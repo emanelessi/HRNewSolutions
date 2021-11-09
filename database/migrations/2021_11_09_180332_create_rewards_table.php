@@ -18,9 +18,9 @@ class CreateRewardsTable extends Migration
             $table->string('cost');
             $table->string('note')->nullable();
             $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
             $table->unsignedBigInteger('project_id')->nullable();
-            $table->foreign('project_id')->references('id')->on('project')->onDelete('cascade');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -19,15 +19,15 @@ class CreateEmployeesTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->integer('phone_number');
-            $table->date('hier_date');
+            $table->date('hire_date');
             $table->integer('salary');
             $table->binary('photo');
             $table->integer('manager_id');
 //            $table->foreign('manager_id');
-            $table->unsignedBigInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('department')->onDelete('cascade');
+//            $table->unsignedBigInteger('department_id');
+//            $table->foreign('department_id')->references('id')->on('department')->onDelete('cascade');
             $table->unsignedBigInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('job')->onDelete('cascade');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -21,7 +21,7 @@ class CreateHolidaysTable extends Migration
             $table->enum('type', ['Sick_holiday', 'annual_holiday','Official_holiday','Marriage_holiday','condolence_holiday','for_an_hour']);
             $table->enum('status', ['pending', 'approve','rejected']);
             $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
             $table->timestamps();
         });
     }
