@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Department extends Migration
+class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class Department extends Migration
      */
     public function up()
     {
-        Schema::create('department', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('manager_id');
-
-//            $table->unsignedBigInteger('manager_id');
-//            $table->foreign('manager_id')->references('id')->on('employee')->onDelete('cascade');
-            $table->rememberToken();
+            $table->string('title');
+            $table->longText('description')->nullable();
+            $table->integer('salary');
             $table->timestamps();
         });
     }
@@ -32,7 +29,6 @@ class Department extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department');
-
+        Schema::dropIfExists('jobs');
     }
 }

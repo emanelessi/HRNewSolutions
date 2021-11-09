@@ -16,10 +16,14 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('admin')->insert([
-            'username' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+//        DB::table('admin')->insert([
+//            'username' => Str::random(10),
+//            'email' => Str::random(10).'@gmail.com',
+//            'password' => Hash::make('password'),
+//        ]);
+//        User::factory()
+//            ->count(50)
+//            ->hasPosts(1)
+//            ->create();
     }
 }
