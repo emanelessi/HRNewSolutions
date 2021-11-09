@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Holiday extends Migration
+class CreateHolidaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Holiday extends Migration
      */
     public function up()
     {
-        Schema::create('holiday', function (Blueprint $table) {
+        Schema::create('holidays', function (Blueprint $table) {
             $table->id();
             $table->dateTime('duration');
             $table->longText('description')->nullable();
@@ -22,7 +22,6 @@ class Holiday extends Migration
             $table->enum('status', ['pending', 'approve','rejected']);
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -34,7 +33,6 @@ class Holiday extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('holiday');
-
+        Schema::dropIfExists('holidays');
     }
 }

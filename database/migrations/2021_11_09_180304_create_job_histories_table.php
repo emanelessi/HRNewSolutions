@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JobHistory extends Migration
+class CreateJobHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class JobHistory extends Migration
      */
     public function up()
     {
-        Schema::create('job_history', function (Blueprint $table) {
+        Schema::create('job_histories', function (Blueprint $table) {
             $table->id();
             $table->date('start_date');
             $table->date('end_date');
@@ -23,7 +23,6 @@ class JobHistory extends Migration
             $table->foreign('job_id')->references('id')->on('job')->onDelete('cascade');
             $table->unsignedBigInteger('department_id');
             $table->foreign('department_id')->references('id')->on('department')->onDelete('cascade');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -35,7 +34,6 @@ class JobHistory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_history');
-
+        Schema::dropIfExists('job_histories');
     }
 }

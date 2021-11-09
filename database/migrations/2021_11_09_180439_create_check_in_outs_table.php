@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CheckInOut extends Migration
+class CreateCheckInOutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CheckInOut extends Migration
      */
     public function up()
     {
-        Schema::create('check_in_out', function (Blueprint $table) {
+        Schema::create('check_in_outs', function (Blueprint $table) {
             $table->id();
             $table->dateTime('time');
             $table->unsignedBigInteger('employee_id')->nullable();
             $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,8 +29,6 @@ class CheckInOut extends Migration
      */
     public function down()
     {
-
-        Schema::dropIfExists('check_in_out');
-
+        Schema::dropIfExists('check_in_outs');
     }
 }

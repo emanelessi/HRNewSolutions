@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Reward extends Migration
+class CreateRewardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Reward extends Migration
      */
     public function up()
     {
-        Schema::create('reward', function (Blueprint $table) {
+        Schema::create('rewards', function (Blueprint $table) {
             $table->id();
             $table->string('cost');
             $table->string('note')->nullable();
@@ -21,7 +21,6 @@ class Reward extends Migration
             $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
             $table->unsignedBigInteger('project_id')->nullable();
             $table->foreign('project_id')->references('id')->on('project')->onDelete('cascade');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -33,7 +32,6 @@ class Reward extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reward');
-
+        Schema::dropIfExists('rewards');
     }
 }
