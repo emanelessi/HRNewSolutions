@@ -30,7 +30,6 @@ class EmployeeFactory extends Factory
             'hire_date'=>  $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'salary'=> rand(1,500),
             'photo' =>$this->faker->imageUrl(400, 300),
-//            'photo' => $this->faker->image('public/storage/posts', 650, 490, null, false),
             'manager_id'=> rand(1,100),
             'job_id'=> Job::factory(),
 
