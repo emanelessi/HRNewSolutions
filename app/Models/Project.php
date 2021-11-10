@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-        public function Employee(){
+    protected $fillable =['name', 'salary', 'description', 'manager_id', 'members'];
+
+    public function Employee(){
         return $this->belongsTo(Employee::class,'employee_id');
     }
 }

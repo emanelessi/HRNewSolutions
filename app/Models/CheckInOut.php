@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CheckInOut extends Model
 {
     use HasFactory;
+    protected $fillable =['time', 'employee_id'];
+
     public function CheckInOut(){
         return $this->hasOne(CheckInOut::class,'employee_id');
     }

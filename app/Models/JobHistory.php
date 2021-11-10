@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class JobHistory extends Model
 {
     use HasFactory;
-        public function Employee(){
+    protected $fillable =['start_date', 'end_date', 'employee_id', 'job_id', 'department_id'];
+
+    public function Employee(){
         return $this->belongsTo(Employee::class,'employee_id');
     }
 }

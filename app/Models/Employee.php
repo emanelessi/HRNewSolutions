@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Employee extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+    protected $fillable =['first_name', 'last_name', 'email', 'phone_number', 'hire_date', 'salary', 'photo', 'manager_id', 'job_id'];
+
     public function Department(){
         return $this->hasOne(Department::class,'department_id');
     }

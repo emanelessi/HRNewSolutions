@@ -14,21 +14,13 @@ class Admin extends Model
     protected $guard = "admin";
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     protected $hidden = [
         'password',
     ];
 
-//    public function JobHistory(){
-//        return $this->hasMany(JobHistory::class,'job_id','id');
-//    }
-//    public function DepartmentManager(){
-//        return $this->hasOne(Department::class,'manager_id');
-//    }
-//    public function Job(){
-//        return $this->belongsTo(Job::class,'job_id');
-//    }
+
 
 }

@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Employee;
+use App\Models\Reward;
 use Illuminate\Database\Seeder;
 
-
-class UserTableSeeder extends Seeder
+class RewardTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,5 +14,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        Reward::factory()->times(20)->create();
     }
 }
