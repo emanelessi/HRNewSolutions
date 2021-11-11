@@ -11,7 +11,7 @@ class Reward extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function Employee(){
+    public function employee(){
         return $this->belongsTo(Employee::class,'employee_id');
     }
 }

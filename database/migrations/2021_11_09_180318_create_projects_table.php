@@ -16,11 +16,10 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('salary');
+            $table->double('salary');
             $table->longText('description')->nullable();
-            $table->integer('manager_id');
-//            $table->unsignedBigInteger('manager_id');
-//            $table->foreign('manager_id')->references('id')->on('employee')->onDelete('cascade');
+            $table->unsignedBigInteger('manager_id');
+            $table->foreign('manager_id')->references('id')->on('employees')->onDelete('cascade');
             $table->string('members');
             $table->softDeletes();
             $table->timestamps();

@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->integer('salary');
+            $table->double('salary');
             $table->softDeletes();
             $table->timestamps();
         });
