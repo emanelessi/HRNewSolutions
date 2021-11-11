@@ -23,6 +23,8 @@ class CreateEmployeesTable extends Migration
             $table->date('hire_date');
             $table->double('salary');
             $table->string('photo')->nullable();
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments')->cascadeOnDelete();
             $table->unsignedBigInteger('job_id');
             $table->foreign('job_id')->references('id')->on('jobs')->cascadeOnDelete();
             $table->rememberToken();
