@@ -11,7 +11,7 @@ class Department extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function Employee(){
+    public function employee(){
         return $this->belongsTo(Employee::class,'department_id');
     }
 

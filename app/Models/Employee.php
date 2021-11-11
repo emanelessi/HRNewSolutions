@@ -18,37 +18,37 @@ class Employee extends Authenticatable
         'remember_token',
     ];
 
-    public function Department()
+    public function department()
     {
         return $this->hasOne(Department::class, 'department_id');
     }
 
-    public function Job()
+    public function job()
     {
-        return $this->hasOne(Job::class, 'job_id');
+        return $this->hasMany(Job::class, 'job_id','id');
     }
 
-    public function Reward()
+    public function reward()
     {
-        return $this->hasOne(Reward::class, 'employee_id');
+        return $this->hasMany(Reward::class, 'employee_id','id');
     }
 
-    public function Holiday()
+    public function holiday()
     {
-        return $this->hasOne(Holiday::class, 'employee_id');
+        return $this->hasMany(Holiday::class, 'employee_id','id');
     }
 
-    public function CheckInOut()
+    public function checkinout()
     {
         return $this->hasOne(CheckInOut::class, 'employee_id');
     }
 
-    public function Project()
+    public function project()
     {
         return $this->hasMany(Project::class, 'project_id', 'id');
     }
 
-    public function JobHistory()
+    public function jobhistory()
     {
         return $this->hasOne(JobHistory::class, 'employee_id');
     }

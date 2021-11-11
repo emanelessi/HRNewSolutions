@@ -11,7 +11,7 @@ class Job extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function Employee(){
+    public function employee(){
         return $this->belongsTo(Employee::class,'job_id');
     }
 }
