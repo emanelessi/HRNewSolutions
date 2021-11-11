@@ -18,6 +18,7 @@ class CreateCheckInOutsTable extends Migration
             $table->dateTime('time');
             $table->unsignedBigInteger('employee_id')->nullable();
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

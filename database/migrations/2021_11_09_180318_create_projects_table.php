@@ -22,6 +22,7 @@ class CreateProjectsTable extends Migration
 //            $table->unsignedBigInteger('manager_id');
 //            $table->foreign('manager_id')->references('id')->on('employee')->onDelete('cascade');
             $table->string('members');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

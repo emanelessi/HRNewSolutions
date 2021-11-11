@@ -22,6 +22,7 @@ class CreateHolidaysTable extends Migration
             $table->enum('status', ['pending', 'approve','rejected']);
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

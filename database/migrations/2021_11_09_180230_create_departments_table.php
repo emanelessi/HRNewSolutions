@@ -20,6 +20,7 @@ class CreateDepartmentsTable extends Migration
 
 //            $table->unsignedBigInteger('manager_id');
 //            $table->foreign('manager_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
