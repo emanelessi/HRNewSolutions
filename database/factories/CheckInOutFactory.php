@@ -20,7 +20,6 @@ class CheckInOutFactory extends Factory
     {
         return [
             'time'=>  $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-
             'employee_id'=>Employee::factory(),
         ];
     }

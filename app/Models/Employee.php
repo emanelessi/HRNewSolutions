@@ -13,6 +13,9 @@ class Employee extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     use SoftDeletes;
+    protected $fillable = [
+        'first_name','last_name','email','password','phone_number','hire_date','salary','photo','job_id','manager_id','remember_token'
+    ];
     protected $hidden = [
         'password',
         'remember_token',
