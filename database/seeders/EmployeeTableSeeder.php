@@ -5,8 +5,7 @@ namespace Database\Seeders;
 use App\Models\Employee;
 use Illuminate\Database\Seeder;
 
-
-class UserTableSeeder extends Seeder
+class EmployeeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,5 +14,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        Employee::factory()->times(20)->create();
+
     }
 }

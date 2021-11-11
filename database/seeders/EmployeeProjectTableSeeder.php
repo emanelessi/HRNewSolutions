@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Employee;
+use App\Models\EmployeeProject;
 use Illuminate\Database\Seeder;
 
-
-class UserTableSeeder extends Seeder
+class EmployeeProjectTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,5 +14,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        EmployeeProject::factory()->times(20)->create();
     }
 }
