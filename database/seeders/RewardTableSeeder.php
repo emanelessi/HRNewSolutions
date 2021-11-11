@@ -14,6 +14,6 @@ class RewardTableSeeder extends Seeder
      */
     public function run()
     {
-        Reward::factory()->times(20)->create();
+        Reward::factory()->times(5)->create();
     }
 }

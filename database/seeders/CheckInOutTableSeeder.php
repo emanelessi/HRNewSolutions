@@ -14,6 +14,6 @@ class CheckInOutTableSeeder extends Seeder
      */
     public function run()
     {
-        CheckInOut::factory()->times(20)->create();
+        CheckInOut::factory()->times(5)->create();
     }
 }

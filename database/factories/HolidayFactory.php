@@ -21,7 +21,7 @@ class HolidayFactory extends Factory
             'duration'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'description'=> $this->faker->text(10),
             'date'=> $this->faker->date(),
-            'type'=> $this->faker->randomElement(['Sick_holiday','annual_holiday','Official_holiday','Marriage_holiday','condolence_holiday','for_an_hour']),
+            'type'=> $this->faker->randomElement(['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas']),
             'status'=> $this->faker->randomElement(['pending', 'approve', 'rejected']),
             'employee_id'=>Employee::factory(),
 

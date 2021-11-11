@@ -14,6 +14,6 @@ class JobHistoryTableSeeder extends Seeder
      */
     public function run()
     {
-        JobHistory::factory()->times(20)->create();
+        JobHistory::factory()->times(5)->create();
     }
 }

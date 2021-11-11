@@ -14,6 +14,6 @@ class DepartmentTableSeeder extends Seeder
      */
     public function run()
     {
-        Department::factory()->times(20)->create();
+        Department::factory()->times(5)->create();
     }
 }

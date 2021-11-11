@@ -14,6 +14,6 @@ class HolidayTableSeeder extends Seeder
      */
     public function run()
     {
-        Holiday::factory()->times(20)->create();
+        Holiday::factory()->times(5)->create();
     }
 }

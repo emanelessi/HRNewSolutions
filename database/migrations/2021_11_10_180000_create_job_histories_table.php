@@ -18,11 +18,11 @@ class CreateJobHistoriesTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees')->cascadeOnDelete();
             $table->unsignedBigInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->foreign('job_id')->references('id')->on('jobs')->cascadeOnDelete();
             $table->unsignedBigInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+            $table->foreign('department_id')->references('id')->on('departments')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class DepartmentFactory extends Factory
     {
         return [
             'name'=> $this->faker->text(10),
-            'manager_id'=> rand(1,100),
+//            'manager_id'=> rand(1,100),
 
         ];
     }
