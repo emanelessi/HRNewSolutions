@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\profileResource;
 use Illuminate\Support\Facades\Route;
 use App\Models\Employee;
 use Illuminate\Http\Request;
@@ -32,16 +33,16 @@ class EmployeeEloquent
 
         $statusCode = $response->getStatusCode();
         $response = json_decode($response->getContent());
-        $user = \auth()->user();
-        return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'user' => $user]);
+        $employee = \auth()->user();
+        return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'employee' => $employee]);
 
     }
 
     public function register(array $data)
     {
         $data['password'] = bcrypt($data['password']);
-        $user = Employee::create($data);
-        return response_api(true, 200, 'Successfully Register!', $user->fresh());
+        $employee = Employee::create($data);
+        return response_api(true, 200, 'Successfully Register!', $employee->fresh());
 
     }
 
