@@ -48,7 +48,7 @@ class EmployeeEloquent
     public function profile($id = null)
     {
         if (isset($id)) {
-            $user = User::find($id);
+            $user = Employee::find($id);
             if (!isset($user)) {
                 return response_api(false, 422, 'Error', new \stdClass());
             }
