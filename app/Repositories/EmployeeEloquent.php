@@ -44,7 +44,7 @@ class EmployeeEloquent
     public function register(array $data)
     {
         $data['password'] = bcrypt($data['password']);
-        $employee = Employee::create($data);
+        $employee = User::create($data);
         return response_api(true, 200, 'Successfully Register!', $employee->fresh());
 
     }
@@ -52,12 +52,12 @@ class EmployeeEloquent
     public function profile($id = null)
     {
         if (isset($id)) {
-            $employee = Employee::find($id);
+            $employee = User::find($id);
             if (!isset($employee)) {
                 return response_api(false, 422, 'Error', new \stdClass());
             }
         }
-        $employee = isset($id) ? $employee : \auth()->employee();
+        $employee = isset($id) ? $employee : \auth()->user();
         return response_api(true, 200, 'Success', new profileResource($employee));
     }
 

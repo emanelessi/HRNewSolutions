@@ -17,7 +17,7 @@ use \App\Http\Controllers\Api\EmployeeController;
 Route::post('/register',[EmployeeController::class,'register']);
 Route::post('/login',[EmployeeController::class,'login']);
 Route::group(['middleware'=>'auth:api'],function (){
-    Route::get('profile',[EmployeeController::class,'profile']);
+    Route::get('profile/{id?}',[EmployeeController::class,'profile']);
     Route::put('profile',[EmployeeController::class,'editProfile']);
 
 });
