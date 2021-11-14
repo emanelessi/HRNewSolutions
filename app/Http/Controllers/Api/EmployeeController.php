@@ -36,5 +36,11 @@ class EmployeeController extends Controller
         return $this->employee->editProfile($request->all());
     }
 
+    public function projects()
+    {
+        return $this->employee->projects();
+    }
+
+
 
 }

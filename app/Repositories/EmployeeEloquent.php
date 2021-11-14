@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Http\Resources\profileResource;
+use App\Http\Resources\projectResource;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Employee;
@@ -59,6 +61,52 @@ class EmployeeEloquent
         }
         $employee = isset($id) ? $employee : \auth()->user();
         return response_api(true, 200, 'Success', new profileResource($employee));
+    }
+    public function editProfile(array $data)
+    {
+        $id = auth()->user()->id;
+        $employee = User::find($id);
+        $employee->first_name = $data['first_name'];
+        $employee->last_name = $data['last_name'];
+        if ($data['email'] != null) {
+            $employee->email = $data['email'];
+        }
+        if ($data['password'] != null) {
+            $employee->password = bcrypt($data['password']);
+        }
+        if ($data['phone_number'] != null) {
+            $employee->phone_number = $data['phone_number'];
+        }
+        if ($data['hire_date'] != null) {
+            $employee->hire_date = $data['hire_date'];
+        }
+        if ($data['salary'] != null) {
+            $employee->salary = $data['salary'];
+        }
+        if ($data['photo'] != null) {
+            $employee->photo = $data['photo'];
+        }
+        if ($data['department_id'] != null) {
+            $employee->department_id = $data['department_id'];
+        }
+        if ($data['job_id'] != null) {
+            $employee->job_id = $data['job_id'];
+        }
+        if ($data['manager_id'] != null) {
+            $employee->manager_id = $data['manager_id'];
+        }
+        $employee->save();
+        return response_api(true, 200, 'Successfully Updated!', ['profile' => new profileResource($employee)]);
+    }
+    public function projects(){
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+//        $project=Project::where('',auth()->user()->id);
+        $total_records = Project::count();
+        $total_pages = ceil($total_records / $page_size);
+        $myproject= Project::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', projectResource::collection($myproject), $page_number, $total_pages, $total_records);
     }
 
 }
