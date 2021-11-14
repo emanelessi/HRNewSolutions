@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->double('salary');
             $table->longText('description')->nullable();
             $table->unsignedBigInteger('manager_id');
-            $table->foreign('manager_id')->references('id')->on('employees')->cascadeOnDelete();
+            $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string('members');
             $table->softDeletes();
             $table->timestamps();

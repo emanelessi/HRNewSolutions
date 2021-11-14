@@ -21,7 +21,7 @@ class CreateHolidaysTable extends Migration
             $table->enum('type', ['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas']);
             $table->enum('status', ['pending', 'approve','rejected']);
             $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees')->cascadeOnDelete();
+            $table->foreign('employee_id')->references('id')->on('users')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

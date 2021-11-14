@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Http\Resources\profileResource;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Employee;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class EmployeeEloquent
 {
     private $model;
 
-    public function __construct(Employee $employee)
+    public function __construct(User $employee)
     {
         $this->model = $employee;
     }
@@ -19,7 +20,9 @@ class EmployeeEloquent
     public function login()
     {
         $proxy = Request::create('oauth/token', 'POST');
+
         $response = Route::dispatch($proxy);
+
         $statusCode = $response->getStatusCode();
         $response = json_decode($response->getContent());
         if ($statusCode != 200)
@@ -33,7 +36,7 @@ class EmployeeEloquent
 
         $statusCode = $response->getStatusCode();
         $response = json_decode($response->getContent());
-        $employee = \auth()->employee();
+        $employee = \auth()->user();
         return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'employee' => $employee]);
 
     }

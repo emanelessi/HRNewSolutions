@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use App\Models\Holiday;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class HolidayFactory extends Factory
@@ -23,7 +24,7 @@ class HolidayFactory extends Factory
             'date'=> $this->faker->date(),
             'type'=> $this->faker->randomElement(['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas']),
             'status'=> $this->faker->randomElement(['pending', 'approve', 'rejected']),
-            'employee_id'=>Employee::factory(),
+            'employee_id'=>User::factory(),
 
         ];
     }

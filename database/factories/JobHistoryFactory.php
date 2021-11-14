@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Job;
 use App\Models\JobHistory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class JobHistoryFactory extends Factory
@@ -22,7 +23,7 @@ class JobHistoryFactory extends Factory
         return [
             'start_date'=>  $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'end_date'=>  $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-            'employee_id'=> Employee::factory(),
+            'employee_id'=> User::factory(),
             'job_id'=>Job::factory(),
             'department_id'=>Department::factory(),
 

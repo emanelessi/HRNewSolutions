@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CheckInOut extends Model
 {
     use HasFactory;
-    public function employee(){
-        return $this->hasOne(Employee::class,'employee_id');
+    public function user(){
+        return $this->hasOne(User::class,'employee_id');
     }
 }

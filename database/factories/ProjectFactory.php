@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProjectFactory extends Factory
@@ -21,7 +22,7 @@ class ProjectFactory extends Factory
             'name'=> $this->faker->text(10),
             'salary'=> rand(1,500),
             'description'=> $this->faker->text(50),
-            'manager_id'=> Employee::factory(),
+            'manager_id'=> User::factory(),
             'members'=> $this->faker->text(30),
 
         ];

@@ -15,7 +15,7 @@ class AddManagerColIdDepartment extends Migration
     {
         Schema::table('departments', function (Blueprint $table) {
             $table->unsignedBigInteger('manager_id')->after('name')->nullable();
-            $table->foreign('manager_id')->references('id')->on('employees')->cascadeOnDelete();
+            $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

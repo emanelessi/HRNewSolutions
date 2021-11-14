@@ -5,13 +5,14 @@ namespace Database\Factories;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Job;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Http\File;
 use Illuminate\Support\Str;
 
 class EmployeeFactory extends Factory
 {
-    protected $model = Employee::class;
+    protected $model = User::class;
     /**
      * Define the model's default state.
      *

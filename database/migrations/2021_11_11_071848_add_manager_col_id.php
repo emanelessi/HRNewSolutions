@@ -13,10 +13,10 @@ class AddManagerColId extends Migration
      */
     public function up()
     {
-        Schema::table('employees', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
             $table->unsignedBigInteger('manager_id')->after('job_id')->nullable();
-            $table->foreign('manager_id')->references('id')->on('employees')->cascadeOnDelete();
+            $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

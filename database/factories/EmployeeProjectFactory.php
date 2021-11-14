@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Employee;
 use App\Models\EmployeeProject;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EmployeeProjectFactory extends Factory
@@ -19,7 +20,7 @@ class EmployeeProjectFactory extends Factory
     public function definition()
     {
         return [
-            'employee_id'=>Employee::factory(),
+            'employee_id'=>User::factory(),
             'project_id'=>Project::factory(),
 
         ];

@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Employee;
 use App\Models\Project;
 use App\Models\Reward;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RewardFactory extends Factory
@@ -21,7 +22,7 @@ class RewardFactory extends Factory
         return [
             'cost'=> rand(1,500),
             'note'=> $this->faker->text(200),
-            'employee_id'=>Employee::factory(),
+            'employee_id'=>User::factory(),
             'project_id'=>Project::factory(),
         ];
     }
