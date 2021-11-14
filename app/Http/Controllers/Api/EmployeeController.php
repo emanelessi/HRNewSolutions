@@ -32,8 +32,5 @@ class EmployeeController extends Controller
 
     }
 
-//    public function edit(ProfileRequest $request)
-//    {
-//        return $this->employee->editProfile($request->all());
-//    }
+
 }

@@ -33,7 +33,7 @@ class EmployeeEloquent
 
         $statusCode = $response->getStatusCode();
         $response = json_decode($response->getContent());
-        $employee = \auth()->user();
+        $employee = \auth()->employee();
         return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'employee' => $employee]);
 
     }
@@ -49,13 +49,13 @@ class EmployeeEloquent
     public function profile($id = null)
     {
         if (isset($id)) {
-            $user = Employee::find($id);
-            if (!isset($user)) {
+            $employee = Employee::find($id);
+            if (!isset($employee)) {
                 return response_api(false, 422, 'Error', new \stdClass());
             }
         }
-        $user = isset($id) ? $user : \auth()->user();
-        return response_api(true, 200, 'Success', new profileResource($user));
+        $employee = isset($id) ? $employee : \auth()->user();
+        return response_api(true, 200, 'Success', new profileResource($employee));
     }
 
 }
