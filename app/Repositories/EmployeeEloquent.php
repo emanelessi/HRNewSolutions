@@ -54,7 +54,7 @@ class EmployeeEloquent
                 return response_api(false, 422, 'Error', new \stdClass());
             }
         }
-        $employee = isset($id) ? $employee : \auth()->user();
+        $employee = isset($id) ? $employee : \auth()->employee();
         return response_api(true, 200, 'Success', new profileResource($employee));
     }
 
