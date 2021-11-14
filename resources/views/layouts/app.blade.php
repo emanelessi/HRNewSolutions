@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<div id="app">
+<div id="app" style="font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
 {{--            <a class="navbar-brand" href="{{ url('/') }}">--}}

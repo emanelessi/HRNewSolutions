@@ -14,11 +14,6 @@
                     <h1 style="margin-bottom: -30px">{{ __('Login') }}</h1>
                     <form action="{{ route('login') }}" class="login-form" method="post">
                         @csrf
-                        <div class="display-hide" style="margin-bottom: 25px">
-                            <button class="close" data-close="alert"></button>
-                            <span>Enter any Email  and password. </span>
-                        </div>
-
                         <div class="row">
                             <div class="col-xs-6">
                                 <label for="email"
