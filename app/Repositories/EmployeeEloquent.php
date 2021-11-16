@@ -3,9 +3,11 @@
 namespace App\Repositories;
 
 use App\Http\Resources\checkinoutResource;
+use App\Http\Resources\holidayResource;
 use App\Http\Resources\profileResource;
 use App\Http\Resources\projectResource;
 use App\Models\CheckInOut;
+use App\Models\Holiday;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -118,6 +120,18 @@ class EmployeeEloquent
         $checkinout->employee_id  = $id;
         $checkinout->save();
         return response_api(true, 200, 'Successfully Added!', ['checkinout' => new checkinoutResource($checkinout)]);
+    }
+    public function holiday(array $data){
+        $id = auth()->user()->id;
+        $holiday =new Holiday();
+        $holiday->duration = $data['duration'];
+        $holiday->description = $data['description'];
+        $holiday->date = $data['date'];
+        $holiday->type = $data['type'];
+        $holiday->status = 'pending';
+        $holiday->employee_id  = $id;
+        $holiday->save();
+        return response_api(true, 200, 'Successfully Added!', ['holiday' => new holidayResource($holiday)]);
     }
 
 

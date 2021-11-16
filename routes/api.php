@@ -21,5 +21,6 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::put('profile',[EmployeeController::class,'editProfile']);
     Route::post('projects',[EmployeeController::class,'projects']);
     Route::post('checkinout',[EmployeeController::class,'checkinout']);
+    Route::post('holiday',[EmployeeController::class,'holiday']);
 
 });

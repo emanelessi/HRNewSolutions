@@ -56,7 +56,7 @@ class User extends Authenticatable
 
     public function holiday()
     {
-        return $this->hasMany(Holiday::class, 'user_id','id');
+        return $this->hasMany(Holiday::class, 'employee_id','id');
     }
 
     public function checkinout()
