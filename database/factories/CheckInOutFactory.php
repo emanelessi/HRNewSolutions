@@ -21,6 +21,7 @@ class CheckInOutFactory extends Factory
     {
         return [
             'time'=>  $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+            'type'=> $this->faker->randomElement(['in', 'out']),
             'employee_id'=>User::factory(),
         ];
     }

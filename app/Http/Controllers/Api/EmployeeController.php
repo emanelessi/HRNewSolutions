@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\CheckInOutRequest;
 use App\Http\Requests\Employee\ProfileRequest;
 use App\Http\Requests\Employee\SignupRequest;
 use App\Repositories\EmployeeEloquent;
@@ -39,6 +40,11 @@ class EmployeeController extends Controller
     public function projects()
     {
         return $this->employee->projects();
+    }
+
+    public function checkinout(CheckInOutRequest $request)
+    {
+        return $this->employee->checkinout($request->all());
     }
 
 

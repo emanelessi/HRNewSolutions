@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\checkinoutResource;
 use App\Http\Resources\profileResource;
 use App\Http\Resources\projectResource;
+use App\Models\CheckInOut;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -108,5 +110,15 @@ class EmployeeEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', projectResource::collection($myproject), $page_number, $total_pages, $total_records);
     }
+    public function checkinout(array $data){
+        $id = auth()->user()->id;
+        $checkinout =new CheckInOut();
+        $checkinout->time = $data['time'];
+        $checkinout->type = $data['type'];
+        $checkinout->employee_id  = $id;
+        $checkinout->save();
+        return response_api(true, 200, 'Successfully Added!', ['checkinout' => new checkinoutResource($checkinout)]);
+    }
+
 
 }

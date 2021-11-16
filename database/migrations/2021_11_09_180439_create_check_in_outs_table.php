@@ -16,6 +16,7 @@ class CreateCheckInOutsTable extends Migration
         Schema::create('check_in_outs', function (Blueprint $table) {
             $table->id();
             $table->dateTime('time');
+            $table->enum('type',['in','out']);
             $table->unsignedBigInteger('employee_id')->nullable();
             $table->foreign('employee_id')->references('id')->on('users')->cascadeOnDelete();
             $table->softDeletes();

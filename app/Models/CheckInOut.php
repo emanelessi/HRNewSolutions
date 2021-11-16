@@ -9,6 +9,6 @@ class CheckInOut extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->hasOne(User::class,'employee_id');
+        return $this->belongsTo(User::class,'employee_id');
     }
 }

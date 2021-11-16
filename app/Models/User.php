@@ -51,12 +51,12 @@ class User extends Authenticatable
 
     public function reward()
     {
-        return $this->hasMany(Reward::class, 'employee_id','id');
+        return $this->hasMany(Reward::class, 'user_id','id');
     }
 
     public function holiday()
     {
-        return $this->hasMany(Holiday::class, 'employee_id','id');
+        return $this->hasMany(Holiday::class, 'user_id','id');
     }
 
     public function checkinout()
@@ -71,6 +71,6 @@ class User extends Authenticatable
 
     public function jobhistory()
     {
-        return $this->hasOne(JobHistory::class, 'employee_id');
+        return $this->hasOne(JobHistory::class, 'user_id');
     }
 }
