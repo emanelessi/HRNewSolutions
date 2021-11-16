@@ -24,5 +24,6 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::post('holiday',[EmployeeController::class,'holiday']);
     Route::post('holidays',[EmployeeController::class,'holidays']);
     Route::post('job',[EmployeeController::class,'job']);
+    Route::post('rewards',[EmployeeController::class,'rewards']);
 
 });

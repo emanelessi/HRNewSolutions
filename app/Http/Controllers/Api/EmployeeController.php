@@ -42,6 +42,10 @@ class EmployeeController extends Controller
     {
         return $this->employee->projects();
     }
+    public function rewards()
+    {
+        return $this->employee->rewards();
+    }
 
     public function checkinout(CheckInOutRequest $request)
     {
