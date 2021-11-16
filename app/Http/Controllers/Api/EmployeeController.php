@@ -51,7 +51,14 @@ class EmployeeController extends Controller
     {
         return $this->employee->holiday($request->all());
     }
-
+    public function holidays()
+    {
+        return $this->employee->holidays();
+    }
+    public function job()
+    {
+        return $this->employee->job();
+    }
 
 
 }

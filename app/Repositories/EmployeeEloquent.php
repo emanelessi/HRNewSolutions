@@ -4,10 +4,12 @@ namespace App\Repositories;
 
 use App\Http\Resources\checkinoutResource;
 use App\Http\Resources\holidayResource;
+use App\Http\Resources\jobResource;
 use App\Http\Resources\profileResource;
 use App\Http\Resources\projectResource;
 use App\Models\CheckInOut;
 use App\Models\Holiday;
+use App\Models\Job;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -132,6 +134,20 @@ class EmployeeEloquent
         $holiday->employee_id  = $id;
         $holiday->save();
         return response_api(true, 200, 'Successfully Added!', ['holiday' => new holidayResource($holiday)]);
+    }
+    public function holidays(){
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $myholiday=Holiday::where('employee_id',auth()->user()->id);
+        $total_records = $myholiday->count();
+        $total_pages = ceil($total_records / $page_size);
+        $holiday= $myholiday->skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', holidayResource::collection($holiday), $page_number, $total_pages, $total_records);
+    }
+    public function job(){
+        $myjob=Job::where('id',auth()->user()->job_id)->first();
+        return response_api(true, 200, 'Success', new jobResource($myjob));
     }
 
 

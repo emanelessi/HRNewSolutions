@@ -22,5 +22,7 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::post('projects',[EmployeeController::class,'projects']);
     Route::post('checkinout',[EmployeeController::class,'checkinout']);
     Route::post('holiday',[EmployeeController::class,'holiday']);
+    Route::post('holidays',[EmployeeController::class,'holidays']);
+    Route::post('job',[EmployeeController::class,'job']);
 
 });
