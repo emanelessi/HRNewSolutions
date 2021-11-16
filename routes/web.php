@@ -22,11 +22,6 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Auth::routes();
 
-Route::get('/admin/login', [LoginController::class,'showAdminLoginForm']);
-Route::get('/admin/register', [RegisterController::class,'showAdminRegisterForm']);
-
-Route::post('/admin/login', [LoginController::class,'adminLogin']);
-Route::post('/admin/register', [RegisterController::class,'createAdmin']);
 
 
 Route::view('/home', 'home')->middleware('auth');

@@ -39,25 +39,25 @@
                 <ul class="navbar-nav mr-auto">
                 </ul>
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto" style="float: right; background-color: #32c5d2; border-color: #32c5d2;border: 20px; color: #fff;">
+                <ul class="navbar-nav ml-auto" style="float: right;padding:10px ;  border-color: #32c5d2;border: 20px; color: #fff;">
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item" style="list-style-type: none">
+                                <a class="nav-link" style="color: whitesmoke;background-color: #32c5d2;padding:10px" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <li class="nav-item" style="list-style-type: none">
+                                <a class="nav-link" style="color: whitesmoke;margin-left: 10px;background-color: #32c5d2;;padding:10px" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a style="color: whitesmoke;margin-left: 10px;background-color: #32c5d2;;padding:10px" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                {{ auth()->user()->first_name }} {{auth()->user()->last_name}}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
