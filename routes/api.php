@@ -48,7 +48,12 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
 
     Route::post('all/projects',[AdminController::class,'projects']);
     Route::post('add/project/{id}',[AdminController::class,'project']);
+    Route::delete('project/{id}',[AdminController::class,'deleteProject']);
+    Route::put('project/{id}',[AdminController::class,'editProject']);
 
     Route::post('all/rewards',[AdminController::class,'rewards']);
+    Route::post('reward/{id}',[AdminController::class,'reward']);
+    Route::delete('reward/{id}',[AdminController::class,'deleteReward']);
+    Route::put('reward/{id}',[AdminController::class,'editReward']);
 
 });

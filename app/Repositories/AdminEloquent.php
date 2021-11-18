@@ -212,5 +212,78 @@ class AdminEloquent
         $employeeproject->save();
         return response_api(true, 200, 'Successfully Added!', ['project' => new projectsResource($employeeproject)]);
     }
+    public function editProject(array $data,$id)
+    {
+        $project = Project::find($id);
+        if ($data['name'] != null) {
+            $project->name = $data['name'];
+        }
+        if ($data['salary'] != null) {
+            $project->salary = $data['salary'];
+        }
+        if ($data['description'] != null) {
+            $project->description = $data['description'];
+        }
+        if ($data['manager_id'] != null) {
+            $project->manager_id = $data['manager_id'];
+        }
+        if ($data['members'] != null) {
+            $project->members = $data['members'];
+        }
+        $project->save();
+
+
+        if ($data['employee_id'] != null) {
+            $employeeproject = EmployeeProject::where('project_id',$id)->first();
+            $employeeproject->employee_id = $data['employee_id'];
+            $employeeproject->save();
+            return response_api(true, 200, 'Successfully Updated!', new projectsResource($employeeproject));
+
+        }
+
+        return response_api(true, 200, 'Successfully Updated!', ['project' => new projectResource($project)]);
+    }
+    public function deleteProject($id){
+        $project = Project::findOrFail($id);
+        $project->delete();
+        $employeeproject = EmployeeProject::where('project_id',$id)->first();
+        $employeeproject->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function reward(array $data,$id)
+    {
+        $reward = new Reward();
+        $reward->cost = $data['cost'];
+        $reward->note = $data['note'];
+        $reward->employee_id  = $id;
+        $reward->project_id   = $data['project_id'];
+        $reward->save();
+        return response_api(true, 200, 'Successfully Added!', ['reward' => new rewardResource($reward)]);
+    }
+    public function deleteReward($id){
+        $reward = Reward::findOrFail($id);
+        $reward->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editReward(array $data,$id)
+    {
+        $reward = Reward::find($id);
+        if ($data['cost'] != null) {
+            $reward->cost = $data['cost'];
+        }
+        if ($data['note'] != null) {
+            $reward->note = $data['note'];
+        }
+        if ($data['employee_id'] != null) {
+            $reward->employee_id = $data['employee_id'];
+        }
+        if ($data['project_id'] != null) {
+            $reward->project_id = $data['project_id'];
+        }
+        $reward->save();
+        return response_api(true, 200, 'Successfully Updated!', ['reward' => new rewardResource($reward)]);
+    }
 
 }
