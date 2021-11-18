@@ -10,10 +10,13 @@ use App\Http\Resources\jobsResource;
 use App\Http\Resources\profileResource;
 use App\Http\Resources\projectResource;
 use App\Http\Resources\projectsResource;
+use App\Http\Resources\rewardResource;
 use App\Models\Admin;
+use App\Models\EmployeeProject;
 use App\Models\Holiday;
 use App\Models\Job;
 use App\Models\Project;
+use App\Models\Reward;
 use App\Models\User;
 
 class AdminEloquent
@@ -148,11 +151,21 @@ class AdminEloquent
     {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
-        $total_records = Project::count();
+        $total_records = EmployeeProject::count();
         $total_pages = ceil($total_records / $page_size);
-        $project = Project::skip(($page_number - 1) * $page_size)
+        $project = EmployeeProject::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', projectsResource::collection($project), $page_number, $total_pages, $total_records);
+    }
+    public function rewards()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Reward::count();
+        $total_pages = ceil($total_records / $page_size);
+        $myrewards= Reward::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', rewardResource::collection($myrewards), $page_number, $total_pages, $total_records);
     }
 
 }

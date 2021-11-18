@@ -60,5 +60,9 @@ class AdminController extends Controller
     {
         return $this->admin->projects();
     }
+    public function rewards()
+    {
+        return $this->admin->rewards();
+    }
 
 }

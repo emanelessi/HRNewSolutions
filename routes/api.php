@@ -39,5 +39,6 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::put('holiday/{id}',[AdminController::class,'editHoliday']);
     Route::post('jobs',[AdminController::class,'jobs']);
     Route::post('all/projects',[AdminController::class,'projects']);
+    Route::post('all/rewards',[AdminController::class,'rewards']);
 
 });
