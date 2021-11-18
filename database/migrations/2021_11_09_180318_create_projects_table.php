@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->double('salary');
             $table->longText('description')->nullable();
-            $table->unsignedBigInteger('manager_id');
+            $table->unsignedBigInteger('manager_id')->nullable();
             $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string('members');
             $table->softDeletes();

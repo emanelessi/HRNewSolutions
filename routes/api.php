@@ -27,18 +27,28 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::post('job',[EmployeeController::class,'job']);
     Route::post('rewards',[EmployeeController::class,'rewards']);
 });
+
 Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::get('home', [AdminController::class,'home']);
+
     Route::post('employees', [AdminController::class,'employees']);
     Route::post('employee', [AdminController::class,'employee']);
     Route::put('employee/{id}',[AdminController::class,'editEmployee']);
     Route::delete('employee/{id}', [AdminController::class,'deleteEmployee']);
+
     Route::post('all/holidays', [AdminController::class,'holidays']);
     Route::post('add/holiday/{id}',[AdminController::class,'holiday']);
     Route::delete('holiday/{id}',[AdminController::class,'deleteHoliday']);
     Route::put('holiday/{id}',[AdminController::class,'editHoliday']);
+
     Route::post('jobs',[AdminController::class,'jobs']);
+    Route::post('add/job',[AdminController::class,'job']);
+    Route::delete('job/{id}',[AdminController::class,'deleteJob']);
+    Route::put('job/{id}',[AdminController::class,'editJob']);
+
     Route::post('all/projects',[AdminController::class,'projects']);
+    Route::post('add/project/{id}',[AdminController::class,'project']);
+
     Route::post('all/rewards',[AdminController::class,'rewards']);
 
 });

@@ -167,5 +167,50 @@ class AdminEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', rewardResource::collection($myrewards), $page_number, $total_pages, $total_records);
     }
+    public function job(array $data)
+    {
+        $job = new Job();
+        $job->title = $data['title'];
+        $job->description = $data['description'];
+        $job->salary = $data['salary'];
+        $job->save();
+        return response_api(true, 200, 'Successfully Added!', ['job' => new jobResource($job)]);
+    }
+    public function deleteJob($id){
+        $job = Job::findOrFail($id);
+        $job->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editJob(array $data,$id)
+    {
+        $job = Job::find($id);
+        if ($data['title'] != null) {
+            $job->title = $data['title'];
+        }
+        if ($data['description'] != null) {
+            $job->description = $data['description'];
+        }
+        if ($data['salary'] != null) {
+            $job->salary = $data['salary'];
+        }
+        $job->save();
+        return response_api(true, 200, 'Successfully Updated!', ['job' => new jobResource($job)]);
+    }
+    public function project(array $data,$id)
+    {
+        $project = new Project();
+        $project->name = $data['name'];
+        $project->salary = $data['salary'];
+        $project->description = $data['description'];
+        $project->manager_id  = null;
+        $project->members = $data['members'];
+        $project->save();
+        $employeeproject = new EmployeeProject();
+        $employeeproject->project_id  = $project->id;
+        $employeeproject->employee_id = $id;
+        $employeeproject->save();
+        return response_api(true, 200, 'Successfully Added!', ['project' => new projectsResource($employeeproject)]);
+    }
 
 }

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Employee\editEmployeeRequest;
 use App\Http\Requests\Employee\editHolidayRequest;
+use App\Http\Requests\Employee\editJobRequest;
 use App\Http\Requests\Employee\EmployeeRequest;
 use App\Http\Requests\Employee\HolidayRequest;
+use App\Http\Requests\Employee\jobRequest;
+use App\Http\Requests\Employee\projectRequest;
 use App\Repositories\AdminEloquent;
 use Illuminate\Http\Request;
 
@@ -63,6 +66,22 @@ class AdminController extends Controller
     public function rewards()
     {
         return $this->admin->rewards();
+    }
+    public function job(jobRequest $request)
+    {
+        return $this->admin->job($request->all());
+    }
+    public function deleteJob($id)
+    {
+        return $this->admin->deleteJob($id);
+    }
+    public function editJob(editJobRequest $request,$id)
+    {
+        return $this->admin->editJob($request->all(),$id);
+    }
+    public function project(projectRequest $request,$id)
+    {
+        return $this->admin->project($request->all(),$id);
     }
 
 }
