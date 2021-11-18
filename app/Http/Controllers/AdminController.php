@@ -52,5 +52,13 @@ class AdminController extends Controller
     {
         return $this->admin->editHoliday($request->all(),$id);
     }
+    public function jobs()
+    {
+        return $this->admin->jobs();
+    }
+    public function projects()
+    {
+        return $this->admin->projects();
+    }
 
 }

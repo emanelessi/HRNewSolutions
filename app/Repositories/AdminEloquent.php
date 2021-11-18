@@ -5,9 +5,15 @@ namespace App\Repositories;
 use App\Http\Resources\employeeResource;
 use App\Http\Resources\employeesResource;
 use App\Http\Resources\holidayResource;
+use App\Http\Resources\jobResource;
+use App\Http\Resources\jobsResource;
 use App\Http\Resources\profileResource;
+use App\Http\Resources\projectResource;
+use App\Http\Resources\projectsResource;
 use App\Models\Admin;
 use App\Models\Holiday;
+use App\Models\Job;
+use App\Models\Project;
 use App\Models\User;
 
 class AdminEloquent
@@ -127,6 +133,26 @@ class AdminEloquent
 
         $holiday->save();
         return response_api(true, 200, 'Successfully Updated!', ['holiday' => new holidayResource($holiday)]);
+    }
+    public function jobs()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Job::count();
+        $total_pages = ceil($total_records / $page_size);
+        $job = Job::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', jobsResource::collection($job), $page_number, $total_pages, $total_records);
+    }
+    public function projects()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Project::count();
+        $total_pages = ceil($total_records / $page_size);
+        $project = Project::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', projectsResource::collection($project), $page_number, $total_pages, $total_records);
     }
 
 }

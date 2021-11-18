@@ -37,5 +37,7 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::post('add/holiday/{id}',[AdminController::class,'holiday']);
     Route::delete('holiday/{id}',[AdminController::class,'deleteHoliday']);
     Route::put('holiday/{id}',[AdminController::class,'editHoliday']);
+    Route::post('jobs',[AdminController::class,'jobs']);
+    Route::post('all/projects',[AdminController::class,'projects']);
 
 });
