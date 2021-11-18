@@ -12,7 +12,7 @@ class Department extends Model
     use SoftDeletes;
 
     public function user(){
-        return $this->belongsTo(User::class,'department_id');
+        return $this->hasOne(User::class,'department_id','id');
     }
 
 }

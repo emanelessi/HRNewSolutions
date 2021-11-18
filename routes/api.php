@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\EmployeeController;
+use \App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,4 +26,9 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::post('holidays',[EmployeeController::class,'holidays']);
     Route::post('job',[EmployeeController::class,'job']);
     Route::post('rewards',[EmployeeController::class,'rewards']);
+});
+Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
+    Route::get('home', [AdminController::class,'home']);
+    Route::post('employees', [AdminController::class,'employees']);
+    Route::post('employee', [AdminController::class,'employee']);
 });

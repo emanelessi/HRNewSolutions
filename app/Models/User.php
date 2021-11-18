@@ -41,12 +41,12 @@ class User extends Authenticatable
     ];
     public function department()
     {
-        return $this->hasOne(Department::class, 'department_id');
+        return $this->belongsTo(Department::class, 'department_id');
     }
 
     public function job()
     {
-        return $this->hasMany(Job::class, 'job_id','id');
+        return $this->belongsTo(Job::class, 'job_id');
     }
 
     public function reward()

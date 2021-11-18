@@ -14,7 +14,7 @@ class InvoiceFactory extends Factory
     public function definition()
     {
         return [
-            'type'=> $this->faker->randomElement(['internet','electricity']),
+            'type'=> $this->faker->randomElement(['internet','electricity','services','communications']),
             'price'=> rand(1,500),
             'date'=> $this->faker->date(),
             'is_paid'=> $this->faker->randomElement([0,1]),

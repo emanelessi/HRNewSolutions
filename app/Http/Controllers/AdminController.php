@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Employee\EmployeeRequest;
+use App\Repositories\AdminEloquent;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function dashboard()
+    public function __construct(AdminEloquent $adminEloquent)
     {
-        return view('admin');
+        $this->admin = $adminEloquent;
+    }
+
+    public function home()
+    {
+        return $this->admin->home();
+    }
+    public function employees()
+    {
+        return $this->admin->employees();
+    }
+    public function employee(EmployeeRequest $request)
+    {
+        return $this->admin->employee($request->all());
     }
 }
