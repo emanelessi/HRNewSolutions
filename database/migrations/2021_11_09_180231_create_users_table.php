@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('job_id');
             $table->foreign('job_id')->references('id')->on('jobs')->cascadeOnDelete();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
