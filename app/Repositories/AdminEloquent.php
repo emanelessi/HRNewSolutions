@@ -4,8 +4,10 @@ namespace App\Repositories;
 
 use App\Http\Resources\employeeResource;
 use App\Http\Resources\employeesResource;
+use App\Http\Resources\holidayResource;
 use App\Http\Resources\profileResource;
 use App\Models\Admin;
+use App\Models\Holiday;
 use App\Models\User;
 
 class AdminEloquent
@@ -75,6 +77,56 @@ class AdminEloquent
         $employee->delete();
         return response_api(true, 200, 'Successfully Deleted!','');
 
+    }
+    public function holidays()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Holiday::count();
+        $total_pages = ceil($total_records / $page_size);
+        $holiday = Holiday::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', holidayResource::collection($holiday), $page_number, $total_pages, $total_records);
+    }
+    public function holiday(array $data,$id)
+    {
+        $holiday = new Holiday();
+        $holiday->duration = $data['duration'];
+        $holiday->description = $data['description'];
+        $holiday->date = $data['date'];
+        $holiday->type = $data['type'];
+        $holiday->status = 'pending';
+        $holiday->employee_id = $id;
+        $holiday->save();
+        return response_api(true, 200, 'Successfully Added!', ['holiday' => new holidayResource($holiday)]);
+    }
+    public function deleteHoliday($id){
+        $holiday = Holiday::findOrFail($id);
+        $holiday->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editHoliday(array $data,$id)
+    {
+        $holiday = Holiday::find($id);
+        if ($data['duration'] != null) {
+            $holiday->duration = $data['duration'];
+        }
+        if ($data['description'] != null) {
+            $holiday->description = $data['description'];
+        }
+        if ($data['date'] != null) {
+            $holiday->date = $data['date'];
+        }
+        if ($data['type'] != null) {
+            $holiday->type = $data['type'];
+        }
+        if ($data['status'] != null) {
+            $holiday->status = $data['status'];
+        }
+
+        $holiday->save();
+        return response_api(true, 200, 'Successfully Updated!', ['holiday' => new holidayResource($holiday)]);
     }
 
 }

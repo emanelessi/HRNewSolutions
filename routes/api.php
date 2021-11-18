@@ -33,5 +33,9 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::post('employee', [AdminController::class,'employee']);
     Route::put('employee/{id}',[AdminController::class,'editEmployee']);
     Route::delete('employee/{id}', [AdminController::class,'deleteEmployee']);
+    Route::post('all/holidays', [AdminController::class,'holidays']);
+    Route::post('add/holiday/{id}',[AdminController::class,'holiday']);
+    Route::delete('holiday/{id}',[AdminController::class,'deleteHoliday']);
+    Route::put('holiday/{id}',[AdminController::class,'editHoliday']);
 
 });

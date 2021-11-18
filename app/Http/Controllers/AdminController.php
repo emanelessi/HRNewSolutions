@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Employee\editEmployeeRequest;
+use App\Http\Requests\Employee\editHolidayRequest;
 use App\Http\Requests\Employee\EmployeeRequest;
+use App\Http\Requests\Employee\HolidayRequest;
 use App\Repositories\AdminEloquent;
 use Illuminate\Http\Request;
 
@@ -34,4 +36,21 @@ class AdminController extends Controller
     {
         return $this->admin->deleteEmployee($id);
     }
+    public function holidays()
+    {
+        return $this->admin->holidays();
+    }
+    public function holiday(HolidayRequest $request,$id)
+    {
+        return $this->admin->holiday($request->all(),$id);
+    }
+    public function deleteHoliday($id)
+    {
+        return $this->admin->deleteHoliday($id);
+    }
+    public function editHoliday(editHolidayRequest $request,$id)
+    {
+        return $this->admin->editHoliday($request->all(),$id);
+    }
+
 }
