@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,7 +71,7 @@ protected function validator(array $data)
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return User|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     protected function create(array $data)
     {
@@ -87,5 +88,16 @@ protected function validator(array $data)
             'department_id' => $data['department_id'],
 
         ]);
+
+//        $departments = DB::table('departments')->get();
+//        return view('Auth.Register')->with('department', $departments);
+//        return view('Auth.Register', compact('data',  'departments'));
+
+    }
+
+    public function showRegistrationForm()
+    {
+        $departments = DB::table('departments')->get();
+        return view('auth.register', compact('departments'));
     }
 }

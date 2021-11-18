@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class=" login">
+    <body class=" login" style="background: center #ffff;">
     <!-- BEGIN : LOGIN PAGE 5-1 -->
     <div class="user-login-5">
         <div class="row bs-reset">
@@ -10,13 +10,13 @@
                     <img class="login-logo" src="../assets/pages/img/login/logo.png"/></div>
             </div>
             <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
-                <div class="login-content">
+                <div class="login-content" style="margin-top: 10%;">
                     <h1 style="margin-bottom: -30px">{{ __('Register') }}</h1>
                     <form action="{{ route('register') }}" class="login-form" method="post">
                         @csrf
 
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-xs-6" style="margin-left: -17px;">
                                 <label for="first_name"
                                        class=" col-form-label text-md-right">{{ __('first_name') }}</label>
                                 <input id="first_name"
@@ -124,6 +124,13 @@
                                        class="form-control form-control-solid placeholder-no-fix form-group @error('job_id') is-invalid @enderror"
                                        type="number" placeholder="job_id"
                                        name="job_id"  value="{{ old('job_id') }}"/>
+
+{{--                                    <select name="job_id" class="form-control">--}}
+
+{{--                                        @foreach ($jobs as $job)--}}
+{{--                                            <option value="{{ $job->id }}">{{ $job->name }}</option>--}}
+{{--                                        @endforeach--}}
+{{--                                    </select>--}}
                                 @error('job_id')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -132,16 +139,22 @@
                             </div>
                                 <div class="col-xs-6">
                                     <label for="department_id" class="col-form-label text-md-right">{{ __('department_id') }}</label>
-                                    <input id="department_id"
-                                           class="form-control form-control-solid placeholder-no-fix form-group @error('department_id') is-invalid @enderror"
-                                           type="number" placeholder="department_id"
-                                           name="department_id"  value="{{ old('department_id') }}" autocomplete="department_id"/>
+{{--                                    <input id="department_id"--}}
+{{--                                           class="form-control form-control-solid placeholder-no-fix form-group @error('department_id') is-invalid @enderror"--}}
+{{--                                           type="number" placeholder="department_id"--}}
+{{--                                           name="department_id"  value="{{ old('department_id') }}" autocomplete="department_id"/>--}}
+                                    <select name="department_id" class="form-control">
+                                        @foreach ($departments as $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                        @endforeach
+                                    </select>
                                     @error('department_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
+
 
 
 

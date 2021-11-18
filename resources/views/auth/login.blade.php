@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class=" login">
+    <body class=" login" style="background: center #ffff;">
     <!-- BEGIN : LOGIN PAGE 5-1 -->
     <div class="user-login-5">
         <div class="row bs-reset">

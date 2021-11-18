@@ -64,7 +64,6 @@
                             <i class="icon-graph"></i>
                                 <span class="title">Dashboard</span>
                                 <span class="selected"></span>
-                                <span class="badge badge-danger">5</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
@@ -83,23 +82,29 @@
                         </ul>
                     </li>
                     <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
+                        <a href="{{url('/tables')}}" class="nav-link nav-toggle">
                             <i class="icon-briefcase"></i>
                             <span class="title">Tables</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                                     <li class="nav-item ">
-                                        <a href="table_datatables_managed.html" class="nav-link "> Managed Datatables </a>
+                                        <a href="{{url('/check/add')}}" class="nav-link "> Managed Datatables </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="table_datatables_buttons.html" class="nav-link "> Buttons Extension </a>
+                                        <a href="{{url('/holiday')}}" class="nav-link "> Buttons Extension </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="table_datatables_scroller.html" class="nav-link "> Scroller Extension </a>
+                                        <a href="{{url('/holiday/add')}}" class="nav-link "> Buttons Extension </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="table_datatables_editable.html" class="nav-link "> Editable Datatables </a>
+                                        <a href="{{url('/job')}}" class="nav-link "> Scroller Extension </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{url('/project')}}" class="nav-link "> Editable Datatables </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{url('/reward')}}" class="nav-link "> Editable Datatables </a>
                                     </li>
                         </ul>
 
