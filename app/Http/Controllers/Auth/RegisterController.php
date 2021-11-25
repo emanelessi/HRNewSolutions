@@ -89,9 +89,6 @@ protected function validator(array $data)
 
         ]);
 
-//        $departments = DB::table('departments')->get();
-//        return view('Auth.Register')->with('department', $departments);
-//        return view('Auth.Register', compact('data',  'departments'));
 
     }
 

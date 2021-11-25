@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CheckInOut;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class CheckController extends Controller
@@ -22,5 +23,9 @@ class CheckController extends Controller
     public function add()
     {
         return view('layouts.check');
+    }
+    public function create () {
+        $employees = DB::select("select * from users ");
+        return view('layouts.check')->with('employees', $employees);
     }
 }

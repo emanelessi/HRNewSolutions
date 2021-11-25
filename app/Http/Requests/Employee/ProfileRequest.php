@@ -24,7 +24,15 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'password' => 'required|string|min:6',
+            'phone_number' => 'required',
+            'hire_date' => 'required',
+            'salary' => 'required',
+            'department_id' => 'required',
+            'job_id' => 'required',
         ];
     }
 }

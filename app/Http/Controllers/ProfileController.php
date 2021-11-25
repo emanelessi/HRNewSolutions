@@ -6,15 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {
     public function index()
-    {
-        $user_id = Auth::user()->id;
+    {    $user_id = Auth::user()->id;
         $profile = User::where('id', $user_id)->get();
-        return view('layouts.profile')->with(compact('profile'));
+        $departments = DB::select("select * from departments ");
+        $jobs = DB::select("select * from jobs ");
+        $users = DB::select("select * from users ");
+        $projects = DB::select("select * from projects");
+        $rewards = DB::select("select * from rewards");
+
+        return view('layouts.profile')->with(compact('profile','departments','jobs','users','projects','rewards'));
     }
 
     public function editprofile(Request $request )

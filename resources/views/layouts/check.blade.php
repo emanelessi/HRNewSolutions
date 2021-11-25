@@ -31,7 +31,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">time</label>
+                                <label class="col-md-3 control-label">Time</label>
                                 <div class="col-md-4">
                                     <div class="input-group">
                                         <span class="input-group-addon">
@@ -43,14 +43,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">employee_id</label>
+                                <label class="col-md-3 control-label">Full Name</label>
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-sticky-note"></i>
                                             </span>
-                                        <input type="number" name="employee_id" class="form-control"
-                                               placeholder="employee_id">
+                                            <select name="employee_id" class="form-control">
+                                                @foreach ($employees as $employee)
+                                                    <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                             </div>
