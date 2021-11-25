@@ -3,9 +3,59 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Holiday;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class HolidayController extends Controller
 {
-    //
+    public function index()
+    {
+       $employee_id = Auth::user()->id;
+        $holiday = Holiday::where('employee_id', $employee_id)->paginate(1);
+        return view('layouts.admin.holiday.holiday')->with(compact('holiday'));
+    }
+
+    public function addholiday(Request $request)
+    {
+        $holiday = new Holiday();
+        $holiday->duration = $request->input('duration');
+        $holiday->description = $request->input('description');
+        $holiday->date = $request->input('date');
+        $holiday->type = $request->input('type');
+        $holiday->status = $request->input('status');
+        $holiday->employee_id = $request->input('employee_id');
+        $holiday->save();
+        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+    }
+
+    public function add()
+    {
+        return view('layouts.admin.holiday.holiday');
+    }
+
+    public function edit(Request $request)
+    {
+        $id = $request->input('id');
+        $holiday = Holiday::find($id);
+        $holiday->duration = $request->input('duration');
+        $holiday->description = $request->input('description');
+        $holiday->date = $request->input('date');
+        $holiday->type = $request->input('type');
+        $holiday->status = $request->input('status');
+        $holiday->employee_id = $request->input('employee_id');
+        $holiday->save();
+        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+
+    }
+
+    public function destroy($id)
+    {
+        $holiday = Holiday::find($id);
+        $holiday->destroy($id);
+        return Redirect::back();
+    }
+
 }

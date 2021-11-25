@@ -24,7 +24,9 @@ class CheckController extends Controller
     {
         return view('layouts.check');
     }
-    public function create () {
+
+    public function create()
+    {
         $employees = DB::select("select * from users ");
         return view('layouts.check')->with('employees', $employees);
     }
