@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
-use App\Http\Controllers\admin;
+use App\Http\Controllers\Admin;
 
 
 /*
@@ -48,50 +48,50 @@ Route::group(['middleware'], function () {
     Route::get('/reward', [Controllers\RewardsController::class, 'index'])->name('rewards');
 
 });
-Route::get('/employee', [admin\UserController::class, 'index'])->name('employee');
-Route::get('/employee/add', [admin\UserController::class, 'add'])->name('employee');
-Route::get('/employee/add', [admin\UserController::class, 'create'])->name('create');
-Route::post('/employee/edit', [admin\UserController::class, 'edit']);
-Route::get('/employee/delete', [admin\UserController::class, 'destroy']);
+Route::get('/employee', [Admin\UserController::class, 'index'])->name('employee');
+Route::get('/employee/add', [Admin\UserController::class, 'add'])->name('employee');
+Route::get('/employee/add', [Admin\UserController::class, 'create'])->name('create');
+Route::post('/employee/edit', [Admin\UserController::class, 'edit']);
+Route::get('/employee/delete', [Admin\UserController::class, 'destroy']);
 
-Route::get('/holiday', [admin\HomeController::class, 'index'])->name('holiday');
-Route::get('/holiday/add', [admin\HomeController::class, 'add'])->name('holiday');
-Route::get('/holiday/add', [admin\HomeController::class, 'create'])->name('create');
-Route::post('/holiday/edit', [admin\HomeController::class, 'edit']);
-Route::get('/holiday/delete', [admin\HomeController::class, 'destroy']);
+Route::get('/holiday', [Admin\HomeController::class, 'index'])->name('holiday');
+Route::get('/holiday/add', [Admin\HomeController::class, 'add'])->name('holiday');
+Route::get('/holiday/add', [Admin\HomeController::class, 'create'])->name('create');
+Route::post('/holiday/edit', [Admin\HomeController::class, 'edit']);
+Route::get('/holiday/delete', [Admin\HomeController::class, 'destroy']);
 
-Route::get('/job', [admin\JobController::class, 'index'])->name('job');
-Route::get('/job/add', [admin\JobController::class, 'add'])->name('job');
-Route::get('/job/add', [admin\JobController::class, 'create'])->name('create');
-Route::post('/job/edit', [admin\JobController::class, 'edit']);
-Route::get('/job/delete', [admin\JobController::class, 'destroy']);
-Route::get('/job/history', [admin\JobController::class, 'showhistory']);
-
-
-Route::get('/project', [admin\ProjectController::class, 'index'])->name('project');
-Route::get('/project/add', [admin\ProjectController::class, 'add'])->name('project');
-Route::get('/project/add', [admin\ProjectController::class, 'create'])->name('create');
-Route::post('/project/edit', [admin\ProjectController::class, 'edit']);
-Route::get('/project/delete', [admin\ProjectController::class, 'destroy']);
-
-Route::get('/reward', [admin\RewardController::class, 'index'])->name('reward');
-Route::get('/reward/add', [admin\RewardController::class, 'add'])->name('reward');
-Route::get('/reward/add', [admin\RewardController::class, 'create'])->name('create');
-Route::post('/reward/edit', [admin\RewardController::class, 'edit']);
-Route::get('/reward/delete', [admin\RewardController::class, 'destroy']);
+Route::get('/job', [Admin\JobController::class, 'index'])->name('job');
+Route::get('/job/add', [Admin\JobController::class, 'add'])->name('job');
+Route::get('/job/add', [Admin\JobController::class, 'create'])->name('create');
+Route::post('/job/edit', [Admin\JobController::class, 'edit']);
+Route::get('/job/delete', [Admin\JobController::class, 'destroy']);
+Route::get('/job/history', [Admin\JobController::class, 'showhistory']);
 
 
-Route::get('/check', [admin\CheckController::class, 'index'])->name('Check');
-Route::get('/check/add', [admin\CheckController::class, 'add'])->name('Check');
-Route::get('/check/add', [admin\CheckController::class, 'create'])->name('create');
-Route::post('/check/add', [admin\CheckController::class, 'addcheck'])->name('addcheck');
-Route::post('/check/edit', [admin\CheckController::class, 'edit']);
-Route::get('/check/delete', [admin\CheckController::class, 'destroy']);
+Route::get('/project', [Admin\ProjectController::class, 'index'])->name('project');
+Route::get('/project/add', [Admin\ProjectController::class, 'add'])->name('project');
+Route::get('/project/add', [Admin\ProjectController::class, 'create'])->name('create');
+Route::post('/project/edit', [Admin\ProjectController::class, 'edit']);
+Route::get('/project/delete', [Admin\ProjectController::class, 'destroy']);
 
-Route::get('/department', [admin\DepartmentController::class, 'index'])->name('department');
-Route::get('/department/add', [admin\DepartmentController::class, 'add'])->name('department');
-Route::get('/department/add', [admin\DepartmentController::class, 'create'])->name('create');
-Route::post('/department/add', [admin\DepartmentController::class, 'adddepartment'])->name('adddepartment');
-Route::post('/department/edit', [admin\DepartmentController::class, 'edit']);
-Route::get('/department/delete', [admin\DepartmentController::class, 'destroy']);
+Route::get('/reward', [Admin\RewardController::class, 'index'])->name('reward');
+Route::get('/reward/add', [Admin\RewardController::class, 'add'])->name('reward');
+Route::get('/reward/add', [Admin\RewardController::class, 'create'])->name('create');
+Route::post('/reward/edit', [Admin\RewardController::class, 'edit']);
+Route::get('/reward/delete', [Admin\RewardController::class, 'destroy']);
+
+
+Route::get('/check', [Admin\CheckController::class, 'index'])->name('Check');
+Route::get('/check/add', [Admin\CheckController::class, 'add'])->name('Check');
+Route::get('/check/add', [Admin\CheckController::class, 'create'])->name('create');
+Route::post('/check/add', [Admin\CheckController::class, 'addcheck'])->name('addcheck');
+Route::post('/check/edit', [Admin\CheckController::class, 'edit']);
+Route::get('/check/delete', [Admin\CheckController::class, 'destroy']);
+
+Route::get('/department', [Admin\DepartmentController::class, 'index'])->name('department');
+Route::get('/department/add', [Admin\DepartmentController::class, 'add'])->name('department');
+Route::get('/department/add', [Admin\DepartmentController::class, 'create'])->name('create');
+Route::post('/department/add', [Admin\DepartmentController::class, 'adddepartment'])->name('adddepartment');
+Route::post('/department/edit', [Admin\DepartmentController::class, 'edit']);
+Route::get('/department/delete', [Admin\DepartmentController::class, 'destroy']);
 
