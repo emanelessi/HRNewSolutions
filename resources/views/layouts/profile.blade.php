@@ -9,137 +9,132 @@
         </div>
     @endif
 
-    <div class="clearfix"></div>
-    <div class="page-container">
-        <div class="page-sidebar-wrapper">
-            <div class="page-sidebar navbar-collapse collapse">
-                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
-                    data-slide-speed="200" style="padding-top: 20px">
-                    <li class="sidebar-toggler-wrapper hide">
-                        <div class="sidebar-toggler">
-                            <span></span>
-                        </div>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/home')}}" class="nav-link nav-toggle ">
-                            <i class="icon-home"></i>
-                            <span class="title">Dashboard</span>
-                            <span class="selected"></span>
-                        </a>
-                    </li>
-                    <li class="heading">
-                        <h3 class="uppercase">Tables</h3>
-                    </li>
-                    <li class="nav-item   start active open">
-                        <a href="{{url('/event')}}" class="nav-link nav-toggle">
-                            <i class="icon-bulb"></i>
-                            <span class="title">Events</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="{{url('/contact')}}" class="nav-link nav-toggle">
-                            <i class="icon-call-end"></i>
-                            <span class="title">Contacts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('/user')}}" class="nav-link nav-toggle">
-                            <i class="icon-user"></i>
-                            <span class="title">Users</span>
-                        </a>
-                    </li>
-                    <li class="heading">
-                        <h3 class="uppercase">Add</h3>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="{{url('/event/add')}}" class="nav-link nav-toggle">
-                            <i class="icon-note"></i>
-                            <span class="title">New Event</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/contact/add')}}" class="nav-link nav-toggle">
-                            <i class="icon-users"></i>
-                            <span class="title">New Contact</span>
-                        </a>
+    @include('includes.memu')
+    <div class="page-fixed-main-content">
+        <div class="profile">
+            <div class="tabbable-line tabbable-full-width">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_1_1" data-toggle="tab"> Profile </a>
                     </li>
                 </ul>
-            </div>
-            <!-- END SIDEBAR -->
-            <div class="page-content-wrapper">
-                <!-- BEGIN CONTENT BODY -->
-                <div class="page-content">
-
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <a href="{{url('/event')}}">Event</a>
-                                <i class="fa fa-circle"></i>
-                            </li>
-                            <li>
-                                <span>Table</span>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <!-- END PAGE BAR -->
-                    <!-- BEGIN PAGE TITLE-->
-                    <h1 class="page-title"> Event Dashboard
-                    </h1>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- BEGIN SAMPLE TABLE PORTLET-->
-                            <div class="portlet box green">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-cogs"></i>Event Table </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1_1">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="list-unstyled profile-nav">
+                                    <li>
+                                        <img src="../assets/pages/media/profile/people19.png"
+                                             class="img-responsive pic-bordered" alt=""/>
+                                        <a href="javascript:;" class="profile-edit"> edit </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-8 profile-info">
+                                        @foreach($profile as $myprofile)
+                                            <h1 class="font-green sbold uppercase">{{$myprofile->first_name}}
+                                                -{{$myprofile->last_name}}</h1>
+                                            <p>
+                                                <a href="javascript:;"> {{$myprofile->email}} </a>
+                                            </p>
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <i class="fa fa-map-marker"></i> {{$myprofile->phone_number}} </li>
+                                                <li>
+                                                    <i class="fa fa-calendar"></i> {{$myprofile->hire_date}} </li>
+                                                <li>
+                                                    <i class="fa fa-briefcase"></i> {{$myprofile->salary}} </li>
+                                                <li>
+                                                    <i class="fa fa-star"></i> {{$myprofile->department_id}} </li>
+                                                <li>
+                                                    <i class="fa fa-heart"></i> {{$myprofile->job_id}} </li>
+                                                <li>
+                                                    <i class="fa fa-heart"></i> {{$myprofile->manager_id}} </li>
+                                            </ul>
+                                    </div>
                                 </div>
-                                <div class="portlet-body flip-scroll">
-                                    <table class="table table-bordered table-striped table-condensed flip-content">
-                                        <thead class="flip-content">
-                                        <tr>
-                                            <th > id </th>
-                                            <th> name </th>
-                                            <th class="numeric"> date </th>
-                                            <th > text </th>
-                                            <th > type</th>
-                                            <th> video </th>
-                                            <th> send to  </th>
-                                            <th> Delete </th>
-                                            <th> Edit </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($event as $myevent)
-                                            <tr>
-                                                <td> {{$myevent->id}} </td>
-                                                <td> {{$myevent->name}} </td>
-                                                <td >{{date('d-m-Y', strtotime($myevent->date))}} </td>
-                                                <td> {{$myevent->text}} </td>
-                                                <td> {{$myevent->type}} </td>
-                                                <td> {{$myevent->video}} </td>
-                                                @foreach($myevent->Contacts as $con)
-                                                    <td> {{$con->name}} </td>
-                                                @endforeach
-                                                <td><a href="/event/delete/{{$myevent->id}}" style="color: red" class="remove">Delete </a></td>
-                                                <td><a href="/event/edit/{{$myevent->id}}" style="color:green" class="remove">Edit </a></td>
+                                <div class="tabbable-line tabbable-custom-profile">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#tab_1_11" data-toggle="tab"> Project </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_1_22" data-toggle="tab"> Reward </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab_1_11">
+                                            <div class="portlet-body">
+                                                <table
+                                                    class="table table-striped table-bordered table-advance table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <i class="fa fa-briefcase"></i> Name
+                                                        </th>
+                                                        <th class="hidden-xs">
+                                                            <i class="fa fa-question"></i> Description
+                                                        </th>
+                                                        <th>
+                                                            <i class="fa fa-bookmark"></i> Manager_id
+                                                        </th>
 
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:;"> Pixel Ltd </a>
+                                                        </td>
+                                                        <td class="hidden-xs"> Server hardware purchase</td>
+                                                        <td> 52560.10$
+                                                            <span class="label label-success label-sm"> Paid </span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_1_22">
+                                            <div class="tab-pane active" id="tab_1_1_1">
+                                                <div class="scroller" data-height="290px" data-always-visible="1"
+                                                     data-rail-visible1="1">
+                                                    <ul class="feeds">
+                                                        <li>
+                                                            <div class="col1">
+                                                                <div class="cont">
+                                                                    <div class="cont-col1">
+                                                                        <div class="label label-success">
+                                                                            <i class="fa fa-bell-o"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="cont-col2">
+                                                                        <div class="desc"> note
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col2">
+                                                                <div class="date"> cost</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
-
             </div>
-            <!-- END CONTAINER -->
-            <!-- BEGIN FOOTER -->
-
+        </div>
     </div>
-
+    <p class="copyright-v2"> 2021 &copy; NewSolutions
+    </p>
 
 @endsection

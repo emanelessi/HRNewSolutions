@@ -22,7 +22,8 @@
                     <!-- END HEADER SEARCH BOX -->
                     <!-- BEGIN GROUP NOTIFICATION -->
                     <div class="btn-group-notification btn-group" id="header_notification_bar">
-                        <button type="button" class="btn md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <button type="button" class="btn md-skip dropdown-toggle" data-toggle="dropdown"
+                                data-hover="dropdown" data-close-others="true">
                             <span class="badge">9</span>
                         </button>
                         <ul class="dropdown-menu-v2">
@@ -32,7 +33,8 @@
                                 <a href="#">view all</a>
                             </li>
                             <li>
-                                <ul class="dropdown-menu-list scroller" style="height: 250px; padding: 0;" data-handle-color="#637283">
+                                <ul class="dropdown-menu-list scroller" style="height: 250px; padding: 0;"
+                                    data-handle-color="#637283">
                                     <li>
                                         <a href="javascript:;">
                                                     <span class="details">
@@ -121,8 +123,9 @@
                     <!-- END GROUP NOTIFICATION -->
                     <!-- BEGIN USER PROFILE -->
                     <div class="btn-group-img btn-group">
-                        <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img src="../assets/layouts/layout5/img/avatar1.jpg" alt=""> </button>
+                        <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"
+                                data-hover="dropdown" data-close-others="true">
+                            <img src="../assets/layouts/layout5/img/avatar1.jpg" alt=""></button>
                         <ul class="dropdown-menu-v2" role="menu">
                             <li>
                                 <a href="page_user_profile_1.html">
@@ -146,7 +149,7 @@
                                     <span class="badge badge-success"> 7 </span>
                                 </a>
                             </li>
-                            <li class="divider"> </li>
+                            <li class="divider"></li>
                             <li>
                                 <a href="page_user_lock_1.html">
                                     <i class="icon-lock"></i> Lock Screen </a>

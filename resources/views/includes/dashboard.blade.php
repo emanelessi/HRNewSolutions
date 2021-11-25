@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="page-content page-content-popup">
         <div class="page-content-fixed-header">
@@ -7,13 +6,13 @@
                 <li>
                     <a href="#">Dashboard</a>
                 </li>
-                <li>Admin Dashboard 3</li>
             </ul>
             <!-- END BREADCRUMBS -->
             <div class="content-header-menu">
                 <!-- BEGIN DROPDOWN AJAX MENU -->
                 <div class="dropdown-ajax-menu btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                            data-close-others="true">
                         <i class="fa fa-circle"></i>
                         <i class="fa fa-circle"></i>
                         <i class="fa fa-circle"></i>
@@ -35,7 +34,8 @@
                 </div>
                 <!-- END DROPDOWN AJAX MENU -->
                 <!-- BEGIN MENU TOGGLER -->
-                <button type="button" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="menu-toggler responsive-toggler" data-toggle="collapse"
+                        data-target=".navbar-collapse">
                             <span class="toggle-icon">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -57,13 +57,14 @@
                 <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                 <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                 <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
+                    data-slide-speed="200">
 
                     <li class="nav-item start active open">
                         <a href="{{url('/home')}}" class="nav-link ">
                             <i class="icon-graph"></i>
-                                <span class="title">Dashboard</span>
-                                <span class="selected"></span>
+                            <span class="title">Dashboard</span>
+                            <span class="selected"></span>
                         </a>
                     </li>
                     <li class="nav-item  ">
@@ -74,9 +75,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item  ">
-                                <a href="page_user_profile_2.html" class="nav-link ">
+                                <a href="{{url('/profile')}}" class="nav-link ">
                                     <i class="icon-users"></i>
-                                    <span class="title">Profile 2</span>
+                                    <span class="title">Profile</span>
+                                </a>
+                                <a href="{{url('/profile/edit')}}" class="nav-link ">
+                                    <i class="icon-users"></i>
+                                    <span class="title">Edit Profile</span>
                                 </a>
                             </li>
                         </ul>
@@ -88,24 +93,24 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
-                                    <li class="nav-item ">
-                                        <a href="{{url('/check/add')}}" class="nav-link "> Managed Datatables </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="{{url('/holiday')}}" class="nav-link "> Buttons Extension </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="{{url('/holiday/add')}}" class="nav-link "> Buttons Extension </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="{{url('/job')}}" class="nav-link "> Scroller Extension </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="{{url('/project')}}" class="nav-link "> Editable Datatables </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="{{url('/reward')}}" class="nav-link "> Editable Datatables </a>
-                                    </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/check/add')}}" class="nav-link "> CheckInOuts </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/holiday')}}" class="nav-link "> Holiday </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/holiday/add')}}" class="nav-link "> Add Holiday </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/job')}}" class="nav-link "> job </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/project')}}" class="nav-link "> project </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{url('/reward')}}" class="nav-link "> reward </a>
+                            </li>
                         </ul>
 
 
@@ -125,7 +130,8 @@
                             <i class="widget-thumb-icon bg-green icon-bulb"></i>
                             <div class="widget-thumb-body">
                                 <span class="widget-thumb-subtitle">USD</span>
-                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="7,644">0</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="7,644">0</span>
                             </div>
                         </div>
                     </div>
@@ -139,7 +145,8 @@
                             <i class="widget-thumb-icon bg-red icon-layers"></i>
                             <div class="widget-thumb-body">
                                 <span class="widget-thumb-subtitle">USD</span>
-                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,293">0</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="1,293">0</span>
                             </div>
                         </div>
                     </div>
@@ -167,7 +174,8 @@
                             <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
                             <div class="widget-thumb-body">
                                 <span class="widget-thumb-subtitle">USD</span>
-                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="5,071">0</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="5,071">0</span>
                             </div>
                         </div>
                     </div>
@@ -198,15 +206,18 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -223,15 +234,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -248,15 +262,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic Ipsum is therefore or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic
+                                                    Ipsum is therefore or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -273,15 +290,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem or non-characteristic Ipsum used since the 1500s or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem or
+                                                    non-characteristic Ipsum used since the 1500s or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -304,15 +324,19 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry. Lorem Ipsum has been the
+                                                    industry's standard dummy.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -329,15 +353,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted by. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted by.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -354,15 +381,19 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. </div>
+                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore
+                                                    always free from repetition, injected humour, or non-characteristic
+                                                    words etc.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -379,15 +410,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used since the 1500s </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used
+                                                    since the 1500s
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -432,15 +466,18 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -457,15 +494,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -482,15 +522,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic Ipsum is therefore or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic
+                                                    Ipsum is therefore or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -507,15 +550,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem or non-characteristic Ipsum used since the 1500s or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem or
+                                                    non-characteristic Ipsum used since the 1500s or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -538,15 +584,19 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry. Lorem Ipsum has been the
+                                                    industry's standard dummy.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -563,15 +613,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted by. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted by.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -588,15 +641,19 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. </div>
+                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore
+                                                    always free from repetition, injected humour, or non-characteristic
+                                                    words etc.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -613,15 +670,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used since the 1500s </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used
+                                                    since the 1500s
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -668,15 +728,18 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -693,15 +756,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -718,15 +784,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic Ipsum is therefore or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic
+                                                    Ipsum is therefore or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -743,15 +812,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem or non-characteristic Ipsum used since the 1500s or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem or
+                                                    non-characteristic Ipsum used since the 1500s or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -774,15 +846,19 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry. Lorem Ipsum has been the
+                                                    industry's standard dummy.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -799,15 +875,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted by. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted by.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -824,15 +903,19 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. </div>
+                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore
+                                                    always free from repetition, injected humour, or non-characteristic
+                                                    words etc.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -849,15 +932,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used since the 1500s </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used
+                                                    since the 1500s
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -902,15 +988,18 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -927,15 +1016,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -952,15 +1044,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic Ipsum is therefore or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The generated Lorem or non-characteristic
+                                                    Ipsum is therefore or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-pending">Pending</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -977,15 +1072,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem or non-characteristic Ipsum used since the 1500s or non-characteristic. </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem or
+                                                    non-characteristic Ipsum used since the 1500s or non-characteristic.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-rejected">Rejected</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -1008,15 +1106,19 @@
                                     <div class="mt-comments">
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar4.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
                                                     <span class="mt-comment-date">26 Feb, 10:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
+                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the
+                                                    printing and typesetting industry. Lorem Ipsum has been the
+                                                    industry's standard dummy.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -1033,15 +1135,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar8.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar8.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Larisa Maskalyova</span>
                                                     <span class="mt-comment-date">12 Feb, 08:30AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> It is a long established fact that a reader will be distracted by. </div>
+                                                <div class="mt-comment-text"> It is a long established fact that a
+                                                    reader will be distracted by.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -1058,15 +1163,19 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar6.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Natasha Kim</span>
                                                     <span class="mt-comment-date">19 Dec,09:50 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. </div>
+                                                <div class="mt-comment-text"> The generated Lorem Ipsum is therefore
+                                                    always free from repetition, injected humour, or non-characteristic
+                                                    words etc.
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -1083,15 +1192,18 @@
                                         </div>
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="../assets/pages/media/users/avatar1.jpg" /> </div>
+                                                <img src="../assets/pages/media/users/avatar1.jpg"/></div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Sebastian Davidson</span>
                                                     <span class="mt-comment-date">10 Dec, 09:20 AM</span>
                                                 </div>
-                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used since the 1500s </div>
+                                                <div class="mt-comment-text"> The standard chunk of Lorem Ipsum used
+                                                    since the 1500s
+                                                </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                    <span
+                                                        class="mt-comment-status mt-comment-status-approved">Approved</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">Quick Edit</a>
@@ -1172,7 +1284,8 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
-                <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+                <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd"
+                     data-wrapper-class="page-quick-sidebar-list">
                     <h3 class="list-heading">Staff</h3>
                     <ul class="media-list list-items">
                         <li class="media">
@@ -1182,14 +1295,14 @@
                             <img class="media-object" src="../assets/layouts/layout/img/avatar3.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Bob Nilson</h4>
-                                <div class="media-heading-sub"> Project Manager </div>
+                                <div class="media-heading-sub"> Project Manager</div>
                             </div>
                         </li>
                         <li class="media">
                             <img class="media-object" src="../assets/layouts/layout/img/avatar1.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Nick Larson</h4>
-                                <div class="media-heading-sub"> Art Director </div>
+                                <div class="media-heading-sub"> Art Director</div>
                             </div>
                         </li>
                         <li class="media">
@@ -1199,14 +1312,14 @@
                             <img class="media-object" src="../assets/layouts/layout/img/avatar4.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Deon Hubert</h4>
-                                <div class="media-heading-sub"> CTO </div>
+                                <div class="media-heading-sub"> CTO</div>
                             </div>
                         </li>
                         <li class="media">
                             <img class="media-object" src="../assets/layouts/layout/img/avatar2.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Ella Wong</h4>
-                                <div class="media-heading-sub"> CEO </div>
+                                <div class="media-heading-sub"> CEO</div>
                             </div>
                         </li>
                     </ul>
@@ -1219,8 +1332,8 @@
                             <img class="media-object" src="../assets/layouts/layout/img/avatar6.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Lara Kunis</h4>
-                                <div class="media-heading-sub"> CEO, Loop Inc </div>
-                                <div class="media-heading-small"> Last seen 03:10 AM </div>
+                                <div class="media-heading-sub"> CEO, Loop Inc</div>
+                                <div class="media-heading-small"> Last seen 03:10 AM</div>
                             </div>
                         </li>
                         <li class="media">
@@ -1231,15 +1344,16 @@
                             <div class="media-body">
                                 <h4 class="media-heading">Ernie Kyllonen</h4>
                                 <div class="media-heading-sub"> Project Manager,
-                                    <br> SmartBizz PTL </div>
+                                    <br> SmartBizz PTL
+                                </div>
                             </div>
                         </li>
                         <li class="media">
                             <img class="media-object" src="../assets/layouts/layout/img/avatar8.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Lisa Stone</h4>
-                                <div class="media-heading-sub"> CTO, Keort Inc </div>
-                                <div class="media-heading-small"> Last seen 13:10 PM </div>
+                                <div class="media-heading-sub"> CTO, Keort Inc</div>
+                                <div class="media-heading-small"> Last seen 13:10 PM</div>
                             </div>
                         </li>
                         <li class="media">
@@ -1249,14 +1363,14 @@
                             <img class="media-object" src="../assets/layouts/layout/img/avatar9.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Deon Portalatin</h4>
-                                <div class="media-heading-sub"> CFO, H&D LTD </div>
+                                <div class="media-heading-sub"> CFO, H&D LTD</div>
                             </div>
                         </li>
                         <li class="media">
                             <img class="media-object" src="../assets/layouts/layout/img/avatar10.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Irina Savikova</h4>
-                                <div class="media-heading-sub"> CEO, Tizda Motors Inc </div>
+                                <div class="media-heading-sub"> CEO, Tizda Motors Inc</div>
                             </div>
                         </li>
                         <li class="media">
@@ -1266,8 +1380,8 @@
                             <img class="media-object" src="../assets/layouts/layout/img/avatar11.jpg" alt="...">
                             <div class="media-body">
                                 <h4 class="media-heading">Maria Gomez</h4>
-                                <div class="media-heading-sub"> Manager, Infomatic Inc </div>
-                                <div class="media-heading-small"> Last seen 03:10 AM </div>
+                                <div class="media-heading-sub"> Manager, Infomatic Inc</div>
+                                <div class="media-heading-small"> Last seen 03:10 AM</div>
                             </div>
                         </li>
                     </ul>
@@ -1280,7 +1394,7 @@
                         </div>
                         <div class="page-quick-sidebar-chat-user-messages">
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1289,7 +1403,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -1298,7 +1412,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1307,7 +1421,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -1316,7 +1430,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1325,7 +1439,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -1334,7 +1448,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1343,7 +1457,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -1352,7 +1466,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg"/>
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1396,7 +1510,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> Just now </div>
+                                <div class="date"> Just now</div>
                             </div>
                         </li>
                         <li>
@@ -1409,12 +1523,12 @@
                                             </div>
                                         </div>
                                         <div class="cont-col2">
-                                            <div class="desc"> Finance Report for year 2013 has been released. </div>
+                                            <div class="desc"> Finance Report for year 2013 has been released.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col2">
-                                    <div class="date"> 20 mins </div>
+                                    <div class="date"> 20 mins</div>
                                 </div>
                             </a>
                         </li>
@@ -1427,12 +1541,13 @@
                                         </div>
                                     </div>
                                     <div class="cont-col2">
-                                        <div class="desc"> You have 5 pending membership that requires a quick review. </div>
+                                        <div class="desc"> You have 5 pending membership that requires a quick review.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 24 mins </div>
+                                <div class="date"> 24 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1445,13 +1560,14 @@
                                     </div>
                                     <div class="cont-col2">
                                         <div class="desc"> New order received with
-                                            <span class="label label-sm label-success"> Reference Number: DR23923 </span>
+                                            <span
+                                                class="label label-sm label-success"> Reference Number: DR23923 </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 30 mins </div>
+                                <div class="date"> 30 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1463,12 +1579,13 @@
                                         </div>
                                     </div>
                                     <div class="cont-col2">
-                                        <div class="desc"> You have 5 pending membership that requires a quick review. </div>
+                                        <div class="desc"> You have 5 pending membership that requires a quick review.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 24 mins </div>
+                                <div class="date"> 24 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1487,7 +1604,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 2 hours </div>
+                                <div class="date"> 2 hours</div>
                             </div>
                         </li>
                         <li>
@@ -1500,12 +1617,12 @@
                                             </div>
                                         </div>
                                         <div class="cont-col2">
-                                            <div class="desc"> IPO Report for year 2013 has been released. </div>
+                                            <div class="desc"> IPO Report for year 2013 has been released.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col2">
-                                    <div class="date"> 20 mins </div>
+                                    <div class="date"> 20 mins</div>
                                 </div>
                             </a>
                         </li>
@@ -1530,7 +1647,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> Just now </div>
+                                <div class="date"> Just now</div>
                             </div>
                         </li>
                         <li>
@@ -1543,12 +1660,12 @@
                                             </div>
                                         </div>
                                         <div class="cont-col2">
-                                            <div class="desc"> Finance Report for year 2013 has been released. </div>
+                                            <div class="desc"> Finance Report for year 2013 has been released.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col2">
-                                    <div class="date"> 20 mins </div>
+                                    <div class="date"> 20 mins</div>
                                 </div>
                             </a>
                         </li>
@@ -1561,12 +1678,13 @@
                                         </div>
                                     </div>
                                     <div class="cont-col2">
-                                        <div class="desc"> You have 5 pending membership that requires a quick review. </div>
+                                        <div class="desc"> You have 5 pending membership that requires a quick review.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 24 mins </div>
+                                <div class="date"> 24 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1579,13 +1697,14 @@
                                     </div>
                                     <div class="cont-col2">
                                         <div class="desc"> New order received with
-                                            <span class="label label-sm label-success"> Reference Number: DR23923 </span>
+                                            <span
+                                                class="label label-sm label-success"> Reference Number: DR23923 </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 30 mins </div>
+                                <div class="date"> 30 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1597,12 +1716,13 @@
                                         </div>
                                     </div>
                                     <div class="cont-col2">
-                                        <div class="desc"> You have 5 pending membership that requires a quick review. </div>
+                                        <div class="desc"> You have 5 pending membership that requires a quick review.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 24 mins </div>
+                                <div class="date"> 24 mins</div>
                             </div>
                         </li>
                         <li>
@@ -1621,7 +1741,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                <div class="date"> 2 hours </div>
+                                <div class="date"> 2 hours</div>
                             </div>
                         </li>
                         <li>
@@ -1634,12 +1754,12 @@
                                             </div>
                                         </div>
                                         <div class="cont-col2">
-                                            <div class="desc"> IPO Report for year 2013 has been released. </div>
+                                            <div class="desc"> IPO Report for year 2013 has been released.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col2">
-                                    <div class="date"> 20 mins </div>
+                                    <div class="date"> 20 mins</div>
                                 </div>
                             </a>
                         </li>
@@ -1651,15 +1771,20 @@
                     <h3 class="list-heading">General Settings</h3>
                     <ul class="list-items borderless">
                         <li> Enable Notifications
-                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                         <li> Allow Tracking
-                            <input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" data-size="small" data-on-color="info"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                         <li> Log Errors
-                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                         <li> Auto Sumbit Issues
-                            <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                         <li> Enable SMS Alerts
-                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                     </ul>
                     <h3 class="list-heading">System Settings</h3>
                     <ul class="list-items borderless">
@@ -1671,17 +1796,20 @@
                             </select>
                         </li>
                         <li> Failed Email Attempts
-                            <input class="form-control input-inline input-sm input-small" value="5" /> </li>
+                            <input class="form-control input-inline input-sm input-small" value="5"/></li>
                         <li> Secondary SMTP Port
-                            <input class="form-control input-inline input-sm input-small" value="3560" /> </li>
+                            <input class="form-control input-inline input-sm input-small" value="3560"/></li>
                         <li> Notify On System Error
-                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                         <li> Notify On SMTP Error
-                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF"> </li>
+                            <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="warning"
+                                   data-on-text="ON" data-off-color="default" data-off-text="OFF"></li>
                     </ul>
                     <div class="inner-content">
                         <button class="btn btn-success">
-                            <i class="icon-settings"></i> Save Changes</button>
+                            <i class="icon-settings"></i> Save Changes
+                        </button>
                     </div>
                 </div>
             </div>

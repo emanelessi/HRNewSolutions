@@ -11,6 +11,8 @@
 
     <div class="clearfix"></div>
     <div class="page-container">
+        @include('includes.memu')
+
         <div class="page-sidebar-wrapper">
             <div class="page-sidebar navbar-collapse collapse">
                 <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
