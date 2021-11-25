@@ -20,7 +20,6 @@
                             <i class="fas fa-user-check"></i>
                             <span class="caption-subject bold uppercase">Check-In-Outs</span>
                         </div>
-
                     </div>
                 <div class="portlet-body form">
                     <form action="{{route('addcheck')}}" method="post" class="form-horizontal">

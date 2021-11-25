@@ -92,76 +92,94 @@
                         <div class="portlet box green">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>New Contact</div>
+                                    <i class="fa fa-gift"></i>New Contact
+                                </div>
                             </div>
                             <div class="portlet-body form">
-                                <!-- BEGIN FORM-->
-                                <form enctype="multipart/form-data" action="{{route('newcontact')}}" method="post" class="form-horizontal">
+                                <form action="{{route('addholiday')}}" method="post" class="form-horizontal">
                                     @csrf
-                                    <div class="form-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Name</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" name="name" class="form-control" placeholder="Enter Contact Name" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group ">
-                                                    <label class="control-label col-md-3">Phone</label>
-                                                    <div class="col-md-9">
-                                                        <input type="tel" name="phone" class="form-control" placeholder="Enter Phone Number" required>
-                                                    </div>
+                                    <div class="form-body" style="    margin-left: 161px;">
+                                        <div class="form-group">
+                                            @if($errors->any())
+                                                <h4 class="col-md-3 control-label"
+                                                    style="color: green;">{{$errors->first()}}</h4>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">duration</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                    <input type="text" name="duration" class="form-control"
+                                                           placeholder="duration">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Email</label>
-                                                    <div class="col-md-9">
-                                                        <input type="email" name="email" class="form-control" placeholder="Enter Email">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Photo</label>
-                                                    <div class="col-md-9">
-                                                        <input type="file" name="photo" class="form-control" accept="image/png, image/jpeg" > </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">description</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                    <input type="text" name="description" class="form-control"
+                                                           placeholder="description">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-offset-3 col-md-9">
-                                                        <button type="submit" name="submit" class="btn green">Submit</button>
-                                                    </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">date</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                    <input type="date" name="date" class="form-control"
+                                                           placeholder="date">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 ">
-                                                @if($errors->any())
-                                                    <h4 style="color: green;">{{$errors->first()}}</h4>
-                                                @endif </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">type</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                    <input type="text" name="type" class="form-control"
+                                                           placeholder="type">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">employee_id</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-sticky-note"></i>
+                                            </span>
+                                                    <input type="number" name="employee_id" class="form-control"
+                                                           placeholder="employee_id">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions fluid">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green">Submit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-            <!-- END CONTAINER -->
-            <!-- BEGIN FOOTER -->
-    </div>
+        </div>
 
 
 @endsection
