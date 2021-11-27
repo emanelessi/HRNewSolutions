@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Employee\editEmployeeRequest;
 use App\Http\Requests\Employee\editHolidayRequest;
+use App\Http\Requests\Employee\editJobhistoryRequest;
 use App\Http\Requests\Employee\editJobRequest;
 use App\Http\Requests\Employee\editProjectRequest;
 use App\Http\Requests\Employee\editRewardRequest;
 use App\Http\Requests\Employee\EmployeeRequest;
 use App\Http\Requests\Employee\HolidayRequest;
+use App\Http\Requests\Employee\jobhistoryRequest;
 use App\Http\Requests\Employee\jobRequest;
 use App\Http\Requests\Employee\projectRequest;
 use App\Http\Requests\Employee\rewardRequest;
@@ -105,6 +107,22 @@ class AdminController extends Controller
     public function editReward(editRewardRequest $request,$id)
     {
         return $this->admin->editReward($request->all(),$id);
+    }
+    public function jobhistories()
+    {
+        return $this->admin->jobhistories();
+    }
+    public function jobhistory(jobhistoryRequest $request,$id)
+    {
+        return $this->admin->jobhistory($request->all(),$id);
+    }
+    public function deleteJobhistory($id)
+    {
+        return $this->admin->deleteJobhistory($id);
+    }
+    public function editJobhistory(editJobhistoryRequest $request,$id)
+    {
+        return $this->admin->editJobhistory($request->all(),$id);
     }
 
 }

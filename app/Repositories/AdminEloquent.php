@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Resources\employeeResource;
 use App\Http\Resources\employeesResource;
 use App\Http\Resources\holidayResource;
+use App\Http\Resources\jobHistoryResource;
 use App\Http\Resources\jobResource;
 use App\Http\Resources\jobsResource;
 use App\Http\Resources\profileResource;
@@ -15,6 +16,7 @@ use App\Models\Admin;
 use App\Models\EmployeeProject;
 use App\Models\Holiday;
 use App\Models\Job;
+use App\Models\JobHistory;
 use App\Models\Project;
 use App\Models\Reward;
 use App\Models\User;
@@ -284,6 +286,54 @@ class AdminEloquent
         }
         $reward->save();
         return response_api(true, 200, 'Successfully Updated!', ['reward' => new rewardResource($reward)]);
+    }
+    public function jobhistories()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = JobHistory::count();
+        $total_pages = ceil($total_records / $page_size);
+        $JobHistory= JobHistory::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', jobHistoryResource::collection($JobHistory), $page_number, $total_pages, $total_records);
+    }
+    public function jobhistory(array $data,$id)
+    {
+        $jobhistory = new JobHistory();
+        $jobhistory->start_date = $data['start_date'];
+        $jobhistory->end_date = $data['end_date'];
+        $jobhistory->employee_id  = $id;
+        $jobhistory->job_id = $data['job_id'];
+        $jobhistory->department_id  = $data['department_id'];
+        $jobhistory->save();
+        return response_api(true, 200, 'Successfully Added!', ['jobhistory' => new jobHistoryResource($jobhistory)]);
+    }
+    public function deleteJobhistory($id){
+        $jobhistory = JobHistory::findOrFail($id);
+        $jobhistory->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editJobhistory(array $data,$id)
+    {
+        $jobhistory = JobHistory::find($id);
+        if ($data['start_date'] != null) {
+            $jobhistory->start_date = $data['start_date'];
+        }
+        if ($data['end_date'] != null) {
+            $jobhistory->end_date = $data['end_date'];
+        }
+        if ($data['employee_id'] != null) {
+            $jobhistory->employee_id = $data['employee_id'];
+        }
+        if ($data['job_id'] != null) {
+            $jobhistory->job_id = $data['job_id'];
+        }
+        if ($data['department_id'] != null) {
+            $jobhistory->department_id = $data['department_id'];
+        }
+        $jobhistory->save();
+        return response_api(true, 200, 'Successfully Updated!', ['jobhistory' => new jobHistoryResource($jobhistory)]);
     }
 
 }

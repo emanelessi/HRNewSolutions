@@ -56,4 +56,9 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::delete('reward/{id}',[AdminController::class,'deleteReward']);
     Route::put('reward/{id}',[AdminController::class,'editReward']);
 
+    Route::post('all/jobhistories',[AdminController::class,'jobhistories']);
+    Route::post('jobhistory/{id}',[AdminController::class,'jobhistory']);
+    Route::delete('jobhistory/{id}',[AdminController::class,'deleteJobhistory']);
+    Route::put('jobhistory/{id}',[AdminController::class,'editJobhistory']);
+
 });
