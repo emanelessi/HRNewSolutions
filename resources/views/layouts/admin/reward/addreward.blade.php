@@ -33,6 +33,7 @@
                         <div class="portlet-body form">
                             <form action="{{route('reward')}}" method="post" class="form-horizontal">
                                 @csrf
+
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
                                         @if($errors->any())
