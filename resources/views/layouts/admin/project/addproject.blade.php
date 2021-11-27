@@ -21,17 +21,17 @@
 
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Employee
+                <h1 class="page-title"> Add New Project
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Employee
+                                <i class="fa fa-gift"></i>New Project
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('addemployee')}}" method="post" class="form-horizontal">
+                            <form action="{{route('project')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -41,7 +41,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">name</label>
+                                        <label class="col-md-3 control-label">Name</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">salary</label>
+                                        <label class="col-md-3 control-label">Salary</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">description</label>
+                                        <label class="col-md-3 control-label">Description</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">members</label>
+                                        <label class="col-md-3 control-label">Members</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">manager_id</label>
+                                        <label class="col-md-3 control-label">Manager</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

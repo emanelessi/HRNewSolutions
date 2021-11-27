@@ -73,12 +73,12 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> name</th>
-                                            <th>salary</th>
-                                            <th> description</th>
-                                            <th> manager_id</th>
-                                            <th> members</th>
+                                            <th> Id</th>
+                                            <th> Name</th>
+                                            <th>Salary</th>
+                                            <th> Description</th>
+                                            <th> Manager</th>
+                                            <th> Members</th>
                                         </tr>
                                         </thead>
                                         <tbody>

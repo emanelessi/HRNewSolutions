@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="page-title"> Job Dashboard
+                    <h1 class="page-title"> Show Job Dashboard
                     </h1>
                     <div class="row">
                         <div class="col-md-12">
@@ -73,10 +73,10 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> title</th>
-                                            <th> description</th>
-                                            <th> salary</th>
+                                            <th> Id</th>
+                                            <th> Title</th>
+                                            <th> Description</th>
+                                            <th> Salary</th>
                                         </tr>
                                         </thead>
                                         <tbody>

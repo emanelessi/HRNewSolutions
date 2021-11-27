@@ -74,16 +74,16 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> first_name</th>
-                                            <th> last_name</th>
-                                            <th> email</th>
-                                            <th> phone_number</th>
-                                            <th class="numeric"> hire_date</th>
-                                            <th class="numeric"> salary</th>
-                                            <th> department_id</th>
-                                            <th> job_id</th>
-                                            <th> manager_id</th>
+                                            <th> Id</th>
+                                            <th> First_name</th>
+                                            <th> Last_name</th>
+                                            <th> Email</th>
+                                            <th> Phone_number</th>
+                                            <th class="numeric"> Hire_date</th>
+                                            <th class="numeric"> Salary</th>
+                                            <th> Department</th>
+                                            <th> Job</th>
+                                            <th> Manager</th>
                                             {{--                                                    <th> Delete</th>--}}
                                             {{--                                                    <th> Edit</th>--}}
                                         </tr>

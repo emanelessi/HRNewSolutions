@@ -17,21 +17,19 @@
         <div class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
-
-
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Employee
+                <h1 class="page-title"> Add New Department
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Employee
+                                <i class="fa fa-gift"></i>New Department
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('addemployee')}}" method="post" class="form-horizontal">
+                            <form action="{{route('adddepartment')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -41,7 +39,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">name</label>
+                                        <label class="col-md-3 control-label">Name</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -54,7 +52,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">manager_id</label>
+                                        <label class="col-md-3 control-label">Manager</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="page-title"> Show Employees Dashboard
+                    <h1 class="page-title"> Show Holiday Dashboard
                     </h1>
                     <div class="row">
                         <div class="col-md-12">
@@ -65,7 +65,7 @@
                             <div class="portlet box green">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-cogs"></i>Employees Table
+                                        <i class="fa fa-cogs"></i>Holiday Table
                                     </div>
                                 </div>
                                 <div class="portlet-body flip-scroll">
@@ -74,13 +74,13 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> duration</th>
-                                            <th> description</th>
-                                            <th> date</th>
-                                            <th> type</th>
-                                            <th> status</th>
-                                            <th> employee_id</th>
+                                            <th> Id</th>
+                                            <th> Duration</th>
+                                            <th> Description</th>
+                                            <th> Date</th>
+                                            <th> Type</th>
+                                            <th> Status</th>
+                                            <th> Employee</th>
                                             {{--                                                    <th> Delete</th>--}}
                                             {{--                                                    <th> Edit</th>--}}
                                         </tr>

@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('addemployee')}}" method="post" class="form-horizontal">
+                            <form action="{{route('addholiday')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -41,7 +41,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">duration</label>
+                                        <label class="col-md-3 control-label">Duration</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">description</label>
+                                        <label class="col-md-3 control-label">Description</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">date</label>
+                                        <label class="col-md-3 control-label">Date</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">type</label>
+                                        <label class="col-md-3 control-label">Type</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">status</label>
+                                        <label class="col-md-3 control-label">Status</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -108,7 +108,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">employee_id</label>
+                                        <label class="col-md-3 control-label">Employee</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

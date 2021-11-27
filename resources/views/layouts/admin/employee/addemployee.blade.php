@@ -41,7 +41,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">first_name</label>
+                                        <label class="col-md-3 control-label">First_name</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">last_name</label>
+                                        <label class="col-md-3 control-label">Last_name</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">email</label>
+                                        <label class="col-md-3 control-label">Email</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">password</label>
+                                        <label class="col-md-3 control-label">Password</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">phone_number</label>
+                                        <label class="col-md-3 control-label">Phone_number</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">hire_date</label>
+                                        <label class="col-md-3 control-label">Hire_date</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -113,7 +113,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">salary</label>
+                                        <label class="col-md-3 control-label">Salary</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -125,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">photo</label>
+                                        <label class="col-md-3 control-label">Photo</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -137,7 +137,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">department_id</label>
+                                        <label class="col-md-3 control-label">Department</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -154,7 +154,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">job_id</label>
+                                        <label class="col-md-3 control-label">Job</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -170,7 +170,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">manager_id</label>
+                                        <label class="col-md-3 control-label">Manager</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

@@ -21,13 +21,13 @@
 
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Contact
+                <h1 class="page-title"> Add New Holiday
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Contact
+                                <i class="fa fa-gift"></i>New Holiday
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">type</label>
+                                        <label class="col-md-3 control-label">Type</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">duration</label>
+                                        <label class="col-md-3 control-label">Duration</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -87,7 +87,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">description</label>
+                                        <label class="col-md-3 control-label">Description</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">date</label>
+                                        <label class="col-md-3 control-label">Date</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

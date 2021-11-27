@@ -21,17 +21,17 @@
 
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Holiday
+                <h1 class="page-title"> Add New Job
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Holiday
+                                <i class="fa fa-gift"></i>New Job
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('addemployee')}}" method="post" class="form-horizontal">
+                            <form action="{{route('job')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -41,7 +41,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">title</label>
+                                        <label class="col-md-3 control-label">Title</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">description</label>
+                                        <label class="col-md-3 control-label">Description</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">salary</label>
+                                        <label class="col-md-3 control-label">Salary</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">

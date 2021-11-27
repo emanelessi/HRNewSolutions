@@ -73,11 +73,11 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> cost</th>
-                                            <th> note</th>
-                                            <th> employee_id</th>
-                                            <th> project_id</th>
+                                            <th> Id</th>
+                                            <th> Cost</th>
+                                            <th> Note</th>
+                                            <th> Employee</th>
+                                            <th> Project</th>
                                         </tr>
                                         </thead>
                                         <tbody>

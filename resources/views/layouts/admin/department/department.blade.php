@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="page-title"> Show Employees Dashboard
+                    <h1 class="page-title"> Show Department Dashboard
                     </h1>
                     <div class="row">
                         <div class="col-md-12">
@@ -65,7 +65,7 @@
                             <div class="portlet box green">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-cogs"></i>Employees Table
+                                        <i class="fa fa-cogs"></i>Department Table
                                     </div>
                                 </div>
                                 <div class="portlet-body flip-scroll">
@@ -75,8 +75,8 @@
                                         <thead>
                                         <tr>
                                             <th> id</th>
-                                            <th> name</th>
-                                            <th> manager_id</th>
+                                            <th> Name</th>
+                                            <th> Manager</th>
                                             {{--                                                    <th> Delete</th>--}}
                                             {{--                                                    <th> Edit</th>--}}
                                         </tr>
