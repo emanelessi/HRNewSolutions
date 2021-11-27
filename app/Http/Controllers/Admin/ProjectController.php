@@ -7,6 +7,7 @@ use App\Models\EmployeeProject;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
@@ -32,10 +33,16 @@ class ProjectController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.project.project');
+        return view('layouts.admin.project.addproject');
     }
 
-    public function edit(Request $request)
+    public function create()
+    {
+        $employees = DB::select("select * from users ");
+        return view('layouts.admin.project.addproject')->with('employees', $employees);
+    }
+
+    public function update(Request $request)
     {
         $id = $request->input('id');
         $project = Project::find($id);
@@ -46,6 +53,15 @@ class ProjectController extends Controller
         $project->members = $request->input('members');
         $project->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+
+    }
+
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = Project::find($id);
+        return view('layouts.admin.project.editproject', compact('users'));
 
     }
 

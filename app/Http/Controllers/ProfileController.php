@@ -44,4 +44,15 @@ class ProfileController extends Controller
     }
 
 
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = User::find($id);
+        return view('layouts.editprofile', compact('users'));
+
+    }
+
+
+
 }

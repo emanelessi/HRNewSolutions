@@ -13,9 +13,9 @@ class HolidayController extends Controller
 {
     public function index()
     {
-       $employee_id = Auth::user()->id;
-        $holiday = Holiday::where('employee_id', $employee_id)->paginate(1);
-        return view('layouts.admin.holiday.holiday')->with(compact('holiday'));
+        $holidays = Holiday::paginate(10);
+        $employee = DB::select("select * from users ");
+        return view('layouts.admin.holiday.holiday')->with(compact('holidays', 'employee'));
     }
 
     public function addholiday(Request $request)
@@ -25,7 +25,6 @@ class HolidayController extends Controller
         $holiday->description = $request->input('description');
         $holiday->date = $request->input('date');
         $holiday->type = $request->input('type');
-        $holiday->status = $request->input('status');
         $holiday->employee_id = $request->input('employee_id');
         $holiday->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
@@ -33,10 +32,17 @@ class HolidayController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.holiday.holiday');
+        return view('layouts.admin.holiday.addholiday');
     }
 
-    public function edit(Request $request)
+    public function create()
+    {
+        $employees = DB::select("select * from users ");
+        $holidays = DB::select("select * from Holidays ");
+        return view('layouts.admin.holiday.addholiday')->with(compact('employees', 'holidays'));
+    }
+
+    public function update(Request $request)
     {
         $id = $request->input('id');
         $holiday = Holiday::find($id);
@@ -50,6 +56,16 @@ class HolidayController extends Controller
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
 
     }
+
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = Holiday::find($id);
+        return view('layouts.admin.holiday.editholiday', compact('users'));
+
+    }
+
 
     public function destroy($id)
     {

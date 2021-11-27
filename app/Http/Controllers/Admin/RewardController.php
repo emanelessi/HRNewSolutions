@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Reward;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class RewardController extends Controller
@@ -30,10 +31,16 @@ class RewardController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.reward.reward');
+        return view('layouts.admin.reward.addreward');
+    }
+    public function create()
+    {
+        $employees = DB::select("select * from users ");
+        $projects = DB::select("select * from projects ");
+        return view('layouts.admin.reward.addreward')->with(compact('employees','projects'));
     }
 
-    public function edit(Request $request)
+    public function update(Request $request)
     {
         $id = $request->input('id');
         $reward = Reward::find($id);
@@ -45,6 +52,15 @@ class RewardController extends Controller
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
 
     }
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = Reward::find($id);
+        return view('layouts.admin.reward.editreward', compact('users'));
+
+    }
+
 
     public function destroy($id)
     {

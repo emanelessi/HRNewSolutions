@@ -18,13 +18,13 @@ class HolidayController extends Controller
         $users = DB::select("select * from users ");
         $employee_id = Auth::user()->id;
         $holiday = Holiday::where('employee_id', $employee_id)->paginate(1);
-        return view('layouts.holiday')->with(compact('holiday','users'));
+        return view('layouts.holiday')->with(compact('holiday', 'users'));
     }
 
 
     public function addholiday(Request $request)
     {
-        $holiday= new Holiday();
+        $holiday = new Holiday();
         $holiday->duration = $request->input('duration');
         $holiday->description = $request->input('description');
         $holiday->date = $request->input('date');
@@ -33,11 +33,14 @@ class HolidayController extends Controller
         $holiday->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
+
     public function add()
     {
         return view('layouts.addholiday');
     }
-    public function create () {
+
+    public function create()
+    {
         $employees = DB::select("select * from users ");
         return view('layouts.addholiday')->with('employees', $employees);
     }

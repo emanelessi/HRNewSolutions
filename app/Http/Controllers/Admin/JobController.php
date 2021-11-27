@@ -6,14 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class JobController extends Controller
 {
     public function index()
     {
-        $employee_id = Auth::user()->job_id;
-        $job = Job::where('id', $employee_id)->paginate(1);
+        $job = Job::paginate(10);
         return view('layouts.admin.job.job')->with(compact('job'));
     }
 
@@ -29,10 +29,16 @@ class JobController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.job.job');
+        return view('layouts.admin.job.addjob');
     }
 
-    public function edit(Request $request)
+    public function create()
+    {
+        $jobs = DB::select("select * from jobs ");
+        return view('layouts.admin.job.addjob')->with('jobs', $jobs);
+    }
+
+    public function update(Request $request)
     {
         $id = $request->input('id');
         $job = Job::find($id);
@@ -44,12 +50,23 @@ class JobController extends Controller
 
     }
 
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = Job::find($id);
+        return view('layouts.admin.job.editjob', compact('users'));
+
+    }
+
+
     public function destroy($id)
     {
         $job = Job::find($id);
         $job->destroy($id);
         return Redirect::back();
     }
+
     public function showhistory()
     {
 

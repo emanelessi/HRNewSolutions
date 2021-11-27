@@ -6,16 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class DepartmentController extends Controller
 {
     public function index()
     {
-        $employee_id = Auth::user()->id;
-        $department = Department::where('id', $employee_id)->paginate(1);
-        return view('layouts.admin.department.department')->with(compact('department'));
+        $departments = Department::paginate(10);
+        return view('layouts.admin.department.department')->with(compact('departments'));
     }
+
     public function adddepartment(Request $request)
     {
         $department = new Department();
@@ -27,10 +28,16 @@ class DepartmentController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.department.department');
+        return view('layouts.admin.department.adddepartment');
     }
 
-    public function edit(Request $request)
+    public function create()
+    {
+        $employees = DB::select("select * from users ");
+        return view('layouts.admin.department.adddepartment')->with('employees', $employees);
+    }
+
+    public function update(Request $request)
     {
         $id = $request->input('id');
         $department = Department::find($id);
@@ -38,6 +45,15 @@ class DepartmentController extends Controller
         $department->manager_id = $request->input('manager_id');
         $department->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+
+    }
+
+    public function edit(Request $request)
+    {
+
+        $id = $request->input('id');
+        $users = Department::find($id);
+        return view('layouts.admin.department.editdepartment', compact('users'));
 
     }
 
