@@ -2,6 +2,9 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\checkinoutResource;
+use App\Http\Resources\checkinoutsResource;
+use App\Http\Resources\departmentResource;
 use App\Http\Resources\employeeResource;
 use App\Http\Resources\employeesResource;
 use App\Http\Resources\holidayResource;
@@ -13,6 +16,8 @@ use App\Http\Resources\projectResource;
 use App\Http\Resources\projectsResource;
 use App\Http\Resources\rewardResource;
 use App\Models\Admin;
+use App\Models\CheckInOut;
+use App\Models\Department;
 use App\Models\EmployeeProject;
 use App\Models\Holiday;
 use App\Models\Job;
@@ -334,6 +339,82 @@ class AdminEloquent
         }
         $jobhistory->save();
         return response_api(true, 200, 'Successfully Updated!', ['jobhistory' => new jobHistoryResource($jobhistory)]);
+    }
+    public function checkinouts()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = CheckInOut::count();
+        $total_pages = ceil($total_records / $page_size);
+        $checkinouts= CheckInOut::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', checkinoutResource::collection($checkinouts), $page_number, $total_pages, $total_records);
+    }
+    public function checkinout(array $data,$id)
+    {
+        $checkinout = new CheckInOut();
+        $checkinout->time = $data['time'];
+        $checkinout->type = $data['type'];
+        $checkinout->employee_id  = $id;
+        $checkinout->save();
+        return response_api(true, 200, 'Successfully Added!', ['checkinout' => new checkinoutResource($checkinout)]);
+    }
+    public function deleteCheckinout($id){
+        $checkinout = CheckInOut::findOrFail($id);
+        $checkinout->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editCheckinout(array $data,$id)
+    {
+        $checkinout = CheckInOut::find($id);
+        if ($data['time'] != null) {
+            $checkinout->time = $data['time'];
+        }
+        if ($data['type'] != null) {
+            $checkinout->type = $data['type'];
+        }
+        if ($data['employee_id'] != null) {
+            $checkinout->employee_id = $data['employee_id'];
+        }
+        $checkinout->save();
+        return response_api(true, 200, 'Successfully Updated!', ['checkinout' => new checkinoutResource($checkinout)]);
+    }
+    public function departments()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Department::count();
+        $total_pages = ceil($total_records / $page_size);
+        $departments= Department::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', departmentResource::collection($departments), $page_number, $total_pages, $total_records);
+    }
+    public function department(array $data,$id)
+    {
+        $department= new Department();
+        $department->name = $data['name'];
+        $department->manager_id  =  $id;
+        $department->save();
+        return response_api(true, 200, 'Successfully Added!', ['department' => new departmentResource($department)]);
+    }
+    public function deleteDepartment($id){
+        $department = Department::findOrFail($id);
+        $department->delete();
+        return response_api(true, 200, 'Successfully Deleted!','');
+
+    }
+    public function editDepartment(array $data,$id)
+    {
+        $department = Department::find($id);
+        if ($data['name'] != null) {
+            $department->name = $data['name'];
+        }
+        if ($data['manager_id'] != null) {
+            $department->manager_id  = $data['manager_id'];
+        }
+        $department->save();
+        return response_api(true, 200, 'Successfully Updated!', ['department' => new departmentResource($department)]);
     }
 
 }

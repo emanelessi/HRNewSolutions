@@ -16,6 +16,7 @@ class departmentResource extends JsonResource
     {
         return [
             'name'=>$this->name,
+//            'manager'=>new employeeResource($this->user),
         ];
     }
 }

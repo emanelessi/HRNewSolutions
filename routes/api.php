@@ -61,4 +61,14 @@ Route::middleware([\App\Http\Middleware\Admin::class])->group(function(){
     Route::delete('jobhistory/{id}',[AdminController::class,'deleteJobhistory']);
     Route::put('jobhistory/{id}',[AdminController::class,'editJobhistory']);
 
+    Route::post('all/checkinouts',[AdminController::class,'checkinouts']);
+    Route::post('checkinout/{id}',[AdminController::class,'checkinout']);
+    Route::delete('checkinout/{id}',[AdminController::class,'deleteCheckinout']);
+    Route::put('checkinout/{id}',[AdminController::class,'editCheckinout']);
+
+    Route::post('all/departments',[AdminController::class,'departments']);
+    Route::post('department/{id}',[AdminController::class,'department']);
+    Route::delete('department/{id}',[AdminController::class,'deleteDepartment']);
+    Route::put('department/{id}',[AdminController::class,'editDepartment']);
+
 });

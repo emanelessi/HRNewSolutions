@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Employee\CheckInOutRequest;
+use App\Http\Requests\Employee\departmentRequest;
+use App\Http\Requests\Employee\editCheckinoutRequest;
+use App\Http\Requests\Employee\editDepartmentRequest;
 use App\Http\Requests\Employee\editEmployeeRequest;
 use App\Http\Requests\Employee\editHolidayRequest;
 use App\Http\Requests\Employee\editJobhistoryRequest;
@@ -123,6 +127,38 @@ class AdminController extends Controller
     public function editJobhistory(editJobhistoryRequest $request,$id)
     {
         return $this->admin->editJobhistory($request->all(),$id);
+    }
+    public function checkinouts()
+    {
+        return $this->admin->checkinouts();
+    }
+    public function checkinout(CheckInOutRequest $request,$id)
+    {
+        return $this->admin->checkinout($request->all(),$id);
+    }
+    public function deleteCheckinout($id)
+    {
+        return $this->admin->deleteCheckinout($id);
+    }
+    public function editCheckinout(editCheckinoutRequest $request,$id)
+    {
+        return $this->admin->editCheckinout($request->all(),$id);
+    }
+    public function departments()
+    {
+        return $this->admin->departments();
+    }
+    public function department(departmentRequest $request,$id)
+    {
+        return $this->admin->department($request->all(),$id);
+    }
+    public function deleteDepartment($id)
+    {
+        return $this->admin->deleteDepartment($id);
+    }
+    public function editDepartment(editDepartmentRequest $request,$id)
+    {
+        return $this->admin->editDepartment($request->all(),$id);
     }
 
 }
