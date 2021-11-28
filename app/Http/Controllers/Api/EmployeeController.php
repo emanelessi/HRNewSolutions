@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\CheckInOutRequest;
+use App\Http\Requests\Employee\HolidayRequest;
 use App\Http\Requests\Employee\ProfileRequest;
 use App\Http\Requests\Employee\SignupRequest;
 use App\Repositories\EmployeeEloquent;
@@ -40,7 +42,27 @@ class EmployeeController extends Controller
     {
         return $this->employee->projects();
     }
+    public function rewards()
+    {
+        return $this->employee->rewards();
+    }
 
+    public function checkinout(CheckInOutRequest $request)
+    {
+        return $this->employee->checkinout($request->all());
+    }
+    public function holiday(HolidayRequest $request)
+    {
+        return $this->employee->holiday($request->all());
+    }
+    public function holidays()
+    {
+        return $this->employee->holidays();
+    }
+    public function job()
+    {
+        return $this->employee->job();
+    }
 
 
 }

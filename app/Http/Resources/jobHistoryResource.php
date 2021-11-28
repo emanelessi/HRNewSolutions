@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class projectResource extends JsonResource
+class jobHistoryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,11 @@ class projectResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'=>$this->name,
-            'salary'=>$this->salary,
-            'description'=>$this->description,
-            'members'=>$this->members,
+            'start_date'=>$this->start_date,
+            'end_date'=>$this->end_date,
+            'employee'=>new employeeResource($this->user),
+            'job'=>new jobResource($this->user->job),
+            'department'=>new departmentResource($this->user->department),
         ];
     }
 }

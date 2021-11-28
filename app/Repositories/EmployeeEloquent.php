@@ -2,9 +2,19 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\checkinoutResource;
+use App\Http\Resources\employeeprojectResource;
+use App\Http\Resources\holidayResource;
+use App\Http\Resources\jobResource;
 use App\Http\Resources\profileResource;
 use App\Http\Resources\projectResource;
+use App\Http\Resources\rewardResource;
+use App\Models\CheckInOut;
+use App\Models\EmployeeProject;
+use App\Models\Holiday;
+use App\Models\Job;
 use App\Models\Project;
+use App\Models\Reward;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Employee;
@@ -62,6 +72,7 @@ class EmployeeEloquent
         $employee = isset($id) ? $employee : \auth()->user();
         return response_api(true, 200, 'Success', new profileResource($employee));
     }
+
     public function editProfile(array $data)
     {
         $id = auth()->user()->id;
@@ -98,15 +109,73 @@ class EmployeeEloquent
         $employee->save();
         return response_api(true, 200, 'Successfully Updated!', ['profile' => new profileResource($employee)]);
     }
-    public function projects(){
+
+    public function projects()
+    {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
-//        $project=Project::where('',auth()->user()->id);
-        $total_records = Project::count();
+        $project = EmployeeProject::where('employee_id', auth()->user()->id);
+        $total_records = $project->count();
         $total_pages = ceil($total_records / $page_size);
-        $myproject= Project::skip(($page_number - 1) * $page_size)
+        $myproject = $project->skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
-        return response_api(true, 200, 'Success', projectResource::collection($myproject), $page_number, $total_pages, $total_records);
+        return response_api(true, 200, 'Success', employeeprojectResource::collection($myproject), $page_number, $total_pages, $total_records);
     }
+
+    public function rewards()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $reward = Reward::where('employee_id', auth()->user()->id);
+        $total_records = $reward->count();
+        $total_pages = ceil($total_records / $page_size);
+        $myrewards= $reward->skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', rewardResource::collection($myrewards), $page_number, $total_pages, $total_records);
+    }
+
+    public function checkinout(array $data)
+    {
+        $id = auth()->user()->id;
+        $checkinout = new CheckInOut();
+        $checkinout->time = $data['time'];
+        $checkinout->type = $data['type'];
+        $checkinout->employee_id = $id;
+        $checkinout->save();
+        return response_api(true, 200, 'Successfully Added!', ['checkinout' => new checkinoutResource($checkinout)]);
+    }
+
+    public function holiday(array $data)
+    {
+        $id = auth()->user()->id;
+        $holiday = new Holiday();
+        $holiday->duration = $data['duration'];
+        $holiday->description = $data['description'];
+        $holiday->date = $data['date'];
+        $holiday->type = $data['type'];
+        $holiday->status = 'pending';
+        $holiday->employee_id = $id;
+        $holiday->save();
+        return response_api(true, 200, 'Successfully Added!', ['holiday' => new holidayResource($holiday)]);
+    }
+
+    public function holidays()
+    {
+        $page_number = intval(\request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $myholiday = Holiday::where('employee_id', auth()->user()->id);
+        $total_records = $myholiday->count();
+        $total_pages = ceil($total_records / $page_size);
+        $holiday = $myholiday->skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        return response_api(true, 200, 'Success', holidayResource::collection($holiday), $page_number, $total_pages, $total_records);
+    }
+
+    public function job()
+    {
+        $myjob = Job::where('id', auth()->user()->job_id)->first();
+        return response_api(true, 200, 'Success', new jobResource($myjob));
+    }
+
 
 }

@@ -19,7 +19,7 @@ class HolidayFactory extends Factory
     public function definition()
     {
         return [
-            'duration'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+            'duration'=>rand(1,25),
             'description'=> $this->faker->text(10),
             'date'=> $this->faker->date(),
             'type'=> $this->faker->randomElement(['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas']),

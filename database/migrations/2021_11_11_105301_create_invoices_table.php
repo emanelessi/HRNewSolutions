@@ -15,7 +15,7 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['internet','electricity']);
+            $table->enum('type', ['internet','electricity','services','communications']);
             $table->integer('price');
             $table->date('date');
             $table->boolean('is_paid');
