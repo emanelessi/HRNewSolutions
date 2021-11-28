@@ -14,8 +14,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $employee_id = Auth::user()->id;
-        $project = EmployeeProject::where('employee_id', $employee_id)->paginate(1);
+        $project = EmployeeProject::paginate(10);
         return view('layouts.admin.project.project')->with(compact('project'));
     }
 
@@ -67,8 +66,10 @@ class ProjectController extends Controller
 
     public function destroy($id)
     {
-        $project = Project::find($id);
+        $project = EmployeeProject::find($id);
         $project->destroy($id);
+        $myproject = Project::find($id);
+        $myproject->destroy($id);
         return Redirect::back();
     }
 

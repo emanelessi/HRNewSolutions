@@ -84,8 +84,8 @@
                                             <th> Department</th>
                                             <th> Job</th>
                                             <th> Manager</th>
-                                            {{--                                                    <th> Delete</th>--}}
-                                            {{--                                                    <th> Edit</th>--}}
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -97,19 +97,21 @@
                                                 <td> {{$myemployee->email}} </td>
                                                 <td> {{$myemployee->phone_number}} </td>
                                                 <td>{{date('d-m-Y h:i:s', strtotime($myemployee->hire_date))}} </td>
-                                                <td> {{$myemployee->salary}}$ </td>
-                                                <td> {{$myemployee->department_id}}</td>
-                                                <td> {{$myemployee->job_id}} </td>
+                                                <td> {{$myemployee->salary}}$</td>
+                                                <td> {{$myemployee->department->name}}</td>
+                                                <td> {{$myemployee->job->title}} </td>
                                                 <td> {{$myemployee->manager_id}} </td>
-{{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
+                                                {{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
                                                 {{--                                                @foreach($myevent->Contacts as $con)--}}
                                                 {{--                                                    <td> {{$con->name}} </td>--}}
                                                 {{--                                                @endforeach--}}
-                                                {{--                                                        <td><a href="/holiday/delete/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color: red" class="remove">Delete </a>--}}
-                                                {{--                                                        </td>--}}
-                                                {{--                                                        <td><a href="/holiday/edit/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color:green" class="remove">Edit </a></td>--}}
+                                                <td>
+                                                    <a href="/admin/employee/delete/{{$myemployee->id}}"
+                                                       style="color: red"
+                                                       class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/employee/edit/{{$myemployee->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
 
                                             </tr>
                                         @endforeach

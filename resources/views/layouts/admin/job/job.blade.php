@@ -77,6 +77,8 @@
                                             <th> Title</th>
                                             <th> Description</th>
                                             <th> Salary</th>
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -86,6 +88,11 @@
                                                 <td> {{$myjob->title}} </td>
                                                 <td> {{$myjob->description}} </td>
                                                 <td> {{$myjob->salary}} </td>
+                                                <td><a href="/admin/job/delete/{{$myjob->id}}"
+                                                       style="color: red" class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/job/edit/{{$myjob->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>

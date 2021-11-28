@@ -13,8 +13,7 @@ class RewardController extends Controller
 {
     public function index()
     {
-        $employee_id = Auth::user()->id;
-        $reward = Reward::where('employee_id', $employee_id)->paginate(1);
+        $reward = Reward::paginate(10);
         return view('layouts.admin.reward.reward')->with(compact('reward'));
     }
 

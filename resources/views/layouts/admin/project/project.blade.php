@@ -79,6 +79,8 @@
                                             <th> Description</th>
                                             <th> Manager</th>
                                             <th> Members</th>
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -90,6 +92,11 @@
                                                 <td> {{$myproject->project['description'] }} </td>
                                                 <td> {{$myproject->project['manager_id'] }} </td>
                                                 <td> {{$myproject->project['members'] }} </td>
+                                                <td><a href="/admin/project/delete/{{$myproject->id}}"
+                                                       style="color: red" class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/project/edit/{{$myproject->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>

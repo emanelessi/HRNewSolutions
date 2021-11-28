@@ -78,6 +78,8 @@
                                             <th> Note</th>
                                             <th> Employee</th>
                                             <th> Project</th>
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -86,8 +88,13 @@
                                                 <td> {{$myreward->id}} </td>
                                                 <td> {{$myreward->cost}} </td>
                                                 <td> {{$myreward->note}} </td>
-                                                <td> {{$myreward->employee_id}} </td>
-                                                <td> {{$myreward->project_id}} </td>
+                                                <td> {{$myreward->user->first_name}} {{$myreward->user->last_name}} </td>
+                                                <td> {{$myreward->project->name}} </td>
+                                                <td><a href="/admin/reward/delete/{{$myreward->id}}"
+                                                       style="color: red" class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/reward/edit/{{$myreward->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>

@@ -81,8 +81,8 @@
                                             <th> Type</th>
                                             <th> Status</th>
                                             <th> Employee</th>
-                                            {{--                                                    <th> Delete</th>--}}
-                                            {{--                                                    <th> Edit</th>--}}
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -94,16 +94,16 @@
                                                 <td>{{date('d-m-Y', strtotime($holiday->date))}} </td>
                                                 <td> {{$holiday->type}} </td>
                                                 <td> {{$holiday->status}} </td>
-                                                <td> {{$holiday->employee_id}} </td>
+                                                <td> {{$holiday->user->first_name}} {{$holiday->user->last_name}} </td>
                                                 {{--        <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
                                                 {{--                                                @foreach($myevent->Contacts as $con)--}}
                                                 {{--                                                    <td> {{$con->name}} </td>--}}
                                                 {{--                                                @endforeach--}}
-                                                {{--                                                        <td><a href="/holiday/delete/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color: red" class="remove">Delete </a>--}}
-                                                {{--                                                        </td>--}}
-                                                {{--                                                        <td><a href="/holiday/edit/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color:green" class="remove">Edit </a></td>--}}
+                                                <td><a href="/admin/holiday/delete/{{$holiday->id}}"
+                                                       style="color: red" class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/holiday/edit/{{$holiday->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
 
                                             </tr>
                                         @endforeach

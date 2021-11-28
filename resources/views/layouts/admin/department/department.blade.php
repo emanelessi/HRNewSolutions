@@ -77,8 +77,8 @@
                                             <th> id</th>
                                             <th> Name</th>
                                             <th> Manager</th>
-                                            {{--                                                    <th> Delete</th>--}}
-                                            {{--                                                    <th> Edit</th>--}}
+                                            <th> Delete</th>
+                                            <th> Edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -92,11 +92,11 @@
                                                 {{--                                                @foreach($myevent->Contacts as $con)--}}
                                                 {{--                                                    <td> {{$con->name}} </td>--}}
                                                 {{--                                                @endforeach--}}
-                                                {{--                                                        <td><a href="/holiday/delete/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color: red" class="remove">Delete </a>--}}
-                                                {{--                                                        </td>--}}
-                                                {{--                                                        <td><a href="/holiday/edit/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color:green" class="remove">Edit </a></td>--}}
+                                                <td><a href="/admin/department/delete/{{$mydepartment->id}}"
+                                                       style="color: red" class="remove">Delete </a>
+                                                </td>
+                                                <td><a href="/admin/department/edit/{{$mydepartment->id}}"
+                                                       style="color:green" class="remove">Edit </a></td>
 
                                             </tr>
                                         @endforeach

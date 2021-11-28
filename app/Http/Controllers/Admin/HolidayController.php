@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Holiday;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class HolidayController extends Controller
     public function index()
     {
         $holidays = Holiday::paginate(10);
-        $employee = DB::select("select * from users ");
+        $employee = User::all();
         return view('layouts.admin.holiday.holiday')->with(compact('holidays', 'employee'));
     }
 

@@ -86,8 +86,8 @@
                                                 <td> {{$myreward->id}} </td>
                                                 <td> {{$myreward->cost}} </td>
                                                 <td> {{$myreward->note}} </td>
-                                                <td> {{$myreward->employee_id}} </td>
-                                                <td> {{$myreward->project_id}} </td>
+                                                <td> {{$myreward->user->first_name}} {{$myreward->user->last_name}} </td>
+                                                <td> {{$myreward->project->name}} </td>
                                             </tr>
                                         @endforeach
                                         </tbody>

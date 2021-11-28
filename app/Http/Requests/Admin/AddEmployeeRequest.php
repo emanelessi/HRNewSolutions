@@ -30,7 +30,7 @@ class AddEmployeeRequest extends FormRequest
             'password' => 'required|string|min:6|',
             'phone_number' => 'required|min:11|numeric',
             'hire_date' => 'required',
-            'salary' => 'required',
+            'salary' => 'required|numeric',
             'department_id' => 'required',
             'job_id' => 'required',
         ];
