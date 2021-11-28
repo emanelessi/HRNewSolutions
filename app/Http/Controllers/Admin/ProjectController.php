@@ -55,10 +55,8 @@ class ProjectController extends Controller
 
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
-
-        $id = $request->input('id');
         $users = Project::find($id);
         return view('layouts.admin.project.editproject', compact('users'));
 

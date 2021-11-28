@@ -102,7 +102,7 @@
                                                 <td><a href="/admin/holiday/delete/{{$holiday->id}}"
                                                        style="color: red" class="remove">Delete </a>
                                                 </td>
-                                                <td><a href="/admin/holiday/edit/{{$holiday->id}}"
+                                                <td><a href="{{url('/admin/holiday/edit/'.$holiday->id)}}"
                                                        style="color:green" class="remove">Edit </a></td>
 
                                             </tr>

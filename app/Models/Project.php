@@ -18,4 +18,8 @@ class Project extends Model
     {
         return $this->hasOne(Reward::class, 'project_id');
     }
+    public function manager()
+    {
+        return $this->hasOne(User::class, 'manager_id');
+    }
 }

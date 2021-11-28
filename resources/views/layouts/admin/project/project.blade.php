@@ -90,7 +90,7 @@
                                                 <td> {{$myproject->project['name'] }} </td>
                                                 <td> {{$myproject->project['salary'] }} </td>
                                                 <td> {{$myproject->project['description'] }} </td>
-                                                <td> {{$myproject->project['manager_id'] }} </td>
+                                                <td> {{$myproject->project['manager_id'] }}  </td>
                                                 <td> {{$myproject->project['members'] }} </td>
                                                 <td><a href="/admin/project/delete/{{$myproject->id}}"
                                                        style="color: red" class="remove">Delete </a>

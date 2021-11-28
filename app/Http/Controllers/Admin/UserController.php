@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AddEmployeeRequest;
+use App\Models\Department;
+use App\Models\EmployeeProject;
+use App\Models\Job;
+use App\Models\Project;
+use App\Models\Reward;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,11 +20,11 @@ class UserController extends Controller
     public function index()
     {
         $employee = User::paginate(10);
-        $departments = DB::select("select * from departments ");
-        $jobs = DB::select("select * from jobs ");
-        $users = DB::select("select * from users ");
-        $projects = DB::select("select * from projects");
-        $rewards = DB::select("select * from rewards");
+        $departments = Department::all();
+        $jobs = Job::all();
+        $users = User::all();
+        $projects = EmployeeProject::all();
+        $rewards = Reward::all();
         return view('layouts.admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
     }
 
@@ -44,9 +49,9 @@ class UserController extends Controller
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        $departments = DB::select("select * from departments ");
-        $jobs = DB::select("select * from jobs ");
+        $employees = User::all();
+        $departments = Department::all();
+        $jobs = Job::all();
         return view('layouts.admin.employee.addemployee')->with(compact('employees', 'departments', 'jobs'));
     }
 
@@ -75,10 +80,8 @@ class UserController extends Controller
 
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request,$id)
     {
-
-        $id = $request->input('id');
         $users = User::find($id);
         return view('layouts.admin.employee.editemployee', compact('users'));
 

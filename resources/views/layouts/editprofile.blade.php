@@ -31,8 +31,6 @@
                                         style="color: green;">{{$errors->first()}}</h4>
                                 @endif
                             </div>
-{{--                            `first_name`, `last_name`, `email`, `email_verified_at`,
- `password`, `phone_number`, `hire_date`, `salary`, `photo`, `department_id`, `job_id`, `manager_id`--}}
                             <div class="form-group">
                                 <label class="col-md-3 control-label">first name</label>
                                 <div class="col-md-4">

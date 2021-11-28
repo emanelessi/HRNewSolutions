@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CheckInOut;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,7 @@ class CheckController extends Controller
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
+        $employees = User::all();
         return view('layouts.admin.check.addcheck')->with('employees', $employees);
     }
 
@@ -49,10 +50,8 @@ class CheckController extends Controller
 
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
-
-        $id = $request->input('id');
         $users = CheckInOut::find($id);
         return view('layouts.admin.check.editcheck', compact('users'));
 

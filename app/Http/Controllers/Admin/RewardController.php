@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmployeeProject;
+use App\Models\Project;
 use App\Models\Reward;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,8 +37,8 @@ class RewardController extends Controller
     }
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        $projects = DB::select("select * from projects ");
+        $employees = User::all();
+        $projects = EmployeeProject::all();
         return view('layouts.admin.reward.addreward')->with(compact('employees','projects'));
     }
 
@@ -51,12 +54,11 @@ class RewardController extends Controller
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
 
     }
-    public function edit(Request $request)
+    public function edit(Request $request,$id)
     {
-
-        $id = $request->input('id');
         $users = Reward::find($id);
-        return view('layouts.admin.reward.editreward', compact('users'));
+        $projects = EmployeeProject::all();
+        return view('layouts.admin.reward.editreward', compact('users','projects'));
 
     }
 

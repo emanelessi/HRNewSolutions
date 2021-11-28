@@ -68,17 +68,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Project::class, 'employee_projects');
     }
+    public function projectmanager()
+    {
+        return $this->belongsTo(User::class, 'manager_id');
+    }
 
     public function jobhistory()
     {
         return $this->hasOne(JobHistory::class, 'user_id');
     }
-    public function user()
-    {
-        return $this->belongsTo('User', 'id');
-    }
-    public function manager()
-    {
-        return $this->hasMany('User', 'manager_id');
-    }
+
+
 }
