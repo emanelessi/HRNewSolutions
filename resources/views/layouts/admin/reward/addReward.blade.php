@@ -21,18 +21,19 @@
 
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Project
+                <h1 class="page-title"> Add New Reward
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Project
+                                <i class="fa fa-gift"></i>New Reward
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('project')}}" method="post" class="form-horizontal">
+                            <form action="{{route('addReward')}}" method="post" class="form-horizontal">
                                 @csrf
+
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
                                         @if($errors->any())
@@ -41,61 +42,37 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Name</label>
+                                        <label class="col-md-3 control-label">Note</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="name" class="form-control"
-                                                       placeholder="name">
+                                                <input type="text" name="note" class="form-control"
+                                                       placeholder="note">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Salary</label>
+                                        <label class="col-md-3 control-label">Cost</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="salary" class="form-control"
-                                                       placeholder="salary">
+                                                <input type="text" name="cost" class="form-control"
+                                                       placeholder="cost">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Description</label>
+                                        <label class="col-md-3 control-label">Employee</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="description" class="form-control"
-                                                       placeholder="description">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Members</label>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                <input type="text" name="members" class="form-control"
-                                                       placeholder="members">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Manager</label>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                <select name="manager_id" class="form-control">
+                                                <select name="job_id" class="form-control">
                                                     <option value=""></option>
                                                     @foreach ($employees as $employee)
                                                         <option
@@ -105,6 +82,38 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Project</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                <select name="manager_id" class="form-control">
+                                                    <option value=""></option>
+                                                    @foreach ($projects as $project)
+                                                        <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{--                                    <div class="form-group">--}}
+                                    {{--                                        <label class="col-md-3 control-label">Full Name</label>--}}
+                                    {{--                                        <div class="col-md-4">--}}
+                                    {{--                                            <div class="input-group">--}}
+                                    {{--                                            <span class="input-group-addon">--}}
+                                    {{--                                                <i class="fa fa-sticky-note"></i>--}}
+                                    {{--                                            </span>--}}
+                                    {{--                                                <select name="employee_id" class="form-control">--}}
+                                    {{--                                                    @foreach ($employees as $employee)--}}
+                                    {{--                                                        <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
+                                    {{--                                                    @endforeach--}}
+                                    {{--                                                </select>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
+
                                     <div class="form-actions fluid">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">

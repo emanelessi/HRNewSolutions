@@ -20,7 +20,7 @@ class RewardController extends Controller
         return view('layouts.admin.reward.reward')->with(compact('reward'));
     }
 
-    public function addreward(Request $request)
+    public function addReward(Request $request)
     {
         $reward = new Reward();
         $reward->cost = $request->input('cost');
@@ -33,13 +33,13 @@ class RewardController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.reward.addreward');
+        return view('layouts.admin.reward.addReward');
     }
     public function create()
     {
         $employees = User::all();
         $projects = EmployeeProject::all();
-        return view('layouts.admin.reward.addreward')->with(compact('employees','projects'));
+        return view('layouts.admin.reward.addReward')->with(compact('employees','projects'));
     }
 
     public function update(Request $request)
@@ -58,7 +58,7 @@ class RewardController extends Controller
     {
         $users = Reward::find($id);
         $projects = EmployeeProject::all();
-        return view('layouts.admin.reward.editreward', compact('users','projects'));
+        return view('layouts.admin.reward.editReward', compact('users','projects'));
 
     }
 

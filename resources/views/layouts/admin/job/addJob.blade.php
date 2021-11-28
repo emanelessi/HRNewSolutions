@@ -17,19 +17,21 @@
         <div class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
+
+
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Department
+                <h1 class="page-title"> Add New Job
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Department
+                                <i class="fa fa-gift"></i>New Job
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('adddepartment')}}" method="post" class="form-horizontal">
+                            <form action="{{route('addJob')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -39,32 +41,38 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Name</label>
+                                        <label class="col-md-3 control-label">Title</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="name" class="form-control"
-                                                       placeholder="name">
+                                                <input type="text" name="title" class="form-control"
+                                                       placeholder="title">
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Manager</label>
+                                        <label class="col-md-3 control-label">Description</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <select name="manager_id" class="form-control">
-                                                    <option value=""></option>
-                                                    @foreach ($employees as $employee)
-                                                        <option
-                                                            value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                                    @endforeach
-                                                </select>
+                                                <input type="text" name="description" class="form-control"
+                                                       placeholder="description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Salary</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                                <input type="number" name="salary" class="form-control"
+                                                       placeholder="salary">
                                             </div>
                                         </div>
                                     </div>

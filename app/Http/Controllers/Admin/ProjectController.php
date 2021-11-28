@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\EmployeeProject;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class ProjectController extends Controller
         return view('layouts.admin.project.project')->with(compact('project'));
     }
 
-    public function addproject(Request $request)
+    public function addProject(Request $request)
     {
         $project = new Project();
         $project->name = $request->input('name');
@@ -32,13 +33,13 @@ class ProjectController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.project.addproject');
+        return view('layouts.admin.project.addProject');
     }
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        return view('layouts.admin.project.addproject')->with('employees', $employees);
+        $employees = User::all();
+        return view('layouts.admin.project.addProject')->with('employees', $employees);
     }
 
     public function update(Request $request)
@@ -58,7 +59,7 @@ class ProjectController extends Controller
     public function edit(Request $request, $id)
     {
         $users = Project::find($id);
-        return view('layouts.admin.project.editproject', compact('users'));
+        return view('layouts.admin.project.editProject', compact('users'));
 
     }
 

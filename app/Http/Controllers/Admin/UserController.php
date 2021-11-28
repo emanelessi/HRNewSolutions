@@ -28,8 +28,7 @@ class UserController extends Controller
         return view('layouts.admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
     }
 
-
-    public function addemployee(AddEmployeeRequest $request)
+    public function addEmployee(AddEmployeeRequest $request)
     {
         $employee = new User();
         $employee->first_name = $request->input('first_name');
@@ -52,12 +51,12 @@ class UserController extends Controller
         $employees = User::all();
         $departments = Department::all();
         $jobs = Job::all();
-        return view('layouts.admin.employee.addemployee')->with(compact('employees', 'departments', 'jobs'));
+        return view('layouts.admin.employee.addEmployee')->with(compact('employees', 'departments', 'jobs'));
     }
 
     public function add()
     {
-        return view('layouts.admin.employee.addemployee');
+        return view('layouts.admin.employee.addEmployee');
     }
 
     public function update(Request $request)
@@ -77,14 +76,12 @@ class UserController extends Controller
         $users->manager_id = $request->input('manager_id');
         $users->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
     }
 
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
         $users = User::find($id);
-        return view('layouts.admin.employee.editemployee', compact('users'));
-
+        return view('layouts.admin.employee.editEmployee', compact('users'));
     }
 
 

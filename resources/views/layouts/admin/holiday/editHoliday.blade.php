@@ -22,7 +22,7 @@
                     </li>
                 </ul>
                 <div class="portlet-body form" id="tab_1_1">
-                    <form action="{{route('editproject')}}" method="post" class="form-horizontal">
+                    <form action="{{route('editHoliday')}}" method="post" class="form-horizontal">
                         @csrf
                         <div class="form-body" style="padding: 0px">
                             <div class="form-group">
@@ -32,26 +32,70 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">cost</label>
+                                <label class="col-md-3 control-label">duration</label>
                                 <div class="col-md-4">
                                     <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <input type="number" value="{{$users['cost']}}" name="cost" class="form-control"
-                                               placeholder="cost">
+                                        <input type="datetime-local" value="{{$holiday['duration']}}" name="duration" class="form-control"
+                                               placeholder="duration">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">note</label>
+                                <label class="col-md-3 control-label">description</label>
                                 <div class="col-md-4">
                                     <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <input type="text" value="{{$users['note']}}" name="note" class="form-control"
-                                               placeholder="note">
+                                        <input type="text" value="{{$holiday['description']}}" name="description" class="form-control"
+                                               placeholder="description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">date</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                        <input type="date" name="date" class="form-control"
+                                               value="{{$holiday['date']}}" placeholder="date">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">type</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                        <select name="type" class="form-control">
+                                            <option value="">-- Select One --</option>
+{{--                                            <option--}}
+{{--                                               value="{{ $type }}">{{ $type }} </option>--}}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">status</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                        <select name="status" class="form-control">
+                                            <option value="">-- Select One --</option>
+{{--                                            <option value="{{ $status }}" selected>{{ $status }} </option>--}}
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -64,36 +108,11 @@
                                                     </span>
                                         <select name="employee_id" class="form-control">
                                             <option value="">-- Select One --</option>
+                                            @foreach ($employees as $employee)
                                                 <option
-                                                    value="{{ $users->id }}">{{ $users->first_name }} {{ $users->last_name }}</option>
+                                                    value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                            @endforeach
                                         </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">project_id</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                        <select name="project_id" class="form-control">
-                                            <option value="">-- Select One --</option>
-                                                <option
-                                                    value="{{ $projects->id }}">{{ $projects->name }}</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">members</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                        <input type="text" name="members" class="form-control"
-                                               value="{{$users['members']}}" placeholder="members">
                                     </div>
                                 </div>
                             </div>

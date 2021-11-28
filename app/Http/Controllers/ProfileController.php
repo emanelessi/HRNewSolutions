@@ -14,17 +14,18 @@ use Illuminate\Support\Facades\Redirect;
 class ProfileController extends Controller
 {
     public function index()
-    {    $user_id = Auth::user()->id;
+    {
+        $user_id = Auth::user()->id;
         $profile = User::where('id', $user_id)->get();
         $departments = Department::all();
         $users = User::all();
         $projects = EmployeeProject::where('employee_id', $user_id)->get();
         $rewards = Reward::where('employee_id', $user_id)->get();
 
-        return view('layouts.profile')->with(compact('profile','departments','users','projects','rewards'));
+        return view('layouts.profile')->with(compact('profile', 'departments', 'users', 'projects', 'rewards'));
     }
 
-    public function editprofile(Request $request )
+    public function editProfile(Request $request)
     {
         $id = $request->input('id');
         $users = User::find($id);
@@ -52,10 +53,9 @@ class ProfileController extends Controller
         $users = User::find($id);
         $Jobs = Job::all();
         $Departments = Department::all();
-        return view('layouts.editprofile', compact('users','Jobs','Departments'));
+        return view('layouts.editProfile', compact('users', 'Jobs', 'Departments'));
 
     }
-
 
 
 }

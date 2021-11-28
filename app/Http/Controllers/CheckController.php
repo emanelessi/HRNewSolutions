@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\CheckInOut;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class CheckController extends Controller
 {
-    public function addcheck(Request $request)
+    public function addCheck(Request $request)
     {
         $check = new CheckInOut();
         $check->time = $request->input('time');
@@ -27,7 +28,7 @@ class CheckController extends Controller
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
+        $employees = User::all();
         return view('layouts.check')->with('employees', $employees);
     }
 }

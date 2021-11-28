@@ -22,7 +22,7 @@
                     </li>
                 </ul>
                 <div class="portlet-body form" id="tab_1_1">
-                    <form action="{{route('edit')}}" method="post" class="form-horizontal">
+                    <form action="{{route('editEmployee')}}" method="post" class="form-horizontal">
                         @csrf
                         <div class="form-body" style="padding: 0px">
                             <div class="form-group">

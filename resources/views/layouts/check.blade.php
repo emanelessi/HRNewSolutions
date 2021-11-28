@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="portlet-body form">
-                        <form action="{{route('addcheck')}}" method="post" class="form-horizontal">
+                        <form action="{{route('addCheck')}}" method="post" class="form-horizontal">
                             @csrf
                             <div class="form-body" style="    margin-left: 161px;">
                                 <div class="form-group">

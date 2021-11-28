@@ -17,7 +17,7 @@ class DepartmentController extends Controller
         return view('layouts.admin.department.department')->with(compact('departments'));
     }
 
-    public function adddepartment(Request $request)
+    public function addDepartment(Request $request)
     {
         $department = new Department();
         $department->name = $request->input('name');
@@ -28,13 +28,13 @@ class DepartmentController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.department.adddepartment');
+        return view('layouts.admin.department.addDepartment');
     }
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        return view('layouts.admin.department.adddepartment')->with('employees', $employees);
+        $employees = Department::all();
+        return view('layouts.admin.department.addDepartment')->with('employees', $employees);
     }
 
     public function update(Request $request)
@@ -50,11 +50,9 @@ class DepartmentController extends Controller
 
     public function edit(Request $request)
     {
-
         $id = $request->input('id');
         $users = Department::find($id);
-        return view('layouts.admin.department.editdepartment', compact('users'));
-
+        return view('layouts.admin.department.editDepartment', compact('users'));
     }
 
     public function destroy($id)

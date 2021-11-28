@@ -33,14 +33,14 @@ class HolidayController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.holiday.addholiday');
+        return view('layouts.admin.holiday.addHoliday');
     }
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        $holidays = DB::select("select * from Holidays ");
-        return view('layouts.admin.holiday.addholiday')->with(compact('employees', 'holidays'));
+        $employees = User::all();
+        $holidays = Holiday::all();
+        return view('layouts.admin.holiday.addHoliday')->with(compact('employees', 'holidays'));
     }
 
     public function update(Request $request)
@@ -65,7 +65,7 @@ class HolidayController extends Controller
         $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
         $status = ['pending', 'approve', 'rejected'];
         $employees = User::all();
-        return view('layouts.admin.holiday.editholiday', compact('holiday', 'type', 'status', 'employees'));
+        return view('layouts.admin.holiday.editHoliday', compact('holiday', 'type', 'status', 'employees'));
 
     }
 

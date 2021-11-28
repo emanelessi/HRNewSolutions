@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('addemployee')}}" method="post" class="form-horizontal">
+                            <form action="{{route('addEmployee')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">

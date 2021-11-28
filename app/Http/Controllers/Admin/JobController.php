@@ -17,7 +17,7 @@ class JobController extends Controller
         return view('layouts.admin.job.job')->with(compact('job'));
     }
 
-    public function addjob(Request $request)
+    public function addJob(Request $request)
     {
         $job = new Job();
         $job->title = $request->input('title');
@@ -29,13 +29,13 @@ class JobController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.job.addjob');
+        return view('layouts.admin.job.addJob');
     }
 
     public function create()
     {
-        $jobs = DB::select("select * from jobs ");
-        return view('layouts.admin.job.addjob')->with('jobs', $jobs);
+        $jobs = Job::all();
+        return view('layouts.admin.job.addJob')->with('jobs', $jobs);
     }
 
     public function update(Request $request)
@@ -54,7 +54,7 @@ class JobController extends Controller
     {
 
         $users = Job::find($id);
-        return view('layouts.admin.job.editjob', compact('users'));
+        return view('layouts.admin.job.editJob', compact('users'));
 
     }
 
@@ -66,7 +66,7 @@ class JobController extends Controller
         return Redirect::back();
     }
 
-    public function showhistory()
+    public function showHistory()
     {
 
     }

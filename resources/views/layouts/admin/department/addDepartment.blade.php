@@ -17,21 +17,19 @@
         <div class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
-
-
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Job
+                <h1 class="page-title"> Add New Department
                 </h1>
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>New Job
+                                <i class="fa fa-gift"></i>New Department
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <form action="{{route('job')}}" method="post" class="form-horizontal">
+                            <form action="{{route('addDepartment')}}" method="post" class="form-horizontal">
                                 @csrf
                                 <div class="form-body" style="padding: 0px">
                                     <div class="form-group">
@@ -41,38 +39,32 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Title</label>
+                                        <label class="col-md-3 control-label">Name</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="title" class="form-control"
-                                                       placeholder="title">
+                                                <input type="text" name="name" class="form-control"
+                                                       placeholder="name">
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Description</label>
+                                        <label class="col-md-3 control-label">Manager</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                <input type="text" name="description" class="form-control"
-                                                       placeholder="description">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Salary</label>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                <input type="number" name="salary" class="form-control"
-                                                       placeholder="salary">
+                                                <select name="manager_id" class="form-control">
+                                                    <option value=""></option>
+                                                    @foreach ($employees as $employee)
+                                                        <option
+                                                            value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>

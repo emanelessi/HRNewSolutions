@@ -14,12 +14,11 @@ class CheckController extends Controller
 {
     public function index()
     {
-
         $checks = CheckInOut::paginate(10);
         return view('layouts.admin.check.check')->with(compact('checks'));
     }
 
-    public function addcheck(Request $request)
+    public function addCheck(Request $request)
     {
         $check = new CheckInOut();
         $check->time = $request->input('time');
@@ -30,13 +29,13 @@ class CheckController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.check.addcheck');
+        return view('layouts.admin.check.addCheck');
     }
 
     public function create()
     {
         $employees = User::all();
-        return view('layouts.admin.check.addcheck')->with('employees', $employees);
+        return view('layouts.admin.check.addCheck')->with('employees', $employees);
     }
 
     public function update(Request $request)
@@ -47,14 +46,12 @@ class CheckController extends Controller
         $check->employee_id = $request->input('employee_id');
         $check->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
     }
 
     public function edit(Request $request, $id)
     {
         $users = CheckInOut::find($id);
-        return view('layouts.admin.check.editcheck', compact('users'));
-
+        return view('layouts.admin.check.editCheck', compact('users'));
     }
 
 

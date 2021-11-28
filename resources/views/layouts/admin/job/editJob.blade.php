@@ -22,7 +22,7 @@
                     </li>
                 </ul>
                 <div class="portlet-body form" id="tab_1_1">
-                    <form action="{{route('edit')}}" method="post" class="form-horizontal">
+                    <form action="{{route('editJob')}}" method="post" class="form-horizontal">
                         @csrf
                         <div class="form-body" style="padding: 0px">
                             <div class="form-group">
@@ -32,30 +32,38 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">name</label>
+                                <label class="col-md-3 control-label">title</label>
                                 <div class="col-md-4">
                                     <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <input type="text" name="name" class="form-control"
-                                               placeholder="name">
+                                        <input type="text" value="{{$users['title']}}" name="title" class="form-control"
+                                               placeholder="title">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">manager_id</label>
+                                <label class="col-md-3 control-label">description</label>
                                 <div class="col-md-4">
                                     <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <select name="manager_id" class="form-control">
-                                            <option value=""></option>
-                                            {{--                                            @foreach ($employees as $employee)--}}
-                                            {{--                                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
-                                            {{--                                            @endforeach--}}
-                                        </select>
+                                        <input type="text" value="{{$users['description']}}" name="description" class="form-control"
+                                               placeholder="description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">salary</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-key"></i>
+                                                    </span>
+                                        <input type="number" name="salary" class="form-control"
+                                               value="{{$users['salary']}}" placeholder="salary">
                                     </div>
                                 </div>
                             </div>
