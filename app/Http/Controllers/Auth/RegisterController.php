@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Employee;
+use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -40,6 +42,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
     }
 
     /**
@@ -48,13 +51,19 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+
+protected function validator(array $data)
     {
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
+            'phone_number' => ['required', 'string', 'min:10'],
+            'hire_date' => ['required', 'date'],
+            'salary' => ['required'],
+            'job_id' => ['required'],
+            'department_id' => ['required'],
         ]);
     }
 
@@ -62,22 +71,30 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\Employee
+     * @return User|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     protected function create(array $data)
     {
-        return Employee::create([
+        return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone_number' => $data['phone_number'],
             'hire_date' => $data['hire_date'],
-            'salary' => $data['salary'],
             'photo' => $data['photo'],
-            'department_id' => $data['department_id'],
+            'salary' => $data['salary'],
             'job_id' => $data['job_id'],
+            'department_id' => $data['department_id'],
 
         ]);
+
+
+    }
+
+    public function showRegistrationForm()
+    {
+        $departments = DB::table('departments')->get();
+        return view('auth.register', compact('departments'));
     }
 }

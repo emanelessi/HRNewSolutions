@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Employee;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileRequest extends FormRequest
+class AddEmployeeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,10 +27,10 @@ class ProfileRequest extends FormRequest
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
-            'password' => 'required|string|min:6',
-            'phone_number' => 'required',
+            'password' => 'required|string|min:6|',
+            'phone_number' => 'required|min:11|numeric',
             'hire_date' => 'required',
-            'salary' => 'required',
+            'salary' => 'required|numeric',
             'department_id' => 'required',
             'job_id' => 'required',
         ];
