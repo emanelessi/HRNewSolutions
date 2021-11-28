@@ -9,3 +9,11 @@
 <link href="{{ asset('../assets/global/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('../assets/pages/css/login-5.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+<link href="{{ asset('../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/global/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/global/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/global/plugins/jqvmap/jqvmap/jqvmap.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/global/css/components-rounded.min.css') }}" rel="stylesheet" id="style_components" type="text/css" />
+<link href="{{ asset('../assets/global/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/layouts/layout6/css/layout.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('../assets/layouts/layout6/css/custom.min.css') }}" rel="stylesheet" type="text/css" />

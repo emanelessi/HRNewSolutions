@@ -12,6 +12,14 @@ class Project extends Model
     use SoftDeletes;
 
     public function user(){
-        return $this->belongsTo(User::class,'employee_id');
+        return $this->belongsToMany(User::class, 'employee_projects');
+    }
+    public function reward()
+    {
+        return $this->hasOne(Reward::class, 'project_id');
+    }
+    public function manager()
+    {
+        return $this->hasOne(User::class, 'manager_id');
     }
 }

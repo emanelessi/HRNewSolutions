@@ -12,6 +12,6 @@ class Job extends Model
     use SoftDeletes;
 
     public function user(){
-        return $this->belongsTo(User::class,'job_id');
+        return $this->hasMany(User::class,'job_id','id');
     }
 }

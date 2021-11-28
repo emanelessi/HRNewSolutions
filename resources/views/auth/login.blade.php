@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class=" login">
+    <body class=" login" style="background: center #ffff;">
     <!-- BEGIN : LOGIN PAGE 5-1 -->
     <div class="user-login-5">
         <div class="row bs-reset">
@@ -14,11 +14,6 @@
                     <h1 style="margin-bottom: -30px">{{ __('Login') }}</h1>
                     <form action="{{ route('login') }}" class="login-form" method="post">
                         @csrf
-                        <div class="display-hide" style="margin-bottom: 25px">
-                            <button class="close" data-close="alert"></button>
-                            <span>Enter any Email  and password. </span>
-                        </div>
-
                         <div class="row">
                             <div class="col-xs-6">
                                 <label for="email"
