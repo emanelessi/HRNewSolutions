@@ -52,10 +52,10 @@
                                                     <i class="fa fa-star"></i>
                                                     {{ $myprofile->department->name }}
                                                 </li>
-                                                {{--                                                <li>--}}
-                                                {{--                                                    <i class="fa fa-briefcase"></i> {{$myprofile->jobs->title}} </li>--}}
-                                                {{--                                                <li>--}}
-                                                {{--                                                    <i class="fa fa-heart"></i> {{$myprofile->users->first_name }} </li>--}}
+                                                <li>
+                                                    <i class="fa fa-briefcase"></i> {{$myprofile->job->title}} </li>
+                                                <li>
+{{--                                                    <i class="fa fa-heart"></i> {{$myprofile->users->first_name }} </li>--}}
                                             </ul>
                                     </div>
                                 </div>
@@ -91,10 +91,10 @@
                                                     @foreach ($projects as $project)
                                                         <tr>
                                                             <td>
-                                                                <a href="javascript:;"> {{$project->name}} </a>
+                                                                <a href="javascript:;"> {{$project->project->name}} </a>
                                                             </td>
-                                                            <td class="hidden-xs"> {{$project->description}}</td>
-                                                            <td> {{$project->manager_id}}
+                                                            <td class="hidden-xs"> {{$project->project->description}}</td>
+                                                            <td> {{$project->project->manager_id}}
                                                             </td>
                                                         </tr>
                                                     @endforeach

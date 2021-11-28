@@ -15,10 +15,9 @@ class HolidayController extends Controller
 {
     public function index()
     {
-        $users = DB::select("select * from users ");
         $employee_id = Auth::user()->id;
         $holiday = Holiday::where('employee_id', $employee_id)->paginate(1);
-        return view('layouts.holiday')->with(compact('holiday', 'users'));
+        return view('layouts.holiday')->with(compact('holiday'));
     }
 
 
@@ -29,7 +28,7 @@ class HolidayController extends Controller
         $holiday->description = $request->input('description');
         $holiday->date = $request->input('date');
         $holiday->type = $request->input('type');
-        $holiday->employee_id = $request->input('employee_id');
+        $holiday->employee_id = Auth::user()->id;
         $holiday->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
@@ -41,8 +40,10 @@ class HolidayController extends Controller
 
     public function create()
     {
-        $employees = DB::select("select * from users ");
-        return view('layouts.addholiday')->with('employees', $employees);
+        $employee_id = Auth::user()->id;
+        $employees = User::where('id', $employee_id);
+        $types=['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas'];
+        return view('layouts.addholiday')->with('employees', $employees)->with('types', $types);
     }
 
 

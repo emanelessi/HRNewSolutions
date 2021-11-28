@@ -73,4 +73,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(JobHistory::class, 'user_id');
     }
+    public function user()
+    {
+        return $this->belongsTo('User', 'id');
+    }
+    public function manager()
+    {
+        return $this->hasMany('User', 'manager_id');
+    }
 }

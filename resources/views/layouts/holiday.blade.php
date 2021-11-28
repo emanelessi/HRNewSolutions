@@ -94,8 +94,8 @@
                                                 <td>{{date('d-m-Y', strtotime($myholiday->date))}} </td>
                                                 <td> {{$myholiday->type}} </td>
                                                 <td> {{$myholiday->status}} </td>
-                                                <td> @foreach ($users as $user){{$user->first_name}}
-                                                    -{{$user->last_name}}  @endforeach</td>
+                                                <td> {{$myholiday->user->first_name}}
+                                                    -{{$myholiday->user->last_name}}  </td>
                                                 {{--                                                @foreach($myevent->Contacts as $con)--}}
                                                 {{--                                                    <td> {{$con->name}} </td>--}}
                                                 {{--                                                @endforeach--}}
