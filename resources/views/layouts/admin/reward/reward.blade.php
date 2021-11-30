@@ -89,7 +89,7 @@
                                                 <td> {{$myreward->cost}} </td>
                                                 <td> {{$myreward->note}} </td>
                                                 <td> {{$myreward->user->first_name}} {{$myreward->user->last_name}} </td>
-                                                <td> {{$myreward->project->name}} </td>
+                                                <td> {{$myreward->project}} </td>
                                                 <td><a href="/admin/reward/delete/{{$myreward->id}}"
                                                        style="color: red" class="remove">Delete </a>
                                                 </td>

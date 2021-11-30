@@ -60,6 +60,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Type</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-sticky-note"></i>
+                                            </span>
+                                            <select name="employee_id" class="form-control">
+                                                <option value="in">in</option>
+                                                <option value="out">out</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-actions fluid">
                                     <div class="row">
                                         <div class="col-md-offset-3 col-md-9">

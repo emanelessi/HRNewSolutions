@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use App\Models\EmployeeProject;
+use App\Models\Holiday;
+use App\Models\Project;
+use App\Models\Reward;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +30,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id = Auth::user()->id;
+        $holidays=Holiday::where('employee_id', $user_id)->get();
+        $projects=EmployeeProject::where('employee_id', $user_id)->get();
+        $rewards=Reward::where('employee_id', $user_id)->get();
+        return view('home')->with('holidays',$holidays)->with('projects',$projects)->with('rewards',$rewards);
     }
 }

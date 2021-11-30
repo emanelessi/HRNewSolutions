@@ -87,6 +87,7 @@
                                                 <td> {{$mychecks->id}} </td>
                                                 <td>{{date('d-m-Y h:i:s', strtotime($mychecks->time))}} </td>
                                                 <td> {{$mychecks->user->first_name}} {{$mychecks->user->last_name}} </td>
+                                                <td> {{$mychecks->type}}</td>
                                                 {{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
                                                 {{--                                                @foreach($myevent->Contacts as $con)--}}
                                                 {{--                                                    <td> {{$con->name}} </td>--}}

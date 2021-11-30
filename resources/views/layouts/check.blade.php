@@ -44,17 +44,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Full Name</label>
+                                    <label class="col-md-3 control-label">Type</label>
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-sticky-note"></i>
                                             </span>
-                                            <select name="employee_id" class="form-control">
-                                                @foreach ($employees as $employee)
-                                                    <option
-                                                        value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                                @endforeach
+                                            <select name="type[]" class="form-control">
+                                                <option value="in">in</option>
+                                                <option value="out">out</option>
                                             </select>
                                         </div>
                                     </div>

@@ -14,9 +14,11 @@ class CheckController extends Controller
 {
     public function addCheck(Request $request)
     {
+        $id=Auth::user()->id;
         $check = new CheckInOut();
         $check->time = $request->input('time');
-        $check->employee_id = $request->input('employee_id');
+        $check->type = $request->input('type');
+        $check->employee_id = $id;
         $check->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
@@ -26,9 +28,5 @@ class CheckController extends Controller
         return view('layouts.check');
     }
 
-    public function create()
-    {
-        $employees = User::all();
-        return view('layouts.check')->with('employees', $employees);
-    }
+
 }

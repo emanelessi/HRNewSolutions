@@ -1,3 +1,11 @@
+@extends('layouts.app')
+
+@section('content')
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
 <div class="container-fluid">
     <div class="page-content page-content-popup">
         <div class="page-content-fixed-header">
@@ -124,23 +132,37 @@
         <div class="page-fixed-main-content">
             <!-- BEGIN PAGE BASE CONTENT -->
             <div class="row widget-row">
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!-- BEGIN WIDGET THUMB -->
                     <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
-                        <h4 class="widget-thumb-heading">Holidays</h4>
+                        <h4 class="widget-thumb-heading">Users</h4>
                         <div class="widget-thumb-wrap">
-                            <i class="widget-thumb-icon bg-red icon-layers"></i>
+                            <i class="widget-thumb-icon bg-green icon-bulb"></i>
                             <div class="widget-thumb-body">
-                                <span class="widget-thumb-subtitle">holiday</span>
+                                <span class="widget-thumb-subtitle">user</span>
                                 <span class="widget-thumb-body-stat" data-counter="counterup"
-                                      data-value="{{$holidays->count()}}">{{$holidays->count()}}</span>
+                                      data-value="{{$users->count()}}">{{$users->count()}}</span>
                             </div>
                         </div>
                     </div>
                     <!-- END WIDGET THUMB -->
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <!-- BEGIN WIDGET THUMB -->
+                    <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                        <h4 class="widget-thumb-heading">Departments</h4>
+                        <div class="widget-thumb-wrap">
+                            <i class="widget-thumb-icon bg-red icon-layers"></i>
+                            <div class="widget-thumb-body">
+                                <span class="widget-thumb-subtitle">department</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="{{$departments->count()}}">{{$departments->count()}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END WIDGET THUMB -->
+                </div>
+                <div class="col-md-3">
                     <!-- BEGIN WIDGET THUMB -->
                     <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
                         <h4 class="widget-thumb-heading">Projects</h4>
@@ -154,7 +176,7 @@
                     </div>
                     <!-- END WIDGET THUMB -->
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!-- BEGIN WIDGET THUMB -->
                     <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
                         <h4 class="widget-thumb-heading">Rewards</h4>
@@ -1791,3 +1813,4 @@
 <!-- END QUICK SIDEBAR -->
 <!-- BEGIN QUICK NAV -->
 <div class="quick-nav-overlay"></div>
+@endsection

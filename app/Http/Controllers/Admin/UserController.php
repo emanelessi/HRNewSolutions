@@ -27,6 +27,14 @@ class UserController extends Controller
         $rewards = Reward::all();
         return view('layouts.admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
     }
+    public function home()
+    {
+        $users=User::all();
+        $departments=Department::all();
+        $projects=Project::all();
+        $rewards=Reward::all();
+        return view('layouts.admin.home')->with('users',$users)->with('departments',$departments)->with('projects',$projects)->with('rewards',$rewards);
+    }
 
     public function addEmployee(AddEmployeeRequest $request)
     {

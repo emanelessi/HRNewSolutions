@@ -28,7 +28,6 @@ Route::group(['middleware'], function () {
     Route::get('/profile/edit', [Controllers\ProfileController::class, 'edit']);
 
     Route::get('/check/add', [Controllers\CheckController::class, 'add']);
-    Route::get('/check/add', [Controllers\CheckController::class, 'create']);
     Route::post('/check/add', [Controllers\CheckController::class, 'addCheck'])->name('addCheck');
 
     Route::get('/holiday', [Controllers\HolidayController::class, 'index']);
@@ -43,6 +42,7 @@ Route::group(['middleware'], function () {
     Route::get('/reward', [Controllers\RewardsController::class, 'index']);
 
 });
+Route::get('/admin/home', [Admin\UserController::class, 'home'])->name('adminHome');
 Route::get('/admin/employee', [Admin\UserController::class, 'index']);
 Route::get('/admin/employee/add', [Admin\UserController::class, 'add']);
 Route::post('/admin/employee/add', [Admin\UserController::class, 'addEmployee'])->name('addEmployee');
