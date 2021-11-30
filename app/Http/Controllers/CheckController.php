@@ -14,11 +14,10 @@ class CheckController extends Controller
 {
     public function addCheck(Request $request)
     {
-        $id=Auth::user()->id;
         $check = new CheckInOut();
         $check->time = $request->input('time');
         $check->type = $request->input('type');
-        $check->employee_id = $id;
+        $check->employee_id = $request->input('employee_id');
         $check->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
