@@ -17,9 +17,7 @@
                     <li class="active">
                         <a href="#tab_1_1" data-toggle="tab"> Personal info </a>
                     </li>
-                    <li class="active">
-                        <a href="#tab_3-3" data-toggle="tab"> Change Password </a>
-                    </li>
+
                 </ul>
                 <div class="portlet-body form" id="tab_1_1">
                     <form action="{{route('editProfile')}}" method="post" class="form-horizontal">
