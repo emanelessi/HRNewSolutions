@@ -89,7 +89,9 @@ class UserController extends Controller
     public function edit(Request $request, $id)
     {
         $users = User::find($id);
-        return view('layouts.admin.employee.editEmployee', compact('users'));
+        $Departments = Department::all();
+        $Jobs = Job::all();
+        return view('layouts.admin.employee.editEmployee', compact('users','Departments','Jobs'));
     }
 
 
