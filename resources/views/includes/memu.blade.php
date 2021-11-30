@@ -32,6 +32,8 @@
                                     <i class="icon-users"></i>
                                     <span class="title">Profile</span>
                                 </a>
+                            </li>
+                            <li class="nav-item  ">
                                 <a href="{{url('/profile/edit')}}" class="nav-link ">
                                     <i class="icon-users"></i>
                                     <span class="title">Edit Profile</span>
