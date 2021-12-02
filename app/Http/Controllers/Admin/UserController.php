@@ -74,7 +74,7 @@ class UserController extends Controller
         $users->first_name = $request->input('first_name');
         $users->last_name = $request->input('last_name');
         $users->email = $request->input('email');
-        $users->password = $request->input('password');
+        $users->password = bcrypt($request->input('password'));
         $users->phone_number = $request->input('phone_number');
         $users->hire_date = $request->input('hire_date');
         $users->salary = $request->input('salary');

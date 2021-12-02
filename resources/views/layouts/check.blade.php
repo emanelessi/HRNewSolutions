@@ -40,6 +40,7 @@
                                         </span>
                                             <input type="datetime-local" name="time" class="form-control"
                                                    placeholder="time">
+                                            <input type="hidden" value="{{\Illuminate\Support\Facades\Auth::user()->id}}" name="employee_id">
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +51,7 @@
                                             <span class="input-group-addon">
                                                 <i class="fa fa-sticky-note"></i>
                                             </span>
-                                            <select name="type[]" class="form-control">
+                                            <select name="type" class="form-control">
                                                 <option value="in">in</option>
                                                 <option value="out">out</option>
                                             </select>
