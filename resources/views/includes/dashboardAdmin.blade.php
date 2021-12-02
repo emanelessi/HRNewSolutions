@@ -3,18 +3,13 @@
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
 
 <div class="page-container">
-    @include('includes.memu')
+    @include('includes.memuAdmin')
     <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
         <div class="page-content">
             <div class="page-bar">
                 <ul class="page-breadcrumb">
-                    <li>
-                        <i class="icon-home"></i>
-                        <a href="index.html">Home</a>
-                        <i class="fa fa-angle-right"></i>
-                    </li>
                     <li>
                         <span>Dashboard</span>
                     </li>
@@ -56,9 +51,9 @@
                         <h4 class="widget-thumb-heading">Holiday</h4>
                         <div class="widget-thumb-wrap">
                             <i class="widget-thumb-icon bg-green icon-bulb"></i>
-                            <span class="widget-thumb-body-stat" data-counter="counterup"
-                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"
-                                  data-value="{{$holidays->count()}}">{{$holidays->count()}}</span>
+{{--                            <span class="widget-thumb-body-stat" data-counter="counterup"--}}
+{{--                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"--}}
+{{--                                  data-value="{{$holidays->count()}}">{{$holidays->count()}}</span>--}}
 
                         </div>
                     </div>
@@ -70,9 +65,9 @@
                         <h4 class="widget-thumb-heading">Project</h4>
                         <div class="widget-thumb-wrap">
                             <i class="widget-thumb-icon bg-red icon-layers"></i>
-                            <span class="widget-thumb-body-stat" data-counter="counterup"
-                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"
-                                  data-value="{{$projects->count()}}">{{$projects->count()}}</span>
+{{--                            <span class="widget-thumb-body-stat" data-counter="counterup"--}}
+{{--                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"--}}
+{{--                                  data-value="{{$projects->count()}}">{{$projects->count()}}</span>--}}
                         </div>
                     </div>
                     <!-- END WIDGET THUMB -->
@@ -83,9 +78,9 @@
                         <h4 class="widget-thumb-heading">Reward</h4>
                         <div class="widget-thumb-wrap">
                             <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
-                            <span class="widget-thumb-body-stat" data-counter="counterup"
-                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"
-                                  data-value="{{$rewards->count()}}">{{$rewards->count()}}</span>
+{{--                            <span class="widget-thumb-body-stat" data-counter="counterup"--}}
+{{--                                  style="display: block;font-size: 30px;font-weight: 600;color: #3e4f5e;"--}}
+{{--                                  data-value="{{$rewards->count()}}">{{$rewards->count()}}</span>--}}
                         </div>
                     </div>
                     <!-- END WIDGET THUMB -->

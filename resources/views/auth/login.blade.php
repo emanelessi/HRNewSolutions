@@ -1,17 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <body class=" login" style="background: center #ffff;">
     <!-- BEGIN : LOGIN PAGE 5-1 -->
     <div class="user-login-5">
-        <div class="row bs-reset">
-            <div class="col-md-6 bs-reset mt-login-5-bsfix">
+        <div class="row bs-reset" style="margin-left: 0px;margin-right: 0px;">
+            <div class="col-md-6 bs-reset mt-login-5-bsfix" >
                 <div class="login-bg" style="background-image:url(../assets/pages/img/login/bg1.jpg)">
                     <img class="login-logo" src="../assets/pages/img/login/logo.png"/></div>
             </div>
-            <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
+            <div class="col-md-6 login-container bs-reset mt-login-5-bsfix" style="
+    margin-top: 155px;
+">
                 <div class="login-content">
-                    <h1 style="margin-bottom: -30px">{{ __('Login') }}</h1>
+                    <h1>{{ __('Login') }}</h1>
                     <form action="{{ route('login') }}" class="login-form" method="post">
                         @csrf
                         <div class="row">

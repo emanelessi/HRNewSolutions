@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    @include('includes.memu')
+    @include('includes.memuAdmin')
     <div class="page-fixed-main-content">
         <div class="profile">
             <div class="tabbable-line tabbable-full-width">

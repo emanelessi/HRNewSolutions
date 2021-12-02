@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    @include('includes.memu')
+    @include('includes.memuAdmin')
     <div class="page-fixed-main-content">
         <div class="profile">
             <div class="tabbable-line tabbable-full-width">
@@ -152,7 +152,7 @@
                                         <select name="job_id" class="form-control">
                                             <option value=""></option>
                                             @foreach ($Jobs as $Job)
-                                                <option  value="{{ $Job->id }}" selected >{{ $Job->title }} </option>
+                                                <option value="{{ $Job->id }}" selected>{{ $Job->title }} </option>
                                             @endforeach
                                         </select>
                                     </div>

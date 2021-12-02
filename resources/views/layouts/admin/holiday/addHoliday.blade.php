@@ -11,7 +11,7 @@
 
     <div class="clearfix"></div>
     <div class="page-container">
-        @include('includes.memu')
+        @include('includes.memuAdmin')
 
 
         <div class="page-content-wrapper">
