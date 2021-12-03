@@ -32,35 +32,46 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="{{url('/tables')}}" class="nav-link nav-toggle">
-                    <i class="icon-briefcase"></i>
-                    <span class="title">Tables</span>
-                    <span class="arrow"></span>
+            <li class="nav-item ">
+
+                <a href="{{url('/check/add')}}" class="nav-link ">
+                    <i class="fa fa-check"></i>
+                    <span class="title">CheckInOuts</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item ">
-                        <a href="{{url('/check/add')}}" class="nav-link "> CheckInOuts </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/holiday')}}" class="nav-link "> Holiday </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/holiday/add')}}" class="nav-link "> Add Holiday </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/job')}}" class="nav-link "> job </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/project')}}" class="nav-link "> project </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{url('/reward')}}" class="nav-link "> reward </a>
-                    </li>
-                </ul>
-                <!-- END SIDEBAR MENU -->
+            </li>
+            <li class="nav-item ">
+                <a href="{{url('/holiday')}}" class="nav-link ">
+                    <i class="fa fa-hourglass-o" aria-hidden="true"></i>
+                    <span class="title">Holiday</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="{{url('/holiday/add')}}" class="nav-link ">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <span class="title">Add Holiday</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="{{url('/job')}}" class="nav-link ">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Job</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="{{url('/project')}}" class="nav-link ">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <span class="title">Project</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="{{url('/reward')}}" class="nav-link ">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="title">Reward</span>
+                </a>
+            </li>
+        </ul>
+
     </div>
-    <!-- END SIDEBAR -->
 </div>
 
 

@@ -9,11 +9,27 @@
         </div>
     @endif
 
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memu')
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
 
-    <div class="page-content-wrapper">
-        <div class="page-content">
-            <div class="page-bar">
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Check-In-Outs</span>
+                        </li>
+                    </ul>
+                </div>
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">
@@ -40,7 +56,9 @@
                                         </span>
                                             <input type="datetime-local" name="time" class="form-control"
                                                    placeholder="time">
-                                            <input type="hidden" value="{{\Illuminate\Support\Facades\Auth::user()->id}}" name="employee_id">
+                                            <input type="hidden"
+                                                   value="{{\Illuminate\Support\Facades\Auth::user()->id}}"
+                                                   name="employee_id">
                                         </div>
                                     </div>
                                 </div>

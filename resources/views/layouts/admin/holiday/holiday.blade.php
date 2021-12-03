@@ -9,10 +9,31 @@
         </div>
     @endif
 
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memuAdmin')
-    <div class="page-content-wrapper">
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
+
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Holiday</span>
+                        </li>
+                    </ul>
+                </div>
         <div class="page-content">
-            <div class="page-bar">
+            <div class="page-bar" style="
+    margin-left: -209px;
+">
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">
@@ -57,8 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="page-title"> Show Holiday Dashboard
-                    </h1>
+
                     <div class="row">
                         <div class="col-md-12">
                             <!-- BEGIN SAMPLE TABLE PORTLET-->

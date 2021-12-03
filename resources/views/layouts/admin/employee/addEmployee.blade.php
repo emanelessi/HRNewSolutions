@@ -9,22 +9,46 @@
         </div>
     @endif
 
-    <div class="clearfix"></div>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-        @include('includes.memuAdmin')
+    @include('includes.memuAdmin')
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
 
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Employee</span>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Add Employee</span>
+                        </li>
+                    </ul>
+                </div>
+    <div class="page-container">
 
-        <div class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
 
 
                 <!-- END PAGE BAR -->
                 <!-- BEGIN PAGE TITLE-->
-                <h1 class="page-title"> Add New Employee
-                </h1>
-                <div class="tab-pane" id="tab_2">
-                    <div class="portlet box green">
+
+                <div class="tab-pane" id="tab_2" style="
+    margin-left: -209px;
+">
+                    <div class="portlet box green" style="
+    margin-top: -60px;
+">
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class="fa fa-gift"></i>New Employee

@@ -8,11 +8,27 @@
             {{ session('status') }}
         </div>
     @endif
-
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memu')
-    <div class="page-content-wrapper">
-        <div class="page-content">
-            <div class="page-bar">
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper"style="
+    margin-top: -36px;
+">
+
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Project</span>
+                        </li>
+                    </ul>
+                </div>
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">
@@ -57,8 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="page-title"> Project Dashboard
-                    </h1>
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="portlet box green">

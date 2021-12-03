@@ -9,11 +9,31 @@
         </div>
     @endif
 
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memuAdmin')
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
 
-    <div class="page-content-wrapper">
-        <div class="page-content">
-            <div class="page-bar">
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Check</span>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Add Check</span>
+                        </li>
+                    </ul>
+                </div>
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">

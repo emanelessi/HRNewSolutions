@@ -9,16 +9,40 @@
         </div>
     @endif
 
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memuAdmin')
-    <div class="page-fixed-main-content">
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
+
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Check</span>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Edit Check</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-container">
+                    <div class="page-fixed-main-content">
         <div class="profile">
             <div class="tabbable-line tabbable-full-width">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" style="
+    margin-top: -52px;
+">
                     <li class="active">
-                        <a href="#tab_1_1" data-toggle="tab"> Personal info </a>
-                    </li>
-                    <li class="active">
-                        <a href="#tab_3-3" data-toggle="tab"> Change Password </a>
+                        <a href="#tab_1_1" data-toggle="tab"> Edit Check </a>
                     </li>
                 </ul>
                 <div class="portlet-body form" id="tab_1_1">

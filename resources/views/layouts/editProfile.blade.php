@@ -8,14 +8,38 @@
             {{ session('status') }}
         </div>
     @endif
-
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    <div class="page-container">
     @include('includes.memu')
+    <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="
+    margin-top: -36px;
+">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="icon-home"></i>
+                            <a href="{{url('/home')}}">Home</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>User</span>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <span>Edit Profile</span>
+                        </li>
+                    </ul>
+                </div>
     <div class="page-fixed-main-content">
         <div class="profile">
             <div class="tabbable-line tabbable-full-width">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" >
                     <li class="active">
-                        <a href="#tab_1_1" data-toggle="tab"> Personal info </a>
+                        <a href="#tab_1_1" data-toggle="tab"> Edit Profile </a>
                     </li>
 
                 </ul>
