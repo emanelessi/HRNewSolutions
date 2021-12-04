@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Department;
+use App\Models\Job;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -99,7 +101,8 @@ protected function validator(array $data)
 
     public function showRegistrationForm()
     {
-        $departments = DB::table('departments')->get();
-        return view('auth.register', compact('departments'));
+        $departments = Department::all();
+        $jobs = Job::all();
+        return view('auth.register', compact('departments','jobs'));
     }
 }

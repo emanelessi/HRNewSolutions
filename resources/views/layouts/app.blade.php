@@ -84,14 +84,15 @@
                                         </ul>
                                     </div>
                                 </div>
-                            @endguest
+                                @endguest
+                                </nav>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-    </nav>
 
     <main class="py-4">
         @yield('content')
