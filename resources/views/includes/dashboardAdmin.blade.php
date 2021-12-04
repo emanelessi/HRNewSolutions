@@ -111,7 +111,7 @@
                                     <!-- END: Comments -->
                                 </div>
                                 @endforeach
-                                    {{ $holidays->links() }}
+                                    {{ $holidays->links("pagination::bootstrap-4") }}
 
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                    {{ $projects->links() }}
+                                    {{ $projects->links("pagination::bootstrap-4") }}
 
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{ $rewards->links() }}
+                            {{ $rewards->links("pagination::bootstrap-4") }}
                         </div>
                     </div>
                     <div class="col-lg-6 col-xs-12 col-sm-12 " >
@@ -234,9 +234,7 @@
                                 </div>
 
                             @endforeach
-                            <div class="">
-                                <div class="">{{ $jobs->links() }}</div>
-                            </div>
+                            {{ $jobs->links("pagination::bootstrap-4") }}
 
                         </div>
                     </div>

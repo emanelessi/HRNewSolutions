@@ -98,9 +98,7 @@
                                     <!-- END: Comments -->
                                 </div>
                                 @endforeach
-                                    <div class="">
-                                        <div class="">{{ $holidays->links() }}</div>
-                                    </div>
+                                    {{ $holidays->links("pagination::bootstrap-4") }}
                             </div>
                         </div>
                     </div>
@@ -137,6 +135,7 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                    {{ $projects->links("pagination::bootstrap-4") }}
                             </div>
                         </div>
                     </div>
@@ -178,9 +177,7 @@
                                 </div>
                             </div>
                             @endforeach
-                            <div class="">
-                                <div class="">{{ $rewards->links() }}</div>
-                            </div>
+                            {{ $rewards->links("pagination::bootstrap-4") }}
                         </div>
                     </div>
 
