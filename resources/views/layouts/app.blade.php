@@ -61,8 +61,8 @@
                                             <li class="dropdown dropdown-user">
                                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                                    data-hover="dropdown" data-close-others="true">
-                                                    <img alt="" class="img-circle"
-                                                         src="../assets/layouts/layout2/img/avatar3_small.jpg"/>
+                                                    <img src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}" class="img-circle"
+                                                         />
                                                     {{ auth()->user()->first_name }} {{auth()->user()->last_name}}
                                                 </a>
                                             </li>

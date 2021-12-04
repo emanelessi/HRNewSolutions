@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -27,6 +28,10 @@ class ProfileController extends Controller
 
     public function editProfile(Request $request)
     {
+        $img=$request->input('photo');
+        $path='uploads/images';
+        $name=time()+rand(1,1000000000000000).'.'.$img->getClientOriginalExtension();
+        Storage::disk('local')->put($path.$name,file_get_contents($img));
         $user_id = Auth::user()->id;
         $users = User::find($user_id);
         $users->first_name = $request->input('first_name');
@@ -36,7 +41,7 @@ class ProfileController extends Controller
         $users->phone_number = $request->input('phone_number');
         $users->hire_date = $request->input('hire_date');
         $users->salary = $request->input('salary');
-        $users->photo = $request->input('photo');
+        $users->photo = $path.$name;
         $users->department_id = $request->input('department_id');
         $users->job_id = $request->input('job_id');
         $users->manager_id = $request->input('manager_id');

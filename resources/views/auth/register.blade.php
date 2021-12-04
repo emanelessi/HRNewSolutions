@@ -12,7 +12,7 @@
             <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                 <div class="login-content" style="margin-top: 10%;">
                     <h1 style="margin-bottom: -30px">{{ __('Register') }}</h1>
-                    <form action="{{ route('register') }}" class="login-form" method="post">
+                    <form action="{{ route('register') }}" class="login-form" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row">
