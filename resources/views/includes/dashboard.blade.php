@@ -164,7 +164,7 @@
                                                     </div>
                                                     <div class="cont-col2" style="margin-left: 20px;">
                                                         <div class="desc"> {{$reward->note}}<br>
-                                                            <span class="label label-sm label-warning "> {{$project->project->name}}
+                                                            <span class="label label-sm label-warning "> {{$reward->project->name}}
                                                                     <i class="fa fa-share"></i>
                                                                 </span>
                                                         </div>
