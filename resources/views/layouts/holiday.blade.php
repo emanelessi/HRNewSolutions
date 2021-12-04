@@ -15,7 +15,6 @@
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -41,8 +40,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="btn-group">
-                                        <button id="sample_editable_1_new" class="btn sbold green"> Add
-                                            New
+                                        <button id="sample_editable_1_new" class="btn sbold green">
+                                            <a href={{"/holiday/add"}}>Add New Holiday</a>
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -73,10 +72,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-12">
-                            <!-- BEGIN SAMPLE TABLE PORTLET-->
                             <div class="portlet box green">
                                 <div class="portlet-title">
                                     <div class="caption">
@@ -89,15 +86,13 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> id</th>
-                                            <th> duration</th>
-                                            <th> description</th>
-                                            <th class="numeric"> date</th>
-                                            <th> type</th>
-                                            <th> status</th>
-                                            <th> employee_id</th>
-                                            {{--                                                    <th> Delete</th>--}}
-                                            {{--                                                    <th> Edit</th>--}}
+                                            <th> Id</th>
+                                            <th> Duration</th>
+                                            <th> Description</th>
+                                            <th class="numeric"> Date</th>
+                                            <th> Type</th>
+                                            <th> Status</th>
+                                            <th> Employee</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -111,15 +106,6 @@
                                                 <td> {{$myholiday->status}} </td>
                                                 <td> {{$myholiday->user->first_name}}
                                                     -{{$myholiday->user->last_name}}  </td>
-                                                {{--                                                @foreach($myevent->Contacts as $con)--}}
-                                                {{--                                                    <td> {{$con->name}} </td>--}}
-                                                {{--                                                @endforeach--}}
-                                                {{--                                                        <td><a href="/holiday/delete/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color: red" class="remove">Delete </a>--}}
-                                                {{--                                                        </td>--}}
-                                                {{--                                                        <td><a href="/holiday/edit/{{$myholiday->id}}"--}}
-                                                {{--                                                               style="color:green" class="remove">Edit </a></td>--}}
-
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -133,8 +119,10 @@
             </div>
         </div>
     </div>
-    <p class="copyright-v2"> 2021 &copy; NewSolutions
-    </p>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
 @endsection
 
 

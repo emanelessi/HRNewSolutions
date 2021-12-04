@@ -12,11 +12,9 @@
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
     @include('includes.memu')
-    <!-- BEGIN CONTENT -->
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -34,7 +32,7 @@
                     <div class="portlet-title">
                         <div class="caption font-dark">
                             <i class="fas fa-user-check"></i>
-                            <span class="caption-subject bold uppercase">Check-In-Outs</span>
+                            <span class="caption-subject bold uppercase">Check In Outs</span>
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -50,34 +48,23 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Time</label>
                                     <div class="col-md-4">
-                                        <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-key"></i>
-                                        </span>
-                                            <input type="datetime-local" name="time" required class="form-control"
-                                                   placeholder="time">
-                                            <input type="hidden"
-                                                   value="{{\Illuminate\Support\Facades\Auth::user()->id}}"
-                                                   name="employee_id">
-                                        </div>
+                                        <input type="datetime-local" name="time" required class="form-control"
+                                               placeholder="time">
+                                        <input type="hidden"
+                                               value="{{\Illuminate\Support\Facades\Auth::user()->id}}"
+                                               name="employee_id">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Type</label>
                                     <div class="col-md-4">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-sticky-note"></i>
-                                            </span>
-                                            <select name="type[]" class="form-control" required>
-{{--                                                @foreach($check as $checks)--}}
-{{--                                                    <option value="{{ $checks->type }}" @if(old('check') == $checks->type || $checks->type == $user->checks) selected @endif>{{ $checks->type }}</option>--}}
-{{--                                                @endforeach--}}
-                                                <option value="in" >in</option>
-                                                <option value="out">out</option>
-                                            </select>
-                                        </div>
+                                        <select name="type[]" class="form-control" required>
+                                            {{--                                                @foreach($check as $checks)--}}
+                                            {{--                                                    <option value="{{ $checks->type }}" @if(old('check') == $checks->type || $checks->type == $user->checks) selected @endif>{{ $checks->type }}</option>--}}
+                                            {{--                                                @endforeach--}}
+                                            <option value="in">in</option>
+                                            <option value="out">out</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-actions fluid">
@@ -93,6 +80,10 @@
                 </div>
             </div>
         </div>
-        <p class="copyright-v2"> 2021 &copy; NewSolutions
-        </p>
+        <div class="page-footer">
+            <div class="page-footer-inner">2021 &copy; NewSolutions
+            </div>
+        </div>
+    </div>
+    </body>
 @endsection

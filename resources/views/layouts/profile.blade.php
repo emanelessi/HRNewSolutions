@@ -18,7 +18,6 @@
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
                 <!-- BEGIN PAGE HEADER-->
-
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li>
@@ -85,15 +84,12 @@
                                                         {{--                                                            <i class="fa fa-heart"></i> {{$myprofile->users->first_name }} </li>--}}
                                                     </ul>
                                             </div>
-                                            <!--end col-md-8-->
                                         </div>
-                                        <!--end row-->
                                         <div class="tabbable-line tabbable-custom-profile">
                                             <ul class="nav nav-tabs">
                                                 <li class="active">
                                                     <a href="#tab_1_11" data-toggle="tab"> Project </a>
                                                 </li>
-
                                             </ul>
                                             <div class="tab-content">
                                                 <div class="tab-pane active" id="tab_1_11">
@@ -111,7 +107,6 @@
                                                                 <th>
                                                                     <i class="fa fa-bookmark"></i> Manager_id
                                                                 </th>
-
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -134,14 +129,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--tab_1_2-->
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END CONTENT BODY -->
         </div>
-        <!-- END CONTENT -->
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
     </div>
     </body>
 
