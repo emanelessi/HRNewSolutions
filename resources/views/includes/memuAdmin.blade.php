@@ -72,10 +72,25 @@
                             <span class="title">Add Job</span>
                         </a>
                     </li>
+                </ul>
+            </li>
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Job History</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="{{url('/admin/job/history')}}" class="nav-link ">
-                            <i class="fa fa-history" aria-hidden="true"></i>
+                            <i class="icon-briefcase"></i>
                             <span class="title">Job History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="{{url('/admin/job/history/add')}}" class="nav-link ">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <span class="title">Add Job History</span>
                         </a>
                     </li>
                 </ul>

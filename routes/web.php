@@ -70,8 +70,14 @@ Route::get('/admin/job/add', [Admin\JobController::class, 'create'])->name('addJ
 Route::post('/admin/job/edit', [Admin\JobController::class, 'update'])->name('editJob');
 Route::get('/admin/job/edit/{id}', [Admin\JobController::class, 'edit']);
 Route::get('/admin/job/delete/{id}', [Admin\JobController::class, 'destroy']);
-Route::get('/admin/job/history', [Admin\JobController::class, 'showHistory']);
-Route::get('/admin/job/history/{id}', [Admin\JobController::class, 'showHistory']);
+
+Route::get('/admin/job/history', [Admin\JobHistoryController::class, 'index']);
+Route::get('/admin/job/history/add', [Admin\JobHistoryController::class, 'add']);
+Route::get('/admin/job/history/add', [Admin\JobHistoryController::class, 'addHistory']);
+Route::get('/admin/job/history/add', [Admin\JobHistoryController::class, 'create'])->name('addHistory');
+Route::post('/admin/job/history/edit', [Admin\JobHistoryController::class, 'update'])->name('editHistory');
+Route::get('/admin/job/history/edit/{id}', [Admin\JobHistoryController::class, 'edit']);
+Route::get('/admin/job/history/delete/{id}', [Admin\JobHistoryController::class, 'destroy']);
 
 
 Route::get('/admin/project', [Admin\ProjectController::class, 'index']);

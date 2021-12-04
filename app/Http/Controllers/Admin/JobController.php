@@ -66,9 +66,6 @@ class JobController extends Controller
         return Redirect::back();
     }
 
-    public function showHistory()
-    {
 
-    }
 
 }
