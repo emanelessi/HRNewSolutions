@@ -61,7 +61,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="text" name="first_name" class="form-control"
-                                               placeholder="first name">
+                                               placeholder="first name" required>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="text" name="last_name" class="form-control"
-                                               placeholder="last name">
+                                               placeholder="last name" required>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="email" name="email" class="form-control"
-                                               placeholder="email">
+                                               placeholder="email" required>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="password" name="password" class="form-control"
-                                               placeholder="password">
+                                               placeholder="password" required>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="tel" name="phone_number" class="form-control"
-                                               placeholder="phone number">
+                                               placeholder="phone number" required>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="datetime-local" name="hire_date" class="form-control"
-                                               placeholder="hire date">
+                                               placeholder="hire date" required>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                                         <i class="fa fa-key"></i>
                                                     </span>
                                         <input type="number" name="salary" class="form-control"
-                                               placeholder="salary">
+                                               placeholder="salary" required>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <select name="department_id" class="form-control">
+                                        <select name="department_id" class="form-control" required>
                                             <option value="">-- Select One --</option>
                                             @foreach ($Departments as $Department)
                                                 <option
@@ -173,7 +173,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                        <select name="job_id" class="form-control">
+                                        <select name="job_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach ($Jobs as $Job)
                                                 <option  value="{{ $Job->id }}" selected >{{ $Job->title }} </option>

@@ -14,6 +14,7 @@ class CheckController extends Controller
 {
     public function addCheck(Request $request)
     {
+
         $check = new CheckInOut();
         $check->time = $request->input('time');
         $check->type = $request->input('type');

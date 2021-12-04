@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AddEmployeeRequest;
 use App\Models\Department;
 use App\Models\EmployeeProject;
+use App\Models\Holiday;
 use App\Models\Job;
 use App\Models\Project;
 use App\Models\Reward;
@@ -30,10 +31,12 @@ class UserController extends Controller
     public function home()
     {
         $users=User::all();
-        $departments=Department::all();
-        $projects=Project::all();
-        $rewards=Reward::all();
-        return view('layouts.admin.home')->with('users',$users)->with('departments',$departments)->with('projects',$projects)->with('rewards',$rewards);
+        $departments=Department::paginate(10);
+        $projects=EmployeeProject::paginate(10);
+        $rewards=Reward::paginate(10);
+        $holidays=Holiday::paginate(10);
+        $jobs=Job::paginate(10);
+        return view('layouts.admin.home')->with('users',$users)->with('departments',$departments)->with('projects',$projects)->with('rewards',$rewards)->with('holidays',$holidays)->with('jobs',$jobs);
     }
 
     public function addEmployee(AddEmployeeRequest $request)

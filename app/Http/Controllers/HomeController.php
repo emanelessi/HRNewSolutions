@@ -31,9 +31,9 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $holidays=Holiday::where('employee_id', $user_id)->get();
-        $projects=EmployeeProject::where('employee_id', $user_id)->get();
-        $rewards=Reward::where('employee_id', $user_id)->get();
+        $holidays=Holiday::where('employee_id', $user_id)->paginate(5);
+        $projects=EmployeeProject::where('employee_id', $user_id)->paginate(5);
+        $rewards=Reward::where('employee_id', $user_id)->paginate(5);
         return view('home')->with('holidays',$holidays)->with('projects',$projects)->with('rewards',$rewards);
     }
 }

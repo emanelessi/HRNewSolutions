@@ -93,9 +93,7 @@
                                                 <li class="active">
                                                     <a href="#tab_1_11" data-toggle="tab"> Project </a>
                                                 </li>
-                                                <li>
-                                                    <a href="#tab_1_22" data-toggle="tab"> Reward </a>
-                                                </li>
+
                                             </ul>
                                             <div class="tab-content">
                                                 <div class="tab-pane active" id="tab_1_11">
@@ -120,7 +118,7 @@
                                                             @foreach ($projects as $project)
                                                                 <tr>
                                                                     <td>
-                                                                        <a href="javascript:;"> {{$project->project->name}} </a>
+                                                                        {{$project->project->name}}
                                                                     </td>
                                                                     <td class="hidden-xs"> {{$project->project->description}}</td>
                                                                     <td> {{$project->project->manager_id}}
@@ -129,37 +127,6 @@
                                                             @endforeach
                                                             </tbody>
                                                         </table>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane" id="tab_1_22">
-                                                    <div class="tab-pane active" id="tab_1_1_1">
-                                                        <div class="scroller" data-height="290px"
-                                                             data-always-visible="1"
-                                                             data-rail-visible1="1">
-                                                            @foreach ($rewards as $reward)
-
-                                                                <ul class="feeds">
-                                                                    <li>
-                                                                        <div class="col1">
-                                                                            <div class="cont">
-                                                                                <div class="cont-col1">
-                                                                                    <div class="label label-success">
-                                                                                        <i class="fa fa-bell-o"></i>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="cont-col2">
-                                                                                    <div class="desc"> {{$reward->note}}
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col2">
-                                                                            <div class="date"> {{$reward->cost}}</div>
-                                                                        </div>
-                                                                        @endforeach
-                                                                    </li>
-                                                                </ul>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

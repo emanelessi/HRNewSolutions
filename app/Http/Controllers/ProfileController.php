@@ -27,8 +27,8 @@ class ProfileController extends Controller
 
     public function editProfile(Request $request)
     {
-        $id = $request->input('id');
-        $users = User::find($id);
+        $user_id = Auth::user()->id;
+        $users = User::find($user_id);
         $users->first_name = $request->input('first_name');
         $users->last_name = $request->input('last_name');
         $users->email = $request->input('email');
