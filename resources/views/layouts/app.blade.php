@@ -80,14 +80,6 @@
                                                     </li>
                                                 </ul>
                                             </li>
-{{--                                            <li class="dropdown dropdown-user">--}}
-{{--                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"--}}
-{{--                                                   data-hover="dropdown" data-close-others="true">--}}
-{{--                                                    <img  src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}" class="img-circle"/>--}}
-{{--                                                    --}}{{--                                                    <img src="{{"http://127.0.0.1:8000/public/storage/".auth()->user()->photo}}" class="img-circle"/>--}}
-{{--                                                    {{ auth()->user()->first_name }} {{auth()->user()->last_name}}--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
                                             <li class="dropdown dropdown-extended quick-sidebar-toggler">
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
@@ -101,6 +93,7 @@
                                                 </form>
                                                 <i class="icon-logout"></i>
                                             </li>
+
                                         </ul>
                                     </div>
                                 </div>
