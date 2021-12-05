@@ -1,6 +1,7 @@
-@extends('layouts.app')
 @extends('includes.cssModal')
 @extends('includes.jsModal')
+@extends('layouts.app')
+
 
 @section('content')
 
@@ -45,8 +46,9 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_new" class="btn sbold green" data-target="#stack1" data-toggle="modal">
-{{--                                                    <a href={{"department/add"}}>Add New Department</a>--}}
+                                                <button id="sample_editable_1_new" class="btn sbold green"
+                                                        data-target="#stack1" data-toggle="modal">
+                                                    {{--                                                    <a href={{"department/add"}}>Add New Department</a>--}}
                                                     Add New Department
                                                     <i class="fa fa-plus"></i>
                                                 </button>
@@ -54,24 +56,68 @@
                                         </div>
                                         <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title">Stack One</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title"> Add New Department</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <p> One fine body… </p>
-                                                <p> One fine body… </p>
-                                                <p> One fine body… </p>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="text" data-tabindex="1"> </div>
-                                                <div class="form-group">
-                                                    <input class="form-control" type="text" data-tabindex="2"> </div>
-                                                <button class="btn blue" data-toggle="modal" href="#stack2">Launch modal</button>
+                                                <form action="{{route('addDepartment')}}" method="post"
+                                                      class="form-horizontal">
+                                                    @csrf
+                                                    <div class="form-body" style="padding: 0px">
+                                                        <div class="form-group">
+                                                            @if($errors->any())
+                                                                <h4 class="col-md-3 control-label"
+                                                                    style="color: green;">{{$errors->first()}}</h4>
+                                                            @endif
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-6">
+                                                                <label class=" control-label">Name</label>
+
+                                                                <input type="text" name="name" class="form-control"
+                                                                       placeholder="name">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+
+                                                            <div class="col-md-6">
+                                                                <label class=" control-label">Manager</label>
+                                                                <select name="manager_id" class="form-control">
+                                                                    <option value=""></option>
+                                                                    @foreach ($employees as $employee)
+                                                                        <option
+                                                                            value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                {{--                                                <p> One fine body… </p>--}}
+                                                {{--                                                <div class="form-group">--}}
+                                                {{--                                                    <input class="form-control" type="text" data-tabindex="1"> </div>--}}
+
+                                                {{--                                                <p> One fine body… </p>--}}
+                                                {{--                                                <div class="form-group">--}}
+                                                {{--                                                    <input class="form-control" type="text" data-tabindex="2"> </div>--}}
+                                                {{--                                                <p> One fine body… </p>--}}
+                                                {{--                                                <div class="form-group">--}}
+                                                {{--                                                    <input class="form-control" type="text" data-tabindex="2"> </div>--}}
+
+                                                {{--                                                <button class="btn blue" data-toggle="modal" href="#stack2">Launch modal</button>--}}
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
-                                                <button type="button" class="btn green">Ok</button>
+                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">
+                                                    Close
+                                                </button>
+                                                <button type="submit" class="btn green">Submit</button>
                                             </div>
                                         </div>
+                                        </form>
+
 
                                         <div class="col-md-6">
                                             <div class="btn-group pull-right">

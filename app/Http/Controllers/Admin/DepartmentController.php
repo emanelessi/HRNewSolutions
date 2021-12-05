@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,8 +14,9 @@ class DepartmentController extends Controller
 {
     public function index()
     {
+        $employees = User::all();
         $departments = Department::paginate(10);
-        return view('layouts.admin.department.department')->with(compact('departments'));
+        return view('layouts.admin.department.department')->with(compact('departments','employees'));
     }
 
     public function addDepartment(Request $request)
@@ -28,13 +30,14 @@ class DepartmentController extends Controller
 
     public function add()
     {
-        return view('layouts.admin.department.addDepartment');
+
+        return view('layouts.admin.department.department');
     }
 
     public function create()
     {
         $employees = Department::all();
-        return view('layouts.admin.department.addDepartment')->with('employees', $employees);
+        return view('layouts.admin.department.department')->with('employees', $employees);
     }
 
     public function update(Request $request)
