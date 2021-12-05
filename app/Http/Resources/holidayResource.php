@@ -15,6 +15,7 @@ class holidayResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'duration'=>$this->duration,
             'description'=>$this->description,
             'date'=>$this->date,

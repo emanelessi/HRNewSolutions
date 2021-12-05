@@ -38,9 +38,10 @@ class HolidayController extends Controller
 
     public function create()
     {
+        $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
+        $status = ['pending', 'approve', 'rejected'];
         $employees = User::all();
-        $holidays = Holiday::all();
-        return view('layouts.admin.holiday.addHoliday')->with(compact('employees', 'holidays'));
+        return view('layouts.admin.holiday.addHoliday')->with(compact('type', 'status', 'employees'));
     }
 
     public function update(Request $request)

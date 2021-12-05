@@ -58,7 +58,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Duration</label>
                                                 <div class="col-md-4">
-                                                        <input type="datetime-local" name="duration"
+                                                        <input type="number" name="duration"
                                                                class="form-control"
                                                                placeholder="duration">
                                                 </div>
@@ -80,28 +80,32 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Type</label>
                                                 <div class="col-md-4">
-                                                        <input type="text" name="type" class="form-control"
-                                                               placeholder="type">
-                                                        {{--                                                <select name="type" class="form-control">--}}
-                                                        {{--                                                    <option value=""></option>--}}
-                                                        {{--                                                    @foreach ($holidays as $holiday)--}}
-                                                        {{--                                                        <option value="{{ $holiday->type }}">{{ $holiday->type }}</option>--}}
-                                                        {{--                                                    @endforeach--}}
-                                                        {{--                                                </select>--}}
+                                                    <select name="type" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @for($i=0;$i<count($type);$i++)
+                                                            <option value="{{$type[$i]}}" {{ (isset($holiday['type']) || old('type'))? "selected":"" }}>{{$type[$i]}}</option>
+                                                        @endfor
+
+                                                    </select>
                                                     </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Status</label>
                                                 <div class="col-md-4">
-                                                        <input type="text" name="status" class="form-control"
-                                                               placeholder="status">
+                                                    <select name="status" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @for($i=0;$i<count($status);$i++)
+                                                            <option value="{{$status[$i]}}" {{ (isset($holiday['status']) || old('status'))? "selected":"" }}>{{$status[$i]}}</option>
+                                                        @endfor
+
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Employee</label>
                                                 <div class="col-md-4">
                                                         <select name="employee_id" class="form-control">
-                                                            <option value=""></option>
+                                                            <option value="">-- Select One --</option>
                                                             @foreach ($employees as $employee)
                                                                 <option
                                                                     value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>

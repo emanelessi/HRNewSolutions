@@ -39,6 +39,7 @@ class EmployeeEloquent
         $response = json_decode($response->getContent());
         if ($statusCode != 200)
             return response_api(false, $statusCode, $response->message, $response);
+
         $response_token = $response;
         $token = $response->access_token;
         \request()->headers->set('Authorization', 'Bearer ' . $token);
@@ -47,8 +48,8 @@ class EmployeeEloquent
         $response = Route::dispatch($proxy);
 
         $statusCode = $response->getStatusCode();
-        $response = json_decode($response->getContent());
-        $employee = \auth()->user();
+        $employee = json_decode($response->getContent())->items;
+//        $employee = \auth()->user();
         return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'employee' => $employee]);
 
     }
@@ -63,13 +64,7 @@ class EmployeeEloquent
 
     public function profile($id = null)
     {
-        if (isset($id)) {
-            $employee = User::find($id);
-            if (!isset($employee)) {
-                return response_api(false, 422, 'Error', new \stdClass());
-            }
-        }
-        $employee = isset($id) ? $employee : \auth()->user();
+        $employee = isset($id) ? $this->model->find($id) : \auth()->user();
         return response_api(true, 200, 'Success', new profileResource($employee));
     }
 
@@ -129,7 +124,7 @@ class EmployeeEloquent
         $reward = Reward::where('employee_id', auth()->user()->id);
         $total_records = $reward->count();
         $total_pages = ceil($total_records / $page_size);
-        $myrewards= $reward->skip(($page_number - 1) * $page_size)
+        $myrewards = $reward->skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', rewardResource::collection($myrewards), $page_number, $total_pages, $total_records);
     }

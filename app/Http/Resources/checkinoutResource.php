@@ -15,6 +15,7 @@ class checkinoutResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'time'=>$this->time,
             'type'=>$this->type,
             'employee'=>new employeeResource($this->user),

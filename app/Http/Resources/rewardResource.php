@@ -15,6 +15,7 @@ class rewardResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'cost'=>$this->cost,
             'note'=>$this->note,
             'employee'=>new employeeResource($this->user),

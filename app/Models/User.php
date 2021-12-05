@@ -45,6 +45,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Department::class, 'department_id');
     }
+   public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_id');
+    }
 
     public function job()
     {
