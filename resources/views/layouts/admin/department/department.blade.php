@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@extends('includes.cssModal')
+@extends('includes.jsModal')
 
 @section('content')
 
@@ -43,12 +45,34 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"department/add"}}>Add New Department</a>
+                                                <button id="sample_editable_1_new" class="btn sbold green" data-target="#stack1" data-toggle="modal">
+{{--                                                    <a href={{"department/add"}}>Add New Department</a>--}}
+                                                    Add New Department
                                                     <i class="fa fa-plus"></i>
                                                 </button>
                                             </div>
                                         </div>
+                                        <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">Stack One</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p> One fine body… </p>
+                                                <p> One fine body… </p>
+                                                <p> One fine body… </p>
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" data-tabindex="1"> </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" data-tabindex="2"> </div>
+                                                <button class="btn blue" data-toggle="modal" href="#stack2">Launch modal</button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+                                                <button type="button" class="btn green">Ok</button>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <div class="btn-group pull-right">
                                                 <button class="btn green  btn-outline dropdown-toggle"
