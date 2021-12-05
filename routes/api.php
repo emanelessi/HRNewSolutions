@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\EmployeeController;
-use \App\Http\Controllers\AdminController;
+use \App\Http\Controllers\Api\AdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
