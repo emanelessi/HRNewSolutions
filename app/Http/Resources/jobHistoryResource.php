@@ -15,6 +15,7 @@ class jobHistoryResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'start_date'=>$this->start_date,
             'end_date'=>$this->end_date,
             'employee'=>new employeeResource($this->user),

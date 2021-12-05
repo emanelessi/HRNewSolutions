@@ -14,5 +14,8 @@ class Department extends Model
     public function user(){
         return $this->hasOne(User::class,'department_id','id');
     }
-
+    public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_id');
+    }
 }
