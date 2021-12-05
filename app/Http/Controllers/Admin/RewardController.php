@@ -45,7 +45,7 @@ class RewardController extends Controller
 
     public function update(Request $request)
     {
-        dd($request);
+//        dd($request);
         $id = $request->input('id');
         $reward = Reward::find($id);
         $reward->cost = $request->input('cost');
@@ -59,9 +59,10 @@ class RewardController extends Controller
     public function edit(Request $request,$id)
     {
 
-        $users = Reward::findOrFail($id);
-        $projects = Project::where('id',$users['project_id']);
-        return view('layouts.admin.reward.editReward', compact('users','projects'));
+        $reward = Reward::findOrFail($id);
+        $projects = Project::all();
+        $users = User::all();
+        return view('layouts.admin.reward.editReward', compact('users','projects','reward'));
 
     }
 

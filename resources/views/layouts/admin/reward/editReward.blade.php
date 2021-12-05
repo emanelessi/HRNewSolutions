@@ -56,17 +56,17 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Cost</label>
                                                 <div class="col-md-4">
-                                                    <input type="number" value="{{$users['cost']}}" name="cost"
+                                                    <input type="number" value="{{$reward['cost']}}" name="cost"
                                                            class="form-control"
                                                            placeholder="Cost">
                                                     <input type="hidden" name="id" class="form-control"
-                                                           value="{{$users['id']}}">
+                                                           value="{{$reward['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Note</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" value="{{$users['note']}}" name="note"
+                                                    <input type="text" value="{{$reward['note']}}" name="note"
                                                            class="form-control"
                                                            placeholder="Note">
                                                 </div>
@@ -76,8 +76,10 @@
                                                 <div class="col-md-4">
                                                     <select name="employee_id" class="form-control">
                                                         <option value="">-- Select One --</option>
-                                                        <option
-                                                            value="{{ $users->id }}">{{ $users->first_name }} {{ $users->last_name }}</option>
+                                                        @foreach($users as $user)
+                                                            <option
+                                                                value="{{ $user->id }}">{{ $user->first_name }} {{ $user->last_name }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -85,8 +87,13 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Project</label>
                                                 <div class="col-md-4">
-{{--                                                    <input type="text" name="project_id" class="form-control"--}}
-{{--                                                           value="{{dd($projects)}}" placeholder="Members">--}}
+                                                    <select name="project_id" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @foreach($projects as $project)
+                                                        <option
+                                                            value="{{ $project->id }}">{{ $project->name }} </option>
+                                                        @endforeach
+                                                    </select>
 
                                                 </div>
                                             </div>
