@@ -32,7 +32,7 @@ Route::group(['middleware'], function () {
     Route::get('/profile/edit', [Controllers\ProfileController::class, 'edit']);
 
     Route::get('/check/add', [Controllers\CheckController::class, 'add']);
-    Route::post('/check/add', [Controllers\CheckController::class, 'addCheck'])->name('addCheck');
+    Route::post('/check/add', [Controllers\CheckController::class, 'addCheck'])->name('addEmployeeCheck');
 
     Route::get('/holiday', [Controllers\HolidayController::class, 'index']);
     Route::get('/holiday/add', [Controllers\HolidayController::class, 'add']);
