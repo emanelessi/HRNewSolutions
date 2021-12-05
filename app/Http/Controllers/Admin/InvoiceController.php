@@ -53,7 +53,12 @@ class InvoiceController extends Controller
         $invoice->type = $request->input('type');
         $invoice->price = $request->input('price');
         $invoice->date = $request->input('date');
-        $invoice->is_paid = $request->input('is_paid');
+        if ($request->input('is_paid') == true){
+            $invoice->is_paid = 1;
+        }
+        else{
+            $invoice->is_paid = 0;
+        }
         $invoice->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
 
@@ -62,7 +67,7 @@ class InvoiceController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $invoice = Invoice::find($id);
+        $invoice = Invoice::findOrFail($id);
         $type = ['internet','electricity','services','communications'];
         $employees = User::all();
         return view('layouts.admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));

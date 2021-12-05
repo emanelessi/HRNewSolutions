@@ -59,6 +59,8 @@
                                                     <input type="number" value="{{$users['cost']}}" name="cost"
                                                            class="form-control"
                                                            placeholder="Cost">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$users['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -79,21 +81,12 @@
                                                     </select>
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Project</label>
                                                 <div class="col-md-4">
-                                                    <select name="project_id" class="form-control">
-                                                        <option value="">-- Select One --</option>
-                                                        <option
-                                                            value="{{ $projects->id }}">{{ $projects->name }}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Members</label>
-                                                <div class="col-md-4">
-                                                    <input type="text" name="members" class="form-control"
-                                                           value="{{$users['members']}}" placeholder="Members">
+{{--                                                    <input type="text" name="project_id" class="form-control"--}}
+{{--                                                           value="{{dd($projects)}}" placeholder="Members">--}}
 
                                                 </div>
                                             </div>

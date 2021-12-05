@@ -42,7 +42,7 @@
                                 <div class="col-md-6">
                                     <div class="btn-group">
                                         <button id="sample_editable_1_new" class="btn sbold green">
-                                            <a href={{"check/add"}}>Add New Check</a>
+                                            <a href={{"check/add"}} style="color:white">Add New Check</a>
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>

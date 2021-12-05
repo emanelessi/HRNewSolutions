@@ -52,18 +52,30 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">time</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="time" class="form-control"
-                                                           placeholder="time">
+                                                    <input type="datetime-local" name="time" class="form-control"
+                                                           placeholder="time" value="{{$check['time']}}">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$check['id']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">type</label>
+                                                <div class="col-md-4">
+                                                    <select name="type" value="{{$check['type']}}" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        <option value="in">in</option>
+                                                        <option value="out">out</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">employee_id</label>
                                                 <div class="col-md-4">
-                                                    <select name="employee_id" class="form-control">
+                                                    <select name="employee_id" value="{{$check['employee_id']}}" class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{ $user->id }}"
-                                                                    selected>{{ $user->first_name }} {{ $user->first_name }} </option>
+                                                                    @if (isset($check['employee_id'])) selected @endif>{{ $user->first_name }} {{ $user->last_name }} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>

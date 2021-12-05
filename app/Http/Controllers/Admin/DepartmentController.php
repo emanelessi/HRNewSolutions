@@ -48,10 +48,9 @@ class DepartmentController extends Controller
 
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
-        $id = $request->input('id');
-        $users = Department::find($id);
+        $users = Department::findOrFail($id);
         return view('layouts.admin.department.editDepartment', compact('users'));
     }
 

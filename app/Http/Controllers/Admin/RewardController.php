@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\ProfileRequest;
 use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\Reward;
@@ -44,6 +45,7 @@ class RewardController extends Controller
 
     public function update(Request $request)
     {
+        dd($request);
         $id = $request->input('id');
         $reward = Reward::find($id);
         $reward->cost = $request->input('cost');
@@ -56,8 +58,9 @@ class RewardController extends Controller
     }
     public function edit(Request $request,$id)
     {
-        $users = Reward::find($id);
-        $projects = EmployeeProject::all();
+
+        $users = Reward::findOrFail($id);
+        $projects = Project::where('id',$users['project_id']);
         return view('layouts.admin.reward.editReward', compact('users','projects'));
 
     }

@@ -31,7 +31,7 @@
                 <div class="page-header-inner ">
                     <div class="page-logo" style="margin-top: -14px;margin-left: -100px;">
                         <a href="{{ route('home') }}">
-                            <img src="../assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default"/>
+                            <img src="http://127.0.0.1:8000/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default"/>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-top: 20px;">

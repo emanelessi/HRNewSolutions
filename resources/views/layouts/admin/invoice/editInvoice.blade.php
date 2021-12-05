@@ -71,6 +71,8 @@
                                                     <input type="number" value="{{$invoice['price']}}"
                                                            name="price" class="form-control"
                                                            placeholder="price">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$invoice['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
