@@ -27,16 +27,16 @@
     <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm"
          style="height: 82px;background-color: #eef1f5;">
         <div class="container">
-            <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header navbar ">
                 <div class="page-header-inner ">
-                    <div class="page-logo" style="margin-top: -14px;margin-left: 6px;">
-                        <a href="index.html">
+                    <div class="page-logo" style="margin-top: -14px;margin-left: -100px;">
+                        <a href="{{ route('home') }}">
                             <img src="../assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default"/>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-top: 20px;">
                         <ul class="navbar-nav ml-auto"
-                            style="float: right;padding:10px ;border-color: #32c5d2;border: 20px; color: #fff;">
+                            style="float: right;padding:10px ;border-color: #32c5d2;border: 20px; color: #fff;margin-right: -50px">
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))

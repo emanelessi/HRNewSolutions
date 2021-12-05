@@ -102,18 +102,18 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($job_history as $myjob_history)
+                                                @foreach($job_history as $myJobHistory)
                                                     <tr>
-                                                        <td> {{$myjob_history->start_date}} </td>
-                                                        <td> {{$myjob_history->end_date}} </td>
-                                                        <td>  {{$myjob_history->user->first_name}} {{$myjob_history->user->last_name}} </td>
-                                                        <td> {{$myjob_history->job["title"]}} </td>
-                                                        <td>  {{$myjob_history->department['name']}}</td>
-                                                        <td><a href="/admin/job/history/delete/{{$myjob_history->id}}"
+                                                        <td> {{$myJobHistory->start_date}} </td>
+                                                        <td> {{$myJobHistory->end_date}} </td>
+                                                        <td>  {{$myJobHistory->user->first_name}} {{$myJobHistory->user->last_name}} </td>
+                                                        <td> {{$myJobHistory->user->job->title}} </td>
+                                                        <td>  {{$myJobHistory->user->department->name}}</td>
+                                                        <td><a href="/admin/job/history/delete/{{$myJobHistory->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>
                                                         </td>
-                                                        <td><a href="/admin/job/history/edit/{{$myjob_history->id}}"
+                                                        <td><a href="/admin/job/history/edit/{{$myJobHistory->id}}"
                                                                class="btn btn-circle green">Edit <i
                                                                     class="fa fa-edit"></i></a>
                                                         </td>
