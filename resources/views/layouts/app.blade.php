@@ -59,15 +59,35 @@
                                     <div class="top-menu">
                                         <ul class="nav navbar-nav pull-right">
                                             <li class="dropdown dropdown-user">
-                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                                   data-hover="dropdown" data-close-others="true">
-                                                    <img
-                                                        src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}"
-                                                        class="img-circle"/>
-                                                    {{--                                                    <img src="{{"http://127.0.0.1:8000/public/storage/".auth()->user()->photo}}" class="img-circle"/>--}}
-                                                    {{ auth()->user()->first_name }} {{auth()->user()->last_name}}
+                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                    <img alt="" class="img-circle" src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}" />
+                                                    <span class="username username-hide-on-mobile"> {{ auth()->user()->first_name }} {{auth()->user()->last_name}} </span>
+                                                    <i class="fa fa-angle-down"></i>
                                                 </a>
+                                                <ul class="dropdown-menu dropdown-menu-default">
+                                                    <li>
+                                                        <a href="page_user_profile_1.html">
+                                                            <i class="icon-user"></i> My Profile </a>
+                                                    </li>
+                                                    <li class="divider"> </li>
+                                                    <li>
+                                                        <a href="page_user_lock_1.html">
+                                                            <i class="icon-lock"></i> Lock Screen </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_user_login_1.html">
+                                                            <i class="icon-key"></i> Log Out </a>
+                                                    </li>
+                                                </ul>
                                             </li>
+{{--                                            <li class="dropdown dropdown-user">--}}
+{{--                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"--}}
+{{--                                                   data-hover="dropdown" data-close-others="true">--}}
+{{--                                                    <img  src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}" class="img-circle"/>--}}
+{{--                                                    --}}{{--                                                    <img src="{{"http://127.0.0.1:8000/public/storage/".auth()->user()->photo}}" class="img-circle"/>--}}
+{{--                                                    {{ auth()->user()->first_name }} {{auth()->user()->last_name}}--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
                                             <li class="dropdown dropdown-extended quick-sidebar-toggler">
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
