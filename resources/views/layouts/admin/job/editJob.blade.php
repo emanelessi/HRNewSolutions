@@ -61,6 +61,8 @@
                                                     <input type="text" value="{{$users['title']}}" name="title"
                                                            class="form-control"
                                                            placeholder="title">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$users['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">

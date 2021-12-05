@@ -61,6 +61,8 @@
                                                 <div class="col-md-4">
                                                     <input type="text" name="first_name" class="form-control" value="{{$users['first_name']}}"
                                                            placeholder="first name">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$users['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -94,7 +96,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Hire Date</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" name="hire_date" class="form-control" value="{{$users['hire_date']}}"
+                                                    <input type="date" name="hire_date" class="form-control" value="{{$users['hire_date']}}"
                                                            placeholder="Hire Date">
                                                 </div>
                                             </div>

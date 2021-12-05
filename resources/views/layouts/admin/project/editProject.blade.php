@@ -63,6 +63,8 @@
                                                     <input type="text" value="{{$users['name']}}" name="name"
                                                            class="form-control"
                                                            placeholder="name">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$users['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">

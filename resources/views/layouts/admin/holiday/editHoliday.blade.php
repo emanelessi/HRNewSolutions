@@ -56,9 +56,11 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">duration</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" value="{{$holiday['duration']}}"
+                                                    <input type="number" value="{{$holiday['duration']}}"
                                                            name="duration" class="form-control"
                                                            placeholder="duration">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$holiday['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
