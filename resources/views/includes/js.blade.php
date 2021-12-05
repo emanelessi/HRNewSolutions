@@ -61,7 +61,6 @@
         type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') }}"
         type="text/javascript"></script>
-<script src="{{ asset('../assets/global/scripts/app.min.js') }}" type="text/javascript"></script>
 
 <script src="{{ asset('../assets/pages/scripts/dashboard.min.js') }}" type="text/javascript"></script>
 
