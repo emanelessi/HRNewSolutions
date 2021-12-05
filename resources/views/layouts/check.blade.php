@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="portlet-body form">
-                        <form action="{{route('addCheck')}}" method="post" class="form-horizontal">
+                        <form action="{{route('addEmployeeCheck')}}" method="post" class="form-horizontal">
                             @csrf
                             <div class="form-body" style="    margin-left: 161px;">
                                 <div class="form-group">
@@ -58,10 +58,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Type</label>
                                     <div class="col-md-4">
-                                        <select name="type[]" class="form-control" required>
-                                            {{--                                                @foreach($check as $checks)--}}
-                                            {{--                                                    <option value="{{ $checks->type }}" @if(old('check') == $checks->type || $checks->type == $user->checks) selected @endif>{{ $checks->type }}</option>--}}
-                                            {{--                                                @endforeach--}}
+                                        <select name="type" class="form-control" required>
                                             <option value="in">in</option>
                                             <option value="out">out</option>
                                         </select>

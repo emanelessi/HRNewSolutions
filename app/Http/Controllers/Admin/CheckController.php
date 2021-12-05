@@ -43,15 +43,18 @@ class CheckController extends Controller
         $id = $request->input('id');
         $check = CheckInOut::find($id);
         $check->time = $request->input('time');
+        $check->type = $request->input('type');
         $check->employee_id = $request->input('employee_id');
+
         $check->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
     }
 
     public function edit(Request $request, $id)
     {
-        $users = CheckInOut::find($id);
-        return view('layouts.admin.check.editCheck', compact('users'));
+        $users = User::all();
+        $check = CheckInOut::findOrFail($id);
+        return view('layouts.admin.check.editCheck', compact('users', 'check'));
     }
 
 

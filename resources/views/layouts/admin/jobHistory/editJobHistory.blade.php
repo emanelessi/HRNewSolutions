@@ -59,6 +59,8 @@
                                                     <input type="datetime-local" value="{{$users['start_date']}}"
                                                            name="start_date" class="form-control"
                                                            placeholder="Start Date">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$users['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -70,28 +72,37 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Employee Name</label>
+                                                <label class="col-md-3 control-label">Employee</label>
                                                 <div class="col-md-4">
-                                                    <input type="text"
-                                                           value="{{$users['first_name']}} {{$users['last_name']}}"
-                                                           name="first_name,last_name" class="form-control"
-                                                           placeholder="Employee Name">
+                                                    <select name="employee_id" class="form-control">
+                                                        @foreach($employess as $employes)
+                                                            <option
+                                                                value="{{ $employes->id }}">{{ $employes->first_name }} {{ $employes->last_name }} </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Job</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" value="{{$jobs['title']}} "
-                                                           name="title" class="form-control"
-                                                           placeholder="title">
+                                                    <select name="job_id" class="form-control">
+                                                        @foreach($jobs as $job)
+                                                            <option
+                                                                value="{{ $job->id }}">{{ $job->title }} </option>
+                                                        @endforeach
+                                                    </select>
+
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Department</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" value="{{$departments['name']}}"
-                                                           name="name" class="form-control"
-                                                           placeholder="name">
+                                                    <select name="department_id" class="form-control">
+                                                        @foreach($departments as $department)
+                                                            <option
+                                                                value="{{ $department->id }}">{{ $department->name }} </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">

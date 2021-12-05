@@ -56,9 +56,11 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">duration</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" value="{{$holiday['duration']}}"
+                                                    <input type="number" value="{{$holiday['duration']}}"
                                                            name="duration" class="form-control"
                                                            placeholder="duration">
+                                                    <input type="hidden" name="id" class="form-control"
+                                                           value="{{$holiday['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -81,8 +83,9 @@
                                                 <div class="col-md-4">
                                                     <select name="type" class="form-control">
                                                         <option value="">-- Select One --</option>
-                                                        {{--                                            <option--}}
-                                                        {{--                                               value="{{ $type }}">{{ $type }} </option>--}}
+                                                        @for($i=0;$i<count($type);$i++)
+                                                        <option value="{{$type[$i]}}" {{ (isset($holiday['type']) || old('type'))? "selected":"" }}>{{$type[$i]}}</option>
+                                                        @endfor
 
                                                     </select>
                                                 </div>
@@ -92,7 +95,10 @@
                                                 <div class="col-md-4">
                                                     <select name="status" class="form-control">
                                                         <option value="">-- Select One --</option>
-                                                        {{--                                            <option value="{{ $status }}" selected>{{ $status }} </option>--}}
+                                                        @for($i=0;$i<count($status);$i++)
+                                                            <option value="{{$status[$i]}}" {{ (isset($holiday['status']) || old('status'))? "selected":"" }}>{{$status[$i]}}</option>
+                                                        @endfor
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -103,7 +109,7 @@
                                                         <option value="">-- Select One --</option>
                                                         @foreach ($employees as $employee)
                                                             <option
-                                                                value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                                value="{{ $employee->id }}" {{ (isset($holiday->user->first_name) || old('employee'))? "selected":"" }}>{{ $employee->first_name }} {{ $employee->last_name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>

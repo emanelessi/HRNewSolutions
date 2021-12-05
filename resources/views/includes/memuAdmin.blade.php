@@ -118,7 +118,7 @@
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-hourglass-o" aria-hidden="true"></i>
+                    <i class="fa fa-paperclip" aria-hidden="true"></i>
                     <span class="title">Invoice</span>
                     <span class="arrow"></span>
                 </a>

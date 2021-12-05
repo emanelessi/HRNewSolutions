@@ -61,7 +61,7 @@ class HolidayController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $holiday = Holiday::find($id);
+        $holiday = Holiday::findOrFail($id);
         $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
         $status = ['pending', 'approve', 'rejected'];
         $employees = User::all();

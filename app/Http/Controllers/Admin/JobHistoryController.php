@@ -62,10 +62,11 @@ class JobHistoryController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $users = JobHistory::find($id);
-        $jobs = Job::find($id);
-        $departments= Department::find($id);
-        return view('layouts.admin.jobHistory.editJobHistory', compact('users','jobs','departments'));
+        $users = JobHistory::findOrFail($id);
+        $jobs = Job::all();
+        $employess = User::all();
+        $departments= Department::all();
+        return view('layouts.admin.jobHistory.editJobHistory', compact('users','jobs','departments','employess'));
 
     }
 

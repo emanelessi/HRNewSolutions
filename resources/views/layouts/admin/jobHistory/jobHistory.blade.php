@@ -47,7 +47,7 @@
                                         <div class="col-md-6">
                                             <div class="btn-group">
                                                 <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"history/add"}}>Add New Job History</a>
+                                                    <a href={{"history/add"}} style="color:white">Add New Job History</a>
                                                     <i class="fa fa-plus"></i>
                                                 </button>
                                             </div>
@@ -107,8 +107,8 @@
                                                         <td> {{$myJobHistory->start_date}} </td>
                                                         <td> {{$myJobHistory->end_date}} </td>
                                                         <td>  {{$myJobHistory->user->first_name}} {{$myJobHistory->user->last_name}} </td>
-                                                        <td> {{$myJobHistory->user->job->title}} </td>
-                                                        <td>  {{$myJobHistory->user->department->name}}</td>
+                                                        <td> {{$myJobHistory->user->job->title }} </td>
+                                                        <td>  {{$myJobHistory->user->department->name }}</td>
                                                         <td><a href="/admin/job/history/delete/{{$myJobHistory->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>

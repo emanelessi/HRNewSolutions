@@ -53,7 +53,7 @@ class JobController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $users = Job::find($id);
+        $users = Job::findOrFail($id);
         return view('layouts.admin.job.editJob', compact('users'));
 
     }

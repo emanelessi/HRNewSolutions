@@ -57,20 +57,20 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Type</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="type" class="form-control"
-                                                           placeholder="type">
-                                                    {{--                                                <select name="type" class="form-control">--}}
-                                                    {{--                                                    <option value=""></option>--}}
-                                                    {{--                                                    @foreach ($holidays as $holiday)--}}
-                                                    {{--                                                        <option value="{{ $holiday->type }}">{{ $holiday->type }}</option>--}}
-                                                    {{--                                                    @endforeach--}}
-                                                    {{--                                                </select>--}}
+                                                    <select name="type" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @for($i=0;$i<count($type);$i++)
+                                                            <option value="{{$type[$i]}}" >{{$type[$i]}}</option>
+                                                        @endfor
+
+                                                    </select>
+
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Price</label>
                                                 <div class="col-md-4">
-                                                        <input type="datetime-local" name="price"
+                                                        <input type="number" name="price"
                                                                class="form-control"
                                                                placeholder="Price">
                                                 </div>
@@ -85,7 +85,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Is Paid</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" name="is_paid"
+                                                    <input type="checkbox" name="is_paid"
                                                            class="form-control"
                                                            placeholder="Is Paid">
                                                 </div>
