@@ -81,8 +81,9 @@
                                                 <div class="col-md-4">
                                                     <select name="type" class="form-control">
                                                         <option value="">-- Select One --</option>
-                                                        {{--                                            <option--}}
-                                                        {{--                                               value="{{ $type }}">{{ $type }} </option>--}}
+                                                        @for($i=0;$i<count($type);$i++)
+                                                        <option value="{{$type[$i]}}">{{$type[$i]}}</option>
+                                                        @endfor
 
                                                     </select>
                                                 </div>
@@ -92,7 +93,10 @@
                                                 <div class="col-md-4">
                                                     <select name="status" class="form-control">
                                                         <option value="">-- Select One --</option>
-                                                        {{--                                            <option value="{{ $status }}" selected>{{ $status }} </option>--}}
+                                                        @for($i=0;$i<count($status);$i++)
+                                                            <option value="{{$status[$i]}}">{{$status[$i]}}</option>
+                                                        @endfor
+
                                                     </select>
                                                 </div>
                                             </div>
