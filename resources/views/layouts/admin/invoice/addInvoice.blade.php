@@ -8,10 +8,9 @@
             {{ session('status') }}
         </div>
     @endif
-
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-        @include('includes.memuAdmin')
+    @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
@@ -24,11 +23,11 @@
                             <i class="fa fa-angle-right"></i>
                         </li>
                         <li>
-                            <span>Job</span>
+                            <span>Invoice</span>
                             <i class="fa fa-angle-right"></i>
                         </li>
                         <li>
-                            <span>Add Job</span>
+                            <span>Add Invoice</span>
                         </li>
                     </ul>
                 </div>
@@ -42,11 +41,11 @@
 ">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-gift"></i>New Job
+                                        <i class="fa fa-gift"></i>New Invoice
                                     </div>
                                 </div>
                                 <div class="portlet-body form">
-                                    <form action="{{route('addJob')}}" method="post" class="form-horizontal">
+                                    <form action="{{route('addInvoice')}}" method="post" class="form-horizontal">
                                         @csrf
                                         <div class="form-body" style="padding: 0px">
                                             <div class="form-group">
@@ -56,24 +55,39 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Title</label>
+                                                <label class="col-md-3 control-label">Type</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="title" class="form-control"
-                                                           placeholder="title">
+                                                    <input type="text" name="type" class="form-control"
+                                                           placeholder="type">
+                                                    {{--                                                <select name="type" class="form-control">--}}
+                                                    {{--                                                    <option value=""></option>--}}
+                                                    {{--                                                    @foreach ($holidays as $holiday)--}}
+                                                    {{--                                                        <option value="{{ $holiday->type }}">{{ $holiday->type }}</option>--}}
+                                                    {{--                                                    @endforeach--}}
+                                                    {{--                                                </select>--}}
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Description</label>
+                                                <label class="col-md-3 control-label">Price</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="description" class="form-control"
-                                                           placeholder="description">
+                                                        <input type="datetime-local" name="price"
+                                                               class="form-control"
+                                                               placeholder="Price">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Salary</label>
+                                                <label class="col-md-3 control-label">Date</label>
                                                 <div class="col-md-4">
-                                                    <input type="number" name="salary" class="form-control"
-                                                           placeholder="salary">
+                                                        <input type="date" name="date" class="form-control"
+                                                               placeholder="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Is Paid</label>
+                                                <div class="col-md-4">
+                                                    <input type="datetime-local" name="is_paid"
+                                                           class="form-control"
+                                                           placeholder="Is Paid">
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">

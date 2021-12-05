@@ -11,12 +11,10 @@
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memuAdmin')
-    <!-- BEGIN CONTENT -->
+        @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -35,15 +33,7 @@
                     </ul>
                 </div>
                 <div class="page-container">
-
-
-                    <!-- BEGIN CONTENT BODY -->
                     <div class="page-content">
-
-
-                        <!-- END PAGE BAR -->
-                        <!-- BEGIN PAGE TITLE-->
-
                         <div class="tab-pane" id="tab_2" style="
     margin-left: -209px;
 ">
@@ -68,80 +58,53 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Start Date</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="datetime-local"
-                                                               name="start_date" class="form-control"
-                                                               placeholder="Start Date">
-                                                    </div>
+                                                    <input type="datetime-local"
+                                                           name="start_date" class="form-control"
+                                                           placeholder="Start Date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">End Date</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="datetime-local"
-                                                               name="end_date" class="form-control"
-                                                               placeholder="End Date">
-                                                    </div>
+                                                    <input type="datetime-local"
+                                                           name="end_date" class="form-control"
+                                                           placeholder="End Date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Employee Name</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-
-                                                        <select name="employee_id" class="form-control">
-                                                            <option value="">-- Select One --</option>
-                                                            @foreach ($Employees as $Employee)
-                                                                <option
-                                                                    value="{{ $Employee->id }}">{{ $Employee->first_name }} {{ $Employee->last_name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
+                                                    <select name="employee_id" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @foreach ($Employees as $Employee)
+                                                            <option
+                                                                value="{{ $Employee->id }}">{{ $Employee->first_name }} {{ $Employee->last_name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Job</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <select name="employee_id" class="form-control">
-                                                            <option value="">-- Select One --</option>
-                                                            @foreach ($jobs as $job)
-                                                                <option
-                                                                    value="{{ $job->id }}">{{ $job->title }} </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
+                                                    <select name="employee_id" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @foreach ($jobs as $job)
+                                                            <option
+                                                                value="{{ $job->id }}">{{ $job->title }} </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Department</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-
-                                                        <select name="employee_id" class="form-control">
-                                                            <option value="">-- Select One --</option>
-                                                            @foreach ($departments as $department)
-                                                                <option
-                                                                    value="{{ $department->id }}">{{ $department->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
+                                                    <select name="employee_id" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @foreach ($departments as $department)
+                                                            <option
+                                                                value="{{ $department->id }}">{{ $department->name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">
@@ -159,6 +122,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
+    </body>
 
 
 @endsection

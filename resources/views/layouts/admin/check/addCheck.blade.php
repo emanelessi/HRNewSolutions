@@ -11,12 +11,10 @@
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memuAdmin')
-    <!-- BEGIN CONTENT -->
+        @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -54,44 +52,29 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Time</label>
                                     <div class="col-md-4">
-                                        <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-key"></i>
-                                        </span>
-                                            <input type="datetime-local" name="time" class="form-control"
-                                                   placeholder="time">
-                                        </div>
+                                        <input type="datetime-local" name="time" class="form-control"
+                                               placeholder="time">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Full Name</label>
                                     <div class="col-md-4">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-sticky-note"></i>
-                                            </span>
-                                            <select name="employee_id" class="form-control">
-                                                <option value=" "></option>
-                                                @foreach ($employees as $employee)
-                                                    <option
-                                                        value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <select name="employee_id" class="form-control">
+                                            <option value=" "></option>
+                                            @foreach ($employees as $employee)
+                                                <option
+                                                    value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Type</label>
                                     <div class="col-md-4">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-sticky-note"></i>
-                                            </span>
-                                            <select name="employee_id" class="form-control">
-                                                <option value="in">in</option>
-                                                <option value="out">out</option>
-                                            </select>
-                                        </div>
+                                        <select name="employee_id" class="form-control">
+                                            <option value="in">in</option>
+                                            <option value="out">out</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-actions fluid">
@@ -107,6 +90,10 @@
                 </div>
             </div>
         </div>
-        <p class="copyright-v2"> 2021 &copy; NewSolutions
-        </p>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
+    </body>
 @endsection

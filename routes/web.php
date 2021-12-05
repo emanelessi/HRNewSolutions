@@ -96,6 +96,13 @@ Route::post('/admin/reward/edit', [Admin\RewardController::class, 'update'])->na
 Route::get('/admin/reward/edit/{id}', [Admin\RewardController::class, 'edit']);
 Route::get('/admin/reward/delete/{id}', [Admin\RewardController::class, 'destroy']);
 
+Route::get('/admin/invoice', [Admin\InvoiceController::class, 'index']);
+Route::get('/admin/invoice/add', [Admin\InvoiceController::class, 'add']);
+Route::get('/admin/invoice/add', [Admin\InvoiceController::class, 'addInvoice'])->name('addInvoice');
+Route::get('/admin/invoice/add', [Admin\InvoiceController::class, 'create']);
+Route::post('/admin/invoice/edit', [Admin\InvoiceController::class, 'update'])->name('editInvoice');
+Route::get('/admin/invoice/edit/{id}', [Admin\InvoiceController::class, 'edit']);
+Route::get('/admin/invoice/delete/{id}', [Admin\InvoiceController::class, 'destroy']);
 
 Route::get('/admin/check', [Admin\CheckController::class, 'index']);
 Route::get('/admin/check/add', [Admin\CheckController::class, 'add']);

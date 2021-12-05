@@ -13,7 +13,7 @@ class CreateInvoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('invoice', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['internet','electricity','services','communications']);
             $table->integer('price');
@@ -31,6 +31,6 @@ class CreateInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('invoice');
     }
 }

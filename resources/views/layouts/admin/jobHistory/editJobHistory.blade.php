@@ -11,12 +11,10 @@
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memuAdmin')
-    <!-- BEGIN CONTENT -->
+        @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -35,7 +33,6 @@
                     </ul>
                 </div>
                 <div class="page-container">
-
                     <div class="page-fixed-main-content">
                         <div class="profile">
                             <div class="tabbable-line tabbable-full-width">
@@ -45,7 +42,6 @@
                                     <li class="active">
                                         <a href="#tab_1_1" data-toggle="tab"> Edit Job </a>
                                     </li>
-
                                 </ul>
                                 <div class="portlet-body form" id="tab_1_1">
                                     <form action="{{route('editHistory')}}" method="post" class="form-horizontal">
@@ -60,66 +56,42 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Start Date</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="datetime-local" value="{{$users['start_date']}}"
-                                                               name="start_date" class="form-control"
-                                                               placeholder="Start Date">
-                                                    </div>
+                                                    <input type="datetime-local" value="{{$users['start_date']}}"
+                                                           name="start_date" class="form-control"
+                                                           placeholder="Start Date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">End Date</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="datetime-local" value="{{$users['end_date']}}"
-                                                               name="end_date" class="form-control"
-                                                               placeholder="End Date">
-                                                    </div>
+                                                    <input type="datetime-local" value="{{$users['end_date']}}"
+                                                           name="end_date" class="form-control"
+                                                           placeholder="End Date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Employee Name</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="text" value="{{$users['first_name']}} {{$users['last_name']}}"
-                                                               name="first_name,last_name" class="form-control"
-                                                               placeholder="Employee Name">
-                                                    </div>
+                                                    <input type="text"
+                                                           value="{{$users['first_name']}} {{$users['last_name']}}"
+                                                           name="first_name,last_name" class="form-control"
+                                                           placeholder="Employee Name">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Job</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="text" value="{{$jobs['title']}} "
-                                                               name="title" class="form-control"
-                                                               placeholder="title">
-                                                    </div>
+                                                    <input type="text" value="{{$jobs['title']}} "
+                                                           name="title" class="form-control"
+                                                           placeholder="title">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Department</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="text" value="{{$departments['name']}}"
-                                                               name="name" class="form-control"
-                                                               placeholder="name">
-                                                    </div>
+                                                    <input type="text" value="{{$departments['name']}}"
+                                                           name="name" class="form-control"
+                                                           placeholder="name">
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">
@@ -135,6 +107,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="copyright-v2"> 2021 &copy; NewSolutions
-                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
+    </body>
 @endsection

@@ -11,12 +11,10 @@
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memuAdmin')
-    <!-- BEGIN CONTENT -->
+        @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -35,7 +33,6 @@
                     </ul>
                 </div>
                 <div class="page-container">
-
                     <div class="page-fixed-main-content">
                         <div class="profile">
                             <div class="tabbable-line tabbable-full-width">
@@ -59,29 +56,21 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">name</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <input type="text" name="name" class="form-control"
-                                                               placeholder="name">
-                                                    </div>
+                                                    <input type="text" name="name" class="form-control"
+                                                           value="{{$users['name']}}"
+                                                           placeholder="name">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">manager_id</label>
                                                 <div class="col-md-4">
-                                                    <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                        <select name="manager_id" class="form-control">
-                                                            <option value=""></option>
-                                                            {{--                                            @foreach ($employees as $employee)--}}
-                                                            {{--                                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
-                                                            {{--                                            @endforeach--}}
-                                                        </select>
-                                                    </div>
+                                                    <select name="manager_id" class="form-control"
+                                                            value="{{$users['manager_id']}}">
+                                                        <option value=""></option>
+                                                        {{--                                            @foreach ($employees as $employee)--}}
+                                                        {{--                                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
+                                                        {{--                                            @endforeach--}}
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">
@@ -97,6 +86,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="copyright-v2"> 2021 &copy; NewSolutions
-                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
+    </body>
 @endsection

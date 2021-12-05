@@ -11,12 +11,10 @@
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memuAdmin')
-    <!-- BEGIN CONTENT -->
+        @include('includes.memuAdmin')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">
-
             <div class="page-content">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -43,8 +41,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="btn-group">
-                                        <button id="sample_editable_1_new" class="btn sbold green"> Add
-                                            New
+                                        <button id="sample_editable_1_new" class="btn sbold green">
+                                            <a href={{"check/add"}}>Add New Check</a>
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -91,9 +89,9 @@
                                         id="sample_1">
                                         <thead>
                                         <tr>
-                                            <th> Id</th>
                                             <th class="numeric"> Time</th>
                                             <th> Employee</th>
+                                            <th> Type</th>
                                             <th> Delete</th>
                                             <th> Edit</th>
                                         </tr>
@@ -101,7 +99,6 @@
                                         <tbody>
                                         @foreach($checks as $mychecks)
                                             <tr>
-                                                <td> {{$mychecks->id}} </td>
                                                 <td>{{date('d-m-Y h:i:s', strtotime($mychecks->time))}} </td>
                                                 <td> {{$mychecks->user->first_name}} {{$mychecks->user->last_name}} </td>
                                                 <td> {{$mychecks->type}}</td>
@@ -110,10 +107,12 @@
                                                 {{--                                                    <td> {{$con->name}} </td>--}}
                                                 {{--                                                @endforeach--}}
                                                 <td><a href="/admin/check/delete/{{$mychecks->id}}"
-                                                       style="color: red" class="remove">Delete </a>
+                                                       class="btn btn-circle red">Delete <i
+                                                            class="fa fa-times"></i> </a>
                                                 </td>
                                                 <td><a href="/admin/check/edit/{{$mychecks->id}}"
-                                                       style="color:green" class="remove">Edit </a></td>
+                                                       class="btn btn-circle green">Edit <i
+                                                            class="fa fa-edit"></i></a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -127,8 +126,11 @@
             </div>
         </div>
     </div>
-    <p class="copyright-v2"> 2021 &copy; NewSolutions
-    </p>
+    <div class="page-footer">
+        <div class="page-footer-inner">2021 &copy; NewSolutions
+        </div>
+    </div>
+    </body>
 @endsection
 
 
