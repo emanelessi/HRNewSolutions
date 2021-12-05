@@ -75,7 +75,7 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Employee</label>
                                                     <div class="col-md-4">
-                                                        <select name="job_id" class="form-control">
+                                                        <select name="employee_id" class="form-control">
                                                             <option value=""></option>
                                                             @foreach ($employees as $employee)
                                                                 <option
@@ -87,11 +87,11 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Project</label>
                                                     <div class="col-md-4">
-                                                        <select name="manager_id" class="form-control">
+                                                        <select name="project_id" class="form-control">
                                                             <option value=""></option>
                                                             @foreach ($projects as $project)
                                                                 <option
-                                                                    value="{{ $project->id }}">{{ $project->name }}</option>
+                                                                    value="{{ $project->project->id }}">{{ $project->project->name }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>

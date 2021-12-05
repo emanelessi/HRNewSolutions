@@ -40,11 +40,11 @@
                                     <li class="active">
                                         <a href="#tab_1_1" data-toggle="tab" style="
     margin-top: -52px;
-"> Edit Holiday </a>
+"> Edit Invoices </a>
                                     </li>
                                 </ul>
                                 <div class="portlet-body form" id="tab_1_1">
-                                    <form action="{{route('editHoliday')}}" method="post" class="form-horizontal">
+                                    <form action="{{route('editInvoice')}}" method="post" class="form-horizontal">
                                         @csrf
                                         <div class="form-body" style="padding: 0px">
                                             <div class="form-group">
@@ -54,58 +54,38 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">duration</label>
+                                                <label class="col-md-3 control-label">type</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" value="{{$holiday['duration']}}"
-                                                           name="duration" class="form-control"
-                                                           placeholder="duration">
+                                                    <select name="type" class="form-control">
+                                                        <option value="">-- Select One --</option>
+                                                        @for($i=0;$i<count($type);$i++)
+                                                            <option value="{{$type[$i]}}" {{old($invoice['type'])}} selected  >{{$type[$i]}}</option>
+                                                        @endfor
+
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">description</label>
+                                                <label class="col-md-3 control-label">price</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" value="{{$holiday['description']}}"
-                                                           name="description" class="form-control"
-                                                           placeholder="description">
+                                                    <input type="number" value="{{$invoice['price']}}"
+                                                           name="price" class="form-control"
+                                                           placeholder="price">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">date</label>
                                                 <div class="col-md-4">
                                                     <input type="date" name="date" class="form-control"
-                                                           value="{{$holiday['date']}}" placeholder="date">
+                                                           value="{{$invoice['date']}}" placeholder="date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">type</label>
+                                                <label class="col-md-3 control-label">is_paid</label>
                                                 <div class="col-md-4">
-                                                    <select name="type" class="form-control">
-                                                        <option value="">-- Select One --</option>
-                                                        {{--                                            <option--}}
-                                                        {{--                                               value="{{ $type }}">{{ $type }} </option>--}}
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">status</label>
-                                                <div class="col-md-4">
-                                                    <select name="status" class="form-control">
-                                                        <option value="">-- Select One --</option>
-                                                        {{--                                            <option value="{{ $status }}" selected>{{ $status }} </option>--}}
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">employee_id</label>
-                                                <div class="col-md-4">
-                                                    <select name="employee_id" class="form-control">
-                                                        <option value="">-- Select One --</option>
-                                                        @foreach ($employees as $employee)
-                                                            <option
-                                                                value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                                        @endforeach
-                                                    </select>
+                                                    <input type="checkbox" name="is_paid"
+                                                           class="form-control"
+                                                           placeholder="Is Paid" @if($invoice['is_paid']==true) checked @endif>
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">

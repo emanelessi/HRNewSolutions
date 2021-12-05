@@ -94,6 +94,7 @@
                                                 <div class="col-md-4">
                                                     <input type="text" name="members" class="form-control"
                                                            value="{{$users['members']}}" placeholder="Members">
+
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">

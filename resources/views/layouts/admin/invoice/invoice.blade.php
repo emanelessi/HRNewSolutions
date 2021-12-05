@@ -47,7 +47,7 @@
                                         <div class="col-md-6">
                                             <div class="btn-group">
                                                 <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"holiday/add"}}>Add New Holiday</a>
+                                                    <a href={{"invoice/add"}}>Add New Invoices</a>
                                                     <i class="fa fa-plus"></i>
                                                 </button>
                                             </div>
@@ -85,7 +85,7 @@
                                     <div class="portlet box green">
                                         <div class="portlet-title">
                                             <div class="caption">
-                                                <i class="fa fa-cogs"></i>Holiday Table
+                                                <i class="fa fa-cogs"></i>Invoices Table
                                             </div>
                                         </div>
                                         <div class="portlet-body flip-scroll">
@@ -94,30 +94,26 @@
                                                 id="sample_1">
                                                 <thead>
                                                 <tr>
-                                                    <th> Duration</th>
-                                                    <th> Description</th>
-                                                    <th> Date</th>
                                                     <th> Type</th>
-                                                    <th> Status</th>
-                                                    <th> Employee</th>
+                                                    <th> Price</th>
+                                                    <th> Date</th>
+                                                    <th> Paid</th>
                                                     <th> Delete</th>
                                                     <th> Edit</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($holidays as $holiday)
+                                                @foreach($invoices as $invoice)
                                                     <tr>
-                                                        <td> {{$holiday->duration}} </td>
-                                                        <td> {{$holiday->description}} </td>
-                                                        <td>{{date('d-m-Y', strtotime($holiday->date))}} </td>
-                                                        <td> {{$holiday->type}} </td>
-                                                        <td> {{$holiday->status}} </td>
-                                                        <td> {{$holiday->user->first_name}} {{$holiday->user->last_name}} </td>
-                                                        <td><a href="/admin/holiday/delete/{{$holiday->id}}"
+                                                        <td> {{$invoice->type}} </td>
+                                                        <td> {{$invoice->price}} </td>
+                                                        <td>{{date('d-m-Y', strtotime($invoice->date))}} </td>
+                                                        <td> {{$invoice->is_paid}} </td>
+                                                        <td><a href="/admin/invoice/delete/{{$invoice->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>
                                                         </td>
-                                                        <td><a href="{{url('/admin/holiday/edit/'.$holiday->id)}}"
+                                                        <td><a href="{{url('/admin/invoice/edit/'.$invoice->id)}}"
                                                                class="btn btn-circle green">Edit <i
                                                                     class="fa fa-edit"></i></a>
 
@@ -125,7 +121,7 @@
                                                 @endforeach
                                                 </tbody>
                                             </table>
-                                            {{$holidays->links("pagination::bootstrap-4")}}
+                                            {{$invoices->links("pagination::bootstrap-4")}}
                                         </div>
                                     </div>
                                 </div>
