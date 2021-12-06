@@ -48,7 +48,7 @@
                                     <div class="col-md-3">
                                         <ul class="list-unstyled profile-nav">
                                             <li>
-                                                <img src="../assets/pages/media/profile/people19.png"
+                                                <img src="{{asset(auth()->user()->photo)}}"
                                                      class="img-responsive pic-bordered" alt=""/>
                                             </li>
                                         </ul>
@@ -75,10 +75,10 @@
                                                         </li>
                                                         <li>
                                                             <i class="fa fa-star"></i>
-                                                            {{ $myprofile->department->name }}
+                                                            {{ $myprofile->department->name ?? null}}
                                                         </li>
                                                         <li>
-                                                            <i class="fa fa-briefcase"></i> {{$myprofile->job->title}}
+                                                            <i class="fa fa-briefcase"></i> {{$myprofile->job->title ?? null}}
                                                         </li>
                                                         {{--                                                        <li>--}}
                                                         {{--                                                            <i class="fa fa-heart"></i> {{$myprofile->users->first_name }} </li>--}}
@@ -113,10 +113,10 @@
                                                             @foreach ($projects as $project)
                                                                 <tr>
                                                                     <td>
-                                                                        {{$project->project->name}}
+                                                                        {{$project->project->name ?? null}}
                                                                     </td>
-                                                                    <td class="hidden-xs"> {{$project->project->description}}</td>
-                                                                    <td> {{$project->project->manager_id}}
+                                                                    <td class="hidden-xs"> {{$project->project->description ?? null}}</td>
+                                                                    <td> {{$project->project->manager->first_name ?? null}}
                                                                     </td>
                                                                 </tr>
                                                             @endforeach

@@ -56,9 +56,10 @@ class ProfileController extends Controller
 
         $id = $request->input('id');
         $users = User::find($id);
+        $employees = User::all();
         $Jobs = Job::all();
         $Departments = Department::all();
-        return view('layouts.editProfile', compact('users', 'Jobs', 'Departments'));
+        return view('layouts.editProfile', compact('users', 'Jobs', 'Departments','employees'));
 
     }
 

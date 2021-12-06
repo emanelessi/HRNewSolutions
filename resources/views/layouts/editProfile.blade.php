@@ -137,9 +137,10 @@
                                         <div class="col-md-4">
                                             <select name="Manager" class="form-control">
                                                 <option value=""></option>
-                                                {{--                                            @foreach ($employees as $employee)--}}
-                                                {{--                                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
-                                                {{--                                            @endforeach--}}
+                                                @foreach ($employees  as $employee)
+                                                    <option
+                                                        value="{{ $employee->id  }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
