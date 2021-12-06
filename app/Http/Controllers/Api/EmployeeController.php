@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+
     public function __construct(EmployeeEloquent $employeeEloquent)
     {
         $this->employee = $employeeEloquent;
