@@ -33,6 +33,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+//    protected $with = ['department'];
+
+
     /**
      * The attributes that should be cast.
      *
@@ -43,7 +46,7 @@ class User extends Authenticatable
     ];
     public function department()
     {
-        return $this->belongsTo(Department::class, 'department_id');
+        return $this->belongsTo(Department::class);
     }
    public function manager()
     {

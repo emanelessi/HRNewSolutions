@@ -108,7 +108,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($employee as $myemployee)
+                                                @foreach($employee->items() as $myemployee)
                                                     <tr>
                                                         <td> {{$myemployee->first_name}} </td>
                                                         <td> {{$myemployee->last_name}} </td>
@@ -116,8 +116,8 @@
                                                         <td> {{$myemployee->phone_number}} </td>
                                                         <td>{{date('d-m-Y h:i:s', strtotime($myemployee->hire_date))}} </td>
                                                         <td> {{$myemployee->salary}} $</td>
-                                                        <td> {{$myemployee->department["name"]}}</td>
-                                                        <td> {{$myemployee->job["title"]}} </td>
+                                                        <td> {{$myemployee->department->name ?? ''}}</td>
+                                                        <td> {{$myemployee->job->name ?? ''}} </td>
                                                         <td> {{$myemployee->manager_id}} </td>
                                                         {{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
                                                         {{--                                                @foreach($myevent->Contacts as $con)--}}

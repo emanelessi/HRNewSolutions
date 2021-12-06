@@ -21,6 +21,7 @@ class UserController extends Controller
     public function index()
     {
         $employee = User::paginate(10);
+//        dd($employee->items()[0]->department);
         $departments = Department::all();
         $jobs = Job::all();
         $users = User::all();
