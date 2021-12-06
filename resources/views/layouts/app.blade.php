@@ -1,5 +1,5 @@
 @extends('includes.jsModal')
-<!doctype html>
+    <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -32,7 +32,8 @@
                 <div class="page-header-inner ">
                     <div class="page-logo" style="margin-top: -14px;margin-left: -100px;">
                         <a href="{{ route('home') }}">
-                            <img src="http://127.0.0.1:8000/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default"/>
+                            <img src="http://127.0.0.1:8000/assets/layouts/layout2/img/logo-default.png" alt="logo"
+                                 class="logo-default"/>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-top: 20px;">
@@ -60,24 +61,23 @@
                                     <div class="top-menu">
                                         <ul class="nav navbar-nav pull-right">
                                             <li class="dropdown dropdown-user">
-                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <img alt="" class="img-circle" src="{{asset(auth()->user()->photo)}}" />
-                                                    <span class="username username-hide-on-mobile"> {{ auth()->user()->first_name }} {{auth()->user()->last_name}} </span>
+                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
+                                                   data-hover="dropdown" data-close-others="true">
+                                                    <img alt="" class="img-circle"
+                                                         src="{{asset(auth()->user()->photo)}}"/>
+                                                    <span
+                                                        class="username username-hide-on-mobile"> {{ auth()->user()->first_name }} {{auth()->user()->last_name}} </span>
                                                     <i class="fa fa-angle-down"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-menu-default">
                                                     <li>
-                                                        <a href="page_user_profile_1.html">
+                                                        <a href="{{url('/profile')}}">
                                                             <i class="icon-user"></i> My Profile </a>
                                                     </li>
-                                                    <li class="divider"> </li>
+                                                    <li class="divider"></li>
                                                     <li>
-                                                        <a href="page_user_lock_1.html">
-                                                            <i class="icon-lock"></i> Lock Screen </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="page_user_login_1.html">
-                                                            <i class="icon-key"></i> Log Out </a>
+                                                        <a href="{{url('/profile/edit')}}">
+                                                            <i class="icon-user"></i> Edit Profile </a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -87,14 +87,11 @@
                                                          document.getElementById('logout-form').submit();">
                                                 </a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                      class="d-none" style="
-        margin-top: -28px;
-    ">
+                                                      class="d-none" style="margin-top: -28px;">
                                                     @csrf
                                                 </form>
                                                 <i class="icon-logout"></i>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
