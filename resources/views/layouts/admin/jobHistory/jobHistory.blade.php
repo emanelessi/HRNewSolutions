@@ -1,3 +1,5 @@
+@extends('includes.cssModal')
+@extends('includes.jsModal')
 @extends('layouts.app')
 
 @section('content')
@@ -46,10 +48,90 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"history/add"}} style="color:white">Add New Job History</a>
+                                                <button id="sample_editable_1_new" class="btn sbold green"
+                                                        data-target="#stack1" data-toggle="modal">
+                                                    Add New Job History
                                                     <i class="fa fa-plus"></i>
                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title"> Add New Job History</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{route('History')}}" method="post" class="form-horizontal">
+                                                    @csrf
+                                                    <div class="form-body" style="padding: 0px">
+                                                        <div class="form-group">
+                                                            @if($errors->any())
+                                                                <h4 class="col-md-3 control-label"
+                                                                    style="color: green;">{{$errors->first()}}</h4>
+                                                            @endif
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Start Date</label>
+                                                            <div class="col-md-8">
+                                                                <input type="datetime-local"
+                                                                       name="start_date" class="form-control"
+                                                                       placeholder="Start Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">End Date</label>
+                                                            <div class="col-md-8">
+                                                                <input type="datetime-local"
+                                                                       name="end_date" class="form-control"
+                                                                       placeholder="End Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Employee Name</label>
+                                                            <div class="col-md-8">
+                                                                <select name="employee_id" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @foreach ($Employees as $Employee)
+                                                                        <option
+                                                                            value="{{ $Employee->id }}">{{ $Employee->first_name }} {{ $Employee->last_name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Job</label>
+                                                            <div class="col-md-8">
+                                                                <select name="employee_id" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @foreach ($job as $jobs)
+                                                                        <option
+                                                                            value="{{ $jobs->id }}">{{ $jobs->title }} </option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Department</label>
+                                                            <div class="col-md-8">
+                                                                <select name="employee_id" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @foreach ($department as $departments)
+                                                                        <option
+                                                                            value="{{ $departments->id }}">{{ $departments->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" data-dismiss="modal"
+                                                                    class="btn btn-outline dark">
+                                                                Close
+                                                            </button>
+                                                            <button type="submit" class="btn green">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -78,6 +160,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="portlet box green">

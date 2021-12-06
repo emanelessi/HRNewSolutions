@@ -13,7 +13,8 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::paginate(10);
-        return view('layouts.admin.invoice.invoice')->with(compact('invoices'));
+        $type = ['internet', 'electricity', 'services', 'communications'];
+        return view('layouts.admin.invoice.invoice')->with(compact('invoices','type'));
     }
 
     public function addInvoice(Request $request)
@@ -22,10 +23,9 @@ class InvoiceController extends Controller
         $invoice->type = $request->input('type');
         $invoice->price = $request->input('price');
         $invoice->date = $request->input('date');
-        if ($request->input('is_paid') == true){
+        if ($request->input('is_paid') == true) {
             $invoice->is_paid = 1;
-        }
-        else{
+        } else {
             $invoice->is_paid = 0;
         }
 
@@ -42,8 +42,8 @@ class InvoiceController extends Controller
     public function create()
     {
         $invoices = Invoice::all();
-        $type=['internet','electricity','services','communications'];
-        return view('layouts.admin.invoice.addInvoice')->with(compact('invoices','type'));
+        $type = ['internet', 'electricity', 'services', 'communications'];
+        return view('layouts.admin.invoice.addInvoice')->with(compact('invoices', 'type'));
     }
 
     public function update(Request $request)
@@ -53,10 +53,9 @@ class InvoiceController extends Controller
         $invoice->type = $request->input('type');
         $invoice->price = $request->input('price');
         $invoice->date = $request->input('date');
-        if ($request->input('is_paid') == true){
+        if ($request->input('is_paid') == true) {
             $invoice->is_paid = 1;
-        }
-        else{
+        } else {
             $invoice->is_paid = 0;
         }
         $invoice->save();
@@ -68,7 +67,7 @@ class InvoiceController extends Controller
     {
 
         $invoice = Invoice::findOrFail($id);
-        $type = ['internet','electricity','services','communications'];
+        $type = ['internet', 'electricity', 'services', 'communications'];
         $employees = User::all();
         return view('layouts.admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
 

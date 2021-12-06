@@ -1,3 +1,5 @@
+@extends('includes.cssModal')
+@extends('includes.jsModal')
 @extends('layouts.app')
 
 @section('content')

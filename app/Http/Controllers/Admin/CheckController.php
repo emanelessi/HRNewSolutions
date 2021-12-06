@@ -15,7 +15,8 @@ class CheckController extends Controller
     public function index()
     {
         $checks = CheckInOut::paginate(10);
-        return view('layouts.admin.check.check')->with(compact('checks'));
+        $employees = User::all();
+        return view('layouts.admin.check.check')->with(compact('checks','employees'));
     }
 
     public function addCheck(Request $request)

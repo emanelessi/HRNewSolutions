@@ -61,7 +61,7 @@
                                                 <h4 class="modal-title"> Add New Department</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('addDepartment')}}" method="post"
+                                                <form action="{{route('Department')}}" method="post"
                                                       class="form-horizontal">
                                                     @csrf
                                                     <div class="form-body" style="padding: 0px">
@@ -95,29 +95,16 @@
 
                                                         </div>
                                                     </div>
-
-                                                {{--                                                <p> One fine body… </p>--}}
-                                                {{--                                                <div class="form-group">--}}
-                                                {{--                                                    <input class="form-control" type="text" data-tabindex="1"> </div>--}}
-
-                                                {{--                                                <p> One fine body… </p>--}}
-                                                {{--                                                <div class="form-group">--}}
-                                                {{--                                                    <input class="form-control" type="text" data-tabindex="2"> </div>--}}
-                                                {{--                                                <p> One fine body… </p>--}}
-                                                {{--                                                <div class="form-group">--}}
-                                                {{--                                                    <input class="form-control" type="text" data-tabindex="2"> </div>--}}
-
-                                                {{--                                                <button class="btn blue" data-toggle="modal" href="#stack2">Launch modal</button>--}}
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">
-                                                    Close
-                                                </button>
-                                                <button type="submit" class="btn green">Submit</button>
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-dismiss="modal"
+                                                                class="btn btn-outline dark">
+                                                            Close
+                                                        </button>
+                                                        <button type="submit" class="btn green">Submit</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        </form>
-
 
                                         <div class="col-md-6">
                                             <div class="btn-group pull-right">

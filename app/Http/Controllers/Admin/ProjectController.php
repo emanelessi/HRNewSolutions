@@ -16,7 +16,8 @@ class ProjectController extends Controller
     public function index()
     {
         $project = EmployeeProject::paginate(10);
-        return view('layouts.admin.project.project')->with(compact('project'));
+        $employees = User::all();
+        return view('layouts.admin.project.project')->with(compact('project','employees'));
     }
 
     public function addProject(Request $request)
