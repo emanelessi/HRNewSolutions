@@ -49,7 +49,6 @@ class EmployeeEloquent
 
         $statusCode = $response->getStatusCode();
         $employee = json_decode($response->getContent())->items;
-//        $employee = \auth()->user();
         return response_api(true, $statusCode, 'Successfully Login', ['token' => $response_token, 'employee' => $employee]);
 
     }

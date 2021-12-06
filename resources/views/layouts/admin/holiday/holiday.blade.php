@@ -112,7 +112,7 @@
                                                         <td>{{date('d-m-Y', strtotime($holiday->date))}} </td>
                                                         <td> {{$holiday->type}} </td>
                                                         <td> {{$holiday->status}} </td>
-                                                        <td> {{$holiday->user->first_name}} {{$holiday->user->last_name}} </td>
+                                                        <td> {{$holiday->user->first_name ?? null}} {{$holiday->user->last_name ?? null}} </td>
                                                         <td><a href="/admin/holiday/delete/{{$holiday->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>

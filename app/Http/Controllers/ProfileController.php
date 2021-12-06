@@ -29,7 +29,7 @@ class ProfileController extends Controller
     public function editProfile(Request $request)
     {
         $img=$request->input('photo');
-        $path='uploads/images';
+        $path='storage';
         $name=time()+rand(1,1000000000000000).'.'.$img->getClientOriginalExtension();
         Storage::disk('local')->put($path.$name,file_get_contents($img));
         $user_id = Auth::user()->id;

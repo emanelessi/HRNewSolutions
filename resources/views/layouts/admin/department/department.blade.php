@@ -170,12 +170,7 @@
                                                 @foreach($departments as $mydepartment)
                                                     <tr>
                                                         <td> {{$mydepartment->name}} </td>
-                                                        <td> {{$mydepartment->manager_id}} </td>
-
-                                                        {{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
-                                                        {{--                                                @foreach($myevent->Contacts as $con)--}}
-                                                        {{--                                                    <td> {{$con->name}} </td>--}}
-                                                        {{--                                                @endforeach--}}
+                                                        <td> {{$mydepartment->manager->first_name ?? null}} </td>
                                                         <td><a href="/admin/department/delete/{{$mydepartment->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>

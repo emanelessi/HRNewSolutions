@@ -79,7 +79,7 @@ protected function validator(array $data)
     protected function create(array $data)
     {
         $img=$data['photo'];
-        $path='uploads/images';
+        $path='public/storage/employees/';
         $name=time()+rand(1,1000000000000000).'.'.$img->getClientOriginalExtension();
         Storage::disk('local')->put($path.$name,file_get_contents($img));
         return User::create([
@@ -89,7 +89,7 @@ protected function validator(array $data)
             'password' => Hash::make($data['password']),
             'phone_number' => $data['phone_number'],
             'hire_date' => $data['hire_date'],
-            'photo' => $path.$name,
+            'photo' => 'storage/employees/'.$name,
             'salary' => $data['salary'],
             'job_id' => $data['job_id'],
             'department_id' => $data['department_id'],

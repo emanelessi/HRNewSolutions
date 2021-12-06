@@ -100,12 +100,8 @@
                                         @foreach($checks as $mychecks)
                                             <tr>
                                                 <td>{{date('d-m-Y h:i:s', strtotime($mychecks->time))}} </td>
-                                                <td> {{$mychecks->user->first_name}} {{$mychecks->user->last_name}} </td>
+                                                <td> {{$mychecks->user->first_name?? null}} {{$mychecks->user->last_name?? null}} </td>
                                                 <td> {{$mychecks->type}}</td>
-                                                {{--                                                <td> @foreach ($users as $user){{$user->first_name}}-{{$user->last_name}}  @endforeach</td>--}}
-                                                {{--                                                @foreach($myevent->Contacts as $con)--}}
-                                                {{--                                                    <td> {{$con->name}} </td>--}}
-                                                {{--                                                @endforeach--}}
                                                 <td><a href="/admin/check/delete/{{$mychecks->id}}"
                                                        class="btn btn-circle red">Delete <i
                                                             class="fa fa-times"></i> </a>
