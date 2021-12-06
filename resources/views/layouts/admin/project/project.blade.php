@@ -163,6 +163,7 @@
                                                 <thead>
                                                 <tr>
                                                     <th> Name</th>
+                                                    <th> Empolyee</th>
                                                     <th>Salary</th>
                                                     <th> Description</th>
                                                     <th> Manager</th>
@@ -174,11 +175,12 @@
                                                 <tbody>
                                                 @foreach($project as $myproject)
                                                     <tr>
-                                                        <td> {{$myproject->project['name'] }} </td>
-                                                        <td> {{$myproject->project['salary'] }} </td>
-                                                        <td> {{$myproject->project['description'] }} </td>
-                                                        <td> {{$myproject->project['manager_id'] }}  </td>
-                                                        <td> {{$myproject->project['members'] }} </td>
+                                                        <td> {{$myproject->project['name'] ?? null}} </td>
+                                                        <td> {{$myproject->user['first_name'] ?? null}} {{$myproject->user['last_name'] ?? null}} </td>
+                                                        <td> {{$myproject->project['salary'] ?? null}} </td>
+                                                        <td> {{$myproject->project['description'] ?? null}} </td>
+                                                        <td> {{$myproject->manager->first_name ?? null }}  </td>
+                                                        <td> {{$myproject->project['members'] ?? null}} </td>
                                                         <td><a href="/admin/project/delete/{{$myproject->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>
