@@ -49,8 +49,8 @@ Route::group(['middleware'], function () {
 Route::get('/admin/home', [Admin\UserController::class, 'home'])->name('adminHome');
 Route::get('/admin/employee', [Admin\UserController::class, 'index'])->name('Employee');
 Route::post('/admin/employee/add', [Admin\UserController::class, 'add']);
-Route::get('/admin/employee/add', [Admin\UserController::class, 'addEmployee'])->name('addEmployee');
-Route::get('/admin/employee/add', [Admin\UserController::class, 'create']);
+Route::get('/admin/employee/add', [Admin\UserController::class, 'addEmployee']);
+Route::get('/admin/employee/add', [Admin\UserController::class, 'create'])->name('addEmployee');
 Route::post('/admin/employee/edit', [Admin\UserController::class, 'update'])->name('editEmployee');
 Route::get('/admin/employee/edit/{id}', [Admin\UserController::class, 'edit']);
 Route::get('/admin/employee/delete/{id}', [Admin\UserController::class, 'destroy']);

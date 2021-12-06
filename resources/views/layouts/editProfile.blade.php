@@ -54,7 +54,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">First Name</label>
                                             <div class="col-md-4">
-                                                <input type="text" name="first_name" class="form-control"
+                                                <input type="text" name="first_name" class="form-control" value="{{$users['first_name']}}"
                                                        placeholder="First Name" required>
                                             </div>
                                         </div>
@@ -62,14 +62,14 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Last Name</label>
                                         <div class="col-md-4">
-                                            <input type="text" name="last_name" class="form-control"
+                                            <input type="text" name="last_name" class="form-control" value="{{$users['last_name']}}"
                                                    placeholder="Last Name" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Email</label>
                                         <div class="col-md-4">
-                                            <input type="email" name="email" class="form-control"
+                                            <input type="email" name="email" class="form-control" value="{{$users['email']}}"
                                                    placeholder="Email" required>
                                         </div>
                                     </div>
@@ -83,35 +83,35 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Phone Number</label>
                                         <div class="col-md-4">
-                                            <input type="tel" name="phone_number" class="form-control"
+                                            <input type="tel" name="phone_number" class="form-control" value="{{$users['phone_number']}}"
                                                    placeholder="Phone Number" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Hire Date</label>
                                         <div class="col-md-4">
-                                            <input type="datetime-local" name="hire_date" class="form-control"
+                                            <input type="date" name="hire_date" class="form-control" value="{{$users['hire_date']}}"
                                                    placeholder="Hire Date" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Salary</label>
                                         <div class="col-md-4">
-                                            <input type="number" name="salary" class="form-control"
+                                            <input type="number" name="salary" class="form-control" value="{{$users['salary']}}"
                                                    placeholder="Salary" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Photo</label>
                                         <div class="col-md-4">
-                                            <input type="file" name="photo" class="form-control"
+                                            <input type="file" name="photo" class="form-control" value="{{$users['photo']}}"
                                                    placeholder="Photo">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Department</label>
                                         <div class="col-md-4">
-                                            <select name="department_id" class="form-control" required>
+                                            <select name="department_id" class="form-control"  value="{{$users['department_id']}}" required>
                                                 <option value="">-- Select One --</option>
                                                 @foreach ($Departments as $Department)
                                                     <option
@@ -123,7 +123,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Job Title</label>
                                         <div class="col-md-4">
-                                            <select name="job_id" class="form-control" required>
+                                            <select name="job_id" class="form-control"  value="{{$users['job_id']}}" required>
                                                 <option value=""></option>
                                                 @foreach ($Jobs as $Job)
                                                     <option value="{{ $Job->id }}"
@@ -135,7 +135,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Manager</label>
                                         <div class="col-md-4">
-                                            <select name="Manager" class="form-control">
+                                            <select name="Manager" class="form-control" value="{{$users['Manager']}}">
                                                 <option value=""></option>
                                                 @foreach ($employees  as $employee)
                                                     <option

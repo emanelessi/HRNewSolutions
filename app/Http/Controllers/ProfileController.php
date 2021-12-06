@@ -22,7 +22,6 @@ class ProfileController extends Controller
         $users = User::all();
         $projects = EmployeeProject::where('employee_id', $user_id)->get();
         $rewards = Reward::where('employee_id', $user_id)->get();
-
         return view('layouts.profile')->with(compact('profile', 'departments', 'users', 'projects', 'rewards'));
     }
 
