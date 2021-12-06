@@ -59,9 +59,8 @@
                                     <div class="top-menu">
                                         <ul class="nav navbar-nav pull-right">
                                             <li class="dropdown dropdown-user">
-                                                <img alt="" class="img-circle" src="{{\Illuminate\Support\Facades\Storage::url(auth()->user()->photo)}}" />
-
                                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                    <img alt="" class="img-circle" src="{{asset(auth()->user()->photo)}}" />
                                                     <span class="username username-hide-on-mobile"> {{ auth()->user()->first_name }} {{auth()->user()->last_name}} </span>
                                                     <i class="fa fa-angle-down"></i>
                                                 </a>

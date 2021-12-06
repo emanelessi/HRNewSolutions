@@ -125,7 +125,7 @@
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="{{url('/admin/invoice')}}" class="nav-link ">
-                            <i class="fa fa-hourglass-o" aria-hidden="true"></i>
+                            <i class="fa fa-paperclip" aria-hidden="true"></i>
                             <span class="title">Invoice</span>
                         </a>
                     </li>

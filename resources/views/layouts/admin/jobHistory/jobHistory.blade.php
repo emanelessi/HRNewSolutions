@@ -189,9 +189,9 @@
                                                     <tr>
                                                         <td> {{$myJobHistory->start_date}} </td>
                                                         <td> {{$myJobHistory->end_date}} </td>
-                                                        <td>  {{$myJobHistory->user->first_name}} {{$myJobHistory->user->last_name}} </td>
-                                                        <td> {{$myJobHistory->user->job->title }} </td>
-                                                        <td>  {{$myJobHistory->user->department->name }}</td>
+                                                        <td>  {{$myJobHistory->user->first_name ?? null}} {{$myJobHistory->user->last_name ?? null}} </td>
+                                                        <td> {{$myJobHistory->user->job->title ?? null}} </td>
+                                                        <td>  {{$myJobHistory->user->department->name ?? null}}</td>
                                                         <td><a href="/admin/job/history/delete/{{$myJobHistory->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>

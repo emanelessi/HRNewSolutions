@@ -171,8 +171,8 @@
                                                     <tr>
                                                         <td> {{$myreward->cost}} </td>
                                                         <td> {{$myreward->note}} </td>
-                                                        <td> {{$myreward->user->first_name}} {{$myreward->user->last_name}} </td>
-                                                        <td> {{$myreward->project["name"]}} </td>
+                                                        <td> {{$myreward->user->first_name ?? null}} {{$myreward->user->last_name ?? null}} </td>
+                                                        <td> {{$myreward->project["name"] ?? null}} </td>
                                                         <td><a href="/admin/reward/delete/{{$myreward->id}}"
                                                                class="btn btn-circle red">Delete <i
                                                                     class="fa fa-times"></i> </a>
