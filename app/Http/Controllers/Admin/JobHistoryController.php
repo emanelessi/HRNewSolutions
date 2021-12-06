@@ -17,7 +17,8 @@ class JobHistoryController extends Controller
         $job_history = JobHistory::paginate(10);
         $job = Job::all();
         $department= Department::all();
-        return view('layouts.admin.jobHistory.jobHistory')->with(compact('job_history','job','department'));
+        $Employees = User::all();
+        return view('layouts.admin.jobHistory.jobHistory')->with(compact('job_history','job','department','Employees'));
     }
 
     public function addHistory(Request $request)

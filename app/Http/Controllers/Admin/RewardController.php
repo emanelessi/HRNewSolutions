@@ -18,7 +18,9 @@ class RewardController extends Controller
     public function index()
     {
         $reward = Reward::paginate(10);
-        return view('layouts.admin.reward.reward')->with(compact('reward'));
+        $employees = User::all();
+        $projects = EmployeeProject::all();
+        return view('layouts.admin.reward.reward')->with(compact('reward','employees','projects'));
     }
 
     public function addReward(Request $request)

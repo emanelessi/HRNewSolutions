@@ -1,3 +1,5 @@
+@extends('includes.cssModal')
+@extends('includes.jsModal')
 @extends('layouts.app')
 
 @section('content')
@@ -46,10 +48,100 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"holiday/add"}} style="color:white">Add New Holiday</a>
+                                                <button id="sample_editable_1_new" class="btn sbold green"
+                                                        data-target="#stack1" data-toggle="modal">
+                                                    Add New Holiday
                                                     <i class="fa fa-plus"></i>
                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title"> Add New Holiday</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{route('Holiday')}}" method="post"
+                                                      class="form-horizontal">
+                                                    @csrf
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            @if($errors->any())
+                                                                <h4 class="col-md-3 control-label"
+                                                                    style="color: green;">{{$errors->first()}}</h4>
+                                                            @endif
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Duration</label>
+                                                            <div class="col-md-8">
+                                                                <input type="number" name="duration"
+                                                                       class="form-control"
+                                                                       placeholder="duration">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Description</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" name="description"
+                                                                       class="form-control"
+                                                                       placeholder="description">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Date</label>
+                                                            <div class="col-md-8">
+                                                                <input type="date" name="date" class="form-control"
+                                                                       placeholder="date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Type</label>
+                                                            <div class="col-md-8">
+                                                                <select name="type" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @for($i=0;$i<count($type);$i++)
+                                                                        <option
+                                                                            value="{{$type[$i]}}" {{ (isset($holiday['type']) || old('type'))? "selected":"" }}>{{$type[$i]}}</option>
+                                                                    @endfor
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Status</label>
+                                                            <div class="col-md-8">
+                                                                <select name="status" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @for($i=0;$i<count($status);$i++)
+                                                                        <option
+                                                                            value="{{$status[$i]}}" {{ (isset($holiday['status']) || old('status'))? "selected":"" }}>{{$status[$i]}}</option>
+                                                                    @endfor
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Employee</label>
+                                                            <div class="col-md-8">
+                                                                <select name="employee_id" class="form-control">
+                                                                    <option value="">-- Select One --</option>
+                                                                    @foreach ($employee as $employees)
+                                                                        <option
+                                                                            value="{{ $employees->id }}">{{ $employees->first_name }} {{ $employees->last_name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" data-dismiss="modal"
+                                                                    class="btn btn-outline dark">
+                                                                Close
+                                                            </button>
+                                                            <button type="submit" class="btn green">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

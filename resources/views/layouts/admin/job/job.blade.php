@@ -1,3 +1,5 @@
+@extends('includes.cssModal')
+@extends('includes.jsModal')
 @extends('layouts.app')
 
 @section('content')
@@ -46,10 +48,60 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_new" class="btn sbold green">
-                                                    <a href={{"job/add"}} style="color:white">Add New Job</a>
+                                                <button id="sample_editable_1_new" class="btn sbold green"
+                                                        data-target="#stack1" data-toggle="modal">
+                                                    Add New Job
                                                     <i class="fa fa-plus"></i>
                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title"> Add New Job</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{route('Job')}}" method="post" class="form-horizontal">
+                                                    @csrf
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            @if($errors->any())
+                                                                <h4 class="col-md-3 control-label"
+                                                                    style="color: green;">{{$errors->first()}}</h4>
+                                                            @endif
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Title</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" name="title" class="form-control"
+                                                                       placeholder="title">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Description</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" name="description"
+                                                                       class="form-control"
+                                                                       placeholder="description">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Salary</label>
+                                                            <div class="col-md-8">
+                                                                <input type="number" name="salary" class="form-control"
+                                                                       placeholder="salary">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" data-dismiss="modal"
+                                                                    class="btn btn-outline dark">
+                                                                Close
+                                                            </button>
+                                                            <button type="submit" class="btn green">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -78,7 +130,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="portlet box green">
@@ -93,7 +144,6 @@
                                                 id="sample_1">
                                                 <thead>
                                                 <tr>
-                                                    =
                                                     <th> Title</th>
                                                     <th> Description</th>
                                                     <th> Salary</th>

@@ -16,7 +16,9 @@ class HolidayController extends Controller
     {
         $holidays = Holiday::paginate(10);
         $employee = User::all();
-        return view('layouts.admin.holiday.holiday')->with(compact('holidays', 'employee'));
+        $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
+        $status = ['pending', 'approve', 'rejected'];
+        return view('layouts.admin.holiday.holiday')->with(compact('holidays', 'employee','type','status'));
     }
 
     public function addholiday(Request $request)

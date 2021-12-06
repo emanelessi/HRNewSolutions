@@ -31,7 +31,9 @@ class DepartmentController extends Controller
     public function add()
     {
 
-        return view('layouts.admin.department.department');
+        $employees = User::all();
+        $departments = Department::paginate(10);
+        return view('layouts.admin.department.department')->with(compact('departments','employees'));
     }
 
     public function create()
