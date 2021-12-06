@@ -11,27 +11,27 @@
                     <span class="selected"></span>
                 </a>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-user"></i>
-                    <span class="title">User</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="{{url('/profile')}}" class="nav-link ">
-                            <i class="icon-users"></i>
-                            <span class="title">Profile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="{{url('/profile/edit')}}" class="nav-link ">
-                            <i class="icon-users"></i>
-                            <span class="title">Edit Profile</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+{{--            <li class="nav-item  ">--}}
+{{--                <a href="javascript:;" class="nav-link nav-toggle">--}}
+{{--                    <i class="icon-user"></i>--}}
+{{--                    <span class="title">User</span>--}}
+{{--                    <span class="arrow"></span>--}}
+{{--                </a>--}}
+{{--                <ul class="sub-menu">--}}
+{{--                    <li class="nav-item  ">--}}
+{{--                        <a href="{{url('/profile')}}" class="nav-link ">--}}
+{{--                            <i class="icon-users"></i>--}}
+{{--                            <span class="title">Profile</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item  ">--}}
+{{--                        <a href="{{url('/profile/edit')}}" class="nav-link ">--}}
+{{--                            <i class="icon-users"></i>--}}
+{{--                            <span class="title">Edit Profile</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
             <li class="nav-item ">
 
                 <a href="{{url('/check/add')}}" class="nav-link ">
