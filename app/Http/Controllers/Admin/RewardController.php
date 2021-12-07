@@ -34,10 +34,7 @@ class RewardController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
-        return view('layouts.admin.reward.addReward');
-    }
+
     public function create()
     {
         $employees = User::all();

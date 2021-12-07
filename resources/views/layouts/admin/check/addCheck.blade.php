@@ -71,7 +71,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Type</label>
                                     <div class="col-md-4">
-                                        <select name="employee_id" class="form-control">
+                                        <select name="type" class="form-control">
                                             <option value="in">in</option>
                                             <option value="out">out</option>
                                         </select>

@@ -68,7 +68,7 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Cost</label>
                                                     <div class="col-md-4">
-                                                        <input type="text" name="cost" class="form-control"
+                                                        <input type="number" name="cost" class="form-control"
                                                                placeholder="cost">
                                                     </div>
                                                 </div>

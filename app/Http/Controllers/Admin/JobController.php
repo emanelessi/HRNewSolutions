@@ -27,10 +27,7 @@ class JobController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
-        return view('layouts.admin.job.addJob');
-    }
+
 
     public function create()
     {

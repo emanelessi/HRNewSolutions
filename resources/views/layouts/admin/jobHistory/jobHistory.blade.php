@@ -102,7 +102,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-3 control-label">Job</label>
                                                             <div class="col-md-8">
-                                                                <select name="employee_id" class="form-control">
+                                                                <select name="job_id" class="form-control">
                                                                     <option value="">-- Select One --</option>
                                                                     @foreach ($job as $jobs)
                                                                         <option
@@ -114,7 +114,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-3 control-label">Department</label>
                                                             <div class="col-md-8">
-                                                                <select name="employee_id" class="form-control">
+                                                                <select name="department_id" class="form-control">
                                                                     <option value="">-- Select One --</option>
                                                                     @foreach ($department as $departments)
                                                                         <option

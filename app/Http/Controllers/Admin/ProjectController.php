@@ -32,10 +32,7 @@ class ProjectController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
-        return view('layouts.admin.project.addProject');
-    }
+
 
     public function create()
     {

@@ -33,11 +33,7 @@ class InvoiceController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
 
-        return view('layouts.admin.invoice.addInvoice');
-    }
 
     public function create()
     {

@@ -33,10 +33,7 @@ class JobHistoryController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
-        return view('layouts.admin.jobHistory.addJobHistory');
-    }
+
 
     public function create()
     {
@@ -62,11 +59,11 @@ class JobHistoryController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $users = JobHistory::findOrFail($id);
+        $job_history = JobHistory::findOrFail($id);
         $jobs = Job::all();
         $employess = User::all();
         $departments= Department::all();
-        return view('layouts.admin.jobHistory.editJobHistory', compact('users','jobs','departments','employess'));
+        return view('layouts.admin.jobHistory.editJobHistory', compact('job_history','jobs','departments','employess'));
 
     }
 

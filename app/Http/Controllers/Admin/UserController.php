@@ -66,10 +66,7 @@ class UserController extends Controller
         return view('layouts.admin.employee.addEmployee')->with(compact('employees', 'departments', 'jobs'));
     }
 
-    public function add()
-    {
-        return view('layouts.admin.employee.addEmployee');
-    }
+
 
     public function update(Request $request)
     {

@@ -56,17 +56,17 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Start Date</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" value="{{$users['start_date']}}"
+                                                    <input type="datetime-local" value="{{$job_history['start_date']}}"
                                                            name="start_date" class="form-control"
                                                            placeholder="Start Date">
                                                     <input type="hidden" name="id" class="form-control"
-                                                           value="{{$users['id']}}">
+                                                           value="{{$job_history['id']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">End Date</label>
                                                 <div class="col-md-4">
-                                                    <input type="datetime-local" value="{{$users['end_date']}}"
+                                                    <input type="datetime-local" value="{{$job_history['end_date']}}"
                                                            name="end_date" class="form-control"
                                                            placeholder="End Date">
                                                 </div>

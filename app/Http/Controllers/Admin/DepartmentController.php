@@ -28,18 +28,13 @@ class DepartmentController extends Controller
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
 
-        $employees = User::all();
-        $departments = Department::paginate(10);
-        return view('layouts.admin.department.department')->with(compact('departments','employees'));
-    }
 
     public function create()
     {
-        $employees = Department::all();
-        return view('layouts.admin.department.department')->with('employees', $employees);
+        $employees = User::all();
+        $departments = Department::paginate(10);
+        return view('layouts.admin.department.addDepartment')->with('employees', $employees)->with('departments', $departments);
     }
 
     public function update(Request $request)

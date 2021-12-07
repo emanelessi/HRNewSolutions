@@ -65,7 +65,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Salary</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="salary" class="form-control"
+                                                    <input type="number" name="salary" class="form-control"
                                                            placeholder="salary">
                                                 </div>
                                             </div>

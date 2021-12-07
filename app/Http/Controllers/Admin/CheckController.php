@@ -23,15 +23,13 @@ class CheckController extends Controller
     {
         $check = new CheckInOut();
         $check->time = $request->input('time');
+        $check->type = $request->input('type');
         $check->employee_id = $request->input('employee_id');
         $check->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
-    public function add()
-    {
-        return view('layouts.admin.check.addCheck');
-    }
+
 
     public function create()
     {
