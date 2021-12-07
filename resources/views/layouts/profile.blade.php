@@ -48,7 +48,7 @@
                                     <div class="col-md-3">
                                         <ul class="list-unstyled profile-nav">
                                             <li>
-                                                <img src="{{asset(auth()->user()->photo)}}"
+                                                <img src="{{asset('storage/'.auth()->user()->photo)}}"
                                                      class="img-responsive pic-bordered" alt=""/>
                                             </li>
                                         </ul>
