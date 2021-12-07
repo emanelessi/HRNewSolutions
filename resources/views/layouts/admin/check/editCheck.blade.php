@@ -50,7 +50,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">time</label>
+                                                <label class="col-md-3 control-label">Time</label>
                                                 <div class="col-md-4">
                                                     <input type="datetime-local" name="time" class="form-control"
                                                            placeholder="time" value="{{$check['time']}}">
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">type</label>
+                                                <label class="col-md-3 control-label">Type</label>
                                                 <div class="col-md-4">
                                                     <select name="type" value="{{$check['type']}}" class="form-control">
                                                         <option value="">-- Select One --</option>
@@ -69,7 +69,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">employee_id</label>
+                                                <label class="col-md-3 control-label">Employee</label>
                                                 <div class="col-md-4">
                                                     <select name="employee_id" value="{{$check['employee_id']}}" class="form-control">
                                                         <option value="">-- Select One --</option>

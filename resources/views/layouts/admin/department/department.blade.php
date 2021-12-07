@@ -72,7 +72,7 @@
                                                             @endif
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-8">
                                                                 <label class=" control-label">Name</label>
 
                                                                 <input type="text" name="name" class="form-control"
@@ -82,10 +82,10 @@
 
                                                         <div class="form-group">
 
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-8">
                                                                 <label class=" control-label">Manager</label>
                                                                 <select name="manager_id" class="form-control">
-                                                                    <option value=""></option>
+                                                                    <option value="">--select one--</option>
                                                                     @foreach ($employees as $employee)
                                                                         <option
                                                                             value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>

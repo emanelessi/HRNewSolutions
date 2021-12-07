@@ -62,7 +62,6 @@ class JobHistoryController extends Controller
 
     public function edit(Request $request, $id)
     {
-
         $users = JobHistory::findOrFail($id);
         $jobs = Job::all();
         $employess = User::all();
