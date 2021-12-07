@@ -60,9 +60,10 @@
                                                 <h4 class="modal-title"> Add New Project</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('Project')}}" method="post" class="form-horizontal">
+                                                <form action="{{route('Project')}}" method="post"
+                                                      class="form-horizontal">
                                                     @csrf
-                                                    <div class="form-body" >
+                                                    <div class="form-body">
                                                         <div class="form-group">
                                                             @if($errors->any())
                                                                 <h4 class="col-md-3 control-label"
@@ -86,7 +87,8 @@
                                                         <div class="form-group">
                                                             <label class="col-md-3 control-label">Description</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" name="description" class="form-control"
+                                                                <input type="text" name="description"
+                                                                       class="form-control"
                                                                        placeholder="description">
                                                             </div>
                                                         </div>

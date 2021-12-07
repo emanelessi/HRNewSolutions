@@ -59,7 +59,8 @@
                                                     <select name="type" class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @for($i=0;$i<count($type);$i++)
-                                                            <option value="{{$type[$i]}}" {{old($invoice['type'])}} selected  >{{$type[$i]}}</option>
+                                                            <option value="{{$type[$i]}}"
+                                                                    {{old($invoice['type'])}} selected>{{$type[$i]}}</option>
                                                         @endfor
 
                                                     </select>
@@ -87,7 +88,8 @@
                                                 <div class="col-md-4">
                                                     <input type="checkbox" name="is_paid"
                                                            class="form-control"
-                                                           placeholder="Is Paid" @if($invoice['is_paid']==true) checked @endif>
+                                                           placeholder="Is Paid"
+                                                           @if($invoice['is_paid']==true) checked @endif>
                                                 </div>
                                             </div>
                                             <div class="form-actions fluid">

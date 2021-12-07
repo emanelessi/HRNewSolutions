@@ -51,11 +51,11 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
 
-protected function validator(array $data)
+    protected function validator(array $data)
     {
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
@@ -73,15 +73,15 @@ protected function validator(array $data)
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return User|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     protected function create(array $data)
     {
-        $img=$data['photo'];
-        $path='public/storage/employees/';
-        $name=time()+rand(1,1000000000000000).'.'.$img->getClientOriginalExtension();
-        Storage::disk('local')->put($path.$name,file_get_contents($img));
+        $img = $data['photo'];
+        $path = 'public/storage/employees/';
+        $name = time() + rand(1, 1000000000000000) . '.' . $img->getClientOriginalExtension();
+        Storage::disk('local')->put($path . $name, file_get_contents($img));
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -89,7 +89,7 @@ protected function validator(array $data)
             'password' => Hash::make($data['password']),
             'phone_number' => $data['phone_number'],
             'hire_date' => $data['hire_date'],
-            'photo' => 'storage/employees/'.$name,
+            'photo' => 'storage/employees/' . $name,
             'salary' => $data['salary'],
             'job_id' => $data['job_id'],
             'department_id' => $data['department_id'],
@@ -103,6 +103,6 @@ protected function validator(array $data)
     {
         $departments = Department::all();
         $jobs = Job::all();
-        return view('auth.register', compact('departments','jobs'));
+        return view('auth.register', compact('departments', 'jobs'));
     }
 }

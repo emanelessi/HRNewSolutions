@@ -11,13 +11,16 @@ class Project extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsToMany(User::class, 'employee_projects');
     }
+
     public function reward()
     {
         return $this->hasOne(Reward::class, 'project_id');
     }
+
     public function manager()
     {
         return $this->hasOne(User::class, 'manager_id');

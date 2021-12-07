@@ -18,8 +18,8 @@ class HolidayController extends Controller
         $employee_id = Auth::user()->id;
         $holiday = Holiday::where('employee_id', $employee_id)->paginate(1);
         $employees = User::where('id', $employee_id);
-        $types=['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas'];
-        return view('layouts.holiday')->with(compact('holiday','employees','types'));
+        $types = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
+        return view('layouts.holiday')->with(compact('holiday', 'employees', 'types'));
     }
 
 
@@ -44,7 +44,7 @@ class HolidayController extends Controller
     {
         $employee_id = Auth::user()->id;
         $employees = User::where('id', $employee_id);
-        $types=['Sick holiday','annual holiday','Official holiday','Marriage holiday','condolence holiday','for an hour','New Years Eve','Israa and meraaj','Prophets Birthday','Labor Day','Eid al-Fitr','Eid al-Adha','Islamic New Year','Independence Day','Christmas'];
+        $types = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
         return view('layouts.addHoliday')->with('employees', $employees)->with('types', $types);
     }
 

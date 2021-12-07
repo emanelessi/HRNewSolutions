@@ -71,7 +71,8 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Employee</label>
                                                 <div class="col-md-4">
-                                                    <select name="employee_id" value="{{$check['employee_id']}}" class="form-control">
+                                                    <select name="employee_id" value="{{$check['employee_id']}}"
+                                                            class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{ $user->id }}"

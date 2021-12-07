@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'first_name','last_name','email','password','phone_number','hire_date','salary','photo','job_id','department_id','manager_id','remember_token'
+        'first_name', 'last_name', 'email', 'password', 'phone_number', 'hire_date', 'salary', 'photo', 'job_id', 'department_id', 'manager_id', 'remember_token'
     ];
 
     /**
@@ -44,11 +44,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function department()
     {
         return $this->belongsTo(Department::class);
     }
-   public function manager()
+
+    public function manager()
     {
         return $this->belongsTo(User::class, 'manager_id');
     }
@@ -60,12 +62,12 @@ class User extends Authenticatable
 
     public function reward()
     {
-        return $this->hasMany(Reward::class, 'employee_id','id');
+        return $this->hasMany(Reward::class, 'employee_id', 'id');
     }
 
     public function holiday()
     {
-        return $this->hasMany(Holiday::class, 'employee_id','id');
+        return $this->hasMany(Holiday::class, 'employee_id', 'id');
     }
 
     public function checkinout()

@@ -17,7 +17,7 @@ class ProjectController extends Controller
     {
         $project = EmployeeProject::paginate(10);
         $employees = User::all();
-        return view('layouts.admin.project.project')->with(compact('project','employees'));
+        return view('layouts.admin.project.project')->with(compact('project', 'employees'));
     }
 
     public function addProject(Request $request)
@@ -31,7 +31,6 @@ class ProjectController extends Controller
         $project->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
-
 
 
     public function create()

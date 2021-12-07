@@ -14,7 +14,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::paginate(10);
         $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.admin.invoice.invoice')->with(compact('invoices','type'));
+        return view('layouts.admin.invoice.invoice')->with(compact('invoices', 'type'));
     }
 
     public function addInvoice(Request $request)
@@ -32,7 +32,6 @@ class InvoiceController extends Controller
         $invoice->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
-
 
 
     public function create()

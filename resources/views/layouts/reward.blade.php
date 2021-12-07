@@ -10,7 +10,7 @@
     @endif
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-container">
-    @include('includes.memu')
+        @include('includes.memu')
         <div class="page-content-wrapper" style="
     margin-top: -36px;
 ">

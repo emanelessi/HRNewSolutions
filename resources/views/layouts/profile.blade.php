@@ -60,7 +60,8 @@
                                                     <h1 class="font-green sbold uppercase">{{$myprofile->first_name}}
                                                         -{{$myprofile->last_name}}</h1>
                                                     <p>
-                                                        <a href="javascript:;" style="color:#000;"> {{$myprofile->email}} </a>
+                                                        <a href="javascript:;"
+                                                           style="color:#000;"> {{$myprofile->email}} </a>
                                                     </p>
                                                     <ul class="list-inline">
                                                         <li>

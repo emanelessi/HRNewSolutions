@@ -62,7 +62,8 @@
                                                 <h4 class="modal-title"> Add New Job History</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('History')}}" method="post" class="form-horizontal">
+                                                <form action="{{route('History')}}" method="post"
+                                                      class="form-horizontal">
                                                     @csrf
                                                     <div class="form-body" style="padding: 0px">
                                                         <div class="form-group">

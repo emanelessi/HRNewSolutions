@@ -10,11 +10,15 @@ class EmployeeProject extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    public function user(){
-        return $this->belongsTo(User::class,'employee_id');
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'employee_id');
     }
-    public function project(){
-        return $this->belongsTo(Project::class,'project_id');
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project_id');
     }
 
 

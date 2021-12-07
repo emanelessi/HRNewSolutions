@@ -16,7 +16,7 @@ class DepartmentController extends Controller
     {
         $employees = User::all();
         $departments = Department::paginate(10);
-        return view('layouts.admin.department.department')->with(compact('departments','employees'));
+        return view('layouts.admin.department.department')->with(compact('departments', 'employees'));
     }
 
     public function addDepartment(Request $request)
@@ -27,7 +27,6 @@ class DepartmentController extends Controller
         $department->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
-
 
 
     public function create()

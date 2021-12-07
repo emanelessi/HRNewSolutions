@@ -34,6 +34,7 @@ class EmployeeController extends Controller
         return $this->employee->profile($id);
 
     }
+
     public function editProfile(ProfileRequest $request)
     {
         return $this->employee->editProfile($request->all());
@@ -43,6 +44,7 @@ class EmployeeController extends Controller
     {
         return $this->employee->projects();
     }
+
     public function rewards()
     {
         return $this->employee->rewards();
@@ -52,14 +54,17 @@ class EmployeeController extends Controller
     {
         return $this->employee->checkinout($request->all());
     }
+
     public function holiday(HolidayRequest $request)
     {
         return $this->employee->holiday($request->all());
     }
+
     public function holidays()
     {
         return $this->employee->holidays();
     }
+
     public function job()
     {
         return $this->employee->job();
