@@ -64,7 +64,7 @@
                                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                                    data-hover="dropdown" data-close-others="true">
                                                     <img alt="" class="img-circle"
-                                                         src="{{asset(auth()->user()->photo)}}"/>
+                                                         src="{{asset('storage/'.auth()->user()->photo)}}"/>
                                                     <span
                                                         class="username username-hide-on-mobile"> {{ auth()->user()->first_name }} {{auth()->user()->last_name}} </span>
                                                     <i class="fa fa-angle-down"></i>
