@@ -30,7 +30,7 @@
         <div class="container">
             <div class="page-header navbar ">
                 <div class="page-header-inner ">
-                    <div class="page-logo" style="margin-top: -14px;margin-left: -100px;">
+                    <div class="page-logo" style="margin-top: -14px;">
                         <a href="{{ route('home') }}">
                             <img src="http://127.0.0.1:8000/assets/layouts/layout2/img/logo-default.png" alt="logo"
                                  class="logo-default"/>
