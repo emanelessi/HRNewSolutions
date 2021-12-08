@@ -78,7 +78,7 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Duration</label>
                                                     <div class="col-md-8">
-                                                        <input type="datetime-local" name="duration"
+                                                        <input type="number" name="duration"
                                                                class="form-control"
                                                                placeholder="duration">
                                                     </div>
