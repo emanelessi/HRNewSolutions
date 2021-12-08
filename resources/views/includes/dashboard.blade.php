@@ -60,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-xs-12 col-sm-12">
-                    <div class="portlet light ">
+                    <div class="portlet light " style="margin-left: 16px;">
                         <div class="portlet-title tabbable-line">
                             <div class="caption">
                                 <i class="icon-bubbles font-dark hide"></i>
