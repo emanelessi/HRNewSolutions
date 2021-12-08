@@ -84,7 +84,8 @@
                                                     <select name="type" class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @for($i=0;$i<count($type);$i++)
-                                                        <option value="{{$type[$i]}}" {{ (isset($holiday['type']) || old('type'))? "selected":"" }}>{{$type[$i]}}</option>
+                                                            <option
+                                                                value="{{$type[$i]}}" {{ (isset($holiday['type']) || old('type'))? "selected":"" }}>{{$type[$i]}}</option>
                                                         @endfor
 
                                                     </select>
@@ -96,7 +97,8 @@
                                                     <select name="status" class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @for($i=0;$i<count($status);$i++)
-                                                            <option value="{{$status[$i]}}" {{ (isset($holiday['status']) || old('status'))? "selected":"" }}>{{$status[$i]}}</option>
+                                                            <option
+                                                                value="{{$status[$i]}}" {{ (isset($holiday['status']) || old('status'))? "selected":"" }}>{{$status[$i]}}</option>
                                                         @endfor
 
                                                     </select>

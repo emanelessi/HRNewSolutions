@@ -28,7 +28,6 @@ class JobController extends Controller
     }
 
 
-
     public function create()
     {
         $jobs = Job::all();
@@ -62,7 +61,6 @@ class JobController extends Controller
         $job->destroy($id);
         return Redirect::back();
     }
-
 
 
 }

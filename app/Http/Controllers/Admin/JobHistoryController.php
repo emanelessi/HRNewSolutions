@@ -16,9 +16,9 @@ class JobHistoryController extends Controller
     {
         $job_history = JobHistory::paginate(10);
         $job = Job::all();
-        $department= Department::all();
+        $department = Department::all();
         $Employees = User::all();
-        return view('layouts.admin.jobHistory.jobHistory')->with(compact('job_history','job','department','Employees'));
+        return view('layouts.admin.jobHistory.jobHistory')->with(compact('job_history', 'job', 'department', 'Employees'));
     }
 
     public function addHistory(Request $request)
@@ -34,7 +34,6 @@ class JobHistoryController extends Controller
     }
 
 
-
     public function create()
     {
         $jobs_history = JobHistory::all();
@@ -43,6 +42,7 @@ class JobHistoryController extends Controller
         $Employees = User::all();
         return view('layouts.admin.jobHistory.addJobHistory', compact('jobs_history', 'jobs', 'departments', 'Employees'));
     }
+
     public function update(Request $request)
     {
         $id = $request->input('id');
@@ -62,8 +62,8 @@ class JobHistoryController extends Controller
         $job_history = JobHistory::findOrFail($id);
         $jobs = Job::all();
         $employess = User::all();
-        $departments= Department::all();
-        return view('layouts.admin.jobHistory.editJobHistory', compact('job_history','jobs','departments','employess'));
+        $departments = Department::all();
+        return view('layouts.admin.jobHistory.editJobHistory', compact('job_history', 'jobs', 'departments', 'employess'));
 
     }
 

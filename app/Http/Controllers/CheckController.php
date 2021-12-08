@@ -14,16 +14,15 @@ class CheckController extends Controller
 {
     public function addCheck(Request $request)
     {
-        $user_ip=$request->ip();
-        if ($user_ip == '127.0.0.1'){
+        $user_ip = $request->ip();
+        if ($user_ip == '127.0.0.1') {
             $check = new CheckInOut();
             $check->time = $request->input('time');
             $check->type = $request->input('type');
             $check->employee_id = $request->input('employee_id');
             $check->save();
             return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
-        }
-        else{
+        } else {
             return Redirect::back()->withErrors(['You are not in the company', 'The Message']);
         }
 
@@ -33,7 +32,6 @@ class CheckController extends Controller
     {
         return view('layouts.check');
     }
-
 
 
 }

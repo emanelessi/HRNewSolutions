@@ -48,7 +48,7 @@
                                     <div class="col-md-3">
                                         <ul class="list-unstyled profile-nav">
                                             <li>
-                                                <img src="{{asset(auth()->user()->photo)}}"
+                                                <img src="{{asset('storage/'.auth()->user()->photo)}}"
                                                      class="img-responsive pic-bordered" alt=""/>
                                             </li>
                                         </ul>
@@ -60,7 +60,8 @@
                                                     <h1 class="font-green sbold uppercase">{{$myprofile->first_name}}
                                                         -{{$myprofile->last_name}}</h1>
                                                     <p>
-                                                        <a href="javascript:;" style="color:#000;"> {{$myprofile->email}} </a>
+                                                        <a href="javascript:;"
+                                                           style="color:#000;"> {{$myprofile->email}} </a>
                                                     </p>
                                                     <ul class="list-inline">
                                                         <li>

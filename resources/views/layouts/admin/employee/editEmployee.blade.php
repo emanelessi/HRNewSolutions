@@ -59,7 +59,8 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">First Name</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="first_name" class="form-control" value="{{$users['first_name']}}"
+                                                    <input type="text" name="first_name" class="form-control"
+                                                           value="{{$users['first_name']}}"
                                                            placeholder="first name">
                                                     <input type="hidden" name="id" class="form-control"
                                                            value="{{$users['id']}}">
@@ -68,14 +69,16 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Last Name</label>
                                                 <div class="col-md-4">
-                                                    <input type="text" name="last_name" class="form-control" value="{{$users['last_name']}}"
+                                                    <input type="text" name="last_name" class="form-control"
+                                                           value="{{$users['last_name']}}"
                                                            placeholder="Last Name">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Email</label>
                                                 <div class="col-md-4">
-                                                    <input type="email" name="email" class="form-control" value="{{$users['email']}}"
+                                                    <input type="email" name="email" class="form-control"
+                                                           value="{{$users['email']}}"
                                                            placeholder="Email">
                                                 </div>
                                             </div>
@@ -89,28 +92,32 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Phone Number</label>
                                                 <div class="col-md-4">
-                                                    <input type="tel" name="phone_number" class="form-control" value="{{$users['phone_number']}}"
+                                                    <input type="tel" name="phone_number" class="form-control"
+                                                           value="{{$users['phone_number']}}"
                                                            placeholder="Phone Number">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Hire Date</label>
                                                 <div class="col-md-4">
-                                                    <input type="date" name="hire_date" class="form-control" value="{{$users['hire_date']}}"
+                                                    <input type="date" name="hire_date" class="form-control"
+                                                           value="{{$users['hire_date']}}"
                                                            placeholder="Hire Date">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Salary</label>
                                                 <div class="col-md-4">
-                                                    <input type="number" name="salary" class="form-control" value="{{$users['salary']}}"
+                                                    <input type="number" name="salary" class="form-control"
+                                                           value="{{$users['salary']}}"
                                                            placeholder="Salary">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Photo</label>
                                                 <div class="col-md-4">
-                                                    <input type="file" name="photo" class="form-control" value="{{$users['photo']}}"
+                                                    <input type="file" name="photo" class="form-control"
+                                                           value="{{$users['photo']}}"
                                                            placeholder="Photo">
                                                 </div>
                                             </div>
@@ -141,7 +148,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Manager</label>
                                                 <div class="col-md-4">
-                                                    <select name="manager_id" class="form-control" >
+                                                    <select name="manager_id" class="form-control">
                                                         <option value=""></option>
                                                         {{--                                            @foreach ($employees as $employee)--}}
                                                         {{--                                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}

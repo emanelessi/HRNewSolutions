@@ -34,9 +34,12 @@ class AdminEloquent
     {
         $this->model = $admin;
     }
-    public function home(){
+
+    public function home()
+    {
         dd('You are active');
     }
+
     public function employees()
     {
         $page_number = intval(\request()->get('page_number'));
@@ -47,13 +50,15 @@ class AdminEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', employeesResource::collection($employee), $page_number, $total_pages, $total_records);
     }
+
     public function employee(array $data)
     {
         $data['password'] = bcrypt($data['password']);
         $employee = User::create($data);
         return response_api(true, 200, 'Successfully Added!', $employee->fresh());
     }
-    public function editEmployee(array $data,$id)
+
+    public function editEmployee(array $data, $id)
     {
         $employee = User::find($id);
         $employee->first_name = $data['first_name'];
@@ -88,12 +93,15 @@ class AdminEloquent
         $employee->save();
         return response_api(true, 200, 'Successfully Updated!', ['profile' => new profileResource($employee)]);
     }
-    public function deleteEmployee($id){
+
+    public function deleteEmployee($id)
+    {
         $employee = User::findOrFail($id);
         $employee->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
+
     public function holidays()
     {
         $page_number = intval(\request()->get('page_number'));
@@ -104,7 +112,8 @@ class AdminEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', holidayResource::collection($holiday), $page_number, $total_pages, $total_records);
     }
-    public function holiday(array $data,$id)
+
+    public function holiday(array $data, $id)
     {
         $holiday = new Holiday();
         $holiday->duration = $data['duration'];
@@ -116,13 +125,16 @@ class AdminEloquent
         $holiday->save();
         return response_api(true, 200, 'Successfully Added!', ['holiday' => new holidayResource($holiday)]);
     }
-    public function deleteHoliday($id){
+
+    public function deleteHoliday($id)
+    {
         $holiday = Holiday::findOrFail($id);
         $holiday->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editHoliday(array $data,$id)
+
+    public function editHoliday(array $data, $id)
     {
         $holiday = Holiday::find($id);
         if ($data['duration'] != null) {
@@ -144,6 +156,7 @@ class AdminEloquent
         $holiday->save();
         return response_api(true, 200, 'Successfully Updated!', ['holiday' => new holidayResource($holiday)]);
     }
+
     public function jobs()
     {
         $page_number = intval(\request()->get('page_number'));
@@ -154,6 +167,7 @@ class AdminEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', jobsResource::collection($job), $page_number, $total_pages, $total_records);
     }
+
     public function projects()
     {
         $page_number = intval(\request()->get('page_number'));
@@ -164,16 +178,18 @@ class AdminEloquent
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', projectsResource::collection($project), $page_number, $total_pages, $total_records);
     }
+
     public function rewards()
     {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
         $total_records = Reward::count();
         $total_pages = ceil($total_records / $page_size);
-        $myrewards= Reward::skip(($page_number - 1) * $page_size)
+        $myrewards = Reward::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', rewardResource::collection($myrewards), $page_number, $total_pages, $total_records);
     }
+
     public function job(array $data)
     {
         $job = new Job();
@@ -183,13 +199,16 @@ class AdminEloquent
         $job->save();
         return response_api(true, 200, 'Successfully Added!', ['job' => new jobResource($job)]);
     }
-    public function deleteJob($id){
+
+    public function deleteJob($id)
+    {
         $job = Job::findOrFail($id);
         $job->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editJob(array $data,$id)
+
+    public function editJob(array $data, $id)
     {
         $job = Job::find($id);
         if ($data['title'] != null) {
@@ -204,22 +223,24 @@ class AdminEloquent
         $job->save();
         return response_api(true, 200, 'Successfully Updated!', ['job' => new jobResource($job)]);
     }
-    public function project(array $data,$id)
+
+    public function project(array $data, $id)
     {
         $project = new Project();
         $project->name = $data['name'];
         $project->salary = $data['salary'];
         $project->description = $data['description'];
-        $project->manager_id  = null;
+        $project->manager_id = null;
         $project->members = $data['members'];
         $project->save();
         $employeeproject = new EmployeeProject();
-        $employeeproject->project_id  = $project->id;
+        $employeeproject->project_id = $project->id;
         $employeeproject->employee_id = $id;
         $employeeproject->save();
         return response_api(true, 200, 'Successfully Added!', ['project' => new projectsResource($employeeproject)]);
     }
-    public function editProject(array $data,$id)
+
+    public function editProject(array $data, $id)
     {
         $project = Project::find($id);
         if ($data['name'] != null) {
@@ -241,7 +262,7 @@ class AdminEloquent
 
 
         if ($data['employee_id'] != null) {
-            $employeeproject = EmployeeProject::where('project_id',$id)->first();
+            $employeeproject = EmployeeProject::where('project_id', $id)->first();
             $employeeproject->employee_id = $data['employee_id'];
             $employeeproject->save();
             return response_api(true, 200, 'Successfully Updated!', new projectsResource($employeeproject));
@@ -250,31 +271,37 @@ class AdminEloquent
 
         return response_api(true, 200, 'Successfully Updated!', ['project' => new projectResource($project)]);
     }
-    public function deleteProject($id){
+
+    public function deleteProject($id)
+    {
         $project = Project::findOrFail($id);
         $project->delete();
-        $employeeproject = EmployeeProject::where('project_id',$id)->first();
+        $employeeproject = EmployeeProject::where('project_id', $id)->first();
         $employeeproject->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function reward(array $data,$id)
+
+    public function reward(array $data, $id)
     {
         $reward = new Reward();
         $reward->cost = $data['cost'];
         $reward->note = $data['note'];
-        $reward->employee_id  = $id;
-        $reward->project_id   = $data['project_id'];
+        $reward->employee_id = $id;
+        $reward->project_id = $data['project_id'];
         $reward->save();
         return response_api(true, 200, 'Successfully Added!', ['reward' => new rewardResource($reward)]);
     }
-    public function deleteReward($id){
+
+    public function deleteReward($id)
+    {
         $reward = Reward::findOrFail($id);
         $reward->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editReward(array $data,$id)
+
+    public function editReward(array $data, $id)
     {
         $reward = Reward::find($id);
         if ($data['cost'] != null) {
@@ -292,34 +319,39 @@ class AdminEloquent
         $reward->save();
         return response_api(true, 200, 'Successfully Updated!', ['reward' => new rewardResource($reward)]);
     }
+
     public function jobhistories()
     {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
         $total_records = JobHistory::count();
         $total_pages = ceil($total_records / $page_size);
-        $JobHistory= JobHistory::skip(($page_number - 1) * $page_size)
+        $JobHistory = JobHistory::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', jobHistoryResource::collection($JobHistory), $page_number, $total_pages, $total_records);
     }
-    public function jobhistory(array $data,$id)
+
+    public function jobhistory(array $data, $id)
     {
         $jobhistory = new JobHistory();
         $jobhistory->start_date = $data['start_date'];
         $jobhistory->end_date = $data['end_date'];
-        $jobhistory->employee_id  = $id;
+        $jobhistory->employee_id = $id;
         $jobhistory->job_id = $data['job_id'];
-        $jobhistory->department_id  = $data['department_id'];
+        $jobhistory->department_id = $data['department_id'];
         $jobhistory->save();
         return response_api(true, 200, 'Successfully Added!', ['jobhistory' => new jobHistoryResource($jobhistory)]);
     }
-    public function deleteJobhistory($id){
+
+    public function deleteJobhistory($id)
+    {
         $jobhistory = JobHistory::findOrFail($id);
         $jobhistory->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editJobhistory(array $data,$id)
+
+    public function editJobhistory(array $data, $id)
     {
         $jobhistory = JobHistory::find($id);
         if ($data['start_date'] != null) {
@@ -340,32 +372,37 @@ class AdminEloquent
         $jobhistory->save();
         return response_api(true, 200, 'Successfully Updated!', ['jobhistory' => new jobHistoryResource($jobhistory)]);
     }
+
     public function checkinouts()
     {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
         $total_records = CheckInOut::count();
         $total_pages = ceil($total_records / $page_size);
-        $checkinouts= CheckInOut::skip(($page_number - 1) * $page_size)
+        $checkinouts = CheckInOut::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', checkinoutResource::collection($checkinouts), $page_number, $total_pages, $total_records);
     }
-    public function checkinout(array $data,$id)
+
+    public function checkinout(array $data, $id)
     {
         $checkinout = new CheckInOut();
         $checkinout->time = $data['time'];
         $checkinout->type = $data['type'];
-        $checkinout->employee_id  = $id;
+        $checkinout->employee_id = $id;
         $checkinout->save();
         return response_api(true, 200, 'Successfully Added!', ['checkinout' => new checkinoutResource($checkinout)]);
     }
-    public function deleteCheckinout($id){
+
+    public function deleteCheckinout($id)
+    {
         $checkinout = CheckInOut::findOrFail($id);
         $checkinout->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editCheckinout(array $data,$id)
+
+    public function editCheckinout(array $data, $id)
     {
         $checkinout = CheckInOut::find($id);
         if ($data['time'] != null) {
@@ -380,38 +417,43 @@ class AdminEloquent
         $checkinout->save();
         return response_api(true, 200, 'Successfully Updated!', ['checkinout' => new checkinoutResource($checkinout)]);
     }
+
     public function departments()
     {
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
         $total_records = Department::count();
         $total_pages = ceil($total_records / $page_size);
-        $departments= Department::skip(($page_number - 1) * $page_size)
+        $departments = Department::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         return response_api(true, 200, 'Success', departmentResource::collection($departments), $page_number, $total_pages, $total_records);
     }
-    public function department(array $data,$id)
+
+    public function department(array $data, $id)
     {
-        $department= new Department();
+        $department = new Department();
         $department->name = $data['name'];
-        $department->manager_id  =  $id;
+        $department->manager_id = $id;
         $department->save();
         return response_api(true, 200, 'Successfully Added!', ['department' => new departmentResource($department)]);
     }
-    public function deleteDepartment($id){
+
+    public function deleteDepartment($id)
+    {
         $department = Department::findOrFail($id);
         $department->delete();
-        return response_api(true, 200, 'Successfully Deleted!','');
+        return response_api(true, 200, 'Successfully Deleted!', '');
 
     }
-    public function editDepartment(array $data,$id)
+
+    public function editDepartment(array $data, $id)
     {
         $department = Department::find($id);
         if ($data['name'] != null) {
             $department->name = $data['name'];
         }
         if ($data['manager_id'] != null) {
-            $department->manager_id  = $data['manager_id'];
+            $department->manager_id = $data['manager_id'];
         }
         $department->save();
         return response_api(true, 200, 'Successfully Updated!', ['department' => new departmentResource($department)]);

@@ -16,7 +16,7 @@ class CheckController extends Controller
     {
         $checks = CheckInOut::paginate(10);
         $employees = User::all();
-        return view('layouts.admin.check.check')->with(compact('checks','employees'));
+        return view('layouts.admin.check.check')->with(compact('checks', 'employees'));
     }
 
     public function addCheck(Request $request)
@@ -28,7 +28,6 @@ class CheckController extends Controller
         $check->save();
         return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
-
 
 
     public function create()

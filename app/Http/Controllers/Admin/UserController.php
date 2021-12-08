@@ -29,15 +29,16 @@ class UserController extends Controller
         $rewards = Reward::all();
         return view('layouts.admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
     }
+
     public function home()
     {
-        $users=User::all();
-        $departments=Department::paginate(10);
-        $projects=EmployeeProject::paginate(10);
-        $rewards=Reward::paginate(10);
-        $holidays=Holiday::paginate(10);
-        $jobs=Job::paginate(10);
-        return view('layouts.admin.home')->with('users',$users)->with('departments',$departments)->with('projects',$projects)->with('rewards',$rewards)->with('holidays',$holidays)->with('jobs',$jobs);
+        $users = User::all();
+        $departments = Department::paginate(10);
+        $projects = EmployeeProject::paginate(10);
+        $rewards = Reward::paginate(10);
+        $holidays = Holiday::paginate(10);
+        $jobs = Job::paginate(10);
+        return view('layouts.admin.home')->with('users', $users)->with('departments', $departments)->with('projects', $projects)->with('rewards', $rewards)->with('holidays', $holidays)->with('jobs', $jobs);
     }
 
     public function addEmployee(AddEmployeeRequest $request)
@@ -67,7 +68,6 @@ class UserController extends Controller
     }
 
 
-
     public function update(Request $request)
     {
         $id = $request->input('id');
@@ -92,7 +92,7 @@ class UserController extends Controller
         $users = User::findOrFail($id);
         $Departments = Department::all();
         $Jobs = Job::all();
-        return view('layouts.admin.employee.editEmployee', compact('users','Departments','Jobs'));
+        return view('layouts.admin.employee.editEmployee', compact('users', 'Departments', 'Jobs'));
     }
 
 

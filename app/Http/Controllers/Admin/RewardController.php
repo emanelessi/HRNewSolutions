@@ -20,7 +20,7 @@ class RewardController extends Controller
         $reward = Reward::paginate(10);
         $employees = User::all();
         $projects = EmployeeProject::all();
-        return view('layouts.admin.reward.reward')->with(compact('reward','employees','projects'));
+        return view('layouts.admin.reward.reward')->with(compact('reward', 'employees', 'projects'));
     }
 
     public function addReward(Request $request)
@@ -39,12 +39,11 @@ class RewardController extends Controller
     {
         $employees = User::all();
         $projects = EmployeeProject::all();
-        return view('layouts.admin.reward.addReward')->with(compact('employees','projects'));
+        return view('layouts.admin.reward.addReward')->with(compact('employees', 'projects'));
     }
 
     public function update(Request $request)
     {
-//        dd($request);
         $id = $request->input('id');
         $reward = Reward::find($id);
         $reward->cost = $request->input('cost');
@@ -55,13 +54,14 @@ class RewardController extends Controller
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
 
     }
-    public function edit(Request $request,$id)
+
+    public function edit(Request $request, $id)
     {
 
         $reward = Reward::findOrFail($id);
         $projects = Project::all();
         $users = User::all();
-        return view('layouts.admin.reward.editReward', compact('users','projects','reward'));
+        return view('layouts.admin.reward.editReward', compact('users', 'projects', 'reward'));
 
     }
 

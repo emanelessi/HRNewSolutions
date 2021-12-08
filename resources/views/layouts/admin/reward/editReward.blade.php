@@ -90,8 +90,8 @@
                                                     <select name="project_id" class="form-control">
                                                         <option value="">-- Select One --</option>
                                                         @foreach($projects as $project)
-                                                        <option
-                                                            value="{{ $project->id }}">{{ $project->name }} </option>
+                                                            <option
+                                                                value="{{ $project->id }}">{{ $project->name }} </option>
                                                         @endforeach
                                                     </select>
 

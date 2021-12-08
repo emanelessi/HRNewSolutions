@@ -33,133 +33,165 @@ class AdminController extends Controller
     {
         return $this->admin->home();
     }
+
     public function employees()
     {
         return $this->admin->employees();
     }
+
     public function employee(EmployeeRequest $request)
     {
         return $this->admin->employee($request->all());
     }
-    public function editEmployee(editEmployeeRequest $request,$id)
+
+    public function editEmployee(editEmployeeRequest $request, $id)
     {
-        return $this->admin->editEmployee($request->all(),$id);
+        return $this->admin->editEmployee($request->all(), $id);
     }
+
     public function deleteEmployee($id)
     {
         return $this->admin->deleteEmployee($id);
     }
+
     public function holidays()
     {
         return $this->admin->holidays();
     }
-    public function holiday(HolidayRequest $request,$id)
+
+    public function holiday(HolidayRequest $request, $id)
     {
-        return $this->admin->holiday($request->all(),$id);
+        return $this->admin->holiday($request->all(), $id);
     }
+
     public function deleteHoliday($id)
     {
         return $this->admin->deleteHoliday($id);
     }
-    public function editHoliday(editHolidayRequest $request,$id)
+
+    public function editHoliday(editHolidayRequest $request, $id)
     {
-        return $this->admin->editHoliday($request->all(),$id);
+        return $this->admin->editHoliday($request->all(), $id);
     }
+
     public function jobs()
     {
         return $this->admin->jobs();
     }
+
     public function projects()
     {
         return $this->admin->projects();
     }
+
     public function rewards()
     {
         return $this->admin->rewards();
     }
+
     public function job(jobRequest $request)
     {
         return $this->admin->job($request->all());
     }
+
     public function deleteJob($id)
     {
         return $this->admin->deleteJob($id);
     }
-    public function editJob(editJobRequest $request,$id)
+
+    public function editJob(editJobRequest $request, $id)
     {
-        return $this->admin->editJob($request->all(),$id);
+        return $this->admin->editJob($request->all(), $id);
     }
-    public function project(projectRequest $request,$id)
+
+    public function project(projectRequest $request, $id)
     {
-        return $this->admin->project($request->all(),$id);
+        return $this->admin->project($request->all(), $id);
     }
+
     public function deleteProject($id)
     {
         return $this->admin->deleteProject($id);
     }
-    public function editProject(editProjectRequest $request,$id)
+
+    public function editProject(editProjectRequest $request, $id)
     {
-        return $this->admin->editProject($request->all(),$id);
+        return $this->admin->editProject($request->all(), $id);
     }
-    public function reward(rewardRequest $request,$id)
+
+    public function reward(rewardRequest $request, $id)
     {
-        return $this->admin->reward($request->all(),$id);
+        return $this->admin->reward($request->all(), $id);
     }
+
     public function deleteReward($id)
     {
         return $this->admin->deleteReward($id);
     }
-    public function editReward(editRewardRequest $request,$id)
+
+    public function editReward(editRewardRequest $request, $id)
     {
-        return $this->admin->editReward($request->all(),$id);
+        return $this->admin->editReward($request->all(), $id);
     }
+
     public function jobhistories()
     {
         return $this->admin->jobhistories();
     }
-    public function jobhistory(jobhistoryRequest $request,$id)
+
+    public function jobhistory(jobhistoryRequest $request, $id)
     {
-        return $this->admin->jobhistory($request->all(),$id);
+        return $this->admin->jobhistory($request->all(), $id);
     }
+
     public function deleteJobhistory($id)
     {
         return $this->admin->deleteJobhistory($id);
     }
-    public function editJobhistory(editJobhistoryRequest $request,$id)
+
+    public function editJobhistory(editJobhistoryRequest $request, $id)
     {
-        return $this->admin->editJobhistory($request->all(),$id);
+        return $this->admin->editJobhistory($request->all(), $id);
     }
+
     public function checkinouts()
     {
         return $this->admin->checkinouts();
     }
-    public function checkinout(CheckInOutRequest $request,$id)
+
+    public function checkinout(CheckInOutRequest $request, $id)
     {
-        return $this->admin->checkinout($request->all(),$id);
+        return $this->admin->checkinout($request->all(), $id);
     }
+
     public function deleteCheckinout($id)
     {
         return $this->admin->deleteCheckinout($id);
     }
-    public function editCheckinout(editCheckinoutRequest $request,$id)
+
+    public function editCheckinout(editCheckinoutRequest $request, $id)
     {
-        return $this->admin->editCheckinout($request->all(),$id);
+        return $this->admin->editCheckinout($request->all(), $id);
     }
+
     public function departments()
     {
         return $this->admin->departments();
     }
-    public function department(departmentRequest $request,$id)
+
+    public function department(departmentRequest $request, $id)
     {
-        return $this->admin->department($request->all(),$id);
+        return $this->admin->department($request->all(), $id);
     }
+
     public function deleteDepartment($id)
     {
         return $this->admin->deleteDepartment($id);
     }
-    public function editDepartment(editDepartmentRequest $request,$id)
+
+    public function editDepartment(editDepartmentRequest $request, $id)
     {
-        return $this->admin->editDepartment($request->all(),$id);
+        return $this->admin->editDepartment($request->all(), $id);
     }
 
 }

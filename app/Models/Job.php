@@ -11,7 +11,8 @@ class Job extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function user(){
-        return $this->hasMany(User::class,'job_id','id');
+    public function user()
+    {
+        return $this->hasMany(User::class, 'job_id', 'id');
     }
 }
