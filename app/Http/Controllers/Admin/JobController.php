@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Job;
+use App\Repositories\Web\Admin\JobEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class JobController extends Controller
 {
+    public function __construct(JobEloquent $jobEloquent)
+    {
+        $this->job = $jobEloquent;
+    }
     public function index()
     {
         $job = Job::paginate(10);

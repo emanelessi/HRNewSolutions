@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\User;
+use App\Repositories\Web\Admin\ProjectEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
 {
+    public function __construct(ProjectEloquent $projectEloquent)
+    {
+        $this->project = $projectEloquent;
+    }
     public function index()
     {
         $project = EmployeeProject::paginate(10);

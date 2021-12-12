@@ -7,11 +7,17 @@ use App\Models\Department;
 use App\Models\Job;
 use App\Models\JobHistory;
 use App\Models\User;
+use App\Repositories\Web\Admin\JobEloquent;
+use App\Repositories\Web\Admin\JobHistoryEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class JobHistoryController extends Controller
 {
+    public function __construct(JobHistoryEloquent $jobHistoryEloquent)
+    {
+        $this->jobHistory = $jobHistoryEloquent;
+    }
     public function index()
     {
         $job_history = JobHistory::paginate(10);

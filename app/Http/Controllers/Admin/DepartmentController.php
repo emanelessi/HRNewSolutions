@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\User;
+use App\Repositories\Web\Admin\DepartmentEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class DepartmentController extends Controller
 {
+    public function __construct(DepartmentEloquent $departmentEloquent)
+    {
+        $this->department = $departmentEloquent;
+    }
     public function index()
     {
         $employees = User::all();

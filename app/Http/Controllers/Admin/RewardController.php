@@ -8,6 +8,7 @@ use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\Reward;
 use App\Models\User;
+use App\Repositories\Web\Admin\RewardEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class RewardController extends Controller
 {
+    public function __construct(RewardEloquent $rewardEloquent)
+    {
+        $this->reward = $rewardEloquent;
+    }
     public function index()
     {
         $reward = Reward::paginate(10);
