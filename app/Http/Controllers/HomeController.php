@@ -8,6 +8,7 @@ use App\Models\Holiday;
 use App\Models\Project;
 use App\Models\Reward;
 use App\Models\User;
+use App\Repositories\Web\EmployeeEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,9 +19,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(EmployeeEloquent $employeeEloquent)
     {
         $this->middleware('auth');
+        $this->employee = $employeeEloquent;
     }
 
     /**
@@ -30,10 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $holidays = Holiday::where('employee_id', $user_id)->paginate(5);
-        $projects = EmployeeProject::where('employee_id', $user_id)->paginate(5);
-        $rewards = Reward::where('employee_id', $user_id)->paginate(5);
-        return view('home')->with('holidays', $holidays)->with('projects', $projects)->with('rewards', $rewards);
+        return $this->employee->index();
     }
+
 }
