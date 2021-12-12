@@ -14,7 +14,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::paginate(10);
         $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.admin.invoice.invoice')->with(compact('invoices', 'type'));
+        return view('layouts.Admin.invoice.invoice')->with(compact('invoices', 'type'));
     }
 
     public function addInvoice(Request $request)
@@ -38,7 +38,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::all();
         $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.admin.invoice.addInvoice')->with(compact('invoices', 'type'));
+        return view('layouts.Admin.invoice.addInvoice')->with(compact('invoices', 'type'));
     }
 
     public function update(Request $request)
@@ -64,7 +64,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::findOrFail($id);
         $type = ['internet', 'electricity', 'services', 'communications'];
         $employees = User::all();
-        return view('layouts.admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
+        return view('layouts.Admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
 
     }
 

@@ -14,7 +14,7 @@ class JobController extends Controller
     public function index()
     {
         $job = Job::paginate(10);
-        return view('layouts.admin.job.job')->with(compact('job'));
+        return view('layouts.Admin.job.job')->with(compact('job'));
     }
 
     public function addJob(Request $request)
@@ -31,7 +31,7 @@ class JobController extends Controller
     public function create()
     {
         $jobs = Job::all();
-        return view('layouts.admin.job.addJob')->with('jobs', $jobs);
+        return view('layouts.Admin.job.addJob')->with('jobs', $jobs);
     }
 
     public function update(Request $request)
@@ -50,7 +50,7 @@ class JobController extends Controller
     {
 
         $users = Job::findOrFail($id);
-        return view('layouts.admin.job.editJob', compact('users'));
+        return view('layouts.Admin.job.editJob', compact('users'));
 
     }
 

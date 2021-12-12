@@ -40,6 +40,7 @@ class HolidayController extends Controller
     public function create()
     {
         return $this->holiday->create();
+
     }
 
 

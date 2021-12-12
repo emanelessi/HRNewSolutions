@@ -17,7 +17,7 @@ class ProjectController extends Controller
     {
         $project = EmployeeProject::paginate(10);
         $employees = User::all();
-        return view('layouts.admin.project.project')->with(compact('project', 'employees'));
+        return view('layouts.Admin.project.project')->with(compact('project', 'employees'));
     }
 
     public function addProject(Request $request)
@@ -36,7 +36,7 @@ class ProjectController extends Controller
     public function create()
     {
         $employees = User::all();
-        return view('layouts.admin.project.addProject')->with('employees', $employees);
+        return view('layouts.Admin.project.addProject')->with('employees', $employees);
     }
 
     public function update(Request $request)
@@ -56,7 +56,7 @@ class ProjectController extends Controller
     public function edit(Request $request, $id)
     {
         $users = Project::findOrFail($id);
-        return view('layouts.admin.project.editProject', compact('users'));
+        return view('layouts.Admin.project.editProject', compact('users'));
 
     }
 

@@ -4,103 +4,55 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AddEmployeeRequest;
-use App\Models\Department;
-use App\Models\EmployeeProject;
-use App\Models\Holiday;
-use App\Models\Job;
-use App\Models\Project;
-use App\Models\Reward;
-use App\Models\User;
+use App\Http\Requests\Employee\editEmployeeRequest;
+use App\Http\Requests\Employee\EmployeeRequest;
+use App\Repositories\Web\Admin\EmployeeEloquent;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
+    public function __construct(EmployeeEloquent $EmployeeEloquent)
+    {
+        $this->Employee = $EmployeeEloquent;
+    }
+
     public function index()
     {
-        $employee = User::paginate(10);
-//        dd($employee->items()[0]->department);
-        $departments = Department::all();
-        $jobs = Job::all();
-        $users = User::all();
-        $projects = EmployeeProject::all();
-        $rewards = Reward::all();
-        return view('layouts.admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
+        return $this->Employee->index();
     }
 
     public function home()
     {
-        $users = User::all();
-        $departments = Department::paginate(10);
-        $projects = EmployeeProject::paginate(10);
-        $rewards = Reward::paginate(10);
-        $holidays = Holiday::paginate(10);
-        $jobs = Job::paginate(10);
-        return view('layouts.admin.home')->with('users', $users)->with('departments', $departments)->with('projects', $projects)->with('rewards', $rewards)->with('holidays', $holidays)->with('jobs', $jobs);
+        return $this->Employee->home();
     }
 
     public function addEmployee(AddEmployeeRequest $request)
     {
-        $employee = new User();
-        $employee->first_name = $request->input('first_name');
-        $employee->last_name = $request->input('last_name');
-        $employee->email = $request->input('email');
-        $employee->password = $request->input('password');
-        $employee->phone_number = $request->input('phone_number');
-        $employee->hire_date = $request->input('hire_date');
-        $employee->salary = $request->input('salary');
-        $employee->photo = $request->input('photo');
-        $employee->department_id = $request->input('department_id');
-        $employee->job_id = $request->input('job_id');
-        $employee->manager_id = $request->input('manager_id');
-        $employee->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->Employee->addEmployee($request->all());
+
     }
 
     public function create()
     {
-        $employees = User::all();
-        $departments = Department::all();
-        $jobs = Job::all();
-        return view('layouts.admin.employee.addEmployee')->with(compact('employees', 'departments', 'jobs'));
+        return $this->Employee->create();
     }
 
 
-    public function update(Request $request)
+    public function update(editEmployeeRequest $request)
     {
-        $id = $request->input('id');
-        $users = User::find($id);
-        $users->first_name = $request->input('first_name');
-        $users->last_name = $request->input('last_name');
-        $users->email = $request->input('email');
-        $users->password = bcrypt($request->input('password'));
-        $users->phone_number = $request->input('phone_number');
-        $users->hire_date = $request->input('hire_date');
-        $users->salary = $request->input('salary');
-        $users->photo = $request->input('photo');
-        $users->department_id = $request->input('department_id');
-        $users->job_id = $request->input('job_id');
-        $users->manager_id = $request->input('manager_id');
-        $users->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+        return $this->Employee->update($request->all());
+
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $users = User::findOrFail($id);
-        $Departments = Department::all();
-        $Jobs = Job::all();
-        return view('layouts.admin.employee.editEmployee', compact('users', 'Departments', 'Jobs'));
+        return $this->Employee->edit($id);
     }
-
 
     public function destroy($id)
     {
-        $movie = User::find($id);
-        $movie->destroy($id);
-        return Redirect::back();
+        return $this->Employee->destroy($id);
+
     }
 
 

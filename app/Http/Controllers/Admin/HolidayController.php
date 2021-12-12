@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\HolidayRequest;
 use App\Models\Holiday;
 use App\Models\User;
+use App\Repositories\Web\Admin\HolidayEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,68 +14,39 @@ use Illuminate\Support\Facades\Redirect;
 
 class HolidayController extends Controller
 {
+    public function __construct(HolidayEloquent $HolidayEloquent)
+    {
+        $this->holiday = $HolidayEloquent;
+    }
+
     public function index()
     {
-        $holidays = Holiday::paginate(10);
-        $employee = User::all();
-        $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
-        $status = ['pending', 'approve', 'rejected'];
-        return view('layouts.admin.holiday.holiday')->with(compact('holidays', 'employee', 'type', 'status'));
+        return $this->holiday->index();
     }
 
-    public function addholiday(Request $request)
+    public function addholiday(HolidayRequest $request)
     {
-        $holiday = new Holiday();
-        $holiday->duration = $request->input('duration');
-        $holiday->description = $request->input('description');
-        $holiday->date = $request->input('date');
-        $holiday->type = $request->input('type');
-        $holiday->employee_id = $request->input('employee_id');
-        $holiday->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->holiday->addholiday($request->all());
     }
-
 
     public function create()
     {
-        $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
-        $status = ['pending', 'approve', 'rejected'];
-        $employees = User::all();
-        return view('layouts.admin.holiday.addHoliday')->with(compact('type', 'status', 'employees'));
+        return $this->holiday->create();
     }
 
-    public function update(Request $request)
+    public function update(HolidayRequest $request)
     {
-        $id = $request->input('id');
-        $holiday = Holiday::find($id);
-        $holiday->duration = $request->input('duration');
-        $holiday->description = $request->input('description');
-        $holiday->date = $request->input('date');
-        $holiday->type = $request->input('type');
-        $holiday->status = $request->input('status');
-        $holiday->employee_id = $request->input('employee_id');
-        $holiday->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
+        return $this->holiday->update($request->all());
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-
-        $holiday = Holiday::findOrFail($id);
-        $type = ['Sick holiday', 'annual holiday', 'Official holiday', 'Marriage holiday', 'condolence holiday', 'for an hour', 'New Years Eve', 'Israa and meraaj', 'Prophets Birthday', 'Labor Day', 'Eid al-Fitr', 'Eid al-Adha', 'Islamic New Year', 'Independence Day', 'Christmas'];
-        $status = ['pending', 'approve', 'rejected'];
-        $employees = User::all();
-        return view('layouts.admin.holiday.editHoliday', compact('holiday', 'type', 'status', 'employees'));
-
+        return $this->holiday->edit($id);
     }
-
 
     public function destroy($id)
     {
-        $holiday = Holiday::find($id);
-        $holiday->destroy($id);
-        return Redirect::back();
+        return $this->holiday->destroy($id);
     }
 
 }
