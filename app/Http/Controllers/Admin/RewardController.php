@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\editRewardRequest;
 use App\Http\Requests\Employee\ProfileRequest;
+use App\Http\Requests\Employee\rewardRequest;
 use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\Reward;
@@ -20,62 +22,36 @@ class RewardController extends Controller
     {
         $this->reward = $rewardEloquent;
     }
+
     public function index()
     {
-        $reward = Reward::paginate(10);
-        $employees = User::all();
-        $projects = EmployeeProject::all();
-        return view('layouts.Admin.reward.reward')->with(compact('reward', 'employees', 'projects'));
+        return $this->reward->index();
     }
 
-    public function addReward(Request $request)
+    public function addReward(rewardRequest $request)
     {
-        $reward = new Reward();
-        $reward->cost = $request->input('cost');
-        $reward->note = $request->input('note');
-        $reward->employee_id = $request->input('employee_id');
-        $reward->project_id = $request->input('project_id');
-        $reward->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->reward->addReward($request->all());
     }
-
 
     public function create()
     {
-        $employees = User::all();
-        $projects = EmployeeProject::all();
-        return view('layouts.Admin.reward.addReward')->with(compact('employees', 'projects'));
+        return $this->reward->create();
     }
 
-    public function update(Request $request)
+    public function update(editRewardRequest $request)
     {
-        $id = $request->input('id');
-        $reward = Reward::find($id);
-        $reward->cost = $request->input('cost');
-        $reward->note = $request->input('note');
-        $reward->employee_id = $request->input('employee_id');
-        $reward->project_id = $request->input('project_id');
-        $reward->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
+        return $this->reward->update($request->all());
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-
-        $reward = Reward::findOrFail($id);
-        $projects = Project::all();
-        $users = User::all();
-        return view('layouts.Admin.reward.editReward', compact('users', 'projects', 'reward'));
-
+        return $this->reward->edit($id);
     }
 
 
     public function destroy($id)
     {
-        $reward = Reward::find($id);
-        $reward->destroy($id);
-        return Redirect::back();
+        return $this->reward->destroy($id);
     }
 
 }

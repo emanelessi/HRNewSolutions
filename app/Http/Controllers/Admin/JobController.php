@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\editJobRequest;
+use App\Http\Requests\Employee\jobRequest;
 use App\Models\Job;
 use App\Repositories\Web\Admin\JobEloquent;
 use Illuminate\Http\Request;
@@ -16,55 +18,35 @@ class JobController extends Controller
     {
         $this->job = $jobEloquent;
     }
+
     public function index()
     {
-        $job = Job::paginate(10);
-        return view('layouts.Admin.job.job')->with(compact('job'));
+        return $this->job->index();
     }
 
-    public function addJob(Request $request)
+    public function addJob(jobRequest $request)
     {
-        $job = new Job();
-        $job->title = $request->input('title');
-        $job->description = $request->input('description');
-        $job->salary = $request->input('salary');
-        $job->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->job->addJob($request->all());
     }
-
 
     public function create()
     {
-        $jobs = Job::all();
-        return view('layouts.Admin.job.addJob')->with('jobs', $jobs);
+        return $this->job->create();
     }
 
-    public function update(Request $request)
+    public function update(editJobRequest $request)
     {
-        $id = $request->input('id');
-        $job = Job::find($id);
-        $job->title = $request->input('title');
-        $job->description = $request->input('description');
-        $job->salary = $request->input('salary');
-        $job->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
+        return $this->job->update($request->all());
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-
-        $users = Job::findOrFail($id);
-        return view('layouts.Admin.job.editJob', compact('users'));
-
+        return $this->job->edit($id);
     }
-
 
     public function destroy($id)
     {
-        $job = Job::find($id);
-        $job->destroy($id);
-        return Redirect::back();
+        return $this->job->destroy($id);
     }
 
 

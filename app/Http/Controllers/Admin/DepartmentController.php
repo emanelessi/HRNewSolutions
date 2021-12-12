@@ -19,50 +19,40 @@ class DepartmentController extends Controller
     }
     public function index()
     {
-        $employees = User::all();
-        $departments = Department::paginate(10);
-        return view('layouts.Admin.department.department')->with(compact('departments', 'employees'));
+        return $this->department->index();
+
     }
 
     public function addDepartment(Request $request)
     {
-        $department = new Department();
-        $department->name = $request->input('name');
-        $department->manager_id = $request->input('manager_id');
-        $department->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->department->addDepartment($request->all());
+
     }
 
 
     public function create()
     {
-        $employees = User::all();
-        $departments = Department::paginate(10);
-        return view('layouts.Admin.department.addDepartment')->with('employees', $employees)->with('departments', $departments);
+        return $this->department->create();
+
     }
 
     public function update(Request $request)
     {
-        $id = $request->input('id');
-        $department = Department::find($id);
-        $department->name = $request->input('name');
-        $department->manager_id = $request->input('manager_id');
-        $department->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+        return $this->department->update($request->all());
+
 
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $users = Department::findOrFail($id);
-        return view('layouts.Admin.department.editDepartment', compact('users'));
+        return $this->department->edit($id);
+
     }
 
     public function destroy($id)
     {
-        $department = Department::find($id);
-        $department->destroy($id);
-        return Redirect::back();
+        return $this->department->destroy($id);
+
     }
 
 }

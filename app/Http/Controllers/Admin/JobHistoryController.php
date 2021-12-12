@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\editJobhistoryRequest;
+use App\Http\Requests\Employee\jobhistoryRequest;
 use App\Models\Department;
 use App\Models\Job;
 use App\Models\JobHistory;
@@ -18,67 +20,35 @@ class JobHistoryController extends Controller
     {
         $this->jobHistory = $jobHistoryEloquent;
     }
+
     public function index()
     {
-        $job_history = JobHistory::paginate(10);
-        $job = Job::all();
-        $department = Department::all();
-        $Employees = User::all();
-        return view('layouts.Admin.jobHistory.jobHistory')->with(compact('job_history', 'job', 'department', 'Employees'));
+        return $this->jobHistory->index();
     }
 
-    public function addHistory(Request $request)
+    public function addHistory(jobhistoryRequest $request)
     {
-        $job_history = new JobHistory();
-        $job_history->start_date = $request->input('start_date');
-        $job_history->end_date = $request->input('end_date');
-        $job_history->employee_id = $request->input('employee_id');
-        $job_history->job_id = $request->input('job_id');
-        $job_history->department_id = $request->input('department_id');
-        $job_history->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->jobHistory->addHistory($request->all());
     }
-
 
     public function create()
     {
-        $jobs_history = JobHistory::all();
-        $jobs = Job::all();
-        $departments = Department::all();
-        $Employees = User::all();
-        return view('layouts.Admin.jobHistory.addJobHistory', compact('jobs_history', 'jobs', 'departments', 'Employees'));
+        return $this->jobHistory->create();
     }
 
-    public function update(Request $request)
+    public function update(editJobhistoryRequest $request)
     {
-        $id = $request->input('id');
-        $job_history = JobHistory::find($id);
-        $job_history->start_date = $request->input('start_date');
-        $job_history->end_date = $request->input('end_date');
-        $job_history->employee_id = $request->input('employee_id');
-        $job_history->job_id = $request->input('job_id');
-        $job_history->department_id = $request->input('department_id');
-        $job_history->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
+        return $this->jobHistory->update($request->all());
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $job_history = JobHistory::findOrFail($id);
-        $jobs = Job::all();
-        $employess = User::all();
-        $departments = Department::all();
-        return view('layouts.Admin.jobHistory.editJobHistory', compact('job_history', 'jobs', 'departments', 'employess'));
-
+        return $this->jobHistory->edit($id);
     }
-
 
     public function destroy($id)
     {
-        $job_history = JobHistory::find($id);
-        $job_history->destroy($id);
-        return Redirect::back();
+        return $this->jobHistory->destroy($id);
     }
 
 }

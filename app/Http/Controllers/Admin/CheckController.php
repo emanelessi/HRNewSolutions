@@ -19,53 +19,39 @@ class CheckController extends Controller
     }
     public function index()
     {
-        $checks = CheckInOut::paginate(10);
-        $employees = User::all();
-        return view('layouts.Admin.check.check')->with(compact('checks', 'employees'));
+        return $this->check->index();
+
     }
 
     public function addCheck(Request $request)
     {
-        $check = new CheckInOut();
-        $check->time = $request->input('time');
-        $check->type = $request->input('type');
-        $check->employee_id = $request->input('employee_id');
-        $check->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return $this->check->addCheck($request->all());
     }
 
 
     public function create()
     {
-        $employees = User::all();
-        return view('layouts.Admin.check.addCheck')->with('employees', $employees);
+        return $this->check->create();
+
     }
 
     public function update(Request $request)
     {
-        $id = $request->input('id');
-        $check = CheckInOut::find($id);
-        $check->time = $request->input('time');
-        $check->type = $request->input('type');
-        $check->employee_id = $request->input('employee_id');
+        return $this->check->update($request->all());
 
-        $check->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $users = User::all();
-        $check = CheckInOut::findOrFail($id);
-        return view('layouts.Admin.check.editCheck', compact('users', 'check'));
+        return $this->check->edit($id);
+
     }
 
 
     public function destroy($id)
     {
-        $check = CheckInOut::find($id);
-        $check->destroy($id);
-        return Redirect::back();
+        return $this->check->destroy($id);
+
     }
 
 }

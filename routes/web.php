@@ -75,7 +75,6 @@ Route::post('/admin/job/history/edit', [Admin\JobHistoryController::class, 'upda
 Route::get('/admin/job/history/edit/{id}', [Admin\JobHistoryController::class, 'edit']);
 Route::get('/admin/job/history/delete/{id}', [Admin\JobHistoryController::class, 'destroy']);
 
-
 Route::get('/admin/project', [Admin\ProjectController::class, 'index'])->name('Project');
 Route::post('/admin/project/add', [Admin\ProjectController::class, 'addProject']);
 Route::get('/admin/project/add', [Admin\ProjectController::class, 'create'])->name('addProject');

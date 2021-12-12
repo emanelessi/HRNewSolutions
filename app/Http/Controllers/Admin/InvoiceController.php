@@ -17,67 +17,39 @@ class InvoiceController extends Controller
     }
     public function index()
     {
-        $invoices = Invoice::paginate(10);
-        $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.Admin.invoice.invoice')->with(compact('invoices', 'type'));
+        return $this->invoice->index();
+
     }
 
     public function addInvoice(Request $request)
     {
-        $invoice = new Invoice();
-        $invoice->type = $request->input('type');
-        $invoice->price = $request->input('price');
-        $invoice->date = $request->input('date');
-        if ($request->input('is_paid') == true) {
-            $invoice->is_paid = 1;
-        } else {
-            $invoice->is_paid = 0;
-        }
+        return $this->invoice->addInvoice($request->all());
 
-        $invoice->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
     }
 
 
     public function create()
     {
-        $invoices = Invoice::all();
-        $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.Admin.invoice.addInvoice')->with(compact('invoices', 'type'));
+        return $this->invoice->create();
+
     }
 
     public function update(Request $request)
     {
-        $id = $request->input('id');
-        $invoice = Invoice::find($id);
-        $invoice->type = $request->input('type');
-        $invoice->price = $request->input('price');
-        $invoice->date = $request->input('date');
-        if ($request->input('is_paid') == true) {
-            $invoice->is_paid = 1;
-        } else {
-            $invoice->is_paid = 0;
-        }
-        $invoice->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+        return $this->invoice->update($request->all());
 
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-
-        $invoice = Invoice::findOrFail($id);
-        $type = ['internet', 'electricity', 'services', 'communications'];
-        $employees = User::all();
-        return view('layouts.Admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
+        return $this->invoice->edit($id);
 
     }
 
 
     public function destroy($id)
     {
-        $invoice = Invoice::find($id);
-        $invoice->destroy($id);
-        return Redirect::back();
+        return $this->invoice->destroy($id);
+
     }
 }

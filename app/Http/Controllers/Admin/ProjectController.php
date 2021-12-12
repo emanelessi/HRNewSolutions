@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\editProjectRequest;
+use App\Http\Requests\Employee\projectRequest;
 use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\User;
@@ -20,58 +22,34 @@ class ProjectController extends Controller
     }
     public function index()
     {
-        $project = EmployeeProject::paginate(10);
-        $employees = User::all();
-        return view('layouts.Admin.project.project')->with(compact('project', 'employees'));
+        return $this->project->index();
+
     }
 
-    public function addProject(Request $request)
+    public function addProject(projectRequest $request)
     {
-        $project = new Project();
-        $project->name = $request->input('name');
-        $project->salary = $request->input('salary');
-        $project->description = $request->input('description');
-        $project->manager_id = $request->input('manager_id');
-        $project->members = $request->input('members');
-        $project->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
-    }
+        return $this->project->addProject($request->all());
 
+    }
 
     public function create()
     {
-        $employees = User::all();
-        return view('layouts.Admin.project.addProject')->with('employees', $employees);
+        return $this->project->create();
     }
 
-    public function update(Request $request)
+    public function update(editProjectRequest $request)
     {
-        $id = $request->input('id');
-        $project = Project::find($id);
-        $project->name = $request->input('name');
-        $project->salary = $request->input('salary');
-        $project->description = $request->input('description');
-        $project->manager_id = $request->input('manager_id');
-        $project->members = $request->input('members');
-        $project->save();
-        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
-
+        return $this->project->update($request->all());
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $users = Project::findOrFail($id);
-        return view('layouts.Admin.project.editProject', compact('users'));
-
+        return $this->project->edit($id);
     }
 
     public function destroy($id)
     {
-        $project = EmployeeProject::find($id);
-        $project->destroy($id);
-        $myproject = Project::find($id);
-        $myproject->destroy($id);
-        return Redirect::back();
+        return $this->project->destroy($id);
     }
 
 }
