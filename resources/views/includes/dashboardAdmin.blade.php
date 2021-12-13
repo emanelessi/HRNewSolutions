@@ -77,6 +77,32 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light portlet-fit ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class=" icon-layers font-green"></i>
+                                <span class="caption-subject font-green bold uppercase">Bar Chart</span>
+                            </div>
+                            <div class="actions">
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-cloud-upload"></i>
+                                </a>
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-wrench"></i>
+                                </a>
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                    <i class="icon-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div id="echarts_bar" style="height:500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-6 col-xs-12 col-sm-12">
                     <div class="portlet light ">
                         <div class="portlet-title tabbable-line">

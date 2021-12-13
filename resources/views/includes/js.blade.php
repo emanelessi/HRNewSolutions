@@ -67,6 +67,8 @@
 <script src="{{ asset('../assets/layouts/layout6/scripts/layout.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('../assets/global/plugins/echarts/echarts.js') }}" type="text/javascript"></script>
+<script src="{{ asset('../assets/pages/scripts/charts-echarts.min.js') }}" type="text/javascript"></script>
 
 
 
