@@ -21,7 +21,7 @@ class JobEloquent
     public function index()
     {
         $job = Job::paginate(10);
-        return view('layouts.Admin.job.job')->with(compact('job'));
+        return view('admin.job.job')->with(compact('job'));
     }
 
     public function addJob(array $data)
@@ -38,7 +38,7 @@ class JobEloquent
     public function create()
     {
         $jobs = Job::all();
-        return view('layouts.Admin.job.addJob')->with('jobs', $jobs);
+        return view('admin.job.addJob')->with('jobs', $jobs);
     }
 
     public function update(array $data)
@@ -56,7 +56,7 @@ class JobEloquent
     public function edit($id)
     {
         $users = Job::findOrFail($id);
-        return view('layouts.Admin.job.editJob', compact('users'));
+        return view('admin.job.editJob', compact('users'));
     }
 
 

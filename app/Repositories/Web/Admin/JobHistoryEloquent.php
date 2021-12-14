@@ -26,7 +26,7 @@ class JobHistoryEloquent
         $job = Job::all();
         $department = Department::all();
         $Employees = User::all();
-        return view('layouts.Admin.jobHistory.jobHistory')->with(compact('job_history', 'job', 'department', 'Employees'));
+        return view('admin.jobHistory.jobHistory')->with(compact('job_history', 'job', 'department', 'Employees'));
     }
 
     public function addHistory(array $data)
@@ -48,7 +48,7 @@ class JobHistoryEloquent
         $jobs = Job::all();
         $departments = Department::all();
         $Employees = User::all();
-        return view('layouts.Admin.jobHistory.addJobHistory', compact('jobs_history', 'jobs', 'departments', 'Employees'));
+        return view('admin.jobHistory.addJobHistory', compact('jobs_history', 'jobs', 'departments', 'Employees'));
     }
 
     public function update(array $data)
@@ -71,7 +71,7 @@ class JobHistoryEloquent
         $jobs = Job::all();
         $employess = User::all();
         $departments = Department::all();
-        return view('layouts.Admin.jobHistory.editJobHistory', compact('job_history', 'jobs', 'departments', 'employess'));
+        return view('admin.jobHistory.editJobHistory', compact('job_history', 'jobs', 'departments', 'employess'));
 
     }
 

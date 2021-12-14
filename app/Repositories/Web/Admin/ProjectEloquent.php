@@ -24,7 +24,7 @@ class ProjectEloquent
     {
         $project = EmployeeProject::paginate(10);
         $employees = User::all();
-        return view('layouts.Admin.project.project')->with(compact('project', 'employees'));
+        return view('admin.project.project')->with(compact('project', 'employees'));
     }
 
     public function addProject(array $data)
@@ -43,7 +43,7 @@ class ProjectEloquent
     public function create()
     {
         $employees = User::all();
-        return view('layouts.Admin.project.addProject')->with('employees', $employees);
+        return view('admin.project.addProject')->with('employees', $employees);
     }
 
     public function update(array $data)
@@ -63,7 +63,7 @@ class ProjectEloquent
     public function edit($id)
     {
         $users = Project::findOrFail($id);
-        return view('layouts.Admin.project.editProject', compact('users'));
+        return view('admin.project.editProject', compact('users'));
 
     }
 

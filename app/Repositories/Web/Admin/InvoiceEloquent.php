@@ -23,7 +23,7 @@ class InvoiceEloquent
     {
         $invoices = Invoice::paginate(10);
         $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.Admin.invoice.invoice')->with(compact('invoices', 'type'));
+        return view('admin.invoice.invoice')->with(compact('invoices', 'type'));
     }
 
     public function addInvoice(array $data)
@@ -47,7 +47,7 @@ class InvoiceEloquent
     {
         $invoices = Invoice::all();
         $type = ['internet', 'electricity', 'services', 'communications'];
-        return view('layouts.Admin.invoice.addInvoice')->with(compact('invoices', 'type'));
+        return view('admin.invoice.addInvoice')->with(compact('invoices', 'type'));
     }
 
     public function update(array $data)
@@ -73,7 +73,7 @@ class InvoiceEloquent
         $invoice = Invoice::findOrFail($id);
         $type = ['internet', 'electricity', 'services', 'communications'];
         $employees = User::all();
-        return view('layouts.Admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
+        return view('admin.invoice.editInvoice', compact('invoice', 'type', 'employees'));
 
     }
 

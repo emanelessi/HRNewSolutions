@@ -25,7 +25,7 @@ class RewardEloquent
         $reward = Reward::paginate(10);
         $employees = User::all();
         $projects = EmployeeProject::all();
-        return view('layouts.Admin.reward.reward')->with(compact('reward', 'employees', 'projects'));
+        return view('admin.reward.reward')->with(compact('reward', 'employees', 'projects'));
     }
 
     public function addReward(array $data)
@@ -44,7 +44,7 @@ class RewardEloquent
     {
         $employees = User::all();
         $projects = EmployeeProject::all();
-        return view('layouts.Admin.reward.addReward')->with(compact('employees', 'projects'));
+        return view('admin.reward.addReward')->with(compact('employees', 'projects'));
     }
 
     public function update(array $data)
@@ -66,7 +66,7 @@ class RewardEloquent
         $reward = Reward::findOrFail($id);
         $projects = Project::all();
         $users = User::all();
-        return view('layouts.Admin.reward.editReward', compact('users', 'projects', 'reward'));
+        return view('admin.reward.editReward', compact('users', 'projects', 'reward'));
 
     }
 

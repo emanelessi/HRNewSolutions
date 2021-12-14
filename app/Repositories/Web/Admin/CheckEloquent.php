@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories\Web\Admin;
+namespace App\Repositories\Web\admin;
 
 
 use App\Models\CheckInOut;
@@ -23,7 +23,7 @@ class CheckEloquent
     {
         $checks = CheckInOut::paginate(10);
         $employees = User::all();
-        return view('layouts.Admin.check.check')->with(compact('checks', 'employees'));
+        return view('admin.check.check')->with(compact('checks', 'employees'));
     }
 
     public function addCheck(array $data)
@@ -40,7 +40,7 @@ class CheckEloquent
     public function create()
     {
         $employees = User::all();
-        return view('layouts.Admin.check.addCheck')->with('employees', $employees);
+        return view('admin.check.addCheck')->with('employees', $employees);
     }
 
     public function update(array $data)
@@ -58,7 +58,7 @@ class CheckEloquent
     {
         $users = User::all();
         $check = CheckInOut::findOrFail($id);
-        return view('layouts.Admin.check.editCheck', compact('users', 'check'));
+        return view('admin.check.editCheck', compact('users', 'check'));
     }
 
 

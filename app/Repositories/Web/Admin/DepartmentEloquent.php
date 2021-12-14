@@ -22,7 +22,7 @@ class DepartmentEloquent
     {
         $employees = User::all();
         $departments = Department::paginate(10);
-        return view('layouts.Admin.department.department')->with(compact('departments', 'employees'));
+        return view('admin.department.department')->with(compact('departments', 'employees'));
     }
 
     public function addDepartment(array $data)
@@ -39,7 +39,7 @@ class DepartmentEloquent
     {
         $employees = User::all();
         $departments = Department::paginate(10);
-        return view('layouts.Admin.department.addDepartment')->with('employees', $employees)->with('departments', $departments);
+        return view('admin.department.addDepartment')->with('employees', $employees)->with('departments', $departments);
     }
 
     public function update(array $data)
@@ -56,7 +56,7 @@ class DepartmentEloquent
     public function edit( $id)
     {
         $users = Department::findOrFail($id);
-        return view('layouts.Admin.department.editDepartment', compact('users'));
+        return view('admin.department.editDepartment', compact('users'));
     }
 
     public function destroy($id)
