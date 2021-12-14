@@ -26,6 +26,9 @@ Route::get('/new-home', function () {
 Route::get('/new-test', function () {
     return view('new.test');
 });
+Route::get('/new', function () {
+    return view('admin.home');
+});
 
 Route::view('/home', 'home')->middleware('auth');
 

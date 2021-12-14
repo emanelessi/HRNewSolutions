@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Repositories\Web\Admin;
+namespace App\Repositories\Web\admin;
 
 
-use App\Http\Requests\Admin\AddEmployeeRequest;
+use App\Http\Requests\admin\AddEmployeeRequest;
 use App\Models\Department;
 use App\Models\EmployeeProject;
 use App\Models\Holiday;
@@ -34,7 +34,7 @@ class EmployeeEloquent
         $users = User::all();
         $projects = EmployeeProject::all();
         $rewards = Reward::all();
-        return view('layouts.Admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
+        return view('admin.employee.employee')->with(compact('employee', 'departments', 'jobs', 'users', 'projects', 'rewards'));
     }
 
     public function home()
@@ -89,7 +89,7 @@ class EmployeeEloquent
 //
 //        $data['chart_data'] = json_encode($data);
 
-        return view('layouts.Admin.home')->with('users', $users)->with('departments', $departments)->with('projects', $projects)->with('rewards', $rewards)->with('holidays', $holidays)->with('jobs', $jobs);
+        return view('admin.home')->with('users', $users)->with('departments', $departments)->with('projects', $projects)->with('rewards', $rewards)->with('holidays', $holidays)->with('jobs', $jobs);
     }
 
     public function addEmployee(array $data)
@@ -115,7 +115,7 @@ class EmployeeEloquent
         $employees = User::all();
         $departments = Department::all();
         $jobs = Job::all();
-        return view('layouts.Admin.employee.addEmployee')->with(compact('employees', 'departments', 'jobs'));
+        return view('admin.employee.addEmployee')->with(compact('employees', 'departments', 'jobs'));
     }
 
 
@@ -143,7 +143,7 @@ class EmployeeEloquent
         $users = User::findOrFail($id);
         $Departments = Department::all();
         $Jobs = Job::all();
-        return view('layouts.Admin.employee.editEmployee', compact('users', 'Departments', 'Jobs'));
+        return view('admin.employee.editEmployee', compact('users', 'Departments', 'Jobs'));
     }
 
 
