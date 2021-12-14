@@ -18,6 +18,7 @@ class InvoiceEloquent
     {
         $this->model = $invoice;
     }
+
     public function index()
     {
         $invoices = Invoice::paginate(10);

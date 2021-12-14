@@ -17,10 +17,10 @@ class CheckController extends Controller
     {
         $this->check = $checkEloquent;
     }
+
     public function index()
     {
         return $this->check->index();
-
     }
 
     public function addCheck(Request $request)
@@ -28,30 +28,24 @@ class CheckController extends Controller
         return $this->check->addCheck($request->all());
     }
 
-
     public function create()
     {
         return $this->check->create();
-
     }
 
     public function update(Request $request)
     {
         return $this->check->update($request->all());
-
     }
 
     public function edit($id)
     {
         return $this->check->edit($id);
-
     }
-
 
     public function destroy($id)
     {
         return $this->check->destroy($id);
-
     }
 
 }

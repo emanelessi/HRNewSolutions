@@ -15,41 +15,34 @@ class InvoiceController extends Controller
     {
         $this->invoice = $invoiceEloquent;
     }
+
     public function index()
     {
         return $this->invoice->index();
-
     }
 
     public function addInvoice(Request $request)
     {
         return $this->invoice->addInvoice($request->all());
-
     }
-
 
     public function create()
     {
         return $this->invoice->create();
-
     }
 
     public function update(Request $request)
     {
         return $this->invoice->update($request->all());
-
     }
 
     public function edit($id)
     {
         return $this->invoice->edit($id);
-
     }
-
 
     public function destroy($id)
     {
         return $this->invoice->destroy($id);
-
     }
 }
