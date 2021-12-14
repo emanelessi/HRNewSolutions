@@ -1,11 +1,13 @@
 @extends('admin.layouts.index')
 @section('content')
+
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
     @endif
-    <div class="tab-pane" id="tab_2" >
+
+    <div class="tab-pane" id="tab_2">
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -15,7 +17,7 @@
             <div class="portlet-body form">
                 <form action="{{route('addEmployee')}}" method="post" class="form-horizontal">
                     @csrf
-                    <div class="form-body" >
+                    <div class="form-body">
                         <div class="form-group">
                             @if($errors->any())
                                 <h4 class="col-md-3 control-label"
@@ -145,6 +147,4 @@
     </div>
 
 @endsection
-@section('js')
 
-@stop

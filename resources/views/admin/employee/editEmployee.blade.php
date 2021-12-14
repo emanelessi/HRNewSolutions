@@ -1,12 +1,11 @@
 @extends('admin.layouts.index')
 @section('content')
+
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
     @endif
-
-
 
     <div class="tab-pane" id="tab_2">
         <div class="portlet box green">
@@ -139,6 +138,4 @@
     </div>
 
 @endsection
-@section('js')
 
-@stop

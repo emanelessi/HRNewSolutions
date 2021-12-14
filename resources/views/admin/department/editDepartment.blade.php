@@ -6,6 +6,7 @@
             {{ session('status') }}
         </div>
     @endif
+
     <div class="tab-pane" id="tab_2">
         <div class="portlet box green">
             <div class="portlet-title">
@@ -58,6 +59,4 @@
         </div>
     </div>
 @endsection
-@section('js')
 
-@stop

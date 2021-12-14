@@ -1,4 +1,5 @@
 @extends('admin.layouts.index')
+
 @section('content')
 
     <div class="tab-pane" id="tab_2">
@@ -11,7 +12,7 @@
             <div class="portlet-body form">
                 <form action="{{route('addCheck')}}" method="post" class="form-horizontal">
                     @csrf
-                    <div class="form-body" >
+                    <div class="form-body">
                         <div class="form-group">
                             @if($errors->any())
                                 <h4 class="col-md-3 control-label"
@@ -59,9 +60,5 @@
         </div>
     </div>
 
-
 @endsection
-@section('js')
-
-@stop
 

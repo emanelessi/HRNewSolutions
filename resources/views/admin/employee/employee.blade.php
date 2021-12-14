@@ -1,14 +1,17 @@
 @extends('admin.layouts.index')
 @section('content')
+
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
     @endif
+
     <link href="{{url('/')}}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css " rel="stylesheet"
           type="text/css"/>
     <link href="{{url('/')}}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet"
           type="text/css"/>
+
     <div class="portlet light bordered">
         <div class="portlet-title">
             <div class="caption font-dark">
@@ -192,62 +195,61 @@
                     <div class="portlet-body">
                         <div class="table-scrollable">
                             <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th> First Name</th>
-                                <th> Last Name</th>
-                                <th> Email</th>
-                                <th> Phone Number</th>
-                                <th class="numeric"> Hire Date</th>
-                                <th class="numeric"> Salary</th>
-                                <th> Department</th>
-                                <th> Job</th>
-                                <th> Manager</th>
-                                <th> Delete</th>
-                                <th> Edit</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($employee as $myemployee)
+                                <thead>
                                 <tr>
-                                    <td> {{$myemployee->first_name}} </td>
-                                    <td> {{$myemployee->last_name}} </td>
-                                    <td> {{$myemployee->email}} </td>
-                                    <td> {{$myemployee->phone_number}} </td>
-                                    <td>{{date('d-m-Y h:i:s', strtotime($myemployee->hire_date))}} </td>
-                                    <td> {{$myemployee->salary}} $</td>
-                                    <td> {{$myemployee->department["name"] ?? null}}</td>
-                                    <td> {{$myemployee->job["title"] ?? null}} </td>
-                                    <td> {{$myemployee->manager->first_name ?? null}} </td>
-
-                                    <td>
-                                        <a href="/admin/employee/delete/{{$myemployee->id}}"
-                                           class="btn btn-circle red">Delete <i
-                                                class="fa fa-times"></i> </a>
-                                    </td>
-                                    <td><a href="/admin/employee/edit/{{$myemployee->id}}"
-                                           class="btn btn-circle green">Edit <i
-                                                class="fa fa-edit"></i></a>
-                                    </td>
+                                    <th> First Name</th>
+                                    <th> Last Name</th>
+                                    <th> Email</th>
+                                    <th> Phone Number</th>
+                                    <th class="numeric"> Hire Date</th>
+                                    <th class="numeric"> Salary</th>
+                                    <th> Department</th>
+                                    <th> Job</th>
+                                    <th> Manager</th>
+                                    <th> Delete</th>
+                                    <th> Edit</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        {{$employee->links("pagination::bootstrap-4")}}
+                                </thead>
+                                <tbody>
+                                @foreach($employee as $myemployee)
+                                    <tr>
+                                        <td> {{$myemployee->first_name}} </td>
+                                        <td> {{$myemployee->last_name}} </td>
+                                        <td> {{$myemployee->email}} </td>
+                                        <td> {{$myemployee->phone_number}} </td>
+                                        <td>{{date('d-m-Y h:i:s', strtotime($myemployee->hire_date))}} </td>
+                                        <td> {{$myemployee->salary}} $</td>
+                                        <td> {{$myemployee->department["name"] ?? null}}</td>
+                                        <td> {{$myemployee->job["title"] ?? null}} </td>
+                                        <td> {{$myemployee->manager->first_name ?? null}} </td>
+
+                                        <td>
+                                            <a href="/admin/employee/delete/{{$myemployee->id}}"
+                                               class="btn btn-circle red">Delete <i
+                                                    class="fa fa-times"></i> </a>
+                                        </td>
+                                        <td><a href="/admin/employee/edit/{{$myemployee->id}}"
+                                               class="btn btn-circle green">Edit <i
+                                                    class="fa fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            {{$employee->links("pagination::bootstrap-4")}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 
+        @endsection
 
-@endsection
-@section('js')
-    <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+        @section('js')
+            <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"
+                    type="text/javascript"></script>
+            <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
+                    type="text/javascript"></script>
+            <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
 
-@stop
+        @stop

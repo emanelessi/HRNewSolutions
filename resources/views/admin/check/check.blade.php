@@ -1,10 +1,13 @@
 @extends('admin.layouts.index')
+
 @section('content')
+
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
     @endif
+
     <link href="{{url('/')}}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css " rel="stylesheet"
           type="text/css"/>
     <link href="{{url('/')}}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet"
@@ -119,43 +122,42 @@
                             <i class="fa fa-cogs"></i>Check Table
                         </div>
                     </div>
-                    <div class="portlet-body flip-scroll">
-                        <table
-                            class="table table-striped table-bordered table-hover table-checkable order-column"
-                            id="sample_1">
-                            <thead>
-                            <tr>
-                                <th class="numeric"> Time</th>
-                                <th> Employee</th>
-                                <th> Type</th>
-                                <th> Delete</th>
-                                <th> Edit</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($checks as $mychecks)
+                    <div class="portlet-body">
+                        <div class="table-scrollable">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
                                 <tr>
-                                    <td>{{date('d-m-Y h:i:s', strtotime($mychecks->time))}} </td>
-                                    <td> {{$mychecks->user->first_name?? null}} {{$mychecks->user->last_name?? null}} </td>
-                                    <td> {{$mychecks->type}}</td>
-                                    <td><a href="/admin/check/delete/{{$mychecks->id}}"
-                                           class="btn btn-circle red">Delete <i
-                                                class="fa fa-times"></i> </a>
-                                    </td>
-                                    <td><a href="/admin/check/edit/{{$mychecks->id}}"
-                                           class="btn btn-circle green">Edit <i
-                                                class="fa fa-edit"></i></a></td>
+                                    <th class="numeric"> Time</th>
+                                    <th> Employee</th>
+                                    <th> Type</th>
+                                    <th> Delete</th>
+                                    <th> Edit</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        {{$checks->links("pagination::bootstrap-4")}}
+                                </thead>
+                                <tbody>
+                                @foreach($checks as $mychecks)
+                                    <tr>
+                                        <td>{{date('d-m-Y h:i:s', strtotime($mychecks->time))}} </td>
+                                        <td> {{$mychecks->user->first_name?? null}} {{$mychecks->user->last_name?? null}} </td>
+                                        <td> {{$mychecks->type}}</td>
+                                        <td><a href="/admin/check/delete/{{$mychecks->id}}"
+                                               class="btn btn-circle red">Delete <i
+                                                    class="fa fa-times"></i> </a>
+                                        </td>
+                                        <td><a href="/admin/check/edit/{{$mychecks->id}}"
+                                               class="btn btn-circle green">Edit <i
+                                                    class="fa fa-edit"></i></a></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            {{$checks->links("pagination::bootstrap-4")}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 
 @section('js')
