@@ -17,42 +17,35 @@ class DepartmentController extends Controller
     {
         $this->department = $departmentEloquent;
     }
+
     public function index()
     {
         return $this->department->index();
-
     }
 
     public function addDepartment(Request $request)
     {
         return $this->department->addDepartment($request->all());
-
     }
-
 
     public function create()
     {
         return $this->department->create();
-
     }
 
     public function update(Request $request)
     {
         return $this->department->update($request->all());
-
-
     }
 
     public function edit($id)
     {
         return $this->department->edit($id);
-
     }
 
     public function destroy($id)
     {
         return $this->department->destroy($id);
-
     }
 
 }

@@ -18,6 +18,7 @@ class CheckEloquent
     {
         $this->model = $checkInOut;
     }
+
     public function index()
     {
         $checks = CheckInOut::paginate(10);
@@ -49,7 +50,6 @@ class CheckEloquent
         $check->time = $data['time'];
         $check->type = $data['type'];
         $check->employee_id = $data['employee_id'];
-
         $check->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
     }
