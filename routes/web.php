@@ -20,6 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/new-home', function () {
+    return view('new.home');
+});
+Route::get('/new-test', function () {
+    return view('new.test');
+});
+
 Route::view('/home', 'home')->middleware('auth');
 
 Auth::routes();

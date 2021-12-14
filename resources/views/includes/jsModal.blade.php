@@ -16,6 +16,4 @@
 <script src="{{ asset('../assets/layouts/layout2/scripts/demo.min.js') }}"  type="text/javascript"></script>
 <script src="{{ asset('../assets/layouts/global/scripts/quick-sidebar.min.js') }}"  type="text/javascript"></script>
 <script src="{{ asset('../assets/layouts/global/scripts/quick-nav.min.js') }}"  type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/echarts/echarts.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/pages/scripts/charts-echarts.min.js') }}" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
