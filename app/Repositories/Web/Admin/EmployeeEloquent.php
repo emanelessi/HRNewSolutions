@@ -45,6 +45,7 @@ class EmployeeEloquent
         $rewards = Reward::paginate(10);
         $holidays = Holiday::paginate(10);
         $jobs = Job::paginate(10);
+
         $chartjs= app()->chartjs
             ->name('lineChartTest')
             ->type('line')

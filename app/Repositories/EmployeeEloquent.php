@@ -64,6 +64,12 @@ class EmployeeEloquent
     public function profile($id = null)
     {
         $employee = isset($id) ? $this->model->find($id) : \auth()->user();
+        if (!isset($employee->manager)){
+            $employee['type']='manager';
+        }
+        else{
+            $employee['type']='employee';
+        }
         return response_api(true, 200, 'Success', new profileResource($employee));
     }
 

@@ -16,7 +16,6 @@ class employeeprojectResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'employee' => new employeeResource($this->user),
             'project' => new projectResource($this->project),
         ];
     }

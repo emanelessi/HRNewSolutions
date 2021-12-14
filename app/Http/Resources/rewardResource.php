@@ -18,7 +18,6 @@ class rewardResource extends JsonResource
             'id' => $this->id,
             'cost' => $this->cost,
             'note' => $this->note,
-            'employee' => new employeeResource($this->user),
             'project' => new projectResource($this->project),
         ];
     }

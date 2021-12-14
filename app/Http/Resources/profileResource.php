@@ -24,7 +24,7 @@ class profileResource extends JsonResource
             'salary' => $this->salary,
             'photo' => $this->photo,
             'department' => new departmentResource($this->department),
-//            'job_id'=>$this->job_id,
+            'type'=>$this->type,
             'manager' => new profileResource($this->manager),
         ];
     }
