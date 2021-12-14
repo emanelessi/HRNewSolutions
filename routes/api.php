@@ -29,47 +29,4 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('rewards', [EmployeeController::class, 'rewards']);
 });
 
-Route::middleware([\App\Http\Middleware\Admin::class])->group(function () {
-    Route::get('home', [AdminController::class, 'home']);
 
-    Route::post('employees', [AdminController::class, 'employees']);
-    Route::post('employee', [AdminController::class, 'employee']);
-    Route::put('employee/{id}', [AdminController::class, 'editEmployee']);
-    Route::delete('employee/{id}', [AdminController::class, 'deleteEmployee']);
-
-    Route::post('all/holidays', [AdminController::class, 'holidays']);
-    Route::post('add/holiday/{id}', [AdminController::class, 'holiday']);
-    Route::delete('holiday/{id}', [AdminController::class, 'deleteHoliday']);
-    Route::put('holiday/{id}', [AdminController::class, 'editHoliday']);
-
-    Route::post('jobs', [AdminController::class, 'jobs']);
-    Route::post('add/job', [AdminController::class, 'job']);
-    Route::delete('job/{id}', [AdminController::class, 'deleteJob']);
-    Route::put('job/{id}', [AdminController::class, 'editJob']);
-
-    Route::post('all/projects', [AdminController::class, 'projects']);
-    Route::post('add/project/{id}', [AdminController::class, 'project']);
-    Route::delete('project/{id}', [AdminController::class, 'deleteProject']);
-    Route::put('project/{id}', [AdminController::class, 'editProject']);
-
-    Route::post('all/rewards', [AdminController::class, 'rewards']);
-    Route::post('reward/{id}', [AdminController::class, 'reward']);
-    Route::delete('reward/{id}', [AdminController::class, 'deleteReward']);
-    Route::put('reward/{id}', [AdminController::class, 'editReward']);
-
-    Route::post('all/jobhistories', [AdminController::class, 'jobhistories']);
-    Route::post('jobhistory/{id}', [AdminController::class, 'jobhistory']);
-    Route::delete('jobhistory/{id}', [AdminController::class, 'deleteJobhistory']);
-    Route::put('jobhistory/{id}', [AdminController::class, 'editJobhistory']);
-
-    Route::post('all/checkinouts', [AdminController::class, 'checkinouts']);
-    Route::post('checkinout/{id}', [AdminController::class, 'checkinout']);
-    Route::delete('checkinout/{id}', [AdminController::class, 'deleteCheckinout']);
-    Route::put('checkinout/{id}', [AdminController::class, 'editCheckinout']);
-
-    Route::post('all/departments', [AdminController::class, 'departments']);
-    Route::post('department/{id}', [AdminController::class, 'department']);
-    Route::delete('department/{id}', [AdminController::class, 'deleteDepartment']);
-    Route::put('department/{id}', [AdminController::class, 'editDepartment']);
-
-});
