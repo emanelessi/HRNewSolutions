@@ -78,6 +78,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    <div style="width:75%;">
+                        {!! $chartjs->render() !!}
+                    </div>
+
                     <div class="portlet light portlet-fit ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -102,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-6 col-xs-12 col-sm-12">
                     <div class="portlet light ">
