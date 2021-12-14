@@ -9,6 +9,7 @@
           type="text/css"/>
     <link href="{{url('/')}}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet"
           type="text/css"/>
+
     <div class="portlet light bordered">
         <div class="portlet-title">
             <div class="caption font-dark">
@@ -28,7 +29,7 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="top: 10%;">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
