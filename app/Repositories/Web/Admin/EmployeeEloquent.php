@@ -40,11 +40,11 @@ class EmployeeEloquent
     public function home()
     {
         $users = User::all();
-        $departments = Department::paginate(10);
-        $projects = EmployeeProject::paginate(10);
-        $rewards = Reward::paginate(10);
-        $holidays = Holiday::paginate(10);
-        $jobs = Job::paginate(10);
+        $departments = Department::all();
+        $projects = EmployeeProject::all();
+        $rewards = Reward::all();
+        $holidays = Holiday::all();
+        $jobs = Job::all();
 
 //        $chartjs= app()->chartjs
 //            ->name('lineChartTest')

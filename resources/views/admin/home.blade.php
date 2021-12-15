@@ -116,7 +116,6 @@
                             </div>
                             <!-- END: Comments -->
                         </div>
-                        {{ $holidays->links("pagination::bootstrap-4") }}
                     </div>
                 </div>
             </div>
@@ -155,7 +154,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{ $projects->links("pagination::bootstrap-4") }}
                     </div>
                 </div>
             </div>
@@ -197,7 +195,6 @@
                             </ul>
                         </div>
                     </div>
-                    {{ $rewards->links("pagination::bootstrap-4") }}
                 </div>
             </div>
             <div class="col-lg-6 col-xs-12 col-sm-12 ">
@@ -238,7 +235,6 @@
                             </ul>
                         </div>
                     </div>
-                    {{ $jobs->links("pagination::bootstrap-4") }}
                 </div>
             </div>
         </div>

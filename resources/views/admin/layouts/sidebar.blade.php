@@ -5,22 +5,22 @@
         <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false"
             data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item start active open">
-{{--            <li class="nav-item @if(preg_match('/admin/home/i',url()->current())) start active open @endif">--}}
-                <a href="{{url('/admin/home')}}" class="nav-link ">
+            <li class="nav-item @if(preg_match('/admin-home/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-home')}}" class="nav-link ">
                     <i class="icon-graph"></i>
                     <span class="title">Dashboard</span>
                     <span class="selected"></span>
                 </a>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-employee/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-employee')}}" class="nav-link nav-toggle">
                     <i class="icon-user"></i>
                     <span class="title">Employee</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/employee')}}" class="nav-link ">
+                        <a href="{{url('/admin-employee')}}" class="nav-link ">
                             <i class="icon-users"></i>
                             <span class="title">Employee</span>
                         </a>
@@ -33,16 +33,16 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-user"></i>
+            <li class="nav-item  @if(preg_match('/admin-check/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-check')}}" class="nav-link nav-toggle">
+                    <i class="fa fa-check"></i>
                     <span class="title">Check</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/check')}}" class="nav-link ">
-                            <i class="icon-users"></i>
+                        <a href="{{url('/admin-check')}}" class="nav-link ">
+                            <i class="fa fa-check"></i>
                             <span class="title">Check</span>
                         </a>
                     </li>
@@ -54,16 +54,16 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-department/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-department')}}" class="nav-link nav-toggle">
                     <i class="icon-user"></i>
                     <span class="title">Department</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/department')}}" class="nav-link ">
-                            <i class="icon-users"></i>
+                        <a href="{{url('/admin-department')}}" class="nav-link ">
+                            <i class="icon-user"></i>
                             <span class="title">Department</span>
                         </a>
                     </li>
@@ -75,15 +75,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-job/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-job')}}" class="nav-link nav-toggle">
                     <i class="icon-briefcase"></i>
                     <span class="title">Job</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/job')}}" class="nav-link ">
+                        <a href="{{url('/admin-job')}}" class="nav-link ">
                             <i class="icon-briefcase"></i>
                             <span class="title">Job</span>
                         </a>
@@ -96,15 +96,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-project/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-project')}}" class="nav-link nav-toggle">
                     <i class="fa fa-tasks" aria-hidden="true"></i>
                     <span class="title">Project</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/project')}}" class="nav-link ">
+                        <a href="{{url('/admin-project')}}" class="nav-link ">
                             <i class="fa fa-tasks" aria-hidden="true"></i>
                             <span class="title">Project</span>
                         </a>
@@ -117,15 +117,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-invoice/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-invoice')}}" class="nav-link nav-toggle">
                     <i class="fa fa-paperclip" aria-hidden="true"></i>
                     <span class="title">Invoice</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/invoice')}}" class="nav-link ">
+                        <a href="{{url('/admin-invoice')}}" class="nav-link ">
                             <i class="fa fa-paperclip" aria-hidden="true"></i>
                             <span class="title">Invoice</span>
                         </a>
@@ -138,15 +138,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-holiday/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-holiday')}}" class="nav-link nav-toggle">
                     <i class="fa fa-hourglass-o" aria-hidden="true"></i>
                     <span class="title">Holiday</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/holiday')}}" class="nav-link ">
+                        <a href="{{url('/admin-holiday')}}" class="nav-link ">
                             <i class="fa fa-hourglass-o" aria-hidden="true"></i>
                             <span class="title">Holiday</span>
                         </a>
@@ -159,15 +159,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-job-history/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-job-history')}}" class="nav-link nav-toggle">
                     <i class="icon-briefcase"></i>
                     <span class="title">Job History</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/job/history')}}" class="nav-link ">
+                        <a href="{{url('/admin-job-history')}}" class="nav-link ">
                             <i class="icon-briefcase"></i>
                             <span class="title">Job History</span>
                         </a>
@@ -180,15 +180,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+            <li class="nav-item @if(preg_match('/admin-reward/i',url()->current())) start active open @endif ">
+                <a href="{{url('/admin-reward')}}" class="nav-link nav-toggle">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <span class="title">Reward</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin/reward')}}" class="nav-link ">
+                        <a href="{{url('/admin-reward')}}" class="nav-link ">
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <span class="title">Reward</span>
                         </a>
