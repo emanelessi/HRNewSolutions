@@ -5,8 +5,8 @@
         <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false"
             data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item start active open">
-            <li class="nav-item @if(preg_match('/admin-home/i',url()->current())) start active open @endif">
-                <a href="{{url('/admin-home')}}" class="nav-link ">
+            <li class="nav-item @if(preg_match('/home/i',url()->current())) start active open @endif">
+                <a href="{{url('/home')}}" class="nav-link ">
                     <i class="icon-graph"></i>
                     <span class="title">Dashboard</span>
                     <span class="selected"></span>

@@ -34,11 +34,11 @@ Route::view('/home', 'home')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware'], function () {
+    Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/admin-home', [Admin\UserController::class, 'home'])->name('adminHome');
+//    Route::get('/admin-home', [Admin\UserController::class, 'home'])->name('adminHome');
     Route::get('/admin-employee', [Admin\UserController::class, 'index'])->name('Employee');
     Route::get('/admin/employee/add', [Admin\UserController::class, 'addEmployee']);
     Route::get('/admin/employee/add', [Admin\UserController::class, 'create'])->name('addEmployee');
@@ -105,20 +105,7 @@ Route::group(['middleware'], function () {
     Route::get('/profile', [Controllers\ProfileController::class, 'index']);
     Route::post('/profile/edit', [Controllers\ProfileController::class, 'editProfile'])->name('editProfile');;
     Route::get('/profile/edit', [Controllers\ProfileController::class, 'edit']);
-//
-//    Route::get('/check/add', [Controllers\CheckController::class, 'add']);
-//    Route::post('/check/add', [Controllers\CheckController::class, 'addCheck'])->name('addEmployeeCheck');
-//
-//    Route::get('/holiday', [Controllers\HolidayController::class, 'index'])->name('Holiday');
-//    Route::get('/holiday/add', [Controllers\HolidayController::class, 'add']);
-//    Route::get('/holiday/add', [Controllers\HolidayController::class, 'create']);
-//    Route::post('/holiday/add', [Controllers\HolidayController::class, 'addHoliday'])->name('addHoliday');
-//
-//    Route::get('/job', [Controllers\JobController::class, 'index']);
-//
-//    Route::get('/project', [Controllers\ProjectController::class, 'index']);
-//
-//    Route::get('/reward', [Controllers\RewardsController::class, 'index']);
+
 
 });
 
