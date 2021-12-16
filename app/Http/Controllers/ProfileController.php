@@ -26,7 +26,7 @@ class ProfileController extends Controller
         return $this->employee->profile();
     }
 
-    public function editProfile(EmployeeRequest $request)
+    public function editProfile(Request $request)
     {
         return $this->employee->editProfile($request->all());
     }
