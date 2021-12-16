@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@extends('includes.cssLogin')
-@extends('includes.jsLogin')
+@extends('admin.layouts.app')
 
 @section('content')
 
@@ -20,10 +18,7 @@
             @csrf
             <h3 class="form-title font-green">{{ __('Register') }}</h3>
             <div class="form-group">
-                <label class="control-label " for="first_name" style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('First Name') }}</label>
+                <label class="control-label " for="first_name" >{{ __('First Name') }}</label>
                 <input id="first_name"
                        class="form-control form-control-solid placeholder-no-fix form-group  @error('first_name') is-invalid @enderror"
                        type="text" placeholder="first_name"
@@ -35,10 +30,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label class="control-label " for="last_name" style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Last Name') }}</label>
+                <label class="control-label " for="last_name" >{{ __('Last Name') }}</label>
                 <input id="last_name"
                        class="form-control form-control-solid placeholder-no-fix form-group  @error('last_name') is-invalid @enderror"
                        type="text" placeholder="last_name"
@@ -50,10 +42,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label class="control-label " for="email" style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('E-Mail Address') }}</label>
+                <label class="control-label " for="email" >{{ __('E-Mail Address') }}</label>
                 <input id="email"
                        class="form-control form-control-solid placeholder-no-fix form-group  @error('email') is-invalid @enderror"
                        type="text" placeholder="email"
@@ -65,10 +54,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="password" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Password') }}</label>
+                <label for="password" class="control-label " >{{ __('Password') }}</label>
                 <input id="password"
                        class="form-control form-control-solid placeholder-no-fix form-group @error('password') is-invalid @enderror"
                        type="password" placeholder="Password"
@@ -80,10 +66,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="phone_number" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Phone Number') }}</label>
+                <label for="phone_number" class="control-label " >{{ __('Phone Number') }}</label>
                 <input id="phone_number"
                        class="form-control form-control-solid placeholder-no-fix form-group @error('phone_number') is-invalid @enderror"
                        type="tel" placeholder="phone_number"
@@ -95,10 +78,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="hire_date" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Hire Date') }}</label>
+                <label for="hire_date" class="control-label " >{{ __('Hire Date') }}</label>
                 <input id="hire_date"
                        class="form-control form-control-solid placeholder-no-fix form-group @error('hire_date') is-invalid @enderror"
                        type="date" placeholder="hire_date"
@@ -110,10 +90,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="salary" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Salary') }}</label>
+                <label for="salary" class="control-label " >{{ __('Salary') }}</label>
                 <input id="salary"
                        class="form-control form-control-solid placeholder-no-fix form-group @error('salary') is-invalid @enderror"
                        type="number" placeholder="salary"
@@ -125,10 +102,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="photo" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Photo') }}</label>
+                <label for="photo" class="control-label " >{{ __('Photo') }}</label>
                 <input id="photo"
                        class="form-control form-control-solid placeholder-no-fix form-group @error('photo') is-invalid @enderror"
                        type="file" placeholder="photo"
@@ -140,10 +114,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="job_id" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Job') }}</label>
+                <label for="job_id" class="control-label " >{{ __('Job') }}</label>
                 <select name="job_id" class="form-control">
                     @foreach ($jobs as $job)
                         <option value="{{ $job->id }}">{{ $job->title }}</option>
@@ -156,10 +127,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="department_id" class="control-label " style="
-    font-size: 13px;
-    font-weight: bold;
-">{{ __('Department') }}</label>
+                <label for="department_id" class="control-label " >{{ __('Department') }}</label>
                 <select name="department_id" class="form-control">
                     @foreach ($departments as $department)
                         <option value="{{ $department->id }}">{{ $department->name }}</option>

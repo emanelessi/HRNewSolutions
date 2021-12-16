@@ -26,11 +26,18 @@ class EmployeeEloquent
 
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $holidays = Holiday::where('employee_id', $user_id)->paginate(5);
-        $projects = EmployeeProject::where('employee_id', $user_id)->paginate(5);
-        $rewards = Reward::where('employee_id', $user_id)->paginate(5);
-        return view('home')->with('holidays', $holidays)->with('projects', $projects)->with('rewards', $rewards);
+        $users = User::all();
+        $departments = Department::all();
+        $projects = EmployeeProject::all();
+        $rewards = Reward::all();
+        $holidays = Holiday::all();
+        $jobs = Job::all();
+//        $user_id = Auth::user()->id;
+//        $holidays = Holiday::where('employee_id', $user_id)->paginate(5);
+//        $projects = EmployeeProject::where('employee_id', $user_id)->paginate(5);
+//        $rewards = Reward::where('employee_id', $user_id)->paginate(5);
+        return view('admin.home')->with('holidays', $holidays)->with('projects', $projects)->with('rewards', $rewards)
+            ->with(compact('users','departments','projects','rewards','holidays','jobs'));
     }
 
     public function profile()
@@ -41,7 +48,7 @@ class EmployeeEloquent
         $users = User::all();
         $projects = EmployeeProject::where('employee_id', $user_id)->get();
         $rewards = Reward::where('employee_id', $user_id)->get();
-        return view('layouts.profile')->with(compact('profile', 'departments', 'users', 'projects', 'rewards'));
+        return view('admin.profile.profile')->with(compact('profile', 'departments', 'users', 'projects', 'rewards'));
     }
 
     public function editProfile(array $data)
@@ -82,7 +89,7 @@ class EmployeeEloquent
         $employees = User::all();
         $Jobs = Job::all();
         $Departments = Department::all();
-        return view('layouts.editProfile', compact('Jobs', 'Departments', 'employees'));
+        return view('admin.profile.editProfile', compact('Jobs', 'Departments', 'employees'));
     }
 
 }

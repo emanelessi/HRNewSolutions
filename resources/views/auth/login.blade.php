@@ -1,6 +1,5 @@
-@extends('layouts.app')
-@extends('includes.cssLogin')
-@extends('includes.jsLogin')
+@extends('admin.layouts.app')
+
 
 @section('content')
 
