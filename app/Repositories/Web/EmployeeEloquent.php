@@ -32,12 +32,8 @@ class EmployeeEloquent
         $rewards = Reward::all();
         $holidays = Holiday::all();
         $jobs = Job::all();
-//        $user_id = Auth::user()->id;
-//        $holidays = Holiday::where('employee_id', $user_id)->paginate(5);
-//        $projects = EmployeeProject::where('employee_id', $user_id)->paginate(5);
-//        $rewards = Reward::where('employee_id', $user_id)->paginate(5);
-        return view('admin.home')->with('holidays', $holidays)->with('projects', $projects)->with('rewards', $rewards)
-            ->with(compact('users','departments','projects','rewards','holidays','jobs'));
+
+        return view('admin.home')->with(compact('users','departments','projects','rewards','holidays','jobs'));
     }
 
     public function profile()
