@@ -3,8 +3,8 @@
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="{{ route('home') }}">
-                <img src="{{url('/')}}/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default"/>
+            <a href="{{ route('home') }}" style="color: white;margin-top: 10px">
+                <h4 style="color: white">HR New Solutions</h4>
             </a>
 
         </div>
