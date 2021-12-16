@@ -143,7 +143,8 @@
                                                     <span
                                                         class="mt-comment-status mt-comment-status-pending"> @for ($i=0; $i <= $project->project->count(); $i++)
                                                             {{$project->project['members']['names'][$i] ?? null}}
-                                                        @endfor</span>
+                                                        @endfor
+                                                    </span>
                                                 </div>
                                             </div>
                                         @endforeach
