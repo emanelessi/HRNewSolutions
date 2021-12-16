@@ -25,7 +25,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">name</label>
+                            <label class="col-md-3 control-label">Name</label>
                             <div class="col-md-4">
                                 <input type="text" name="name" class="form-control"
                                        value="{{$users['name']}}"
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">manager_id</label>
+                            <label class="col-md-3 control-label">Manager</label>
                             <div class="col-md-4">
                                 <select name="manager_id" class="form-control"
                                         value="{{$users['manager_id']}}">

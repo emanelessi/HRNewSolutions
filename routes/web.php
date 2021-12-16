@@ -45,8 +45,8 @@ Route::group(['middleware'], function () {
     Route::get('/admin/employee/delete/{id}', [Admin\UserController::class, 'destroy']);
 
     Route::get('/admin-holiday', [Admin\HolidayController::class, 'index'])->name('Holiday');
-    Route::get('/admin/holiday/add', [Admin\HolidayController::class, 'addHoliday'])->name('addHoliday');
-    Route::get('/admin/holiday/add', [Admin\HolidayController::class, 'create']);
+    Route::get('/admin/holiday/add', [Admin\HolidayController::class, 'addHoliday']);
+    Route::get('/admin/holiday/add', [Admin\HolidayController::class, 'create'])->name('addHoliday');
     Route::post('/admin/holiday/edit', [Admin\HolidayController::class, 'update'])->name('editHoliday');
     Route::get('/admin/holiday/edit/{id}', [Admin\HolidayController::class, 'edit']);
     Route::get('/admin/holiday/delete/{id}', [Admin\HolidayController::class, 'destroy']);
@@ -58,7 +58,7 @@ Route::group(['middleware'], function () {
     Route::get('/admin/job/edit/{id}', [Admin\JobController::class, 'edit']);
     Route::get('/admin/job/delete/{id}', [Admin\JobController::class, 'destroy']);
 
-    Route::get('/admin/job-history', [Admin\JobHistoryController::class, 'index'])->name('History');
+    Route::get('/admin-history', [Admin\JobHistoryController::class, 'index'])->name('History');
     Route::post('/admin/job/history/add', [Admin\JobHistoryController::class, 'addHistory']);
     Route::get('/admin/job/history/add', [Admin\JobHistoryController::class, 'create'])->name('addHistory');
     Route::post('/admin/job/history/edit', [Admin\JobHistoryController::class, 'update'])->name('editHistory');
