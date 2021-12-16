@@ -20,7 +20,6 @@ class CreateProjectsTable extends Migration
             $table->longText('description')->nullable();
             $table->unsignedBigInteger('manager_id')->nullable();
             $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->string('members');
             $table->softDeletes();
             $table->timestamps();
         });
