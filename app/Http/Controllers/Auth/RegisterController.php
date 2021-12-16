@@ -58,15 +58,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'phone_number' => ['required', 'string', 'min:10'],
-            'hire_date' => ['required', 'date'],
-            'salary' => ['required'],
-            'job_id' => ['required'],
-            'department_id' => ['required'],
         ]);
     }
 
@@ -82,17 +76,12 @@ class RegisterController extends Controller
         $path = 'public/storage/employees/';
         $name = time() + rand(1, 1000000000000000) . '.' . $img->getClientOriginalExtension();
         Storage::disk('local')->put($path . $name, file_get_contents($img));
-        return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+        return Admin::create([
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'phone_number' => $data['phone_number'],
-            'hire_date' => $data['hire_date'],
             'photo' => 'storage/employees/' . $name,
-            'salary' => $data['salary'],
-            'job_id' => $data['job_id'],
-            'department_id' => $data['department_id'],
+
 
         ]);
 
@@ -101,8 +90,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $departments = Department::all();
-        $jobs = Job::all();
-        return view('auth.register', compact('departments', 'jobs'));
+
+        return view('auth.register');
     }
 }
