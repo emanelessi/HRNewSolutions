@@ -1,6 +1,4 @@
 @extends('admin.layouts.app')
-
-
 @section('content')
 
     <body class=" login">

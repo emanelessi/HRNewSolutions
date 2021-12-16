@@ -32,9 +32,7 @@ class EmployeeEloquent
     public function login()
     {
         $proxy = Request::create('oauth/token', 'POST');
-
         $response = Route::dispatch($proxy);
-
         $statusCode = $response->getStatusCode();
         $response = json_decode($response->getContent());
         if ($statusCode != 200)

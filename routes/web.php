@@ -37,7 +37,6 @@ Auth::routes();
 
 Route::group(['middleware'], function () {
     Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
-
     Route::get('/admin-employee', [Admin\UserController::class, 'index'])->name('Employee');
     Route::get('/admin/employee/add', [Admin\UserController::class, 'addEmployee']);
     Route::get('/admin/employee/add', [Admin\UserController::class, 'create'])->name('addEmployee');
