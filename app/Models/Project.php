@@ -10,6 +10,9 @@ class Project extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    protected $casts = [
+        'members' => 'array'
+    ];
 
     public function user()
     {

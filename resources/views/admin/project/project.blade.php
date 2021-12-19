@@ -158,7 +158,12 @@
                                         <td> {{$myproject->project['salary'] ?? null}} </td>
                                         <td> {{$myproject->project['description'] ?? null}} </td>
                                         <td> {{$myproject->manager->first_name ?? null }}  </td>
-                                        <td> {{$myproject->project['members'] ?? null}} </td>
+
+                                        <td> @for ($i=0; $i <= $myproject->project->count(); $i++)
+                                                {{$myproject->project['members']['names'][$i] ?? null}}<br>
+                                            @endfor
+                                        </td>
+
                                         <td><a href="/admin/project/delete/{{$myproject->id}}"
                                                class="btn btn-circle red">Delete <i
                                                     class="fa fa-times"></i> </a>

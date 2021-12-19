@@ -25,7 +25,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">name</label>
+                            <label class="col-md-3 control-label">Name</label>
                             <div class="col-md-4">
                                 <input type="text" value="{{$users['name']}}" name="name"
                                        class="form-control"
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">salary</label>
+                            <label class="col-md-3 control-label">Salary</label>
                             <div class="col-md-4">
                                 <input type="number" value="{{$users['salary']}}" name="salary"
                                        class="form-control"
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">description</label>
+                            <label class="col-md-3 control-label">Description</label>
                             <div class="col-md-4">
                                 <input type="text" value="{{$users['description']}}"
                                        name="description" class="form-control"
@@ -51,18 +51,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">manager_id</label>
+                            <label class="col-md-3 control-label">Manager</label>
                             <div class="col-md-4">
-                                <input type="number" name="manager_id" class="form-control"
-                                       value="{{$users['manager_id']}}"
-                                       placeholder="manager_id">
+                                <select name="manager_id" class="form-control">
+                                    <option value=""></option>
+                                    @foreach ($employees as $employee)
+                                        <option
+                                            value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">members</label>
+                            <label class="col-md-3 control-label">Members</label>
                             <div class="col-md-4">
+{{--                                @for ($i=0; $i <= $users['members']['names']->count(); $i++)--}}
                                 <input type="text" name="members" class="form-control"
-                                       value="{{$users['members']}}" placeholder="members">
+                                       value="{{$users['members']['names'][0]?? null}}" placeholder="members">
+{{--                                @endfor--}}
                             </div>
                         </div>
                         <div class="form-actions fluid">

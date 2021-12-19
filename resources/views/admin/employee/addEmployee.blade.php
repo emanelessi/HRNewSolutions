@@ -117,21 +117,7 @@
                                 </select>
                             </div>
                         </div>
-                        {{--                                    <div class="form-group">--}}
-                        {{--                                        <label class="col-md-3 control-label">Full Name</label>--}}
-                        {{--                                        <div class="col-md-4">--}}
-                        {{--                                            <div class="input-group">--}}
-                        {{--                                            <span class="input-group-addon">--}}
-                        {{--                                                <i class="fa fa-sticky-note"></i>--}}
-                        {{--                                            </span>--}}
-                        {{--                                                <select name="employee_id" class="form-control">--}}
-                        {{--                                                    @foreach ($employees as $employee)--}}
-                        {{--                                                        <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>--}}
-                        {{--                                                    @endforeach--}}
-                        {{--                                                </select>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
+
 
                         <div class="form-actions fluid">
                             <div class="row">

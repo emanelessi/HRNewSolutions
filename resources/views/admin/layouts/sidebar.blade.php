@@ -159,15 +159,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  @if(preg_match('/admin-job-history/i',url()->current())) start active open @endif">
-                <a href="{{url('/admin-job-history')}}" class="nav-link nav-toggle">
+            <li class="nav-item  @if(preg_match('/admin-history/i',url()->current())) start active open @endif">
+                <a href="{{url('/admin-history')}}" class="nav-link nav-toggle">
                     <i class="icon-briefcase"></i>
                     <span class="title">Job History</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{url('/admin-job-history')}}" class="nav-link ">
+                        <a href="{{url('/admin-history')}}" class="nav-link ">
                             <i class="icon-briefcase"></i>
                             <span class="title">Job History</span>
                         </a>

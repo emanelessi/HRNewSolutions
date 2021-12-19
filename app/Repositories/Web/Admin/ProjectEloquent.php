@@ -63,7 +63,8 @@ class ProjectEloquent
     public function edit($id)
     {
         $users = Project::findOrFail($id);
-        return view('admin.project.editProject', compact('users'));
+        $employees = User::all();
+        return view('admin.project.editProject', compact('users','employees'));
 
     }
 
