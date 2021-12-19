@@ -33,7 +33,11 @@ class EmployeeEloquent
         $rewards = Reward::all();
         $holidays = Holiday::all();
         $jobs = Job::all();
-
+        foreach ($users as $user){
+            $photo_link =Storage::url($user->photo);
+            $user->photo=$photo_link;
+        }
+//        dd($users->toArray());
         return view('admin.home')->with(compact('users','departments','projects','rewards','holidays','jobs'));
     }
 
@@ -45,6 +49,10 @@ class EmployeeEloquent
         $users = User::all();
         $projects = EmployeeProject::where('employee_id', $user_id)->get();
         $rewards = Reward::where('employee_id', $user_id)->get();
+        foreach ($users as $user){
+            $photo_link =Storage::url($user->photo);
+            $user->photo=$photo_link;
+        }
         return view('admin.profile.profile')->with(compact('profile', 'departments', 'users', 'projects', 'rewards'));
     }
 
@@ -64,7 +72,7 @@ class EmployeeEloquent
         $users->password = bcrypt($data['password']);
 
         if ($data['photo'] != null) {
-            $path = 'storage';
+            $path = 'public/storage/';
             $name = time() + rand(1, 1000000000000000) . '.' . $data['photo']->getClientOriginalExtension();
             Storage::disk('local')->put($path . $name, file_get_contents($data['photo']));
             $users->photo = $path . $name;

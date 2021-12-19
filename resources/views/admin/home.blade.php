@@ -56,6 +56,7 @@
             <!-- END WIDGET THUMB -->
         </div>
     </div>
+    <!-- BEGIN INTERACTIVE CHART PORTLET-->
     <div class="portlet light portlet-fit ">
         <div class="portlet-title">
             <div class="caption">
@@ -72,9 +73,10 @@
             </div>
         </div>
         <div class="portlet-body">
-            <div id="chart_2" class="chart"> </div>
+            <div id="chart_2" class="chart"></div>
         </div>
     </div>
+    <!-- END INTERACTIVE CHART PORTLET-->
     <div class="row">
         <div class="col-lg-6 col-xs-12 col-sm-12">
             <div class="portlet light ">
@@ -235,12 +237,10 @@
         </div>
     </div>
 
-
-
-
 @endsection
 
 @section('js')
+{{--    <script src="{{url('/')}}/cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>--}}
 
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="{{url('/')}}/assets/global/plugins/moment.min.js" type="text/javascript"></script>
@@ -301,18 +301,22 @@
     <!-- END THEME GLOBAL SCRIPTS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{url('/')}}/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.pie.min.js" type="text/javascript"></script>
+    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.stack.min.js" type="text/javascript"></script>
+    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.crosshair.min.js" type="text/javascript"></script>
+    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.axislabels.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
     <script src="{{ asset('../assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ asset('../assets/global/scripts/app.min.js') }}" type="text/javascript"></script>
-    <script  type="text/javascript">
-        var ChartsFlotcharts = function() {
+    <script type="text/javascript">
+        var ChartsFlotcharts = function () {
 
             return {
                 //main function to initiate the module
 
 
-                initCharts: function() {
+                initCharts: function () {
 
                     if (!jQuery.plot) {
                         return;
@@ -352,6 +356,7 @@
                         function randValue() {
                             return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
                         }
+
                         var pageviews = [
                             [1, randValue()],
                             [2, randValue()],
@@ -490,7 +495,7 @@
                         }
 
                         var previousPoint = null;
-                        $("#chart_2").bind("plothover", function(event, pos, item) {
+                        $("#chart_2").bind("plothover", function (event, pos, item) {
                             $("#x").text(pos.x.toFixed(2));
                             $("#y").text(pos.y.toFixed(2));
 
@@ -520,9 +525,16 @@
             };
         }();
 
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function () {
             ChartsFlotcharts.initCharts();
 
         });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#clickmewow').click(function () {
+                $('#radio1003').attr('checked', 'checked');
+            });
+        })
     </script>
 @stop
