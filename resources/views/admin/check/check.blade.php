@@ -37,17 +37,20 @@
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
                             <h4 class="modal-title"> Add New Check</h4>
+
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('Check')}}" method="post" class="form-horizontal" id="check">
+                            <form action="{{route('addCheck')}}" method="post" class="form-horizontal" id="check">
                                 @csrf
+
+                                <div class="alert alert-success alert-dismissible fade in" role="alert" style="display: none !important; color: red !important;">
+                                    <strong>Success!</strong>Post was added successfully.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                                 <div class="form-body">
-                                    <div class="form-group">
-                                        @if($errors->any())
-                                            <h4 class="col-md-3 control-label"
-                                                style="color: green;">{{$errors->first()}}</h4>
-                                        @endif
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Time</label>
                                         <div class="col-md-8">
@@ -76,14 +79,12 @@
                                             </select>
                                         </div>
                                     </div>
-
                                     <div class="modal-footer">
                                         <button type="button" data-dismiss="modal"
                                                 class="btn btn-danger" >
                                             Close
                                         </button>
                                         <button type="submit" class="btn btn-success" id="submit">Submit</button>
-
                                     </div>
                                 </div>
                             </form>
@@ -173,34 +174,49 @@
             $(document).on('submit', '#check', function (e) {
                 e.preventDefault();
 
+                var url = $(this).attr('action')
                 var form = $('#check')[0];
 
+                alert(url)
                 var data = new FormData(form);
                 $.ajax({
-                    url: "{{ url('admin/check/add') }}",
+                    url: url,
                     method: 'post',
                     data: data,
                     type:'json',
                     processData: false,
                     contentType: false,
-                    success: function (result) {
-                        if(result.errors) {
-                            $('.alert-danger').html('');
-                            $.each(result.errors, function(key, value) {
-                                $('.alert-danger').show();
-                                $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
-                            });
-                        } else {
-                            $('.alert-danger').hide();
-                            $('.alert-success').show();
-                            $('.datatable').DataTable().ajax.reload();
-                            setInterval(function(){
-                                $('.alert-success').hide();
-                                $('#CreateArticleModal').modal('hide');
-                                location.reload();
-                            }, 2000);
-                        }
-                    }
+                    success: function(result){
+                        console.log(result);
+                        $('.alert-success').show();
+                        // setInterval(function(){
+                        //     // $('.alert-success').hide();
+                        //     $('#stack1').modal('hide');
+                        //     location.reload();
+                        // }, 10000);
+                    },
+                    error: function(xhr, status, error){
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        alert('Error - ' + errorMessage);
+                    },
+                    // success: function (result) {
+                    //     if(result.errors) {
+                    //         $('.alert-danger').html('');
+                    //         $.each(result.errors, function(key, value) {
+                    //             $('.alert-danger').show();
+                    //             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
+                    //         });
+                    //     } else {
+                    //         $('.alert-danger').hide();
+                    //         $('.alert-success').show();
+                    //         $('.datatable').DataTable().ajax.reload();
+                    //         setInterval(function(){
+                    //             $('.alert-success').hide();
+                    //             $('#CreateArticleModal').modal('hide');
+                    //             location.reload();
+                    //         }, 2000);
+                    //     }
+                    // }
                 });
             });
         });

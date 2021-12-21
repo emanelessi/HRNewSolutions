@@ -58,10 +58,8 @@ class EmployeeEloquent
 
     public function editProfile(array $data)
     {
-
         $user_id = Auth::user()->id;
         $users = Admin::find($user_id);
-
 
         if ($data['username'] != null) {
             $users->username = $data['username'];
