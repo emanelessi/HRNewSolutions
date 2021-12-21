@@ -25,6 +25,7 @@ class CheckController extends Controller
 
     public function addCheck(Request $request)
     {
+//        dd($request->all());
         return $this->check->addCheck($request->all());
     }
 

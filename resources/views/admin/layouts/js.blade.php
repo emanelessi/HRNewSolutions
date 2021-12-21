@@ -15,6 +15,8 @@
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="{{url('/')}}/assets/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
+
+@yield('js')
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{url('/')}}/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
@@ -24,12 +26,6 @@
 <script src="{{url('/')}}/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="{{url('/')}}/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
-<script>
-    $(document).ready(function () {
-        $('#clickmewow').click(function () {
-            $('#radio1003').attr('checked', 'checked');
-        });
-    })
-</script>
+
 
 @stack('js')

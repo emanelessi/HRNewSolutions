@@ -32,14 +32,14 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="top: 10%;">
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" >
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
                             <h4 class="modal-title"> Add New Check</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('Check')}}" method="post" class="form-horizontal">
+                            <form action="{{route('Check')}}" method="post" class="form-horizontal" id="check">
                                 @csrf
                                 <div class="form-body">
                                     <div class="form-group">
@@ -70,18 +70,20 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Type</label>
                                         <div class="col-md-8">
-                                            <select name="employee_id" class="form-control">
+                                            <select name="type" class="form-control">
                                                 <option value="in">in</option>
                                                 <option value="out">out</option>
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="modal-footer">
                                         <button type="button" data-dismiss="modal"
-                                                class="btn btn-outline dark">
+                                                class="btn btn-danger" >
                                             Close
                                         </button>
-                                        <button type="submit" class="btn green">Submit</button>
+                                        <button type="submit" class="btn btn-success" id="submit">Submit</button>
+
                                     </div>
                                 </div>
                             </form>
@@ -166,5 +168,41 @@
     <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
             type="text/javascript"></script>
     <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('submit', '#check', function (e) {
+                e.preventDefault();
 
+                var form = $('#check')[0];
+
+                var data = new FormData(form);
+                $.ajax({
+                    url: "{{ url('admin/check/add') }}",
+                    method: 'post',
+                    data: data,
+                    type:'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if(result.errors) {
+                            $('.alert-danger').html('');
+                            $.each(result.errors, function(key, value) {
+                                $('.alert-danger').show();
+                                $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
+                            });
+                        } else {
+                            $('.alert-danger').hide();
+                            $('.alert-success').show();
+                            $('.datatable').DataTable().ajax.reload();
+                            setInterval(function(){
+                                $('.alert-success').hide();
+                                $('#CreateArticleModal').modal('hide');
+                                location.reload();
+                            }, 2000);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @stop
