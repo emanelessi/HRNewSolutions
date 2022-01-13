@@ -31,7 +31,9 @@ class JobEloquent
         $job->description = $data['description'];
         $job->salary = $data['salary'];
         $job->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
+
     }
 
 

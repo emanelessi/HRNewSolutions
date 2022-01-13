@@ -106,7 +106,9 @@ class EmployeeEloquent
         $employee->job_id = $data['job_id'];
         $employee->manager_id = $data['manager_id'];
         $employee->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
+
     }
 
     public function create()

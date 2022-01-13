@@ -32,34 +32,35 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="top: 10%;">
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
                             <h4 class="modal-title"> Add New Department</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('Department')}}" method="post"
-                                  class="form-horizontal">
+                            <form action="{{route('addDepartment')}}" method="post" class="form-horizontal"
+                                  id="department">
                                 @csrf
+                                <div class="alert alert-success alert-dismissible fade in" role="alert"
+                                     style="display: none !important; color: red !important;">
+                                    <strong>Success!</strong>Post was added successfully.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                                 <div class="form-body">
                                     <div class="form-group">
-                                        @if($errors->any())
-                                            <h4 class="col-md-3 control-label"
-                                                style="color: green;">{{$errors->first()}}</h4>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
+                                        <label class=" col-md-3 control-label">Name</label>
                                         <div class="col-md-8">
-                                            <label class=" control-label">Name</label>
-
                                             <input type="text" name="name" class="form-control"
                                                    placeholder="name">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
+                                        <label class=" col-md-3 control-label">Manager</label>
                                         <div class="col-md-8">
-                                            <label class=" control-label">Manager</label>
                                             <select name="manager_id" class="form-control">
                                                 <option value="">--select one--</option>
                                                 @foreach ($employees as $employee)
@@ -157,5 +158,57 @@
     <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
             type="text/javascript"></script>
     <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('submit', '#department', function (e) {
+                e.preventDefault();
 
+                var url = $(this).attr('action')
+                var form = $('#department')[0];
+
+                alert(url)
+                var data = new FormData(form);
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: data,
+                    type: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        console.log(result);
+                        $('.alert-success').show();
+                        // setInterval(function(){
+                        //     // $('.alert-success').hide();
+                        //     $('#stack1').modal('hide');
+                        //     location.reload();
+                        // }, 10000);
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        alert('Error - ' + errorMessage);
+                    },
+                    // success: function (result) {
+                    //     if(result.errors) {
+                    //         $('.alert-danger').html('');
+                    //         $.each(result.errors, function(key, value) {
+                    //             $('.alert-danger').show();
+                    //             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
+                    //         });
+                    //     } else {
+                    //         $('.alert-danger').hide();
+                    //         $('.alert-success').show();
+                    //         $('.datatable').DataTable().ajax.reload();
+                    //         setInterval(function(){
+                    //             $('.alert-success').hide();
+                    //             $('#CreateArticleModal').modal('hide');
+                    //             location.reload();
+                    //         }, 2000);
+                    //     }
+                    // }
+                });
+            });
+        });
+    </script>
 @stop
+

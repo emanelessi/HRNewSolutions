@@ -244,7 +244,28 @@
 
 @section('js')
 {{--    <script src="{{url('/')}}/cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>--}}
-
+<script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.resize.min.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.categories.min.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js"
+        type="text/javascript"></script>
+<script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js"
+        type="text/javascript"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="{{url('/')}}/assets/global/plugins/moment.min.js" type="text/javascript"></script>
     <script src="{{url('/')}}/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
@@ -272,32 +293,11 @@
             type="text/javascript"></script>
     <script src="{{url('/')}}/assets/global/plugins/amcharts/amstockcharts/amstock.js"
             type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/fullcalendar/fullcalendar.min.js"
-            type="text/javascript"></script>
+{{--    <script src="{{url('/')}}/assets/global/plugins/fullcalendar/fullcalendar.min.js"--}}
+{{--            type="text/javascript"></script>--}}
     <script src="{{url('/')}}/assets/global/plugins/horizontal-timeline/horizontal-timeline.js"
             type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.resize.min.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.categories.min.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js"
-            type="text/javascript"></script>
-    <script src="{{url('/')}}/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js"
-            type="text/javascript"></script>
+
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="{{url('/')}}/assets/global/scripts/app.min.js" type="text/javascript"></script>
@@ -309,9 +309,7 @@
     <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.crosshair.min.js" type="text/javascript"></script>
     <script src="{{url('/')}}/assets/global/plugins/flot/jquery.flot.axislabels.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
-    <script src="{{ asset('../assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
 
-    <script src="{{ asset('../assets/global/scripts/app.min.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         var ChartsFlotcharts = function () {
 
@@ -482,44 +480,42 @@
                         });
 
 
-                        function showTooltip(x, y, contents) {
-                            $('<div id="tooltip">' + contents + '</div>').css({
-                                position: 'absolute',
-                                display: 'none',
-                                top: y + 5,
-                                left: x + 15,
-                                border: '1px solid #333',
-                                padding: '4px',
-                                color: '#fff',
-                                'border-radius': '3px',
-                                'background-color': '#333',
-                                opacity: 0.80
-                            }).appendTo("body").fadeIn(200);
-                        }
+                        // function showTooltip(x, y, contents) {
+                        //     $('<div id="tooltip">' + contents + '</div>').css({
+                        //         position: 'absolute',
+                        //         display: 'none',
+                        //         top: y + 5,
+                        //         left: x + 15,
+                        //         border: '1px solid #333',
+                        //         padding: '4px',
+                        //         color: '#fff',
+                        //         'border-radius': '3px',
+                        //         'background-color': '#333',
+                        //         opacity: 0.80
+                        //     }).appendTo("body").fadeIn(200);
+                        // }
 
                         var previousPoint = null;
                         $("#chart_2").bind("plothover", function (event, pos, item) {
                             $("#x").text(pos.x.toFixed(2));
                             $("#y").text(pos.y.toFixed(2));
 
-                            if (item) {
-                                if (previousPoint != item.dataIndex) {
-                                    previousPoint = item.dataIndex;
-
-                                    $("#tooltip").remove();
-                                    var x = item.datapoint[0].toFixed(2),
-                                        y = item.datapoint[1].toFixed(2);
-
-                                    showTooltip(item.pageX, item.pageY, item.series.label + " of " + x + " = " + y);
-                                }
-                            } else {
-                                $("#tooltip").remove();
-                                previousPoint = null;
-                            }
+                            // if (item) {
+                            //     if (previousPoint != item.dataIndex) {
+                            //         previousPoint = item.dataIndex;
+                            //
+                            //         $("#tooltip").remove();
+                            //         var x = item.datapoint[0].toFixed(2),
+                            //             y = item.datapoint[1].toFixed(2);
+                            //
+                            //         showTooltip(item.pageX, item.pageY, item.series.label + " of " + x + " = " + y);
+                            //     }
+                            // } else {
+                            //     $("#tooltip").remove();
+                            //     previousPoint = null;
+                            // }
                         });
                     }
-
-
                     chart2();
 
 

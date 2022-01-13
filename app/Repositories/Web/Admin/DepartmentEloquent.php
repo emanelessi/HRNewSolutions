@@ -31,7 +31,8 @@ class DepartmentEloquent
         $department->name = $data['name'];
         $department->manager_id = $data['manager_id'];
         $department->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
     }
 
 

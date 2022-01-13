@@ -31,67 +31,71 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="top: 10%;">
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
                             <h4 class="modal-title"> Add New Reward</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('Reward')}}" method="post"
-                                  class="form-horizontal">
+                            <form action="{{route('addReward')}}" method="post"
+                                  class="form-horizontal" id="reward">
                                 @csrf
-                                <div class="form-body" style="padding: 0px">
+                                <div class="alert alert-success alert-dismissible fade in" role="alert"
+                                     style="display: none !important; color: red !important;">
+                                    <strong>Success!</strong>Post was added successfully.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="form-body">
+
                                     <div class="form-group">
-                                        @if($errors->any())
-                                            <h4 class="col-md-3 control-label"
-                                                style="color: green;">{{$errors->first()}}</h4>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Note</label>
-                                        <div class="col-md-8">
-                                            <input type="text" name="note" class="form-control"
-                                                   placeholder="note">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Note</label>
+                                            <div class="col-md-8">
+                                                <input type="text" name="note" class="form-control"
+                                                       placeholder="note">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Cost</label>
-                                        <div class="col-md-8">
-                                            <input type="number" name="cost" class="form-control"
-                                                   placeholder="cost">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Cost</label>
+                                            <div class="col-md-8">
+                                                <input type="number" name="cost" class="form-control"
+                                                       placeholder="cost">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Employee</label>
-                                        <div class="col-md-8">
-                                            <select name="employee_id" class="form-control">
-                                                <option value=""></option>
-                                                @foreach ($employees as $employee)
-                                                    <option
-                                                        value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                                @endforeach
-                                            </select>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Employee</label>
+                                            <div class="col-md-8">
+                                                <select name="employee_id" class="form-control">
+                                                    <option value=""></option>
+                                                    @foreach ($employees as $employee)
+                                                        <option
+                                                            value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Project</label>
-                                        <div class="col-md-8">
-                                            <select name="project_id" class="form-control">
-                                                <option value=""></option>
-                                                @foreach ($projects as $project)
-                                                    <option
-                                                        value="{{ $project->project->id }}">{{ $project->project->name }}</option>
-                                                @endforeach
-                                            </select>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Project</label>
+                                            <div class="col-md-8">
+                                                <select name="project_id" class="form-control">
+                                                    <option value=""></option>
+                                                    @foreach ($projects as $project)
+                                                        <option
+                                                            value="{{ $project->project->id }}">{{ $project->project->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" data-dismiss="modal"
-                                                class="btn btn-outline dark">
-                                            Close
-                                        </button>
-                                        <button type="submit" class="btn green">Submit</button>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal"
+                                                    class="btn btn-outline dark">
+                                                Close
+                                            </button>
+                                            <button type="submit" class="btn green">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -178,5 +182,57 @@
     <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
             type="text/javascript"></script>
     <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('submit', '#reward', function (e) {
+                e.preventDefault();
 
+                var url = $(this).attr('action')
+                var form = $('#reward')[0];
+
+                alert(url)
+                var data = new FormData(form);
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: data,
+                    type: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        console.log(result);
+                        $('.alert-success').show();
+                        // setInterval(function(){
+                        //     // $('.alert-success').hide();
+                        //     $('#stack1').modal('hide');
+                        //     location.reload();
+                        // }, 10000);
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        alert('Error - ' + errorMessage);
+                    },
+                    // success: function (result) {
+                    //     if(result.errors) {
+                    //         $('.alert-danger').html('');
+                    //         $.each(result.errors, function(key, value) {
+                    //             $('.alert-danger').show();
+                    //             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
+                    //         });
+                    //     } else {
+                    //         $('.alert-danger').hide();
+                    //         $('.alert-success').show();
+                    //         $('.datatable').DataTable().ajax.reload();
+                    //         setInterval(function(){
+                    //             $('.alert-success').hide();
+                    //             $('#CreateArticleModal').modal('hide');
+                    //             location.reload();
+                    //         }, 2000);
+                    //     }
+                    // }
+                });
+            });
+        });
+    </script>
 @stop
+

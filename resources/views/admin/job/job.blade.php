@@ -31,23 +31,25 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" style="top: 10%;">
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" >
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
                             <h4 class="modal-title"> Add New Job</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('Job')}}" method="post" class="form-horizontal">
-                                @csrf
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        @if($errors->any())
-                                            <h4 class="col-md-3 control-label"
-                                                style="color: green;">{{$errors->first()}}</h4>
-                                        @endif
+                            <form action="{{route('addJob')}}" method="post" class="form-horizontal" id="job">
+                                    @csrf
+                                    <div class="alert alert-success alert-dismissible fade in" role="alert"
+                                         style="display: none !important; color: red !important;">
+                                        <strong>Success!</strong>Post was added successfully.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-body">
+
+                                        <div class="form-group">
                                         <label class="col-md-3 control-label">Title</label>
                                         <div class="col-md-8">
                                             <input type="text" name="title" class="form-control"
@@ -117,39 +119,39 @@
                     <div class="portlet-body">
                         <div class="table-scrollable">
                             <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th> Title</th>
-                                <th> Description</th>
-                                <th> Salary</th>
-                                <th> Delete</th>
-                                <th> Edit</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($job as $myjob)
+                                <thead>
                                 <tr>
-                                    <td> {{$myjob->title}} </td>
-                                    <td> {{$myjob->description}} </td>
-                                    <td> {{$myjob->salary}} $</td>
-                                    <td><a href="/admin/job/delete/{{$myjob->id}}"
-                                           class="btn btn-circle red">Delete <i
-                                                class="fa fa-times"></i> </a>
-                                    </td>
-                                    <td><a href="/admin/job/edit/{{$myjob->id}}"
-                                           class="btn btn-circle green">Edit <i
-                                                class="fa fa-edit"></i></a>
-                                    </td>
+                                    <th> Title</th>
+                                    <th> Description</th>
+                                    <th> Salary</th>
+                                    <th> Delete</th>
+                                    <th> Edit</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        {{$job->links("pagination::bootstrap-4")}}
+                                </thead>
+                                <tbody>
+                                @foreach($job as $myjob)
+                                    <tr>
+                                        <td> {{$myjob->title}} </td>
+                                        <td> {{$myjob->description}} </td>
+                                        <td> {{$myjob->salary}} $</td>
+                                        <td><a href="/admin/job/delete/{{$myjob->id}}"
+                                               class="btn btn-circle red">Delete <i
+                                                    class="fa fa-times"></i> </a>
+                                        </td>
+                                        <td><a href="/admin/job/edit/{{$myjob->id}}"
+                                               class="btn btn-circle green">Edit <i
+                                                    class="fa fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            {{$job->links("pagination::bootstrap-4")}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 @endsection
@@ -160,5 +162,57 @@
     <script src="{{url('/')}}/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
             type="text/javascript"></script>
     <script src="{{url('/')}}/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('submit', '#job', function (e) {
+                e.preventDefault();
 
+                var url = $(this).attr('action')
+                var form = $('#job')[0];
+
+                alert(url)
+                var data = new FormData(form);
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: data,
+                    type:'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(result){
+                        console.log(result);
+                        $('.alert-success').show();
+                        // setInterval(function(){
+                        //     // $('.alert-success').hide();
+                        //     $('#stack1').modal('hide');
+                        //     location.reload();
+                        // }, 10000);
+                    },
+                    error: function(xhr, status, error){
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        alert('Error - ' + errorMessage);
+                    },
+                    // success: function (result) {
+                    //     if(result.errors) {
+                    //         $('.alert-danger').html('');
+                    //         $.each(result.errors, function(key, value) {
+                    //             $('.alert-danger').show();
+                    //             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
+                    //         });
+                    //     } else {
+                    //         $('.alert-danger').hide();
+                    //         $('.alert-success').show();
+                    //         $('.datatable').DataTable().ajax.reload();
+                    //         setInterval(function(){
+                    //             $('.alert-success').hide();
+                    //             $('#CreateArticleModal').modal('hide');
+                    //             location.reload();
+                    //         }, 2000);
+                    //     }
+                    // }
+                });
+            });
+        });
+    </script>
 @stop
+

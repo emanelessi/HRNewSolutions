@@ -32,7 +32,7 @@
                             </button>
                         </div>
                     </div>
-                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first" >
+                    <div id="stack1" class="modal fade" tabindex="-1" data-focus-on="input:first">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true"></button>
@@ -42,15 +42,14 @@
                         <div class="modal-body">
                             <form action="{{route('addCheck')}}" method="post" class="form-horizontal" id="check">
                                 @csrf
-
-                                <div class="alert alert-success alert-dismissible fade in" role="alert" style="display: none !important; color: red !important;">
+                                <div class="alert alert-success alert-dismissible fade in" role="alert"
+                                     style="display: none !important; color:red !important;">
                                     <strong>Success!</strong>Post was added successfully.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="form-body">
-
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Time</label>
                                         <div class="col-md-8">
@@ -81,7 +80,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" data-dismiss="modal"
-                                                class="btn btn-danger" >
+                                                class="btn btn-danger">
                                             Close
                                         </button>
                                         <button type="submit" class="btn btn-success" id="submit">Submit</button>
@@ -183,10 +182,10 @@
                     url: url,
                     method: 'post',
                     data: data,
-                    type:'json',
+                    type: 'json',
                     processData: false,
                     contentType: false,
-                    success: function(result){
+                    success: function (result) {
                         console.log(result);
                         $('.alert-success').show();
                         // setInterval(function(){
@@ -195,7 +194,7 @@
                         //     location.reload();
                         // }, 10000);
                     },
-                    error: function(xhr, status, error){
+                    error: function (xhr, status, error) {
                         var errorMessage = xhr.status + ': ' + xhr.statusText
                         alert('Error - ' + errorMessage);
                     },

@@ -36,7 +36,9 @@ class HolidayEloquent
         $holiday->type = $data['type'];
         $holiday->employee_id = $data['employee_id'];
         $holiday->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
+
     }
 
 

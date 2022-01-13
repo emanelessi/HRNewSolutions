@@ -36,7 +36,9 @@ class ProjectEloquent
         $project->manager_id = $data['manager_id'];
         $project->members = $data['members'];
         $project->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
+
     }
 
 

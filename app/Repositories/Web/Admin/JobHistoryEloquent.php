@@ -38,7 +38,9 @@ class JobHistoryEloquent
         $job_history->job_id = $data['job_id'];
         $job_history->department_id = $data['department_id'];
         $job_history->save();
-        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+//        return Redirect::back()->withErrors(['Added Successfully', 'The Message']);
+        return response()->json(['success'=>'post added successfully']);
+
     }
 
 
